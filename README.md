@@ -40,3 +40,5 @@ Registro
 * **Gustavo Facundo Acosta**: 31 años, futuro estudiante de tecnicatura superior en informática en la Universidad Nacional de General Sarmiento, actualmente trabajador independiente en el area de gastronomia vegana. Pero futuro programador.
 
 * **Franco Daniel Nievas**: 18 años, estudiante en economía y administración en el Instituto San Miguel Arcángel.Y estudiante de la cursada de Digital House y Fundación Formar.
+
+* **Juan Cordero**: 32 años, Estudiante de desarrollo web full stack en Digital House y Fundación Formar. Actualmente trabajador en el area textil como Empleado de Serigrafia , Emprendiendo de Forma independiente  en el diseño de indumentaria .
