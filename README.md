@@ -28,9 +28,15 @@ Detalles del Producto
 Footer
 * https://www.argentina.gridohelado.com/
 -----------------------------------------------------
+Login
+* https://playground.digitalhouse.com/ar/
+-----------------------------------------------------
+Registro
+* http://www.resermap.com.ar/buenos-aires
+-----------------------------------------------------
 ## Descripción de los integrantes:
 * **Ana Belén Bernal**: 22 años, estudiante de ingeniería en informática en la Universidad Nacional de la Matanza y desarrollo web full stack en Digital House y Fundación Formar.
 
 * **Gustavo Facundo Acosta**: 31 años, futuro estudiante de tecnicatura superior en informática en la Universidad Nacional de General Sarmiento, actualmente trabajador independiente en el area de gastronomia vegana. Pero futuro programador.
 
-* **Franco Daniel Nievas**: 18 años, estudiante en economía y administración en el Instituto San Miguel Arcángel .  Y estudiante de la cursada de Digital House y Fundación Formar.
+* **Franco Daniel Nievas**: 18 años, estudiante en economía y administración en el Instituto San Miguel Arcángel.Y estudiante de la cursada de Digital House y Fundación Formar.
