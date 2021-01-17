@@ -2,7 +2,7 @@
 Somos una empresa orientada al desarrollo tecnológico en el área gastronómica. El servicio que se brindará será un sitio en donde los locales gastronómicos podrán ofrecer sus productos y servicios, al mismo tiempo que los usuarios interactúan con el sitio para elegir el plato/postre que mejor se adapte a sus gustos y además también podrán elegir una reserva para el restaurante/bar de su preferencia. Nuestro sitio busca solucionar el problema de las personas con un tipo de alimentación particular que no conocen un lugar adecuado que se adapte a sus necesidades. Food4me se encarga de solucionar ese problema de forma fácil y rápida.
 El sitio fue creado para que todo el público pueda utilizarla, pero fue especialmente diseñada para las personas que dispongan poco tiempo y deseen una solución rápida con un menú variado y nutritivo, también, para personas con alguna dieta alternativa, como por ejemplo vegetarianos, celíacos, veganos, entre otros. 
 Nuestros clientes son los locales gastronómicos, quienes al utilizar los servicios de nuestro sitio, podrán obtener un gran incremento en sus ventas.
-
+ 
 -----------------------------------------------------
 ## Sitios de referencia:
 Productos y servicios que ofrece
