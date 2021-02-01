@@ -1,0 +1,68 @@
+
+body{
+  background-image: url("../img/fondo.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+div.form{
+    width: 300px;
+    background-color:#ffff;
+    margin: 50px;
+
+    
+}
+div.form h1{
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(49, 49, 49);
+    padding: 20px 0 0 0;
+}
+  
+.Entradas label{
+    margin-top: 10px;
+    padding-top: 20px;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+
+  }
+.Entradas input{
+    width: 80%;
+    margin: 10px 0px ;
+    height: 30px;
+    padding-left: 10px;
+  }
+.Recordar{
+    overflow: hidden;
+    margin: 15px 0px;
+  }
+.Recordar input{
+    float: right;
+  }
+.Recordar label{
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+    float: right;
+    padding-left: 10px;
+    
+  }
+
+.botones{
+  display: flex;
+ flex-wrap:wrap;
+justify-content: space-around;
+margin-bottom: 25px;
+}
+.botones button{
+    background-color: rgb(76, 172, 231);
+    color: #fff;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border:none;
+    
+  
+    
+}
+p{
+    color: red;
+}
