@@ -1,68 +1,111 @@
 
-body{
-  background-image: url("../img/fondo.jpeg");
-  background-size: cover;
-  background-repeat: no-repeat;
+/*Todo*/
+*{
+  font-family: 'gentium';
 }
-div.form{
-    width: 300px;
-    background-color:#ffff;
-    margin: 50px;
+body{
+   /*box-shadow:rgba(78, 76, 76, 0.767);*/
+   box-shadow: whitesmoke;
+}
 
+
+.home.html{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/*titulo de Registrate*/
+h1{
+  font-family: 'Roboto';
+  text-align: center;
+  font-weight: 500;
+  margin: 20px 0;
+  background: #bc0c2b;
+  color: white;
+  border-radius: 10px;
     
 }
-div.form h1{
-    text-transform: uppercase;
-    text-align: center;
-    color: rgb(49, 49, 49);
-    padding: 20px 0 0 0;
+
+
+/*Datos del registrate*/
+.datosRegister{
+ flex-wrap: wrap;
+ 
 }
+
+.EntradasRegister{
   
-.Entradas label{
+  display: flex;
+  flex-direction: column;
+  
+} 
+.EntradasRegister label{
     margin-top: 10px;
     padding-top: 20px;
     font-weight: bold;
     color: rgb(49, 49, 49);
 
   }
-.Entradas input{
+.EntradasRegister input{
     width: 80%;
-    margin: 10px 0px ;
     height: 30px;
-    padding-left: 10px;
+    padding-left: 20px;
+    border-radius: 3px;
+    
+
   }
-.Recordar{
+
+
+/*Fecha de Nacimiento */
+
+
+
+
+/* CHECK*/
+.check{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 10px;
+}
+.negritaRegister{
     overflow: hidden;
     margin: 15px 0px;
-  }
-.Recordar input{
-    float: right;
-  }
-.Recordar label{
-    font-weight: bold;
-    color: rgb(49, 49, 49);
-    float: right;
-    padding-left: 10px;
+    
     
   }
 
-.botones{
+.negritaRegister input{
+  flex-direction: column;
+  border-radius: 2px;
+}
+
+.terminosRegister{
+padding: 10px;
+}
+
+
+
+/*Bonotes*/
+.botonesRegister{
   display: flex;
  flex-wrap:wrap;
-justify-content: space-around;
-margin-bottom: 25px;
+ justify-content: space-around;
+ margin-bottom: 25px;
+ 
 }
-.botones button{
-    background-color: rgb(76, 172, 231);
+
+
+.botonesRegister button{
+    background-color: #BC0C2B;
     color: #fff;
     width: 100px;
-    height: 30px;
+    height: 50%;
     border-radius: 10px;
     border:none;
     
+}
+
   
-    
-}
-p{
-    color: red;
-}

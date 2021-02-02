@@ -1,63 +1,83 @@
-body{
-    background-image: url("../img/fondo.jpeg");
-    background-repeat : no-repeat;
-    background-size: cover;
+*{
+      font-family: 'gentium';
 }
-div.form{
-      width: 350px;
-      margin: auto;
-      background-color:#fff;
+
+
+
+.card{
+  
+  box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}  
+    
+.home.html{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+}
+    
+    
+    /*titulo de Registrate*/
+h1{
+      font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;
+        
+}
+    
+    
+    /*Datos del registrate*/
+    .datosLogin{
+     flex-wrap: wrap;
+     
+    }
+    
+    .EntradasLogin{
       
-}
-
-div.form h1{
-      text-transform: uppercase;
-      text-align: center;
-      color: rgb(49, 49, 49);
-}
+      display: flex;
+      flex-direction: column;
+      
+    } 
+    .EntradasLogin label{
+        /*margin-top: 10px;
+        padding-top: 20px;*/
+        font-weight: bold;
+        color: rgb(49, 49, 49);
+    
+      }
+    .EntradasLogin input{
+        width: 80%;
+        height: 30px;
+        padding-left: 20px;
+        border-radius: 3px;
+        
+    
+      }
     
     
-div.form div.Entradas label{
-      margin-top: 10px;
-      padding-top: 20px;
-      font-weight: bold;
-      color: rgb(49, 49, 49);
-  
-}
-    
-div.form div.Entradas input{
-      width: 80%;
-      margin: 10px 0px ;
-      height: 30px;
-      padding-left: 10px;
-}
-    
-div.form div.Recordar{
-      overflow: hidden;
-      margin: 15px 0px;
-}
-    
-div.form div.Recordar input{
-      float: right;
- }
-
- div.form div.Recordar label{
-      font-weight: bold;
-      color: rgb(49, 49, 49);
-      float: right;
-      padding-left: 10px;
-}
-    
-div.form button{
-      background-color: rgb(76, 172, 231);
-      color: #fff;
-      width: 100px;
-      height: 30px;
-      border-radius: 10px;
-      border:none;
-}
    
-div.form p{
-      color: red;
-}
-  
+    
+    /*Bonotes*/
+    .botonesLogin{
+      display: flex;
+     flex-wrap:wrap;
+     justify-content: space-around;
+     margin-bottom: 25px;
+     
+    }
+    
+    
+    .botonesLogin button{
+        background-color: #BC0C2B;
+        color: #fff;
+        width: 100px;
+        height: 60%;
+        border-radius: 10px;
+        border:none;
+        
+    }
+    
+      
