@@ -150,24 +150,9 @@ main .productos .contenido .datos span{
     
 }
 
-main .productos .contenido .descuento{
-    align-items:center;    
-    font-size:30px;
-    color: #09db25;
-    
-}
-
 main .productos .contenido h3{
     text-align: center;
     font-size: 60px;
-}
-
-main .productos .contenido i{
-    color: #09db25;
-    font-size: 25px;
-    margin-left:85%;
-    margin-bottom: 5%;
-    
 }
 
 main .productos .contenido i:hover{
@@ -226,7 +211,7 @@ footer{
     position: static;
     bottom: 0;
     background-color:#BC0C2B;
-    width: 100%;
+    max-width: 1440px;
 }
 
 /* QR */
@@ -295,6 +280,16 @@ footer .pie .pie2 a{
 /* footer */
 
 /*PRODUCT ADD*/
+
+.contenedor-product-add{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contenedor-detalle{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
 
 .contenido-form{
     display: flex;
