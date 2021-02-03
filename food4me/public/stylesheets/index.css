@@ -9,10 +9,10 @@
     margin: 0;
 }
 body{
-    background-color: black;
-   
-    
+    background-image: url(/images/fondo.jpeg);
+    background-size: cover;
 }
+
 /* header */
 
 header{
@@ -375,11 +375,6 @@ footer .pie .pie2 a{
 
 /*PRODUCT ADD*/
 
-body{
-    background-image: url(/images/fondo.jpeg);
-    background-size: cover;
-}
-
 .contenido-form{
     display: flex;
     flex-wrap: wrap;
@@ -431,12 +426,6 @@ body{
 }
 
 /*PRODUCT DETAIL*/
-
-body{
-    background-image: url(/images/fondo.jpeg);
-    background-size: cover;
-    
-}
 
 div .contenido-detalle{
     display: flex;
