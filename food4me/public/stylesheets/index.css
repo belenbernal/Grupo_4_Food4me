@@ -16,7 +16,8 @@ body{
 /* header */
 
 header{
-    
+    z-index: 10;
+    max-width: 1440px;
     top: 0;
     position: fixed;
     width: 100%;
@@ -62,7 +63,7 @@ header .buttons{
     justify-content: flex-end;
 }
 
-header .buttons button{
+header .buttons a{
     margin-top: 10px;
     border: none;
     color: white;
@@ -73,10 +74,8 @@ header .buttons button{
 }
 
 /* categorias */
-header{
-    max-width: 1140px;
-    z-index: 10;
-}
+
+
 header .menu{
     
     margin: 10px 0 10px;    
@@ -89,7 +88,7 @@ header .menu{
 
 header .menu .menu-2{
     
-    width: 300px;
+    width: 60%;
 }
 
 header .menu ul{  
@@ -189,12 +188,15 @@ main .contenido img{
 }
 
 main h2{
+    text-decoration-line:underline;
+    font-family: gentium;
+    font-weight: 700;
     text-align: center;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 main .btns{
-    
+    margin: 5px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -209,10 +211,10 @@ main .btns button{
     background-color: #BC0C2B;
 }
 
-main .btns .btn-1,
-main .btns .btn-2{
+main .btns .btn{
+    margin-top: 5px;
+    margin-left: 5px;
     margin-bottom: 5px;
-    margin-left: 5%;
     width: 90%;
     border: 1px solid;
 }
@@ -292,6 +294,18 @@ footer .pie .pie2 a{
 /* footer */
 
 @media (min-width: 768px){
+
+    .navbar-expand-md .navbar-collapse {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+        width: 120%;
+    }
+
   header img{
       width: 100%;
   }
@@ -319,6 +333,7 @@ footer .pie .pie2 a{
 
     .pie{
         display: flex;
+        flex-wrap: wrap;
    
     }
     .pie .map .inframe{
@@ -326,15 +341,16 @@ footer .pie .pie2 a{
     }
 
     .pie .qr img{
-        height: 80%;
-        width: 90%;
+        margin: 10px;    
+        width: 50%;
     }
     
 }
-@media (min-width: 1024px){
+@media (min-width: 1024px){    
 
-    
-        
+    header .buttons{
+    justify-content: space-evenly;
+    }
     main{
     
         margin-top: 200px;
@@ -351,8 +367,7 @@ footer .pie .pie2 a{
     header .menu ul li{
         text-align: center;
     }
-    main .btns .btn-1,
-    main .btns .btn-2{
+    main .btns .btn{
         width: 95%;
     } 
 }

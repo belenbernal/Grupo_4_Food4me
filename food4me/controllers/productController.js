@@ -5,5 +5,8 @@ const productController = {
     productDetail: (req, res)=>{
         res.render('productDetail')
     },
+    carrito: (req, res)=>{
+        res.render('carrito')
+    }
 }
 module.exports = productController;

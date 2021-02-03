@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include('./partials/head') %>
+    
+<body>
+    <%- include('./partials/header') %>
+    <div class="container">
+        <div class="row card mx-auto carrito">
+            <div class="productos-carritos">
+                <div class="contenido-carrito col-12">
+                    <div class="col-3">
+                        <img src="./img/hamburger-1238246_1920.jpg" alt="plato">
+                    </div>
+                    <div class="col-9 datos-carrito">
+                        <div class="titulocarrito col-9">
+                            <h3>Ensalada</h3>
+                        </div>
+                        <div class="col-4 option-carrito">
+                            <form action="">
+                                <button type="button" class="btn btn-primary">Comprar</button>
+                                <div class="option">
+                                    <label for="cantidad">Cantidad</label>
+                                    <span class="numero">
+                                        <input type="number" value="1" min="1" max="100" class="number-spinner" id="cantidad">
+                                    </span>
+                                </div>
+                            </form>
+                            <div class="col-5 precio-carrito">
+                                <h3>$120 </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footer') %> 
