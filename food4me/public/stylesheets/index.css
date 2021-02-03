@@ -645,6 +645,201 @@ main .precio-carrito button:hover{
         }
 }
 
+    
+/*Login*/
+
+.contenedorLogin{
+    margin-top: 200px;
+      margin-bottom: 150px;
+  }
+  
+  .card {
+    
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+  }  
+      
+  .home.html{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+  }
+      
+      
+      /*titulo de Registrate*/
+  .loginTitulo{
+        font-family: 'Roboto';
+      text-align: center;
+      font-weight: 500;
+      margin: 20px 0;
+      background: #bc0c2b;
+      color: white;
+      border-radius: 10px;
+          
+  }
+      
+      
+      /*Datos del registrate*/
+      .datosLogin{
+       flex-wrap: wrap;
+       
+      }
+      
+      .EntradasLogin{
+        
+        display: flex;
+        flex-direction: column;
+        
+      } 
+      .EntradasLogin label{
+          /*margin-top: 10px;
+          padding-top: 20px;*/
+          font-weight: bold;
+          color: rgb(49, 49, 49);
+      
+        }
+      .EntradasLogin input{
+          width: 80%;
+          height: 30px;
+          padding-left: 20px;
+          border-radius: 3px;
+          
+      
+        }
+      
+      
+     
+      
+      /*Bonotes*/
+      .botonesLogin{
+        display: flex;
+       flex-wrap:wrap;
+       justify-content: space-around;
+       margin-bottom: 25px;
+       
+      }
+      
+      
+      .botonesLogin button{
+          background-color: #BC0C2B;
+          color: #fff;
+          width: 100px;
+          height: 60%;
+          border-radius: 10px;
+          border:none;
+          
+      }
+      .botonesLogin button a{
+          text-decoration: none;
+          color: #fff;
+      }
+        
+
+/*Register*/
+.home.html{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+.contenedorRegister{
+  margin-top: 200px;
+    margin-bottom: 150px;
+}
+/*titulo de Registrate*/
+.registerTitulo{
+
+  font-family: 'Roboto';
+  text-align: center;
+  font-weight: 500;
+  margin: 20px 0;
+  background: #bc0c2b;
+  color: white;
+  border-radius: 10px;
+    
+}
+
+
+/*Datos del registrate*/
+.datosRegister{
+ flex-wrap: wrap;
+ 
+}
+
+.EntradasRegister{
+  
+  display: flex;
+  flex-direction: column;
+  
+} 
+.EntradasRegister label{
+    margin-top: 10px;
+    padding-top: 20px;
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+
+  }
+.EntradasRegister input{
+    width: 80%;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 3px;
+    
+
+  }
+
+
+/*Fecha de Nacimiento */
+
+
+
+
+/* CHECK*/
+.check{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 10px;
+}
+.negritaRegister{
+    overflow: hidden;
+    margin: 15px 0px;
+    
+    
+  }
+
+.negritaRegister input{
+  flex-direction: column;
+  border-radius: 2px;
+}
+
+.terminosRegister{
+padding: 10px;
+}
+
+
+
+/*Bonotes*/
+.botonesRegister{
+  display: flex;
+ flex-wrap:wrap;
+ justify-content: space-around;
+ margin-bottom: 25px;
+ 
+}
+
+
+.botonesRegister button{
+    background-color: #BC0C2B;
+    color: #fff;
+    width: 100px;
+    height: 50%;
+    border-radius: 10px;
+    border:none;
+    
+}
+
+  
 
 
 
