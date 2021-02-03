@@ -1,0 +1,650 @@
+/*IMPORT*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Basic:ital,wght@0,400;0,700;1,400&display=swap');
+
+*{
+    font-family: gentium;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-image: url(/images/fondo.jpeg);
+    background-size: cover;
+}
+
+/* header */
+
+header{
+    z-index: 10;
+    max-width: 1440px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    background-color: #BC0C2B;
+}
+
+/* search */
+header .buscador{
+    text-align: center;
+}
+
+header .buscador input{
+    margin-top: 14px;
+    height: 25px;
+    width: 75%;
+    border-radius: 10px 0 0 10px;
+    border: none;
+   
+}
+
+header .buscador button{
+    margin-top: 16px;
+    height: 25px;
+    width: 30px;
+    background-color: white;
+    border: none;
+    margin-left: -14px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+/* logo */
+img{
+    margin-top: 10px;
+    width:130%;
+}
+
+
+/* login-carrito */
+header .buttons{
+    display: flex;
+    justify-content: flex-end;
+}
+
+header .buttons a{
+    margin-top: 10px;
+    border: none;
+    color: white;
+    background-color: #BC0C2B;
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+}
+
+/* categorias */
+
+
+header .menu{
+    
+    margin: 10px 0 10px;    
+    width: 100%;    
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+header .menu .menu-2{
+    
+    width: 60%;
+}
+
+header .menu ul{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+header .menu ul li{        
+        border-bottom: 1px solid white;
+}
+header .menu ul li:hover{
+    background-color: #c22d4f;
+}
+
+header .menu ul li a{   
+    color: white;
+    text-decoration: none;
+}
+/* header */
+
+/* main */
+main{    
+    margin-top: 200px;
+    margin-bottom: 280px;
+    
+}
+
+.carousel{
+   
+    display: none;
+}
+
+main .carousel-item img {
+    height: 300px;
+    
+}
+
+main .productos .contenido{
+    border-radius: 10px;
+    margin-top: 15px;
+    padding: 8px;
+}
+
+main .productos .contenido .datos{
+    display: flex;
+    border: 1px solid white;
+}
+
+main .productos .contenido .datos .precio{
+    display: flex;
+}
+
+main .productos .contenido .datos h3,
+main .productos .contenido .datos span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+main .productos .contenido h3{
+    text-align: center;
+    font-size: 60px;
+}
+
+main .productos .contenido i:hover{
+    font-size: 30px;
+}
+
+main .contenido{
+    
+    background-color: white;
+}
+
+main .contenido a{    
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+main .contenido img{
+    width: 100%;
+}
+
+main h2{
+    text-decoration-line:underline;
+    font-family: gentium;
+    font-weight: 700;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+main .btns{
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .btns button{   
+    border-radius: 12px;   
+    color: white;
+    font-weight: 900;
+    height: 70px;
+    width:100%;
+    border: none;
+    background-color: #BC0C2B;
+}
+
+main .btns .btn{
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    width: 90%;
+    border: 1px solid;
+}
+
+
+/* footer */
+footer{
+    position: static;
+    bottom: 0;
+    background-color:#BC0C2B;
+    max-width: 1440px;
+}
+
+/* QR */
+footer .qr{
+    display: flex;
+    justify-content: center;
+}
+
+footer .qr img{
+    width: 90px;
+    height: 95px;
+}
+
+/* mapa */
+footer iframe{
+    height: 100px;
+    width: 100%;
+}
+
+/* pie */
+
+
+.atajos{
+    margin-top: 10px;
+    background-color:#BC0C2B;
+    border-bottom:1px solid white;   
+    text-align: center;
+    
+}
+
+.atajos a{    
+    padding-top:20px;
+    color: white;
+    text-decoration: none;
+}
+
+.atajos .atajos2{
+    font-weight: 900;
+   border-bottom: 1px solid white;
+}
+
+.atajos i{
+    padding: 30px;
+    font-size: 20px;
+}
+
+/* pie2 */
+
+
+footer .pie{
+    padding-top: 10px;
+    margin-top: 15px;
+}
+footer .pie .pie2{
+    columns: auto;
+    text-align: center;
+}
+
+footer .pie .pie2 a{
+    white-space: nowrap;
+    font-size: 18px;
+    padding: 8px;
+    color: white;
+    
+}
+/* footer */
+
+/*PRODUCT ADD*/
+
+.contenedor-product-add{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contenedor-detalle{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contenido-form{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border: rgba(0, 0, 0, 0.537) solid 1px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+.contenido-form .entrada{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.contenido-form input , .contenido-form label{
+    width: 900%;
+}
+
+.contenido-form textarea{
+    width: 900%;
+}
+
+.titulo-formu{
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;
+}
+
+.contenido-form .boton-carga{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.contenido-form .boton-carga .btn{
+    background-color: #bc0c2b;
+    border: #bc0c2b 1px solid;
+    font-weight: bold;
+}
+
+/*PRODUCT DETAIL*/
+
+div .contenido-detalle{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+
+div .contenido-detalle img{
+    width: 98%;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+.contenido-detalle .datos{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    position: relative;
+    justify-content: space-around;
+}
+
+.contenido-detalle .datos .nombre{
+    margin-bottom: 0;
+}
+
+.contenido-detalle .datos h2{
+    font-family: 'Roboto';
+    margin-bottom: 0;
+}
+
+.contenido-detalle .datos p{
+    border-top: 2px solid black;
+    margin-top: 5px;
+    padding-top: 10px;
+    font-family: 'Gentium';
+    font-weight: 500;
+}
+
+.contenido-detalle .boton form{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.contenido-detalle .boton form .comprar{
+    background-color: #bc0c2b;
+    border: #bc0c2b 1px solid;
+    font-weight: bold;
+}
+
+.contenido-detalle .boton form .option{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contenido-detalle .boton form label{
+    font-family: 'Roboto';
+    font-weight: bold;
+    justify-content: center;
+    margin-right: 5px;
+}
+
+.contenido-detalle .boton form input{
+ border: black 1px solid;
+ border-radius: 5px;
+ font-weight: 600;
+ text-align: center;
+}
+
+.contenido-detalle .boton form .carrito{
+    border:none;
+    background-color: #bc0c2b;
+    color: white;
+    border-radius: 2px;
+}
+
+/* CARRITO */
+
+main .titulo-carrito{
+    text-align: center;
+    background-color: #BC0C2B;
+    color: white;
+    border-radius: 15px;
+    
+}
+
+main .productos-carritos{
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main img{    
+    width: 90%;
+}
+
+main .precio-carrito{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .option{
+    padding-top: 30px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+main .datos-carrito{
+    text-align: center;
+}
+main h1{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+main .datos-carrito h3{    
+    font-weight: 700;
+    font-size:15px;
+    text-align: center;
+}
+
+
+main input{
+    width: 70%;
+    border-radius: 15px;
+    text-align: center;
+}
+main .delete{
+    font-size: 15px;
+    padding-top: 35px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+
+}
+
+main .delete i{
+    font-size: 20px;
+    color: black;
+}
+
+main .delete i:hover{
+    font-size: 30px;
+}
+    
+
+main .precio-carrito .total{
+    border-radius: 15px;
+    font-size: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+main .precio-carrito button{
+    width: 40%;
+    border: none;
+    background-color: #BC0C2B;
+}
+
+main .precio-carrito button:hover{
+    background-color: #c22d4f;
+}
+
+/* MEDIA QUERIS */
+@media (min-width: 768px){
+
+    .navbar-expand-md .navbar-collapse {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+        width: 120%;
+    }
+
+  header img{
+      width: 100%;
+  }
+  header .menu ul li{   
+    white-space: nowrap;    
+    border-bottom: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header .buscador input{
+      height: 35px;
+      margin-top: 10px;
+  }
+  header .buscador button {
+    height: 35px;
+    margin-top: 12px;
+}
+
+    .carousel{
+        padding: 40px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        display:block;
+    }
+
+    .pie{
+        display: flex;
+        flex-wrap: wrap;
+   
+    }
+    .pie .map .inframe{
+        height: 80%;
+    }
+
+    .pie .qr img{
+        margin: 10px;    
+        width: 50%;
+    }
+    
+    .contenido-form{
+        max-width: 70%;
+    }
+
+    main .datos-carrito h3{          
+        font-size: 4vh;        
+    }
+    .contenido-detalle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        flex-direction: row;
+        max-width: 80%;
+    }
+    div .contenido-detalle .imagen{
+        width: 80%;            
+    }
+
+    main input{
+        width: 50%;
+        
+    }
+}
+@media (min-width: 1024px){    
+
+    header .buttons{
+    justify-content: space-evenly;
+    }
+    main{
+    
+        margin-top: 200px;
+    }
+
+    header .buttons{
+        justify-content: center;
+    }
+    header .buttons button{
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    header .menu ul li{
+        text-align: center;
+    }
+    main .btns .btn{
+        width: 95%;
+    } 
+
+    div .contenido-detalle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        flex-direction: row;
+        max-width: 85%;
+        }
+
+        div .contenido-detalle .imagen{
+            max-width: 50%;
+            padding: 0;
+            margin: 0;            
+        }
+
+        div .contenido-detalle img{
+            border-radius: 2px;
+            padding: 0;
+            margin: 0;            
+        }
+
+        .contenido-detalle .datos{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            justify-content: space-around;
+        }
+
+        .contenido-detalle{
+            max-width: 85%;
+        }
+}
+
+
+
+

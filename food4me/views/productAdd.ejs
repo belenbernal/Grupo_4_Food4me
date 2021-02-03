@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+           
+                <div class="container contenedor-product-add">
+                    <div class="row contenido-form card mx-auto col-12">
+                        <form action="">
+                            <h2 class="titulo-formu">Carga de producto</h2>
+
+                            <div class="mb-3 entrada">
+                                <!--producto-->
+                                <label for="producto" class="form-label">Nombre del producto</label>
+                                <input type="text" class="form-control"
+                                    placeholder="Por ejemplo: pasteleria, postre...">
+                            </div>
+
+                            <div class="mb-3 entrada">
+                                <!--categoria-->
+                                <label for="categoria" class="form-label">Categoría</label>
+                                <input type="text" class="form-control" placeholder="Nombre del producto">
+                            </div>
+
+                            <div class="mb-3 entrada">
+                                <!--precio-->
+                                <label for="precio" class="form-label">Precio</label>
+                                <input type="number" class="form-control" placeholder="Precio unitario">
+                            </div>
+
+                            <div class="mb-3 entrada">
+                                <!--cliente-->
+                                <label for="cliente" class="form-label">Nombre del cliente</label>
+                                <input type="text" class="form-control" placeholder="Nombre del bar/restaurante">
+                            </div>
+
+                            <div class="mb-3 entrada">
+                                <!--descripción-->
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <div class="mb-3 entrada">
+                                <!--imagen-->
+                                <label for="formFile" class="form-label">Foto del producto</label>
+                                <input class="form-control" type="file">
+                            </div>
+
+                            <div class="boton-carga">
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+       
+            <%- include('./partials/footer') %>
+
+
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+                    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+                    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+                    crossorigin="anonymous"></script>
+    </body>
+
+</html>
