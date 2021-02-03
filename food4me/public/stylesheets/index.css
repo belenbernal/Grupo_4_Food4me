@@ -294,85 +294,6 @@ footer .pie .pie2 a{
 }
 /* footer */
 
-@media (min-width: 768px){
-
-    .navbar-expand-md .navbar-collapse {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .navbar-expand-md .navbar-nav {
-        flex-direction: row;
-        width: 120%;
-    }
-
-  header img{
-      width: 100%;
-  }
-  header .menu ul li{   
-    white-space: nowrap;    
-    border-bottom: none;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  header .buscador input{
-      height: 35px;
-      margin-top: 10px;
-  }
-  header .buscador button {
-    height: 35px;
-    margin-top: 12px;
-}
-
-    .carousel{
-        padding: 40px;
-        margin-top: -40px;
-        margin-bottom: 10px;
-        display:block;
-    }
-
-    .pie{
-        display: flex;
-        flex-wrap: wrap;
-   
-    }
-    .pie .map .inframe{
-        height: 80%;
-    }
-
-    .pie .qr img{
-        margin: 10px;    
-        width: 50%;
-    }
-    
-}
-@media (min-width: 1024px){    
-
-    header .buttons{
-    justify-content: space-evenly;
-    }
-    main{
-    
-        margin-top: 200px;
-    }
-
-    header .buttons{
-        justify-content: center;
-    }
-    header .buttons button{
-        margin-top: 25px;
-        margin-left: 15px;
-    }
-
-    header .menu ul li{
-        text-align: center;
-    }
-    main .btns .btn{
-        width: 95%;
-    } 
-}
-
 /*PRODUCT ADD*/
 
 .contenido-form{
@@ -417,12 +338,6 @@ footer .pie .pie2 a{
     background-color: #bc0c2b;
     border: #bc0c2b 1px solid;
     font-weight: bold;
-}
-
-@media(min-width: 768px){
-    .contenido-form{
-        max-width: 70%;
-    }
 }
 
 /*PRODUCT DETAIL*/
@@ -506,59 +421,6 @@ div .contenido-detalle img{
     border-radius: 2px;
 }
 
-/*tablet*/
-@media(min-width: 768px){
-    .contenido-detalle{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        padding: 25px;
-        flex-direction: row;
-        max-width: 80%;
-    }
-    div .contenido-detalle .imagen{
-        width: 80%;            
-    }
-}
-/*laptop large*/
-@media(min-width: 992px){
-    div .contenido-detalle{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        padding: 25px;
-        flex-direction: row;
-        max-width: 85%;
-        }
-
-        div .contenido-detalle .imagen{
-            max-width: 50%;
-            padding: 0;
-            margin: 0;            
-        }
-
-        div .contenido-detalle img{
-            border-radius: 2px;
-            padding: 0;
-            margin: 0;            
-        }
-
-        .contenido-detalle .datos{
-            display: flex;
-            flex-wrap: wrap;
-            text-align: left;
-            justify-content: space-around;
-        }
-}
-
-@media(min-width: 1024px){
-    .contenido-detalle{
-        max-width: 85%;
-    }
-}
-
 /* CARRITO */
 
 main .productos-carritos{
@@ -590,16 +452,25 @@ main .datos-carrito{
     text-align: center;
 }
 main h1{
+    font-size: 25px;
+    font-weight: 700;
     text-align: center;
 }
 
+main .datos-carrito h3{    
+    font-weight: 700;
+    font-size:15px;
+    text-align: center;
+}
+
+
 main input{
+    width: 70%;
     border-radius: 15px;
     text-align: center;
 }
-
 main .delete{
-    
+    font-size: 15px;
     padding-top: 35px;
     height: 100px;
     text-align: center;
@@ -611,6 +482,10 @@ main .delete i{
     font-size: 20px;
     color: black;
 }
+
+main .delete i:hover{
+    font-size: 30px;
+}
     
 
 main .precio-carrito .total{
@@ -621,6 +496,152 @@ main .precio-carrito .total{
 }
 
 main .precio-carrito button{
+    width: 40%;
+    border: none;
     background-color: #BC0C2B;
 }
+
+main .precio-carrito button:hover{
+    background-color: #c22d4f;
+}
+
+/* MEDIA QUERIS */
+@media (min-width: 768px){
+
+    .navbar-expand-md .navbar-collapse {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row;
+        width: 120%;
+    }
+
+  header img{
+      width: 100%;
+  }
+  header .menu ul li{   
+    white-space: nowrap;    
+    border-bottom: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  header .buscador input{
+      height: 35px;
+      margin-top: 10px;
+  }
+  header .buscador button {
+    height: 35px;
+    margin-top: 12px;
+}
+
+    .carousel{
+        padding: 40px;
+        margin-top: -40px;
+        margin-bottom: 10px;
+        display:block;
+    }
+
+    .pie{
+        display: flex;
+        flex-wrap: wrap;
+   
+    }
+    .pie .map .inframe{
+        height: 80%;
+    }
+
+    .pie .qr img{
+        margin: 10px;    
+        width: 50%;
+    }
+    
+    .contenido-form{
+        max-width: 70%;
+    }
+
+    main .datos-carrito h3{          
+        font-size: 4vh;        
+    }
+    .contenido-detalle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        flex-direction: row;
+        max-width: 80%;
+    }
+    div .contenido-detalle .imagen{
+        width: 80%;            
+    }
+
+    main input{
+        width: 50%;
+        
+    }
+}
+@media (min-width: 1024px){    
+
+    header .buttons{
+    justify-content: space-evenly;
+    }
+    main{
+    
+        margin-top: 200px;
+    }
+
+    header .buttons{
+        justify-content: center;
+    }
+    header .buttons button{
+        margin-top: 25px;
+        margin-left: 15px;
+    }
+
+    header .menu ul li{
+        text-align: center;
+    }
+    main .btns .btn{
+        width: 95%;
+    } 
+
+    div .contenido-detalle{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        padding: 25px;
+        flex-direction: row;
+        max-width: 85%;
+        }
+
+        div .contenido-detalle .imagen{
+            max-width: 50%;
+            padding: 0;
+            margin: 0;            
+        }
+
+        div .contenido-detalle img{
+            border-radius: 2px;
+            padding: 0;
+            margin: 0;            
+        }
+
+        .contenido-detalle .datos{
+            display: flex;
+            flex-wrap: wrap;
+            text-align: left;
+            justify-content: space-around;
+        }
+
+        .contenido-detalle{
+            max-width: 85%;
+        }
+}
+
+
+
 
