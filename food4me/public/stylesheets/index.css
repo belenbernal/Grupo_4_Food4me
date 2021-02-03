@@ -111,9 +111,10 @@ header .menu ul li a{
 /* header */
 
 /* main */
-main{
+main{    
+    margin-top: 200px;
+    margin-bottom: 280px;
     
-    margin-top: 150px;
 }
 
 .carousel{
@@ -222,7 +223,7 @@ main .btns .btn{
 
 /* footer */
 footer{
-    position:static;
+    position: static;
     bottom: 0;
     background-color:#BC0C2B;
     width: 100%;
@@ -568,3 +569,69 @@ div .contenido-detalle img{
         max-width: 85%;
     }
 }
+
+/* CARRITO */
+
+main .productos-carritos{
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main img{    
+    width: 90%;
+}
+
+main .precio-carrito{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .option{
+    padding-top: 30px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+main .datos-carrito{
+    text-align: center;
+}
+main h1{
+    text-align: center;
+}
+
+main input{
+    border-radius: 15px;
+    text-align: center;
+}
+
+main .delete{
+    
+    padding-top: 35px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+
+}
+
+main .delete i{
+    font-size: 20px;
+    color: black;
+}
+    
+
+main .precio-carrito .total{
+    border-radius: 15px;
+    font-size: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+main .precio-carrito button{
+    background-color: #BC0C2B;
+}
+

@@ -5,56 +5,57 @@
 
     <body>
         <%- include('./partials/header') %>
+            <main>
+                <div class="container">
+                    <div class="row contenido-form card mx-auto col-12">
+                        <form action="">
+                            <h2 class="titulo-formu">Carga de producto</h2>
 
-            <div class="container">
-                <div class="row contenido-form card mx-auto col-12">
-                    <form action="">
-                        <h2 class="titulo-formu">Carga de producto</h2>
+                            <div class="mb-3 entrada">
+                                <!--producto-->
+                                <label for="producto" class="form-label">Nombre del producto</label>
+                                <input type="text" class="form-control"
+                                    placeholder="Por ejemplo: pasteleria, postre...">
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--producto-->
-                            <label for="producto" class="form-label">Nombre del producto</label>
-                            <input type="text" class="form-control" placeholder="Por ejemplo: pasteleria, postre...">
-                        </div>
+                            <div class="mb-3 entrada">
+                                <!--categoria-->
+                                <label for="categoria" class="form-label">Categoría</label>
+                                <input type="text" class="form-control" placeholder="Nombre del producto">
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--categoria-->
-                            <label for="categoria" class="form-label">Categoría</label>
-                            <input type="text" class="form-control" placeholder="Nombre del producto">
-                        </div>
+                            <div class="mb-3 entrada">
+                                <!--precio-->
+                                <label for="precio" class="form-label">Precio</label>
+                                <input type="number" class="form-control" placeholder="Precio unitario">
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--precio-->
-                            <label for="precio" class="form-label">Precio</label>
-                            <input type="number" class="form-control" placeholder="Precio unitario">
-                        </div>
+                            <div class="mb-3 entrada">
+                                <!--cliente-->
+                                <label for="cliente" class="form-label">Nombre del cliente</label>
+                                <input type="text" class="form-control" placeholder="Nombre del bar/restaurante">
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--cliente-->
-                            <label for="cliente" class="form-label">Nombre del cliente</label>
-                            <input type="text" class="form-control" placeholder="Nombre del bar/restaurante">
-                        </div>
+                            <div class="mb-3 entrada">
+                                <!--descripción-->
+                                <label for="descripcion" class="form-label">Descripción</label>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--descripción-->
-                            <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
+                            <div class="mb-3 entrada">
+                                <!--imagen-->
+                                <label for="formFile" class="form-label">Foto del producto</label>
+                                <input class="form-control" type="file">
+                            </div>
 
-                        <div class="mb-3 entrada">
-                            <!--imagen-->
-                            <label for="formFile" class="form-label">Foto del producto</label>
-                            <input class="form-control" type="file">
-                        </div>
+                            <div class="boton-carga">
+                                <button type="button" class="btn btn-primary">Guardar cambios</button>
+                            </div>
 
-                        <div class="boton-carga">
-                            <button type="button" class="btn btn-primary">Guardar cambios</button>
-                        </div>
-
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
-
+            </main>
             <%- include('./partials/footer') %>
 
 
