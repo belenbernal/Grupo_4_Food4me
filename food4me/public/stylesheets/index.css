@@ -434,6 +434,14 @@ div .contenido-detalle img{
 
 /* CARRITO */
 
+main .titulo-carrito{
+    text-align: center;
+    background-color: #BC0C2B;
+    color: white;
+    border-radius: 15px;
+    
+}
+
 main .productos-carritos{
     padding: 10px;
     align-items: center;
