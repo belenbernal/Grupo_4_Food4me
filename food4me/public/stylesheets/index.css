@@ -9,7 +9,7 @@
     margin: 0;
 }
 body{
-    background-image: url(/images/fondo.jpeg);
+    background-image: url(/images/fondo11.jpg);
     background-size: cover;
 }
 
@@ -728,7 +728,7 @@ main .precio-carrito button:hover{
           border:none;
           
       }
-      .botonesLogin button a{
+      .botonesLogin button .botonLogin{
           text-decoration: none;
           color: #fff;
       }
