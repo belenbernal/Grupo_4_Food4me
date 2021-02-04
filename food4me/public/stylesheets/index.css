@@ -337,6 +337,11 @@ footer .pie .pie2 a{
 
 /*PRODUCT DETAIL*/
 
+.contenedor-detalle{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
 div .contenido-detalle{
     display: flex;
     flex-wrap: wrap;
