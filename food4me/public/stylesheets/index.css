@@ -30,6 +30,7 @@ header .buscador{
 }
 
 header .buscador input{
+    outline: none;
     margin-top: 14px;
     height: 25px;
     width: 75%;
@@ -44,7 +45,7 @@ header .buscador button{
     width: 30px;
     background-color: white;
     border: none;
-    margin-left: -14px;
+    margin-left: -4px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     
@@ -54,6 +55,11 @@ header .buscador button{
 img{
     margin-top: 10px;
     width:130%;
+}
+
+header .logo a{
+    display: inline-block;
+    max-width: 220px;
 }
 
 
@@ -711,10 +717,12 @@ main .precio-carrito button:hover{
       
       /*Bonotes*/
       .botonesLogin{
+      
         display: flex;
        flex-wrap:wrap;
        justify-content: space-around;
        margin-bottom: 25px;
+        margin: 20px;
        
       }
       
@@ -735,16 +743,24 @@ main .precio-carrito button:hover{
         
 
 /*Register*/
-.home.html{
+.contenedor-Login{
+    
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 400px;
 }
 
 
 .contenedorRegister{
-  margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
     margin-bottom: 150px;
+}
+
+.contenedorRegister .card form{
+    max-width: 400px;
 }
 /*titulo de Registrate*/
 .registerTitulo{
@@ -780,7 +796,7 @@ main .precio-carrito button:hover{
 
   }
 .EntradasRegister input{
-    width: 80%;
+    width: 100%;
     height: 30px;
     padding-left: 20px;
     border-radius: 3px;
@@ -838,3 +854,4 @@ padding: 10px;
     border:none;
     
 }
+
