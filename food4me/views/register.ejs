@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('./partials/head') %>
-    
+<%- include('./partials/head') %>
 
 <body>
     <%- include('./partials/header') %>
@@ -27,31 +26,38 @@
                         <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido">
                     </div>                   
 
+                            <div class="EntradasRegister">
+                                <label for="mail">Usuario</label>
+                                <input type="email" name="mail" id="mail" placeholder="Ingresa tu Usuario">
+                            </div>
 
                     <div class="EntradasRegister col-12">
                         <label for="mail">Email</label>
 
-                        <input type="email" name="mail" id="mail" placeholder="Ingresa tu email">
-                    </div>
+                            <div class="EntradasRegister">
+                                <label for="mail">Email</label>
 
                     <div class="EntradasRegister col-12">
                         <label for="pass">Contraseña</label>
 
-                        <input type="password" name="pass" id="pass" placeholder="Password">
-                    </div>
+                            <div class="EntradasRegister">
+                                <label for="pass">Contraseña</label>
 
+                                <input type="password" name="pass" id="pass" placeholder="Password">
+                            </div>
 
 
                     <div class="EntradasRegister col-12">
                         <label for="pass"> Confirmar Contraseña</label>
 
-                        <input type="password" name="pass" id="pass" placeholder="Password">
-                    </div>
+                            <div class="EntradasRegister">
+                                <label for="pass"> Confirmar Contraseña</label>
 
+                                <input type="password" name="pass" id="pass" placeholder="Password">
+                            </div>
 
                     <div class="EntradasRegister col-12">
                         <label for="">Fecha de Nacimiento </label>
-                        <input type="date" name="" id="">
                     </div>
                 </div>
 
@@ -64,38 +70,43 @@
                         <option value="3">Prefiero no Decirlo</option>
                     </select>
 
+                                <input type="date" name="" id="">
+                            </div>
+                        </div>
 
-                    <div class="terminosRegister">
-                        <input type="checkbox" name="" id="accepto">
-                        <label for="accepto">Acepto los terminos y condiciones.</label>
-                    </div>
+
+                        <div class="check">
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>Genero</option>
+                                <option value="1">Masculino</option>
+                                <option value="2">Femenino</option>
+                                <option value="3">Prefiero no Decirlo</option>
+                            </select>
+
+
+                            <div class="terminosRegister">
+                                <input type="checkbox" name="" id="accepto">
+                                <label for="accepto">Acepto los terminos y condiciones.</label>
+                            </div>
+                        </div>
+
+                        <div class=" col-12 botonesRegister">
+
+                            <button type="submit">Registrarme</button>
+                            <button type="reset">Cancelar</button>
+                        </div>
+
+
+
+                    </form>
+
+
                 </div>
+            </div>
 
-                <div class=" col-12 botonesRegister">
+            <%- include('./partials/footer') %>
 
-                    <button type="submit">Registrarme</button>
-                    <button type="reset">Cancelar</button>
-                </div>
-
-
-
-            </form>
-
-
-        </div>
-    </div>
-
-    <%- include('./partials/footer') %>
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-        crossorigin="anonymous"></script>
-</body>
+                <%- include('./partials/scripts') %>
+    </body>
 
 </html>
