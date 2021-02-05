@@ -772,6 +772,7 @@ main .precio-carrito button:hover{
     margin-bottom: 25px;
 }
       
+<<<<<<< HEAD
 .botonesLogin button{
 
     background-color: #BC0C2B;
@@ -786,6 +787,21 @@ main .precio-carrito button:hover{
     text-decoration: none;
     color: #fff;
 }
+=======
+      .botonesLogin button{
+          background-color: #BC0C2B;
+          color: #fff;
+          width: 100px;
+          height: 60%;
+          border-radius: 10px;
+          border:none;
+          
+      }
+      .botonesLogin button .botonLogin{
+          text-decoration: none;
+          color: #fff;
+      }
+>>>>>>> 2fda6315f21b9b430407ea68c5855beac6626a41
         
 /*---------------------------------------------------------------------------------------------------------REGISTER*/
 
