@@ -46,8 +46,7 @@ header .buscador button{
     border: none;
     margin-left: -14px;
     border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    
+    border-top-right-radius: 10px;   
 }
 
 /* logo */
@@ -98,7 +97,7 @@ header .menu ul{
 }
 
 header .menu ul li{        
-        border-bottom: 1px solid white;
+    border-bottom: 1px solid white;
 }
 header .menu ul li:hover{
     background-color: #c22d4f;
@@ -108,9 +107,11 @@ header .menu ul li a{
     color: white;
     text-decoration: none;
 }
-/* header */
+
+/*---------------------------------------------------------------------------------------------------------MAIN*/
 
 /* main */
+
 main{    
     margin-top: 200px;
     margin-bottom: 280px;
@@ -205,8 +206,10 @@ main .btns .btn{
     border: 1px solid;
 }
 
+/*---------------------------------------------------------------------------------------------------------FOOTER*/
 
 /* footer */
+
 footer{
     position: static;
     bottom: 0;
@@ -279,6 +282,8 @@ footer .pie .pie2 a{
 }
 /* footer */
 
+/*---------------------------------------------------------------------------------------------------------PRODUCT ADD*/
+
 /*PRODUCT ADD*/
 
 .contenedor-product-add{
@@ -334,6 +339,8 @@ footer .pie .pie2 a{
     border: #bc0c2b 1px solid;
     font-weight: bold;
 }
+
+/*---------------------------------------------------------------------------------------------------------PRODUCT DETAIL*/
 
 /*PRODUCT DETAIL*/
 
@@ -408,10 +415,10 @@ div .contenido-detalle img{
 }
 
 .contenido-detalle .boton form input{
- border: black 1px solid;
- border-radius: 5px;
- font-weight: 600;
- text-align: center;
+    border: black 1px solid;
+    border-radius: 5px;
+    font-weight: 600;
+    text-align: center;
 }
 
 .contenido-detalle .boton form .carrito{
@@ -420,6 +427,8 @@ div .contenido-detalle img{
     color: white;
     border-radius: 2px;
 }
+
+/*---------------------------------------------------------------------------------------------------------CARRITO*/
 
 /* CARRITO */
 
@@ -513,7 +522,9 @@ main .precio-carrito button:hover{
     background-color: #c22d4f;
 }
 
-/* MEDIA QUERIS */
+/*---------------------------------------------------------------------------------------------------------MEDIA QUERYS*/
+
+/* MEDIA QUERYS */
 @media (min-width: 768px){
 
     .navbar-expand-md .navbar-collapse {
@@ -527,22 +538,22 @@ main .precio-carrito button:hover{
         width: 120%;
     }
 
-  header img{
-      width: 100%;
-  }
-  header .menu ul li{   
-    white-space: nowrap;    
-    border-bottom: none;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  header .buscador input{
-      height: 35px;
-      margin-top: 10px;
-  }
-  header .buscador button {
-    height: 35px;
-    margin-top: 12px;
+    header img{
+        width: 100%;
+    }
+    header .menu ul li{   
+        white-space: nowrap;    
+        border-bottom: none;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    header .buscador input{
+        height: 35px;
+        margin-top: 10px;
+    }
+    header .buscador button {
+        height: 35px;
+        margin-top: 12px;
 }
 
     .carousel{
@@ -624,215 +635,179 @@ main .precio-carrito button:hover{
         padding: 25px;
         flex-direction: row;
         max-width: 85%;
-        }
+    }
 
-        div .contenido-detalle .imagen{
-            max-width: 50%;
-            padding: 0;
-            margin: 0;            
-        }
+    div .contenido-detalle .imagen{
+        max-width: 50%;
+        padding: 0;
+        margin: 0;            
+    }
 
-        div .contenido-detalle img{
-            border-radius: 2px;
-            padding: 0;
-            margin: 0;            
-        }
+    div .contenido-detalle img{
+        border-radius: 2px;
+        padding: 0;
+        margin: 0;            
+    }
 
-        .contenido-detalle .datos{
-            display: flex;
-            flex-wrap: wrap;
-            text-align: left;
-            justify-content: space-around;
-        }
+    .contenido-detalle .datos{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: left;
+        justify-content: space-around;
+    }
 
-        .contenido-detalle{
-            max-width: 85%;
-        }
+    .contenido-detalle{
+        max-width: 85%;
+    }
 }
 
+/*---------------------------------------------------------------------------------------------------------LOGIN*/
     
-/*Login*/
+/*LOGIN*/
 
 .contenedorLogin{
     margin-top: 200px;
-      margin-bottom: 150px;
-  }
+    margin-bottom: 150px;
+}
   
-  .card {
-    
+.card {
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
-  }  
+}  
       
-  .home.html{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-  }
-      
-      
-      /*titulo de Registrate*/
-  .loginTitulo{
-        font-family: 'Roboto';
-      text-align: center;
-      font-weight: 500;
-      margin: 20px 0;
-      background: #bc0c2b;
-      color: white;
-      border-radius: 10px;
-          
-  }
-      
-      
-      /*Datos del registrate*/
-      .datosLogin{
-       flex-wrap: wrap;
-       
-      }
-      
-      .EntradasLogin{
-        
-        display: flex;
-        flex-direction: column;
-        
-      } 
-      .EntradasLogin label{
-          /*margin-top: 10px;
-          padding-top: 20px;*/
-          font-weight: bold;
-          color: rgb(49, 49, 49);
-      
-        }
-      .EntradasLogin input{
-          width: 80%;
-          height: 30px;
-          padding-left: 20px;
-          border-radius: 3px;
-          
-      
-        }
-      
-      
-     
-      
-      /*Bonotes*/
-      .botonesLogin{
-        display: flex;
-       flex-wrap:wrap;
-       justify-content: space-around;
-       margin-bottom: 25px;
-       
-      }
-      
-      
-      .botonesLogin button{
-          background-color: #BC0C2B;
-          color: #fff;
-          width: 100px;
-          height: 60%;
-          border-radius: 10px;
-          border:none;
-          
-      }
-      .botonesLogin button a{
-          text-decoration: none;
-          color: #fff;
-      }
-        
-
-/*Register*/
 .home.html{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
+.loginTitulo{
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;   
+}
+      
+.datosLogin{
+    flex-wrap: wrap;
+}
+
+.EntradasLogin{
+    display: flex;
+    flex-direction: column;
+} 
+
+.EntradasLogin label{
+    /*margin-top: 10px;
+    padding-top: 20px;*/
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+}
+
+.EntradasLogin input{
+    width: 80%;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+.botonesLogin{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+      
+.botonesLogin button{
+
+    background-color: #BC0C2B;
+    color: #fff;
+    width: 100px;
+    height: 60%;
+    border-radius: 10px;
+    border:none;      
+}
+
+.botonesLogin button a{
+    text-decoration: none;
+    color: #fff;
+}
+        
+/*---------------------------------------------------------------------------------------------------------REGISTER*/
+
+/*REGISTER*/
+.contenidoLogin{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
 
 .contenedorRegister{
-  margin-top: 200px;
+    margin-top: 200px;
     margin-bottom: 150px;
 }
-/*titulo de Registrate*/
-.registerTitulo{
 
-  font-family: 'Roboto';
-  text-align: center;
-  font-weight: 500;
-  margin: 20px 0;
-  background: #bc0c2b;
-  color: white;
-  border-radius: 10px;
-    
+.registerTitulo{
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;  
 }
 
-
-/*Datos del registrate*/
 .datosRegister{
- flex-wrap: wrap;
- 
+    flex-wrap: wrap;
 }
 
 .EntradasRegister{
-  
-  display: flex;
-  flex-direction: column;
-  
+    display: flex;
+    flex-direction: column; 
 } 
+
 .EntradasRegister label{
     margin-top: 10px;
     padding-top: 20px;
     font-weight: bold;
     color: rgb(49, 49, 49);
+}
 
-  }
 .EntradasRegister input{
     width: 80%;
     height: 30px;
     padding-left: 20px;
     border-radius: 3px;
-    
+}
 
-  }
-
-
-/*Fecha de Nacimiento */
-
-
-
-
-/* CHECK*/
 .check{
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin: 10px;
 }
 .negritaRegister{
     overflow: hidden;
     margin: 15px 0px;
-    
-    
-  }
+}
 
 .negritaRegister input{
-  flex-direction: column;
-  border-radius: 2px;
+    flex-direction: column;
+    border-radius: 2px;
 }
 
 .terminosRegister{
-padding: 10px;
+    padding: 10px;
 }
 
-
-
-/*Bonotes*/
 .botonesRegister{
-  display: flex;
- flex-wrap:wrap;
- justify-content: space-around;
- margin-bottom: 25px;
- 
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
 }
-
 
 .botonesRegister button{
     background-color: #BC0C2B;
@@ -841,5 +816,4 @@ padding: 10px;
     height: 50%;
     border-radius: 10px;
     border:none;
-    
 }

@@ -4,26 +4,23 @@
 <%- include('./partials/head') %>
 
 
-
     <body>
         <%- include('./partials/header') %>
             <div class="contenedorLogin">
                 <div class="container form ">
                     <div class="row card mx-auto">
                         <h1 class="loginTitulo">Login</h1>
-                        <form action="home.html">
+                        <form action="home.html" class="contenidoLogin">
                             <div class="col-12  col-md-12 datosLogin">
 
                                 <div class="EntradasLogin">
                                     <label for="mail">Usuario</label>
-                                    <br>
                                     <input type="email" name="mail" id="mail" placeholder="Ingresa tu Usuario">
                                 </div>
 
 
                                 <div class="EntradasLogin">
                                     <label for="mail">Email</label>
-                                    <br>
                                     <input type="email" name="mail" id="mail" placeholder="Ingresa tu email">
                                 </div>
 
@@ -34,16 +31,7 @@
                                 </div>
                             </div>
 
-
-
                             <div class="botonesLogin">
-                                <label for=""></label>
-                                <br>
-
-                            </div>
-                            <br>
-                            <div class="botonesLogin">
-                                <label for=""></label>
                                 <button type="submit">Ingrese</button>
                                 <button type="submit">  <a href="/users/register"> Registrarme </a></button>
                                 <button type="reset">Cancelar</button>
@@ -56,20 +44,6 @@
 
 
             <%- include('./partials/footer') %>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
