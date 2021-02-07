@@ -5,43 +5,43 @@
     <%- include('./partials/header') %>
         <main>
             <!-- banner -->
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="container carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="/images/banner.jpg" class="d-block w-100" alt="...">
+                        <img src="/images/banner1.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="/images/catering.jpg" class="d-block w-100" alt="...">
+                        <img src="/images/banner2.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="/images/red-apples.jpg" class="d-block w-100" alt="...">
+                        <img src="/images/banner3.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>
             <!-- banner -->
 
-            <div class="container-fluid">
+            <div class="container">
 
                 <div class="row productos">
 
-
-
                     <div class="col-12 col-md-6 col-lg-3 producto">
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/plato vegetariano.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/plato vegetariano.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3>
+                                </div>
                             </a>
-
                         </div>
                         <div>
                             <form class="col-12 btns" action="#">
@@ -60,18 +60,20 @@
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/cake.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/cake.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
                         <div>
                             <form class="col-12 btns" action="#">
@@ -89,20 +91,22 @@
                     <div class="col-12 col-md-6 col-lg-3 producto">
                         <div class="contenido">
                             <a href="/products/detail/:id">
+                                <div class="img-productos">
+                                    <img src="/images/extra-burger.jpg" alt="">
+                                </div>
 
-                                <img src="/images/extra-burger.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
 
-                                <h3>$120</h3><br>
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
@@ -120,19 +124,22 @@
                         <div class="contenido">
                             <a href="productDetail.ejs">
 
-                                <img src="/images/hamburger.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/hamburger.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
@@ -150,19 +157,22 @@
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/pizza.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/pizza.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
@@ -180,19 +190,22 @@
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/food.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/food.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
@@ -210,19 +223,22 @@
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/plato vegetariano.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/plato vegetariano.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
@@ -240,19 +256,22 @@
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
-                                <img src="/images/extra-burger.jpg" alt="">
-                                <h2>Producto</h2>
+                                <div class="img-productos">
+                                    <img src="/images/extra-burger.jpg" alt="">
+                                </div>
 
-                                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo
-                                    aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                    necessitatibus
-                                    voluptate ab natus dolorem saepe est dolor molestiae!
-                                </p>
+                                <div class="des-producto">
+                                    <h2>Producto</h2>
 
-                                <h3>$120</h3><br>
+                                    <p> 
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                    </p>
+
+                                    <h3>$120</h3><br>
+                                </div>
                             </a>
-
                         </div>
+
                         <div>
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">

@@ -125,8 +125,8 @@ main{
 }
 
 .carousel{
-   
     display: none;
+    max-width: 1440px;
 }
 
 main .carousel-item img {
@@ -138,6 +138,14 @@ main .productos .contenido{
     border-radius: 10px;
     margin-top: 15px;
     padding: 8px;
+    height: 80%;
+    margin-bottom: 15px;
+    transition: transform 0.5s ease, box-shadow .5s ease;
+}
+
+main .productos .contenido:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.3);
 }
 
 main .productos .contenido .datos{
@@ -159,7 +167,7 @@ main .productos .contenido .datos span{
 
 main .productos .contenido h3{
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
 }
 
 main .productos .contenido i:hover{
@@ -175,15 +183,22 @@ main .contenido a{
     color: rgb(0, 0, 0);
     text-decoration: none;
 }
+main .contenido .img-productos{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+}
 
 main .contenido img{
-    width: 100%;
+    width: 95%;
+    border-radius: 4px;
 }
 
 main h2{
-    text-decoration-line:underline;
-    font-family: gentium;
-    font-weight: 700;
+    text-decoration-line: none;
+    font-family: 'Roboto';
+    font-weight: 600;
     text-align: center;
     color: rgb(0, 0, 0);
 }
@@ -209,7 +224,7 @@ main .btns .btn{
     margin-left: 5px;
     margin-bottom: 5px;
     width: 90%;
-    border: 1px solid;
+    border: 1px solid ;
 }
 
 /*---------------------------------------------------------------------------------------------------------FOOTER*/
@@ -649,6 +664,10 @@ main .precio-carrito button:hover{
         margin: 0;            
     }
 
+    main .contenido .img-productos{
+        height: 30vh;
+    }
+
     div .contenido-detalle img{
         border-radius: 2px;
         padding: 0;
@@ -664,6 +683,12 @@ main .precio-carrito button:hover{
 
     .contenido-detalle{
         max-width: 85%;
+    }
+}
+
+@media (min-width: 1440px){
+    main .contenido .img-productos{
+        height: 35vh;
     }
 }
 
@@ -772,22 +797,6 @@ main .precio-carrito button:hover{
     margin-bottom: 25px;
 }
       
-<<<<<<< HEAD
-.botonesLogin button{
-
-    background-color: #BC0C2B;
-    color: #fff;
-    width: 100px;
-    height: 60%;
-    border-radius: 10px;
-    border:none;      
-}
-
-.botonesLogin button a{
-    text-decoration: none;
-    color: #fff;
-}
-=======
       .botonesLogin button{
           background-color: #BC0C2B;
           color: #fff;
@@ -801,7 +810,6 @@ main .precio-carrito button:hover{
           text-decoration: none;
           color: #fff;
       }
->>>>>>> 2fda6315f21b9b430407ea68c5855beac6626a41
         
 /*---------------------------------------------------------------------------------------------------------REGISTER*/
 
