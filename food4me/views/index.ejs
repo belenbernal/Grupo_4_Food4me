@@ -4,8 +4,15 @@
 
     <%- include('./partials/header') %>
         <main>
+
             <!-- banner -->
-            <div id="carouselExampleSlidesOnly" class="container carousel slide" data-bs-ride="carousel">
+
+            <div id="carouselExampleIndicators" class="carousel carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="/images/banner1.jpg" class="d-block w-100" alt="...">
@@ -17,7 +24,16 @@
                         <img src="/images/banner3.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
+
             <!-- banner -->
 
             <div class="container">
@@ -34,16 +50,18 @@
 
                                 <div class="des-producto">
                                     <h2>Producto</h2>
-
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
-
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
                                     <h3>$120</h3>
                                 </div>
                             </a>
                         </div>
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -67,15 +85,19 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
 
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -98,16 +120,19 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
-
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -131,16 +156,19 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
-
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -164,16 +192,20 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
 
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -197,16 +229,20 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
 
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -230,16 +266,19 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
-
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>
@@ -263,16 +302,19 @@
                                 <div class="des-producto">
                                     <h2>Producto</h2>
 
-                                    <p> 
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                    </p>
-
+                                    <div class="descripcion">
+                                        <p>
+                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
+                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
+                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                        </p>
+                                    </div>
                                     <h3>$120</h3><br>
                                 </div>
                             </a>
                         </div>
 
-                        <div>
+                        <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6">
                                     <button class="btn" type="button">Comprar</button>

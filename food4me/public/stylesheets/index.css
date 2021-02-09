@@ -9,14 +9,17 @@
     margin: 0;
 }
 body{
-    background-image: url(/images/fondo11.jpg);
+    background-image: url('/images/fondo11.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 
 /* header */
 
 header{
-    z-index: 10;
+    z-index: 100;
     max-width: 1440px;
     top: 0;
     position: fixed;
@@ -93,7 +96,7 @@ header .menu{
 
 header .menu .menu-2{
     
-    width: 60%;
+    width: 80%;
 }
 
 header .menu ul{  
@@ -120,13 +123,20 @@ header .menu ul li a{
 
 main{    
     margin-top: 200px;
-    margin-bottom: 280px;
+    margin-bottom: 25px;
     
 }
 
 .carousel{
+    margin-left: auto;
+    width: 95%;
+    margin-right: auto;
     display: none;
-    max-width: 1440px;
+    
+    
+}
+.carousel-inner{
+box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
 }
 
 main .carousel-item img {
@@ -145,7 +155,7 @@ main .productos .contenido{
 
 main .productos .contenido:hover {
     transform: scale(1.02);
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0, 0.3);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
 }
 
 main .productos .contenido .datos{
@@ -204,7 +214,7 @@ main h2{
 }
 
 main .btns{
-    margin: 5px;
+    
     display: flex;
     flex-wrap: wrap;
 }
@@ -443,10 +453,11 @@ div .contenido-detalle img{
 }
 
 .contenido-detalle .boton form .carrito{
+    width: 50px;
     border:none;
     background-color: #bc0c2b;
     color: white;
-    border-radius: 2px;
+    border-radius: 5px;
 }
 
 /*---------------------------------------------------------------------------------------------------------CARRITO*/
@@ -579,6 +590,7 @@ main .precio-carrito button:hover{
 
     .carousel{
         padding: 40px;
+        width: 95%;
         margin-top: -40px;
         margin-bottom: 10px;
         display:block;
@@ -702,8 +714,16 @@ main .precio-carrito button:hover{
 }
   
 .card {
+    max-width: 1000px;
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
-}  
+}
+
+.card-login{
+    background-color: white;
+    max-width: 400px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+  
       
   .home.html{
         display: flex;
@@ -713,7 +733,8 @@ main .precio-carrito button:hover{
       
       
       /*titulo de Registrate*/
-  .loginTitulo{
+  .card-login .loginTitulo{
+      width: 100%;
         font-family: 'Roboto';
       text-align: center;
       font-weight: 500;
@@ -727,6 +748,7 @@ main .precio-carrito button:hover{
       
       /*Datos del registrate*/
       .datosLogin{
+        display: flex;
        flex-wrap: wrap;
        
       }
@@ -784,7 +806,7 @@ main .precio-carrito button:hover{
 }
 
 .EntradasLogin input{
-    width: 80%;
+    width: 100%;
     height: 30px;
     padding-left: 20px;
     border-radius: 3px;
