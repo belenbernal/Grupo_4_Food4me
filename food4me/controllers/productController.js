@@ -1,3 +1,5 @@
+const products = require('../data/products')
+
 const productController = {
     productAdd: (req, res)=>{
         res.render('productAdd')

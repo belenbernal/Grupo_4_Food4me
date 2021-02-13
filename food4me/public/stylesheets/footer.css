@@ -1,0 +1,91 @@
+footer{
+    position: static;
+    bottom: 0;
+    background-color:#BC0C2B;
+    max-width: 1440px;
+}
+
+/* QR */
+footer .qr{
+    display: flex;
+    justify-content: center;
+}
+
+footer .qr img{
+    width: 90px;
+    height: 95px;
+}
+
+/* mapa */
+footer iframe{
+    height: 100px;
+    width: 100%;
+}
+
+/* pie */
+
+
+.atajos{
+    margin-top: 10px;
+    background-color:#BC0C2B;
+    border-bottom:1px solid white;   
+    text-align: center;
+    
+}
+
+.atajos a{    
+    padding-top:20px;
+    color: white;
+    text-decoration: none;
+}
+
+.atajos .atajos2{
+    font-weight: 900;
+   border-bottom: 1px solid white;
+}
+
+.atajos i{
+    padding: 30px;
+    font-size: 20px;
+}
+
+/* pie2 */
+
+
+footer .pie{
+    padding-top: 10px;
+    margin-top: 15px;
+}
+footer .pie .pie2{
+    columns: auto;
+    text-align: center;
+}
+
+footer .pie .pie2 a{
+    white-space: nowrap;
+    font-size: 18px;
+    padding: 8px;
+    color: white;
+    
+}
+
+/* MEDIA QUERYS */
+@media (min-width: 768px){
+    .pie{
+        display: flex;
+        flex-wrap: wrap;
+   
+    }
+    .pie .map .inframe{
+        height: 80%;
+    }
+
+    .pie .qr img{
+        margin: 10px;    
+        width: 50%;
+    }
+    
+    .contenido-form{
+        max-width: 70%;
+    }
+}
