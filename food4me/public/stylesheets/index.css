@@ -123,7 +123,12 @@ main .btns{
     padding-right: 0;
 }
 
+main .btns-form{
+    margin-top: -10px;
+}
+
 main .btns-form .botones-index{
+    margin-left: -2px;
     display: flex;
     justify-content: center;
     padding-left: 0;
@@ -188,6 +193,7 @@ main .btns .btn{
         height: 35vh;
     }
     main .container{
-        max-width: 1440;
+        width: 95%;
+        max-width: 1440px;
     }
 }

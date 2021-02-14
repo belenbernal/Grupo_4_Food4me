@@ -40,27 +40,27 @@
 
                 <div class="row productos">
 
+                    <% products.forEach(product => { %>                    
                     <div class="col-12 col-md-6 col-lg-3 producto">
                         <div class="contenido">
                             <a href="/products/detail/:id">
 
                                 <div class="img-productos">
-                                    <img src="/images/plato vegetariano.jpg" alt="">
+                                    <img src="/images/<%= product.image %>" alt="">
                                 </div>
 
                                 <div class="des-producto">
-                                    <h2>Producto</h2>
+                                    <h2><%= product.name %> </h2>
                                     <div class="descripcion">
                                         <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
+                                           <%= product.description %> 
                                         </p>
                                     </div>
-                                    <h3>$120</h3>
+                                    <h3>$<%= product.price %> </h3>
                                 </div>
                             </a>
                         </div>
+                        
                         <div class="btns-form">
                             <form class="col-12 btns" action="#">
                                 <div class="col-6 botones-index">
@@ -74,258 +74,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-
-                                <div class="img-productos">
-                                    <img src="/images/cake.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-                                <div class="img-productos">
-                                    <img src="/images/extra-burger.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="productDetail.ejs">
-
-                                <div class="img-productos">
-                                    <img src="/images/hamburger.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-
-                                <div class="img-productos">
-                                    <img src="/images/pizza.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-
-                                <div class="img-productos">
-                                    <img src="/images/food.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-
-                                <div class="img-productos">
-                                    <img src="/images/plato vegetariano.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3 producto">
-                        <div class="contenido">
-                            <a href="/products/detail/:id">
-
-                                <div class="img-productos">
-                                    <img src="/images/extra-burger.jpg" alt="">
-                                </div>
-
-                                <div class="des-producto">
-                                    <h2>Producto</h2>
-
-                                    <div class="descripcion">
-                                        <p>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda quasi
-                                            nemo aperiam laudantium delectus hic eum quas maxime, quos nostrum ipsa
-                                            necessitatibus voluptate ab natus dolorem saepe est dolor molestiae!
-                                        </p>
-                                    </div>
-                                    <h3>$120</h3><br>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="btns-form">
-                            <form class="col-12 btns" action="#">
-                                <div class="col-6">
-                                    <button class="btn" type="button">Comprar</button>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn" type="submit"><span
-                                            class="fas fa-cart-arrow-down"></span></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+                    <% }) %>
 
                 </div>
             </div>

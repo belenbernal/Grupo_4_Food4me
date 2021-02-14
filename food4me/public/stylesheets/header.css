@@ -77,6 +77,10 @@ header .menu .menu-2{
     width: 80%;
 }
 
+header .menu .menu-2 .cf{
+    justify-content: center;
+}
+
 header .menu ul{  
     display: flex;
     flex-wrap: wrap;
