@@ -5,7 +5,10 @@
         "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
         "price": 4144.4,
         "image": "cake.jpg",
-        "category": "Automotive"
+        "category": "Automotive",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 2,
@@ -13,7 +16,10 @@
         "description": "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
         "price": 1563.12,
         "image": "extra-burger.jpg",
-        "category": "Kids"
+        "category": "Kids",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 3,
@@ -21,7 +27,10 @@
         "description": "faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio",
         "price": 4830.94,
         "image": "hamburger.jpg",
-        "category": "Beauty"
+        "category": "Beauty",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 4,
@@ -29,7 +38,10 @@
         "description": "rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem",
         "price": 4495.34,
         "image": "pizza.jpg",
-        "category": "Jewelery"
+        "category": "Jewelery",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 5,
@@ -37,7 +49,10 @@
         "description": "rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor",
         "price": 1805.08,
         "image": "plato vegetariano.jpg",
-        "category": "Clothing"
+        "category": "Clothing",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 6,
@@ -45,7 +60,10 @@
         "description": "orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in",
         "price": 910.47,
         "image": "cake.jpg",
-        "category": "Clothing"
+        "category": "Clothing",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 7,
@@ -53,7 +71,10 @@
         "description": "cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
         "price": 2734.1,
         "image": "extra-burger.jpg",
-        "category": "Industrial"
+        "category": "Industrial",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 8,
@@ -61,7 +82,10 @@
         "description": "faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
         "price": 1317.08,
         "image": "food.jpg",
-        "category": "Jewelery"
+        "category": "Jewelery",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 9,
@@ -69,7 +93,10 @@
         "description": "eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse",
         "price": 3878.86,
         "image": "pizza.jpg",
-        "category": "Automotive"
+        "category": "Automotive",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 10,
@@ -77,7 +104,10 @@
         "description": "id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget",
         "price": 1201.9,
         "image": "hamburger.jpg",
-        "category": "Baby"
+        "category": "Baby",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 11,
@@ -85,7 +115,10 @@
         "description": "blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est",
         "price": 3338.55,
         "image": "plato vegetariano.jpg",
-        "category": "Games"
+        "category": "Games",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 12,
@@ -93,7 +126,10 @@
         "description": "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse",
         "price": 1589.26,
         "image": "food.jpg",
-        "category": "Outdoors"
+        "category": "Outdoors",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 13,
@@ -101,7 +137,10 @@
         "description": "est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis",
         "price": 2887.3,
         "image": "pizza.jpg",
-        "category": "Kids"
+        "category": "Kids",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 14,
@@ -109,7 +148,10 @@
         "description": "pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus",
         "price": 2435.3,
         "image": "extra-burger.jpg",
-        "category": "Books"
+        "category": "Books",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     },
     {
         "id": 15,
@@ -117,6 +159,9 @@
         "description": "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
         "price": 4060.75,
         "image": "cake.jpg",
-        "category": "Electronics"
+        "category": "Electronics",
+        "vegan": "no",
+        "vegetarian": "no",
+        "celiac": "no"
     }
 ]
