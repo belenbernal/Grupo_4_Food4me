@@ -5,7 +5,7 @@
         "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
         "price": 4144.4,
         "image": "cake.jpg",
-        "category": "Automotive"
+        "category": "veggie"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "description": "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
         "price": 1563.12,
         "image": "extra-burger.jpg",
-        "category": "Kids"
+        "category": "veggie"
     },
     {
         "id": 3,
