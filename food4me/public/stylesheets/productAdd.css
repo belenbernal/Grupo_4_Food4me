@@ -28,6 +28,10 @@
     width: 900%;
 }
 
+.contenido-form .checks{
+    justify-content: space-around;
+}
+
 .contenido-form textarea{
     width: 900%;
 }

@@ -20,7 +20,29 @@
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="categoria" class="form-label">Categoría</label>
-                            <input type="text" class="form-control" placeholder="Nombre del producto">
+                            <select class="custom-select">
+                                <option selected>Selecciona la categoría</option>
+                                <option value="entrada">Entrada</option>
+                                <option value="platoPrincipal">Plato principal</option>
+                                <option value="postre">Postre</option>
+                                <option value="pasteleria">Pastelería</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 entrada  checks">
+                            <!--opciones vegetariano, vegano, celiaco-->
+                            <div class="custom-control custom-checkbox checks">
+                                <input type="checkbox" class="custom-control-input" id="comidaVegetariana">
+                                <label class="custom-control-label" for="comidaVegetariana">Comida vegetariana</label>  
+                            </div>
+                            <div class="custom-control custom-checkbox checks">
+                                <input type="checkbox" class="custom-control-input" id="comidaVegana">
+                                <label class="custom-control-label" for="comidaVegana">Comida vegana</label>
+                            </div>
+                            <div class="custom-control custom-checkbox checks">
+                                <input type="checkbox" class="custom-control-input" id="comidaCeliacos">
+                                <label class="custom-control-label" for="comidaCeliacos">Comida para celíacos</label>
+                            </div>
                         </div>
 
                         <div class="mb-3 entrada">
@@ -44,7 +66,7 @@
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="formFile" class="form-label">Foto del producto</label>
-                            <input class="form-control" type="file">
+                            <input type="file" id="myFile" name="filename2">
                         </div>
 
                         <div class="boton-carga">
