@@ -5,7 +5,10 @@ const productController = require('../controllers/productController')
 /* GET home page. */
 router.get('/create', productController.productAdd);
 
+router.post('/', productController.productCreate);
+
 router.get('/detail/:id', productController.productDetail);
 
-router.get('/carrito', productController.carrito )
+router.get('/carrito', productController.carrito );
+
 module.exports = router;

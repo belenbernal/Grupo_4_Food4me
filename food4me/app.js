@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -25,6 +26,7 @@ app.use('/', indexRouter);
 app.use('/products',productController)
 app.use('/users', usersRouter);
 
+app.use(methodOverride ("_method"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
