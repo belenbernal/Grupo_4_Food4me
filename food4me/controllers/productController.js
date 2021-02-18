@@ -5,7 +5,12 @@ const productController = {
         res.render('productAdd')
     },
     productDetail: (req, res)=>{
-        res.render('productDetail')
+        let product = products.find(product=>{
+            return product.id == req.params.id
+        });
+        res.render('productDetail', {
+            product
+        })
     },
     carrito: (req, res)=>{
         res.render('carrito')
