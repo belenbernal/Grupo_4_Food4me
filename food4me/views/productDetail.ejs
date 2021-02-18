@@ -10,21 +10,18 @@
                 <div class="row contenido-detalle card mx-auto">
                     <!--Imagen-->
                     <div class="imagen col-12 col-lg-6">
-                        <img src="/images/extra-burger.jpg" alt="">
+                        <img src="/images/<%= product.image %> " alt="">
                     </div>
                     <!--Datos-->
                     <div class="col-12 col-lg-6 datos-detalle">
                         <div class="datos">
                             <h2 class="nombre">
-                                Extra Burger
+                                <%= product.name %> 
                             </h2>
                             <h2 class="precio">
-                                $650
+                                $<%= product.price %> 
                             </h2>
-                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus odio quisquam magni,
-                                laudantium
-                                sed
-                                est deleniti optio. Reprehenderit, tempora quasi?</p>
+                            <p><%= product.description %> </p>
                         </div>
                         <!--Botón e input-->
                         <div class="boton">

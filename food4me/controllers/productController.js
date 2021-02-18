@@ -4,14 +4,13 @@ const productController = {
     productAdd: (req, res)=>{ //method get
         res.render('productAdd')
     },
-    productCreate: (req, res)=>{ //method post
-
-    },
-    productDetail: (req, res)=>{  //method get
-        res.render('productDetail')
-    },
-    productUpdate: (req, res)=>{  //method get
-        res.render('productDetail')
+    productDetail: (req, res)=>{
+        let product = products.find(product=>{
+            return product.id == req.params.id
+        });
+        res.render('productDetail', {
+            product
+        })
     },
     carrito: (req, res)=>{
         res.render('carrito')
