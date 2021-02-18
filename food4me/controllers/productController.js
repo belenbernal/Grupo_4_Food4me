@@ -15,6 +15,16 @@ const productController = {
     carrito: (req, res)=>{
         res.render('carrito')
     },
+    search: (req, res)=>{
+        const busqueda = req.query.buscar;
+
+        const result = products.filter(product =>{
+            return product.name.includes(busqueda);
+        });
+        res.render('index',{
+            products : result
+        })
+    },
     productDelete: (req,res)=>{
 
     }
