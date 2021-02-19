@@ -182,11 +182,13 @@
     {
         "id": 16,
         "name": "Torta",
-        "description": "Torta de chocolate",
+        "description": "esperemos que funcione :)",
         "price": "500",
         "client": "rullirolls",
-        "image": "image-1613706683791.jpg",
+        "image": "image-1613777275954.jpg",
         "category": "pasteleria",
-        "vegetarian": "on"
+        "vegetarian": "on",
+        "vegan": "",
+        "celiac": ""
     }
 ]

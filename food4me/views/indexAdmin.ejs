@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="container">
+                <div class="row productos">
+                    <div class="col-12">
+                        <h1>Lista de productos</h1>
+                    </div>
+                    <% products.forEach(product=> { %>
+                        <div class="col-12 col-md-6 col-lg-3 producto">
+                            <div class="contenido">
+                                <a href="/products/edit/<%= product.id %> ">
+                                    <div class="img-productos">
+                                        <img src="/images/products/<%= product.image %>" alt="">
+                                    </div>
+                                    <div class="des-producto">
+                                        <h2>
+                                            <%= product.name %>
+                                        </h2>
+                                        <div class="descripcion">
+                                            <p>
+                                                <%= product.description %>
+                                            </p>
+                                        </div>
+                                        <h3>$<%= product.price %>
+                                        </h3>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-12 btns-form">
+                                <form class="btns" action="/products/eliminar/<%=product.id%>?_method=DELETE" method="POST">
+                                    <div class="col-6 botones-index">
+                                        <button class="btn boton-comprar" type="submit">Eliminar</button>
+                                    </div>
+                                </form>
+                                <form class="btns" action="/products/edit/<%= product.id %> ">
+                                    <div class="col-6 botones-index">
+                                        <button class="btn" type="submit">Editar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+            </div>
+            </div>
+            <div class="container atajos">
+                <div class="row">
+                    <div class="col-12 atajos2">
+                        <a href="#"><i class="fas fa-truck"></i>Envios</a>
+                    </div>
+                    <div class="col-12 atajos2">
+                        <a href="#"><i class="fas fa-percentage"></i>Ofertas</a>
+                    </div>
+                    <div class="col-12 atajos2">
+                        <a href="#"><i class="fas fa-credit-card"></i>Formas de pago</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
+</html>
