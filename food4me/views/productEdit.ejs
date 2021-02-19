@@ -8,39 +8,39 @@
 
             <div class="container contenedor-product-add">
                 <div class="row contenido-form card mx-auto col-12">
-                    <form action="/products/create" method="POST" enctype="multipart/form-data">
-                        <h2 class="titulo-formu">Carga de producto</h2>
+                    <form action="/products/update/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                        <h2 class="titulo-formu">Editar producto</h2>
 
                         <div class="mb-3 entrada">
                             <!--producto-->
                             <label for="name" class="form-label">Nombre del producto</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto" value="<%=product.name%>">
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
-                            <select name="category" id="category" class="custom-select">
-                                <option selected>Selecciona la categoría</option>
-                                <option value="entrada">Entrada</option>
-                                <option value="platoPrincipal">Plato principal</option>
-                                <option value="postre">Postre</option>
-                                <option value="pasteleria">Pastelería</option>
+                            <select name="category" id="category" class="custom-select" value="<%=product.category%>">
+                                <option >Selecciona la categoría</option>
+                                <option value="entrada" <%- product.category === 'entrada' ? 'selected' : null %> >Entrada</option>
+                                <option value="platoPrincipal" <%- product.category === 'platoPrincipal' ? 'selected' : null %> >Plato principal</option>
+                                <option value="postre" <%- product.category === 'postre' ? 'selected' : null %> >Postre</option>
+                                <option value="pasteleria" <%- product.category === 'pasteleria' ? 'selected' : null %> >Pastelería</option>
                             </select>
                         </div>
 
                         <div class="mb-3 entrada  checks">
                             <!--opciones vegetariano, vegano, celiaco-->
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="vegetarian">
+                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="vegetarian" value="<%=product.vegetarian%>">
                                 <label class="custom-control-label" for="vegetarian">Comida vegetariana</label>  
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="vegan" id="vegan">
+                                <input type="checkbox" class="custom-control-input" name="vegan" id="vegan" value="<%=product.vegan%>">
                                 <label class="custom-control-label" for="vegan">Comida vegana</label>
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="celiac" id="celiac">
+                                <input type="checkbox" class="custom-control-input" name="celiac" id="celiac" value="<%=product.celiac%>">
                                 <label class="custom-control-label" for="celiac">Comida para celíacos</label>
                             </div>
                         </div>
@@ -48,25 +48,26 @@
                         <div class="mb-3 entrada">
                             <!--precio-->
                             <label for="price" class="form-label">Precio</label>
-                            <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario">
+                            <input type="text" name="price" id="price" class="form-control" placeholder="Precio unitario" value="<%=product.price%>">
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--cliente-->
                             <label for="client" class="form-label">Nombre del cliente</label>
-                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante">
+                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante" value="<%=product.client%>">
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3"  value="<%=product.description%>"></textarea>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="image" class="form-label">Foto del producto</label>
                             <input type="file" id="image" name="image">
+                            <!--no se puede cargar el value de la imagen-->
                         </div>
 
                         <div class="boton-carga">

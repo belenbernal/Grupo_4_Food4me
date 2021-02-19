@@ -15,7 +15,7 @@
         "id": 2,
         "name": "Milk - Skim",
         "description": "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
-        "price": 1563.12,        
+        "price": 1563.12,
         "client": "bonappetit",
         "image": "entrada2.jpg",
         "category": "entrada",
@@ -178,5 +178,15 @@
         "vegan": "si",
         "vegetarian": "si",
         "celiac": "no"
+    },
+    {
+        "id": 16,
+        "name": "Torta",
+        "description": "Torta de chocolate",
+        "price": "500",
+        "client": "rullirolls",
+        "image": "image-1613706683791.jpg",
+        "category": "pasteleria",
+        "vegetarian": "on"
     }
 ]
