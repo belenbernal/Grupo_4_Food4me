@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const { setProduct, getProduct } = require("../data/products");
 const products = getProduct()
@@ -60,7 +61,7 @@ const productController = {
                 product.price = price,
                 product.client = client,
                 product.category = category,
-                product.image = req.files[0].filename,
+                product.image = image,
                 product.vegan = vegan,
                 product.vegetarian = vegetarian,
                 product.celiac = celiac

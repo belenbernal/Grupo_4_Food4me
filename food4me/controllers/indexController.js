@@ -1,4 +1,5 @@
-const products = require('../data/products');
+const { setProduct, getProduct } = require("../data/products");
+const products = getProduct()
 
 
 const indexController = {

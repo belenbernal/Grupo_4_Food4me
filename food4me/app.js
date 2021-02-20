@@ -11,7 +11,7 @@ var productController = require('./routes/products');
 
 
 var app = express();
-app.use(methodOverride("_method"));
+app.use(methodOverride('_method'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
