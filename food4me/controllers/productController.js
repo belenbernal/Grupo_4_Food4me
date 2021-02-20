@@ -31,8 +31,8 @@ const productController = {
             celiac
         }
         products.push(product);
-        fs.writeFileSync('./data/products.json', JSON.stringify(products), 'utf-8');
-        res.redirect('/');
+        setProduct(products);
+        res.redirect('/indexAdmin');
     },
     productDetail: (req, res) => {
         let product = products.find(product => {
@@ -71,9 +71,9 @@ const productController = {
 
             }
         });
-       setProduct(products)
-        res.redirect('/');
-    
+        setProduct(products)
+        res.redirect('/indexAdmin');
+
 
     },
     carrito: (req, res) => {
@@ -89,22 +89,22 @@ const productController = {
             products: result
         })
     },
-    productDelete: (req, res) => {        
-            products.forEach(product => {
-                if (product.id === +req.params.id) {
-                    if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
-                        fs.unlinkSync(path.join('public', 'images', 'products', product.image));
-                    }
-                    let eliminar = products.indexOf(product);
-                    products.splice(eliminar, 1);
+    productDelete: (req, res) => {
+        products.forEach(product => {
+            if (product.id === +req.params.id) {
+                if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
+                    fs.unlinkSync(path.join('public', 'images', 'products', product.image));
                 }
-            });
-            setProduct(products)
-        res.redirect('indexAdmin');
-    
+                let eliminar = products.indexOf(product);
+                products.splice(eliminar, 1);
+            }
+        });
+        setProduct(products)
+        res.redirect('/indexAdmin');
+
     },
     list: (req, res) => {
-        res.render('productList', {
+        res.render('indexAdmin', {
             products
         })
     }
