@@ -7,7 +7,8 @@ const methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var productController = require('./routes/products');
+var productRouter = require('./routes/products');
+var adminRouter = require('./routes/adminRouter')
 
 
 var app = express();
@@ -24,8 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/products',productController)
+app.use('/products',productRouter)
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter)
 
 
 
