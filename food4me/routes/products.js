@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const path = require("path")
+const path = require("path");
 const multer = require("multer");
-const {carrito,editProduct,newProduct,productAdd,productDelete,productDetail,search,updateProduct,list} = require('../controllers/productController')
+const {productDelete, carrito, editProduct, newProduct, productAdd, productDetail, productList, search, updateProduct} = require('../controllers/productController')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -15,21 +15,20 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-/* GET home page. */
-router.get('/create', productAdd);
-router.post('/create', upload.any(), newProduct);
+router.get('/create',productAdd);
+router.post('/create', upload.any(),newProduct);
 
-router.get('/detail/:id', productDetail);
+router.get('/detail/:id',productDetail);
 
 router.get('/edit/:id',editProduct);
-router.put('/update/:id', upload.any(), updateProduct);
+router.put('/update/:id', upload.any(),updateProduct);
 
-router.delete('/eliminar/id', productDelete)
+router.get('/search',search);
 
-router.get('/search', search);
+router.get('/carrito',carrito );
 
-router.get('/carrito', carrito );
+router.delete('/eliminar/:id',productDelete);
 
-router.get('/list', list)
+router.get('/admin',productList);
 
 module.exports = router;

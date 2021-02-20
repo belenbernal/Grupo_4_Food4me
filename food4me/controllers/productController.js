@@ -3,7 +3,13 @@ const path = require('path');
 const { setProduct, getProduct } = require("../data/products");
 const products = getProduct()
 
+
 const productController = {
+    productList: (req, res) => { //method get
+        res.render('indexAdmin', {
+            products
+        })
+    },
     productAdd: (req, res) => { //method get
         res.render('productAdd')
     },
@@ -32,7 +38,7 @@ const productController = {
         }
         products.push(product);
         setProduct(products);
-        res.redirect('/indexAdmin');
+        res.redirect('/products/admin');
     },
     productDetail: (req, res) => {
         let product = products.find(product => {
@@ -72,9 +78,7 @@ const productController = {
             }
         });
         setProduct(products)
-        res.redirect('/indexAdmin');
-
-
+        res.redirect('/products/admin');
     },
     carrito: (req, res) => {
         res.render('carrito')
@@ -90,6 +94,7 @@ const productController = {
         })
     },
     productDelete: (req, res) => {
+        /* res.send('holaa') */
         products.forEach(product => {
             if (product.id === +req.params.id) {
                 if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
@@ -100,13 +105,8 @@ const productController = {
             }
         });
         setProduct(products)
-        res.redirect('/indexAdmin');
+        res.redirect('/products/admin');
 
-    },
-    list: (req, res) => {
-        res.render('indexAdmin', {
-            products
-        })
     }
 }
 module.exports = productController;
