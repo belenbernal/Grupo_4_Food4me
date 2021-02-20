@@ -4,16 +4,16 @@
 
         <div class="row barra">
             <!-- logo -->
-            <div class="col-3">
-                <a href="#">
-                    <img src="images/logo2.png" alt="">
+            <div class="logo col-3">
+                <a href="/">
+                    <img src="/images/logo2.2.png" alt="">
                 </a>
             </div>
 
             <!-- buscador -->
             <div class="col-6 buscador">
-                <form action="search">
-                    <input type="search">
+                <form action="/products/search">
+                    <input type="search" name="buscar">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
@@ -21,8 +21,8 @@
             <!-- login/carrito -->
             <div class="col-3 buttons">
 
-                <button type="button"><i class="fas fa-user-circle"></i></button>
-                <button type="button"><i class="fas fa-cart-arrow-down"></i></button>
+                <a href="/users/login"><i class="fas fa-user-circle"></i></a>
+                <a href="/products/carrito"><i class="fas fa-cart-arrow-down"></i></a>
 
 
             </div>
@@ -31,35 +31,35 @@
 
         <!-- categorias -->
         <div class=" menu">
-            <nav class="navbar-expand-md navbar-light menu-2">
-                <div class="container-fluid">
+            <nav class="navbar navbar-expand-md navbar-light menu-2">
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="fas fa-bars"></span>
+                <div class="container-fluid cf">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                         <ul class="navbar-nav col-md-12 col-lg-12">
+                            <li><a href="/">Menú</a></li>
+                            
                             <li><a href="">Reservas</a></li>
 
-                            <li><a href="">Veggies</a></li>
+                            <li><a href="">Pedidos online</a></li>
 
-                            <li><a href="">Pasteleria</a></li>
+                            <li><a href="">Catering</a></li>
 
-                            <li><a href="">Entradas</a></li>
-
-                            <li><a href="">Platos principales</a></li>
-
-                            <li><a href="">Postres</a></li>
+                            <li><a href="">Contacto</a></li>
 
                         </ul>
 
                     </div>
                 </div>
+
             </nav>
         </div>
-        <!-- categorias -->
     </div>
 </header>
-<!-- HEADER -->

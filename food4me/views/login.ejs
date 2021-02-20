@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+
+    <body>
+        <%- include('./partials/header') %>
+            <div class="contenedorLogin">
+                <div class="container form ">
+                    <div class="row card-login mx-auto">
+                        <h1 class="loginTitulo">Login</h1>
+                        <form  action="home.html">
+                            <div class="col-12  col-md-12 datosLogin">
+
+                                <div class="col-12 EntradasLogin">
+                                    <label for="mail">Usuario</label>
+                                   
+                                    <input type="email" name="mail" id="mail" placeholder="Ingresa tu Usuario">
+                                </div>
+
+
+                                <div class="col-12 EntradasLogin">
+                                    <label for="mail">Email</label>
+                                  
+                                    <input type="email" name="mail" id="mail" placeholder="Ingresa tu email">
+                                </div>
+
+                                <div class="col-12 EntradasLogin">
+                                    <label for="pass">Contraseña</label>
+                                   
+                                    <input type="password" name="pass" id="pass" placeholder="Password">
+                                </div>
+                            </div>
+           
+                           
+                            <div class="botonesLogin">
+                              
+                                <button type="submit">Ingresar</button>
+                                <button type="submit">  <a class="botonLogin" href="/users/register"> Registrarme </a></button>
+                                <button type="reset">Cancelar</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <%- include('./partials/footer') %>
+
+                <%- include('./partials/scripts') %>
+    </body>

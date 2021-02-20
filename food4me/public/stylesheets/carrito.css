@@ -1,0 +1,119 @@
+/* CARRITO */
+
+main .titulo-carrito{
+    text-align: center;
+    background-color: #BC0C2B;
+    color: white;
+    border-radius: 15px;
+    
+}
+
+main .productos-carritos{
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main img{    
+    width: 90%;
+}
+
+main .precio-carrito{
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+main .option{
+    padding-top: 30px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+main .datos-carrito{
+    text-align: center;
+}
+main h1{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+main .datos-carrito h3{    
+    font-weight: 700;
+    font-size:15px;
+    text-align: center;
+}
+
+
+main input{
+    width: 70%;
+    border-radius: 15px;
+    text-align: center;
+}
+main .delete{
+    font-size: 15px;
+    padding-top: 35px;
+    height: 100px;
+    text-align: center;
+    border-left: 1px solid black;
+
+}
+
+main .delete i{
+    font-size: 20px;
+    color: black;
+}
+
+main .delete i:hover{
+    font-size: 30px;
+}
+    
+
+main .precio-carrito .total{
+    border-radius: 15px;
+    font-size: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+main .precio-carrito button{
+    width: 40%;
+    border: none;
+    background-color: #BC0C2B;
+}
+
+main .precio-carrito button:hover{
+    background-color: #c22d4f;
+}
+
+/* MEDIA QUERYS */
+@media (min-width: 768px){
+    main .datos-carrito h3{          
+        font-size: 4vh;        
+    }
+
+    main input{
+        width: 50%;
+    }
+}
+@media (min-width: 1024px){
+    main .btns .btn{
+        width: 95%;
+    } 
+    main .contenido .img-productos{
+        height: 30vh;
+    }
+}
+
+@media (min-width: 1440px){
+    main .contenido .img-productos{
+        height: 35vh;
+    }
+    main .container{
+        max-width: 1440;
+    }
+}

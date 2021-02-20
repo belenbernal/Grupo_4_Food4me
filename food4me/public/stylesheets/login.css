@@ -1,0 +1,115 @@
+/*LOGIN*/
+
+.contenedorLogin{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+  
+.card {
+    max-width: 1000px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+.card-login{
+    background-color: white;
+    max-width: 400px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+  
+      
+.home.html{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+    
+/*titulo de Registrate*/
+.card-login .loginTitulo{
+    width: 100%;
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;
+}
+           
+/*Datos del registrate*/
+.datosLogin{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.EntradasLogin{
+    display: flex;
+    flex-direction: column;
+
+} 
+.EntradasLogin label{
+    /*margin-top: 10px;
+    padding-top: 20px;*/
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+
+}
+.EntradasLogin input{
+    width: 80%;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+/*Botones*/
+.botonesLogin{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
+    margin: 20px;
+}
+      
+.datosLogin{
+    flex-wrap: wrap;
+}
+
+.EntradasLogin{
+    display: flex;
+    flex-direction: column;
+} 
+
+.EntradasLogin label{
+    /*margin-top: 10px;
+    padding-top: 20px;*/
+    font-weight: bold;
+    color: rgb(49, 49, 49);
+}
+
+.EntradasLogin input{
+    width: 100%;
+    height: 30px;
+    padding-left: 20px;
+    border-radius: 3px;
+}
+
+.botonesLogin{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+      
+.botonesLogin button{
+    background-color: #BC0C2B;
+    color: #fff;
+    width: 100px;
+    height: 60%;
+    border-radius: 10px;
+    border:none;
+    
+}
+.botonesLogin button .botonLogin{
+    text-decoration: none;
+    color: #fff;
+}

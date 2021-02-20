@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+
+    <%- include('./partials/header') %>
+    
+        <main>
+
+            <div class="container">
+                <div class="row card mx-auto car">
+                    <div class="col-12 productos-carritos">
+
+                        <div class="col-4">
+                            <img src="/images/hamburger.jpg" alt="plato">
+                        </div>
+                        <div class="col-2 datos-carrito">
+                            <h3>Hamburguesa Vegana</h3>
+                        </div>
+                        <div class="col-2 option-carrito">
+                            <form action="">
+                                <div class="option">
+                                    <input type="number" value="1" min="1" max="100" class="number-spinner"
+                                        id="cantidad"><script>$("input[type='number']").InputSpinner();
+                                        </script>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-2">
+                            <h1>$123</h1>
+                        </div>
+
+                        <div class="col-2 delete">
+                            <form action="">
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                            </form>
+                        </div>
+
+                        <div class="col-4">
+                            <img src="/images/cake.jpg" alt="plato">
+                        </div>
+                        <div class="col-2 datos-carrito">
+                            <h3>Tiramisú</h3>
+                        </div>
+                        <div class="col-2 option-carrito">
+                            <form action="">
+                                <div class="option">
+                                    <input type="number" value="1" min="1" max="100" class="number-spinner"
+                                        id="cantidad">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-2">
+                            <h1>$123</h1>
+                        </div>
+
+                        <div class="col-2 delete">
+                            <form action="">
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                            </form>
+                        </div>
+
+                        <div class="col-4">
+                            <img src="/images/pizza.jpg" alt="plato">
+                        </div>
+                        <div class="col-2 datos-carrito">
+                            <h3>Pizza</h3>
+                        </div>
+                        <div class="col-2 option-carrito">
+                            <form action="">
+                                <div class="option">
+                                    <input type="number" value="1" min="1" max="100" class="number-spinner"
+                                        id="cantidad">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-2">
+                            <h1>$123</h1>
+                        </div>
+
+                        <div class="col-2 delete">
+                            <form action="">
+                                <a href=""><i class="fas fa-trash-alt"></i></a>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-12 precio-carrito">
+                    <div class="col-6">
+                        <form action="">
+                            <button type="submit" class="btn btn-primary">Comprar</button>
+                            <button type="reset" class="btn btn-primary">Cancelar</button>
+                        </form>
+                    </div>
+                    <div class="col-6 total">
+                        <h3>TOTAL: $120 </h3>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </main>
+        <%- include('./partials/footer') %>
+
+            <%- include('./partials/scripts') %>
+
+</html>

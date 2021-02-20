@@ -1,0 +1,60 @@
+/*PRODUCT ADD*/
+
+.contenedor-product-add{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contenedor-detalle{
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+
+.contenido-form{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    border: rgba(0, 0, 0, 0.537) solid 1px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+.contenido-form .entrada{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+}
+
+.contenido-form input , .contenido-form label{
+    width: 900%;
+}
+
+.contenido-form .checks{
+    justify-content: space-around;
+}
+
+.contenido-form textarea{
+    width: 900%;
+}
+
+.titulo-formu{
+    font-family: 'Roboto';
+    text-align: center;
+    font-weight: 500;
+    margin: 20px 0;
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;
+}
+
+.contenido-form .boton-carga{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+.contenido-form .boton-carga .btn{
+    background-color: #bc0c2b;
+    border: #bc0c2b 1px solid;
+    font-weight: bold;
+}
+
