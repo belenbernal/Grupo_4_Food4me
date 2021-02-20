@@ -94,8 +94,8 @@ const productController = {
         })
     },
     productDelete: (req, res) => {
-        res.send('holaa')
-        /* products.forEach(product => {
+        /* res.send('holaa') */
+        products.forEach(product => {
             if (product.id === +req.params.id) {
                 if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
                     fs.unlinkSync(path.join('public', 'images', 'products', product.image));
@@ -105,7 +105,7 @@ const productController = {
             }
         });
         fs.writeFileSync('./data/products.json', JSON.stringify(products), 'utf-8');
-        res.redirect('indexAdmin') */
+        res.redirect('indexAdmin');
     }
 }
 module.exports = productController;

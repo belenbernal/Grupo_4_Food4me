@@ -21,7 +21,7 @@ router.post('/create', upload.any(),newProduct);
 router.get('/detail/:id',productDetail);
 
 router.get('/edit/:id',editProduct);
-router.post('/update/:id', upload.any(),updateProduct);
+router.put('/update/:id', upload.any(),updateProduct);
 
 router.get('/search',search);
 
