@@ -24,7 +24,7 @@ router.get('/detail/:id', productController.productDetail);
 router.get('/edit/:id',productController.editProduct);
 router.put('/update/:id', upload.any(), productController.updateProduct);
 
-router.delete('/eliminar', productController.productDelete)
+router.delete('/eliminar/id', productController.productDelete)
 
 router.get('/search', productController.search);
 
