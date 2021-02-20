@@ -22,10 +22,14 @@ router.post('/create', upload.any(), productController.newProduct);
 router.get('/detail/:id', productController.productDetail);
 
 router.get('/edit/:id',productController.editProduct);
-router.post('/update/:id', upload.any(), productController.updateProduct);
+router.put('/update/:id', upload.any(), productController.updateProduct);
+
+router.delete('/eliminar', productController.productDelete)
 
 router.get('/search', productController.search);
 
 router.get('/carrito', productController.carrito );
+
+router.get('/list', productController.list)
 
 module.exports = router;

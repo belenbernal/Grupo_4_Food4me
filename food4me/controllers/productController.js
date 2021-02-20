@@ -1,5 +1,6 @@
-const fs = require("fs");
-const products = require('../data/products')
+const path = require('path');
+const { setProduct, getProduct } = require("../data/products");
+const products = getProduct()
 
 const productController = {
     productAdd: (req, res)=>{ //method get
@@ -48,6 +49,25 @@ const productController = {
         })
     },
     updateProduct: (req, res,next)=>{ //method post
+        const {name, description, price, client, category, image, vegan, vegetarian, celiac} = req.body;
+        products.forEach(product => {
+            if (product.id === +req.params.id) {
+                if (fs.existsSync(path.join('public','images','products', product.image))) {
+                    fs.unlinkSync(path.join('public','images','products', product.image))
+                }
+                product.name = name,
+                product.description = description,
+                product.price = price,
+                product.client = client,
+                product.category = category,
+                product.image = req.files[0].filename,
+                product.vegan = vegan,
+                product.vegetarian = vegetarian,
+                product.celiac = celiac
+            }
+        });
+        setProduct(products)
+        res.redirect('/products/list')
         
     },
     carrito: (req, res)=>{
@@ -64,7 +84,20 @@ const productController = {
         })
     },
     productDelete: (req,res)=>{
-
+        products.forEach(product => {
+            if (fs.existsSync(path.join('public','images','products', product.image))) {
+                fs.unlinkSync(path.join('public','images','products', product.image))
+            }
+            let eliminar = products.indexOf(product);
+                products.splice(eliminar,1);
+        })
+        setProduct(products) 
+        res.redirect('/products/list')
+    },
+    list : (req, res)=>{
+        res.render('productList',{
+            products
+        })
     }
 }
 module.exports = productController;

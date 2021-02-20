@@ -11,6 +11,7 @@ var productController = require('./routes/products');
 
 
 var app = express();
+app.use(methodOverride("_method"));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +27,7 @@ app.use('/', indexRouter);
 app.use('/products',productController)
 app.use('/users', usersRouter);
 
-app.use(methodOverride ("_method"));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
