@@ -22,12 +22,11 @@ const productController = {
             }
         });
 
-        const { name, description, price, client, image, category, vegan, vegetarian, celiac } = req.body;
+        const { name, price, client, image, category, vegan, vegetarian, celiac } = req.body;
 
         let product = {
             id: lastID + 1,
-            name,
-            description,
+            name,            
             price,
             client,
             image: req.files[0].filename,
@@ -57,7 +56,7 @@ const productController = {
     },
     updateProduct: (req, res, next) => { //method put
 
-        const { name, description, price, client, image, category, vegan, vegetarian, celiac } = req.body;
+        const { name, price, client, image, category, vegan, vegetarian, celiac } = req.body;
 
         products.forEach(product => {
             if (product.id === +req.params.id) {
@@ -65,8 +64,7 @@ const productController = {
                     fs.unlinkSync(path.join('public', 'images', 'products', product.image));
                 }
                 product.id = +req.params.id;
-                product.name = name;
-                product.description = description;
+                product.name = name;                
                 product.price = price;
                 product.client = client;
                 product.image = req.files[0].filename;
