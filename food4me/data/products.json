@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Croissant, Raw - Mini",    
+    "name": "Croissant, Raw - Mini",
     "price": 4144.4,
     "client": "lafarola",
     "image": "entrada1.jpg",
@@ -11,30 +11,16 @@
     "celiac": "si"
   },
   {
-    "id": 2,
-    "name": "Milk - Skim",    
-    "price": 1563.12,
-    "client": "bonappetit",
-    "image": "entrada2.jpg",
-    "category": "entrada",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "si"
-  },
-  {
     "id": 3,
-    "name": "Mortadella",    
-    "price": 4830.94,
+    "name": "Mortadella",
+    "price": "4830.94",
     "client": "bonappetit",
-    "image": "entrada3.jpg",
-    "category": "entrada",
-    "vegan": "no",
-    "vegetarian": "no",
-    "celiac": "no"
+    "image": "image-1614183155429.jpg",
+    "category": "entrada"
   },
   {
     "id": 4,
-    "name": "Pop - Club Soda Can",    
+    "name": "Pop - Club Soda Can",
     "price": 4495.34,
     "client": "lafarola",
     "image": "platoprincipal1.jpg",
@@ -45,7 +31,7 @@
   },
   {
     "id": 5,
-    "name": "Pineapple - Regular",    
+    "name": "Pineapple - Regular",
     "price": 1805.08,
     "client": "mostaza",
     "image": "platoprincipal2.jpg",
@@ -56,7 +42,7 @@
   },
   {
     "id": 6,
-    "name": "Wine - White, Gewurtzraminer",    
+    "name": "Wine - White, Gewurtzraminer",
     "price": 910.47,
     "client": "garden",
     "image": "platoprincipal3.jpg",
@@ -67,7 +53,7 @@
   },
   {
     "id": 7,
-    "name": "Clams - Littleneck, Whole",    
+    "name": "Clams - Littleneck, Whole",
     "price": 2734.1,
     "client": "garden",
     "image": "platoprincipal4.jpg",
@@ -78,7 +64,7 @@
   },
   {
     "id": 8,
-    "name": "Bread - Pumpernickle, Rounds",    
+    "name": "Bread - Pumpernickle, Rounds",
     "price": 1317.08,
     "client": "rolirolls",
     "image": "postre1.jpg",
@@ -89,7 +75,7 @@
   },
   {
     "id": 9,
-    "name": "Cheese - Oka",    
+    "name": "Cheese - Oka",
     "price": 3878.86,
     "client": "rolirolls",
     "image": "postre2.jpg",
@@ -100,7 +86,7 @@
   },
   {
     "id": 10,
-    "name": "Flavouring - Orange",    
+    "name": "Flavouring - Orange",
     "price": 1201.9,
     "client": "rolirolls",
     "image": "postre3.jpg",
@@ -111,7 +97,7 @@
   },
   {
     "id": 11,
-    "name": "Seedlings - Clamshell",    
+    "name": "Seedlings - Clamshell",
     "price": 3338.55,
     "client": "rolirolls",
     "image": "postre4.jpg",
@@ -122,7 +108,7 @@
   },
   {
     "id": 12,
-    "name": "Lambcasing",    
+    "name": "Lambcasing",
     "price": 1589.26,
     "client": "rolirolls",
     "image": "pasteleria1.jpg",
@@ -133,7 +119,7 @@
   },
   {
     "id": 13,
-    "name": "Wine - Pinot Grigio Collavini",    
+    "name": "Wine - Pinot Grigio Collavini",
     "price": 2887.3,
     "client": "rolirolls",
     "image": "pasteleria2.jpg",
@@ -144,7 +130,7 @@
   },
   {
     "id": 14,
-    "name": "Beef - Rib Roast, Capless",    
+    "name": "Beef - Rib Roast, Capless",
     "price": 2435.3,
     "client": "rolirolls",
     "image": "pasteleria3.jpg",
@@ -155,13 +141,19 @@
   },
   {
     "id": 15,
-    "name": "Leeks - Baby, White",    
-    "price": 4060.75,
-    "client": "rolirolls",
-    "image": "pasteleria4.jpg",
-    "category": "pasteleria",
-    "vegan": "si",
-    "vegetarian": "si",
-    "celiac": "no"
+    "name": "omelette du fromage",
+    "price": "1563",
+    "client": "tavo",
+    "image": "image-1614135744373.jpg",
+    "category": "entrada",
+    "vegetarian": "on"
+  },
+  {
+    "id": 16,
+    "name": "omelett",
+    "price": "2435",
+    "client": "tavo",
+    "image": "image-1614183187109.jpg",
+    "category": "entrada"
   }
 ]
