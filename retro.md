@@ -84,6 +84,7 @@
 * Poner fecha de vencimiento a las tareas.
 * Ser más autónomos (que cada uno haga la tarea que eligió y en caso de necesitar ayuda, consultarlo con el equipo).
 * Organizar como armar la estructura del codigo antes de codear.
+* Hacer una minuta con los temas de las reuniones.
 
 ### Hacer más:
 * Ser mas detallistas con el Front-End.
