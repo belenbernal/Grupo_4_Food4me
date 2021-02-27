@@ -2,7 +2,6 @@
   {
     "id": 1,
     "name": "Croissant, Raw - Mini",
-    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 4144.4,
     "client": "lafarola",
     "image": "entrada1.jpg",
@@ -26,8 +25,7 @@
   {
     "id": 3,
     "name": "Mortadella",
-    "description": "faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio",
-    "price": 4830.94,
+    "price": "4830.94",
     "client": "bonappetit",
     "image": "entrada3.jpg",
     "category": "entrada",
@@ -38,7 +36,6 @@
   {
     "id": 4,
     "name": "Pop - Club Soda Can",
-    "description": "rhoncus aliquet pulvinar sed nisl nunc rhoncus dui vel sem",
     "price": 4495.34,
     "client": "lafarola",
     "image": "platoprincipal1.jpg",
@@ -50,7 +47,6 @@
   {
     "id": 5,
     "name": "Pineapple - Regular",
-    "description": "rhoncus mauris enim leo rhoncus sed vestibulum sit amet cursus id turpis integer aliquet massa id lobortis convallis tortor",
     "price": 1805.08,
     "client": "mostaza",
     "image": "platoprincipal2.jpg",
@@ -62,7 +58,6 @@
   {
     "id": 6,
     "name": "Wine - White, Gewurtzraminer",
-    "description": "orci vehicula condimentum curabitur in libero ut massa volutpat convallis morbi odio odio elementum eu interdum eu tincidunt in",
     "price": 910.47,
     "client": "garden",
     "image": "platoprincipal3.jpg",
@@ -74,7 +69,6 @@
   {
     "id": 7,
     "name": "Clams - Littleneck, Whole",
-    "description": "cras in purus eu magna vulputate luctus cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus",
     "price": 2734.1,
     "client": "garden",
     "image": "platoprincipal4.jpg",
@@ -86,7 +80,6 @@
   {
     "id": 8,
     "name": "Bread - Pumpernickle, Rounds",
-    "description": "faucibus orci luctus et ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
     "price": 1317.08,
     "client": "rolirolls",
     "image": "postre1.jpg",
@@ -98,7 +91,6 @@
   {
     "id": 9,
     "name": "Cheese - Oka",
-    "description": "eleifend pede libero quis orci nullam molestie nibh in lectus pellentesque at nulla suspendisse",
     "price": 3878.86,
     "client": "rolirolls",
     "image": "postre2.jpg",
@@ -110,7 +102,6 @@
   {
     "id": 10,
     "name": "Flavouring - Orange",
-    "description": "id pretium iaculis diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget",
     "price": 1201.9,
     "client": "rolirolls",
     "image": "postre3.jpg",
@@ -122,7 +113,6 @@
   {
     "id": 11,
     "name": "Seedlings - Clamshell",
-    "description": "blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est",
     "price": 3338.55,
     "client": "rolirolls",
     "image": "postre4.jpg",
@@ -134,7 +124,6 @@
   {
     "id": 12,
     "name": "Lambcasing",
-    "description": "in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse",
     "price": 1589.26,
     "client": "rolirolls",
     "image": "pasteleria1.jpg",
@@ -146,7 +135,6 @@
   {
     "id": 13,
     "name": "Wine - Pinot Grigio Collavini",
-    "description": "est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis",
     "price": 2887.3,
     "client": "rolirolls",
     "image": "pasteleria2.jpg",
@@ -158,7 +146,6 @@
   {
     "id": 14,
     "name": "Beef - Rib Roast, Capless",
-    "description": "pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus",
     "price": 2435.3,
     "client": "rolirolls",
     "image": "pasteleria3.jpg",
