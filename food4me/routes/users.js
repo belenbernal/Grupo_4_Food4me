@@ -1,18 +1,20 @@
 var express = require('express');
 var router = express.Router();
-const upload = require ('../middlewares/usersMulter');
-const {register, processRegister, login, processLogin, logout} = require('../controllers/usersController');
+const upload = require('../middlewares/usersMulter')
 
+const {login,processLogin,processRegister, register,logout, profile}=require('../controllers/usersController')
 
-/* registro */
-router.get('/register', register)
-router.post('/register',upload.any(), processRegister)
+const loginValidator = require('../validations/loginValidator');
+const userCheck = require('../middlewares/userCheck');
 
-/* logeo */
-router.get('/login', login)
-router.post('/login', processLogin )
+/* GET users listing. */
+router.get('/login', login);
+router.post('/login', loginValidator, processLogin);
 
-/* logout */
-router.get('/logout', logout)
+router.get('/register', register);
+router.post('/register', upload.any(), processRegister);
+
+router.get('/profile',userCheck, profile)
+router.get('/logout',logout);
 
 module.exports = router;
