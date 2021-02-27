@@ -1,11 +1,31 @@
 var express = require('express');
 var router = express.Router();
 const multer = require('multer');
-const bcrypt = require('bcrypt')
+const path = require('path')
+const {register, processRegister, login, processLogin, logout} = require('../controllers/usersController');
 
-const usersController=require('../controllers/usersController')
-/* GET users listing. */
-router.get('/login', usersController.login)
-router.get('/register', usersController.register)
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, '/public/images/users')
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+
+var upload = multer({ storage: storage })
+
+
+
+/* registro */
+router.get('/register', register)
+router.post('/register',upload.any(), processRegister)
+
+/* logeo */
+router.get('/login', login)
+router.post('/login', processLogin )
+
+/* logout */
+router.get('/logout', logout)
 
 module.exports = router;
