@@ -1,7 +1,8 @@
-const fs = require('fs');
 const path = require('path');
+const bcrypt = require('bcrypt');
 const { setUsers, getUsers } = require("../data/users");
-const users = getUsers()
+const users_db = getUsers()
+const {validationResult} = require('express-validator');
 
 const usersController = {
     login:(req,res)=> {
@@ -61,8 +62,14 @@ const usersController = {
             })
         }
     },
+    logout:(req,res)=>{
+        res.render('register')
+    },
     register:(req,res)=>{
         res.render('register')
+    },
+    profile:(req,res)=>{
+        res.render('profile')
     }
 }
 
