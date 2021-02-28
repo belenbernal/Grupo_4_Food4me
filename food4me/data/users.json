@@ -69,5 +69,16 @@
     "image": "image-1614544913170.jpg",
     "genero": "2",
     "rol": "usuario"
+  },
+  {
+    "id": 8,
+    "mail": "belu@email.com",
+    "nombre": "belu",
+    "apellido": "bernal",
+    "pass1": "$2b$12$fnzPvjekQr8fbe7BMJLYYuHeKvmcqhahsCOEQE0rixtIUk9R/DIna",
+    "birth": "2015-02-11",
+    "image": "image-1614551356482.jpg",
+    "genero": "Genero",
+    "rol": "usuario"
   }
 ]

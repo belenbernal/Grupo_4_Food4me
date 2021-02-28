@@ -3,7 +3,7 @@ var router = express.Router();
 
 const upload = require('../middlewares/usersMulter');
 const {login,processLogin,register,logout,profile,processRegister}=require('../controllers/usersController')
-
+const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
 const userCheck = require('../middlewares/userCheck');
 
@@ -12,7 +12,7 @@ router.get('/login', login);
 router.post('/login', loginValidator, processLogin);
 
 router.get('/register', register);
-router.post('/register',upload.any(), processRegister)
+router.post('/register',upload.any(),registerValidator, processRegister)
 
 router.get('/profile',userCheck, profile);
 
