@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const multer = require('multer');
 
-
-const {login,processLogin,register,logout,profile}=require('../controllers/usersController')
+const upload = require('../middlewares/usersMulter')
+const {login,processLogin,register,logout,profile,processRegister}=require('../controllers/usersController')
 
 const loginValidator = require('../validations/loginValidator');
 const userCheck = require('../middlewares/userCheck');

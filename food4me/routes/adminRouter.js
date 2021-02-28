@@ -1,25 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const multer = require("multer");
-const path = require("path");
-const {index, productDelete, editProduct, newProduct, productAdd, productList, updateProduct} = require('../controllers/adminController')
-
-/* multer */
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'public/images/products')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-
-var upload = multer({ storage: storage })
+const {productDelete, editProduct, newProduct, productAdd, productList, updateProduct} = require('../controllers/adminController')
+const upload = require('../middlewares/productMulter');
+const userCheck = require('../middlewares/userCheck');
 
 
 /* carga de producto*/
 router.get('/create',productAdd);
-router.post('/create', upload.any(),newProduct);
+router.post('/create', userCheck, upload.any(),newProduct);
 
 /* edicion y subida de producto */
 router.get('/edit/:id',editProduct);
