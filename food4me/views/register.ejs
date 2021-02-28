@@ -8,7 +8,7 @@
             <div class="container form contenedorRegister">
                 <div class="row card mx-auto ">
                     <h1 class="registerTitulo">Registrate</h1>
-                    <form action="home.html">
+                    <form action="/users/login" method="POST" enctype="multipart/form-data">
                         <div class="col-12  col-md-12 datosRegister">
 
                             <div class="EntradasRegister col-12">
@@ -29,25 +29,32 @@
                             <div class="EntradasRegister col-12">
                                 <label for="pass">Contraseña</label>
 
-                                <input type="password" name="pass" id="pass" placeholder="Password">
+                                <input type="password" name="pass1" id="pass" placeholder="Password">
                             </div>
 
                             <div class="EntradasRegister  col-12">
                                 <label for="pass"> Confirmar Contraseña</label>
 
-                                <input type="password" name="pass" id="pass" placeholder="Password">
-                            </div>
+                                <input type="password" name="pass2" id="pass" placeholder="Password">
+                            </div> 
 
                             <div class="EntradasRegister col-12">
                                 <label for="">Fecha de Nacimiento </label>
-                                <input type="date" name="" id="">
+                                <input type="date" name="birth" id="">
                             </div> 
+
+                            <div>
+                                <label for="image" class="form-label">foto de perfil</label>
+                            <input type="file" id="image" name="image">
+                            </div>
+
+
 
                         </div>
 
 
                         <div class="check">
-                            <select class="form-select" aria-label="Default select example">
+                            <select name="genero" class="form-select" aria-label="Default select example">
                                 <option selected>Genero</option>
                                 <option value="1">Masculino</option>
                                 <option value="2">Femenino</option>
@@ -64,7 +71,7 @@
                         <div class=" col-12 botonesRegister">
 
                             <button type="submit">Registrarme</button>
-                            <button type="reset">Cancelar</button>
+                           
                         </div>
 
                     </form>

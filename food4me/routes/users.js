@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 
+
 const {login,processLogin,register,logout,profile}=require('../controllers/usersController')
 
 const loginValidator = require('../validations/loginValidator');
@@ -12,6 +13,7 @@ router.get('/login', login);
 router.post('/login', loginValidator, processLogin);
 
 router.get('/register', register);
+router.post('/register',upload.any(), processRegister)
 
 router.get('/profile',userCheck, profile);
 

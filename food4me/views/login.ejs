@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
+​
 <%- include('./partials/head') %>
-
+    ​
+    ​
 
     <body>
         <%- include('./partials/header') %>
@@ -12,7 +13,7 @@
                         <h1 class="loginTitulo">Login</h1>
                         <form action="/users/login" method="POST">
                             <div class="col-12  col-md-12 datosLogin">
-
+                                ​
                                 <div class="col-12 EntradasLogin">
                                     <label for="email">Email</label>
                                     <input type="email" name="email" id="email" placeholder="Ingresa tu email">
@@ -37,13 +38,13 @@
                                 <button type="submit"> <a class="botonLogin" href="/users/register"> Registrarme</a></button>
                             </div>
                         </form>
-
+                        ​
                     </div>
                 </div>
             </div>
-
-
+            ​
+            ​
             <%- include('./partials/footer') %>
-
+                ​
                 <%- include('./partials/scripts') %>
     </body>
