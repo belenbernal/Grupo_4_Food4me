@@ -42,8 +42,8 @@
                             </div>
 
                             <div class="EntradasRegister col-12">
-                                <label for="">Fecha de Nacimiento </label>
-                                <input type="date" name="birth" id="">
+                                <label for="date">Fecha de Nacimiento </label>
+                                <input type="date" name="date" id="">
                                 <span class="text-danger"><%= (typeof errores != 'undefined' && errores.birth)?errores.birth.msg : "" %> </span>
                             </div> 
 
@@ -68,8 +68,8 @@
                             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.genero)?errores.genero.msg : "" %> </span>
 
                             <div class="terminosRegister">
-                                <input type="checkbox" name="" id="accepto">
-                                <label for="accepto">Acepto los terminos y condiciones.</label>
+                                <input type="checkbox" name="aceptar" id="aceptar">
+                                <label for="aceptar">Acepto los terminos y condiciones.</label>
                             </div>
                         </div>
 

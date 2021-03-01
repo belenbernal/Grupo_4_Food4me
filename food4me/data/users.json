@@ -31,5 +31,27 @@
     "image": "image-1614551356482.jpg",
     "genero": "Genero",
     "rol": "user"
+  },
+  {
+    "id": 9,
+    "email": "mandy@email.com",
+    "nombre": "ale",
+    "apellido": "asda",
+    "pass": "$2b$12$Hqfny18O0CY9qVDLNZpMS.sgPD4rGWd4lF0Cu.TqXSA1QSaf74ARq",
+    "date": "2021-02-17",
+    "image": "image-1614561495297.jpg",
+    "genero": "Femenino",
+    "rol": "usuario"
+  },
+  {
+    "id": 10,
+    "email": "mecha@email.com",
+    "nombre": "mecha",
+    "apellido": "asda",
+    "pass": "$2b$12$E0TGYNcwQeEZuGicCFPKg.Te5ujsV1vuq503uS2MiETrXlqAhNObS",
+    "date": "2021-02-18",
+    "image": "image-1614561623295.jpg",
+    "genero": "Femenino",
+    "rol": "usuario"
   }
 ]
