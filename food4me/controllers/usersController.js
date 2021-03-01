@@ -109,7 +109,9 @@ const usersController = {
 
     },
     profile: (req, res) => {
-        res.render('profile')
+        res.render('profile', {
+            users_db
+        })
     },
     logout: (req, res) => {
         /* preguntamos si existe la cookie */
