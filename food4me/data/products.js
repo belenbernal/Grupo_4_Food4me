@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path')
 const product_db = path.join('data','products.json');
+
 module.exports = {
     getProduct: ()=> JSON.parse(fs.readFileSync(__dirname + "/products.json", "utf-8")),
     setProduct: (data) => {

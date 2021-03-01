@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-
+​
 <%- include('./partials/head') %>
-
+    ​
+    ​
 
     <body>
         <%- include('./partials/header') %>
@@ -10,44 +11,40 @@
                 <div class="container form ">
                     <div class="row card-login mx-auto">
                         <h1 class="loginTitulo">Login</h1>
-                        <form  action="home.html">
+                        <form action="/users/login" method="POST">
                             <div class="col-12  col-md-12 datosLogin">
-
+                                ​
                                 <div class="col-12 EntradasLogin">
-                                    <label for="mail">Usuario</label>
-                                   
-                                    <input type="email" name="mail" id="mail" placeholder="Ingresa tu Usuario">
-                                </div>
-
-
-                                <div class="col-12 EntradasLogin">
-                                    <label for="mail">Email</label>
-                                  
-                                    <input type="email" name="mail" id="mail" placeholder="Ingresa tu email">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" id="email" placeholder="Ingresa tu email">
+                                    <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email) ? errores.email.msg : null %> </span>
                                 </div>
 
                                 <div class="col-12 EntradasLogin">
                                     <label for="pass">Contraseña</label>
-                                   
-                                    <input type="password" name="pass" id="pass" placeholder="Password">
+                                    <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña">
+                                    <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass) ? errores.pass.msg : null%> </span>
+                                </div>
+
+                                <div class="col-12 EntradasLogin custom-control custom-checkbox recordame">
+                                    <input type="checkbox" class="custom-control-input" id="recordar" name="recordar">
+                                    <label class="custom-control-label" for="recordar">Recordame</label>
                                 </div>
                             </div>
-           
-                           
+
+
                             <div class="botonesLogin">
-                              
                                 <button type="submit">Ingresar</button>
-                                <button type="submit">  <a class="botonLogin" href="/users/register"> Registrarme </a></button>
-                                <button type="reset">Cancelar</button>
+                                <button type="submit"> <a class="botonLogin" href="/users/register"> Registrarme</a></button>
                             </div>
                         </form>
-
+                        ​
                     </div>
                 </div>
             </div>
-
-
+            ​
+            ​
             <%- include('./partials/footer') %>
-
+                ​
                 <%- include('./partials/scripts') %>
     </body>

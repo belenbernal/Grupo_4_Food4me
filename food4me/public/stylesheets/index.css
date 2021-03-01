@@ -124,10 +124,16 @@ main .btns{
 }
 
 main .btns-form{
+    display: flex;
+    width: 100%;
+    padding-left: 0;
     margin-top: -10px;
+    padding-right: 0;
+    
 }
 
 main .btns-form .botones-index{
+    width: 100%;
     margin-left: -2px;
     display: flex;
     justify-content: center;

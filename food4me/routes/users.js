@@ -1,9 +1,21 @@
 var express = require('express');
 var router = express.Router();
 
-const usersController=require('../controllers/usersController')
+const upload = require('../middlewares/usersMulter');
+const {login,processLogin,register,logout,profile,processRegister}=require('../controllers/usersController')
+const registerValidator = require('../validations/registerValidator');
+const loginValidator = require('../validations/loginValidator');
+const userCheck = require('../middlewares/userCheck');
+
 /* GET users listing. */
-router.get('/login', usersController.login)
-router.get('/register', usersController.register)
+router.get('/login', login);
+router.post('/login', loginValidator, processLogin);
+
+router.get('/register', register);
+router.post('/register',upload.any(),registerValidator, processRegister)
+
+router.get('/profile',userCheck, profile);
+
+router.get('/logout', userCheck, logout);
 
 module.exports = router;
