@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>Perfil</h1>
+
+    <p>Nombre: <span><%= user.email %> </span></p>
+
+    <img src="/images/users/<%= user.image %> " alt="image">
+
+    <a href="/users/logout">cerrar session</a>
+    
 </body>
 </html>
