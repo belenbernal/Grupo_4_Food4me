@@ -113,14 +113,14 @@ const usersController = {
     },
     logout: (req, res) => {
         /* preguntamos si existe la cookie */
-        if (req.cookies.userAdmin) { 
+        if (req.cookies.userFood4me) { 
 
             /* si existe, borramos la cookie */
-            res.cookie('userAdmin', '', { maxAge: -1 });
+            res.cookie('userFood4me', '', { maxAge: -1 });
         }
 
         /* cerramos sesion */
-        delete req.session.userAdmin
+        delete req.session.user
 
         /* redireccionamos al home */
         res.redirect('/')
