@@ -4,39 +4,39 @@ const users_db = getUsers();
 
 module.exports = [
     check('nombre')
-    .notEmpty().withMessage('este campo es requerido'),
+    .notEmpty().withMessage('Este campo es requerido'),
 
     check('apellido')
-    .notEmpty().withMessage('este campo es requerido'),
+    .notEmpty().withMessage('Este campo es requerido'),
 
     check('email')
     .notEmpty().withMessage('este campo es requerido')
     .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
 
     body('email').custom(value =>{
-        let mail = users_db.find(email => email.mail === value)
-        if (mail){
+        let result = users_db.find(user => user.email === value)
+        if (result){
             return false
         }else{
             return true
         }
-    }).withMessage('el email ya esta registrado'),
+    }).withMessage('El email ya esta registrado'),
     
-    check('pass1')
-    .notEmpty().withMessage('este campo es requerido')
-    .isLength({min : 6, max : 12}).withMessage('la contraseña tiene q tener un minimo de 6 y un maximo de 12 caracteres'),
+    check('pass')
+    .notEmpty().withMessage('Este campo es requerido')
+    .isLength({min : 6, max : 12}).withMessage('La contraseña tiene que tener entre 6 y 12 caracteres'),
 
     body('pass2').custom((value,{req}) =>{
-        if (value !== req.body.pass1){
+        if (value !== req.body.pass){
             return false
         }else{
             return true
         }
-    }).withMessage('las contraseñas no coinciden'),
+    }).withMessage('Las contraseñas no coinciden'),
 
     check('date')
     .notEmpty().withMessage('este campo es requerido'),
 
     check('genero')
-    .notEmpty().withMessage('este campo es requerido')
+    .notEmpty().withMessage('Este campo es requerido')
 ]

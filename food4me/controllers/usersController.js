@@ -14,7 +14,7 @@ const usersController = {
         let errores = validationResult(req);
 
         /* requerimos los datos que nos envian desde el formulario */
-        const {email, pass1, recordar} = req.body;
+        const {email, pass, recordar} = req.body;
 
         /* si el array de errores no esta vacia, muestro los errores */
         if(!errores.isEmpty()){
@@ -30,7 +30,7 @@ const usersController = {
             if(result){
 
                 /* comparemos las contraseñas, en caso de que coincidan.. */
-                if(bcrypt.compareSync(pass1.trim(), result.pass)){
+                if(bcrypt.compareSync(pass.trim(), result.pass)){
 
                     /* creamos la session */
                     req.session.user = {
@@ -70,7 +70,7 @@ const usersController = {
 
          /* si el array de errores no esta vacia, muestro los errores */
          if(!errores.isEmpty()){
-            res.render('register',{
+            return res.render('register',{
                 errores : errores.mapped()/* devuelve el error corrrespondiente */
             })
          }else{/* si esta todo bien pasa a crear el usuario */
@@ -83,18 +83,18 @@ const usersController = {
             });
             
             /* requiro los campos pasados por el formulario */
-            const {email, nombre, apellido, pass1, birth, genero} = req.body;
+            const {email, nombre, apellido, pass, birth, genero} = req.body;
             
             /* encripta la contraseña */
-            let passHash = bcrypt.hashSync(pass1.trim(),12)       
+            let passHash = bcrypt.hashSync(pass.trim(),12)       
             
-                /* crrea nuevo usuario */
+                /* crea nuevo usuario */
                 let newUser = {
                     id : +last + 1,
                     email : email.trim(),
                     nombre : nombre.trim(),
                     apellido : apellido.trim(),
-                    pass1 : passHash,               
+                    pass : passHash,               
                     birth : birth,
                     image : req.files[0].filename || 'sin imagen',
                     genero : genero,
@@ -106,38 +106,7 @@ const usersController = {
                 setUsers(users_db);
                 res.redirect('/users/login')
          }
-        /* creo una variable para crear el usuario en el json */
-        let last = 0
-        
-        users_db.forEach(usuario => {        
-            if(usuario.id > last){
-               last = usuario.id            
-            }
-        });
-        
-        /* requiro los campos pasados por el formulario */
-        const {email, nombre, apellido, pass1, birth, genero} = req.body;
-        
-        /* encripta la contraseña */
-        let passHash = bcrypt.hashSync(pass1,12)       
-        
-            /* crrea nuevo usuario */
-            let newUser = {
-                id : +last + 1,
-                email : email.trim(),
-                nombre : nombre.trim(),
-                apellido : apellido.trim(),
-                pass1 : passHash,               
-                birth : birth,
-                image : req.files[0].filename,
-                genero : genero,
-                rol : 'usuario'
-            }
-    
-            /* envia al nuevo usuario al json */
-            users_db.push(newUser);
-            setUsers(users_db);
-            res.redirect('/users/login')
+      
     },
     profile:(req,res)=>{
         res.render('profile')
