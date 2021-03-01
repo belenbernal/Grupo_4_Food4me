@@ -1,56 +1,23 @@
 [
   {
-    "id": 6,
+    "id": 1,
     "email": "gusacosta@hotmail.com",
     "nombre": "Gustavo",
     "apellido": "Acosta",
     "pass": "$2b$12$vY2.p15QvVYu7MD6h02BF.CjsCSUxPt6k9G21f2kGIhsCT8WD5Sxu",
     "date": "2021-02-18",
-    "image": "image-1614481731559.jpg",
+    "image": "image-1614480820560.jpg",
     "genero": "1",
     "rol": "user"
   },
   {
-    "id": 7,
-    "email": "tavo@hotmail.com",
-    "nombre": "Juana",
-    "apellido": "Barrionuevo",
-    "pass": "$2b$12$7h2oMXm5WO1/AG3P5S.5vu7D81L8lVAeA3GfTeJ/3GFRpxClbmZN.",
-    "date": "2021-02-10",
-    "image": "image-1614544913170.jpg",
-    "genero": "2",
-    "rol": "admin"
-  },
-  {
-    "id": 8,
-    "email": "belu@email.com",
-    "nombre": "belu",
-    "apellido": "bernal",
-    "pass1": "$2b$12$fnzPvjekQr8fbe7BMJLYYuHeKvmcqhahsCOEQE0rixtIUk9R/DIna",
-    "date": "2015-02-11",
-    "image": "image-1614551356482.jpg",
-    "genero": "Genero",
-    "rol": "user"
-  },
-  {
-    "id": 9,
-    "email": "mandy@email.com",
-    "nombre": "ale",
-    "apellido": "asda",
-    "pass": "$2b$12$Hqfny18O0CY9qVDLNZpMS.sgPD4rGWd4lF0Cu.TqXSA1QSaf74ARq",
-    "date": "2021-02-17",
-    "image": "image-1614561495297.jpg",
-    "genero": "Femenino",
-    "rol": "usuario"
-  },
-  {
-    "id": 10,
-    "email": "mecha@email.com",
-    "nombre": "mecha",
-    "apellido": "asda",
-    "pass": "$2b$12$E0TGYNcwQeEZuGicCFPKg.Te5ujsV1vuq503uS2MiETrXlqAhNObS",
-    "date": "2021-02-18",
-    "image": "image-1614561623295.jpg",
+    "id": 2,
+    "email": "bb@gmail.com",
+    "nombre": "Belu",
+    "apellido": "Bernal",
+    "pass": "$2b$12$elxcMa4k.tcE1.sRLULl1.XaJoe/7cNJwYj9sht75Gv/bHcsKAvIS",
+    "date": "1999-01-07",
+    "image": "image-1614569421444.jpeg",
     "genero": "Femenino",
     "rol": "usuario"
   }

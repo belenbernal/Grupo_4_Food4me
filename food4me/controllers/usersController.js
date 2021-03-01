@@ -98,7 +98,7 @@ const usersController = {
                 date: date,
                 image: req.files[0].filename || 'sin imagen',
                 genero: genero,
-                rol: 'usuario'
+                rol: 'user'
             }
 
             /* envia al nuevo usuario al json */
@@ -112,12 +112,17 @@ const usersController = {
         res.render('profile')
     },
     logout: (req, res) => {
-        if (req.cookies.userAdmin) { //chequeo que la cookie exista
-            res.cookie('userAdmin', '', { maxAge: -1 }); //borro la cookie
+        /* preguntamos si existe la cookie */
+        if (req.cookies.userAdmin) { 
+
+            /* si existe, borramos la cookie */
+            res.cookie('userAdmin', '', { maxAge: -1 });
         }
+
+        /* cerramos sesion */
         delete req.session.userAdmin
 
-        //req.session.destroy();
+        /* redireccionamos al home */
         res.redirect('/')
     }
 }

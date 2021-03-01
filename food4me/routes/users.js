@@ -16,6 +16,6 @@ router.post('/register',upload.any(),registerValidator, processRegister)
 
 router.get('/profile',userCheck, profile);
 
-router.get('/logout',logout);
+router.get('/logout', userCheck, logout);
 
 module.exports = router;
