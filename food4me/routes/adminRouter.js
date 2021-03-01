@@ -1,34 +1,22 @@
 var express = require('express');
 var router = express.Router();
-const multer = require("multer");
-const path = require("path");
-const {index, productDelete, editProduct, newProduct, productAdd, productList, updateProduct} = require('../controllers/adminController')
-
-/* multer */
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, 'public/images/products')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-
-var upload = multer({ storage: storage })
+const {productDelete, editProduct, newProduct, productAdd, productList, updateProduct} = require('../controllers/adminController')
+const upload = require('../middlewares/productMulter');
+const adminCheck = require('../middlewares/adminCheck');
 
 
 /* carga de producto*/
-router.get('/create',productAdd);
-router.post('/create', upload.any(),newProduct);
+router.get('/create', adminCheck , productAdd);
+router.post('/create', upload.any() , newProduct);
 
 /* edicion y subida de producto */
-router.get('/edit/:id',editProduct);
+router.get('/edit/:id', adminCheck , editProduct);
 router.put('/update/:id', upload.any(),updateProduct);
 
 /* elimina producto */
-router.delete('/eliminar/:id',productDelete);
+router.delete('/eliminar/:id', adminCheck , productDelete);
 
 /* lista productos */
-router.get('/list',productList);
+router.get('/list', adminCheck , productList);
 
 module.exports = router;

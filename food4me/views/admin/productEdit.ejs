@@ -73,6 +73,22 @@
                 </div>
             </div>
 
+            <% if (product.vegetarian) { %>
+                <script>
+                    document.getElementById('vegetarian').checked = true;
+                </script>
+            <% } %>
+            <% if (product.vegan) { %>
+                <script>
+                    document.getElementById('vegan').checked = true;
+                </script>
+            <% } %>
+            <% if (product.celiac) { %>
+                <script>
+                    document.getElementById('celiac').checked = true;
+                </script>
+            <% } %>
+
             <%- include('./partials/footer') %>
 
                 <%- include('./partials/scripts') %>

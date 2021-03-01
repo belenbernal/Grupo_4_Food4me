@@ -61,6 +61,11 @@
     border-radius: 3px;
 }
 
+.EntradasLogin .recordame{
+    display: flex;
+    justify-content: center;
+}
+
 /*Botones*/
 .botonesLogin{
     display: flex;

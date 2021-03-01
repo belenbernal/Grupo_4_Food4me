@@ -6,17 +6,32 @@
     "client": "lafarola",
     "image": "entrada1.jpg",
     "category": "entrada",
-    "vegan": "si",
-    "vegetarian": "si",
-    "celiac": "si"
+    "vegan": 1,
+    "vegetarian": 1,
+    "celiac": 1
+  },
+  {
+    "id": 2,
+    "name": "Milk - Skim",
+    "description": "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",
+    "price": 1563.12,
+    "client": "bonappetit",
+    "image": "entrada2.jpg",
+    "category": "entrada",
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 1
   },
   {
     "id": 3,
     "name": "Mortadella",
     "price": "4830.94",
     "client": "bonappetit",
-    "image": "image-1614183155429.jpg",
-    "category": "entrada"
+    "image": "entrada3.jpg",
+    "category": "entrada",
+    "vegan": 0,
+    "vegetarian": 0,
+    "celiac": 0
   },
   {
     "id": 4,
@@ -25,9 +40,9 @@
     "client": "lafarola",
     "image": "platoprincipal1.jpg",
     "category": "platoPrincipal",
-    "vegan": "no",
-    "vegetarian": "no",
-    "celiac": "si"
+    "vegan": 0,
+    "vegetarian": 0,
+    "celiac": 1
   },
   {
     "id": 5,
@@ -36,9 +51,9 @@
     "client": "mostaza",
     "image": "platoprincipal2.jpg",
     "category": "platoPrincipal",
-    "vegan": "no",
-    "vegetarian": "no",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 0,
+    "celiac": 0
   },
   {
     "id": 6,
@@ -47,9 +62,9 @@
     "client": "garden",
     "image": "platoprincipal3.jpg",
     "category": "platoPrincipal",
-    "vegan": "si",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 1,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 7,
@@ -58,9 +73,9 @@
     "client": "garden",
     "image": "platoprincipal4.jpg",
     "category": "platoPrincipal",
-    "vegan": "si",
-    "vegetarian": "si",
-    "celiac": "si"
+    "vegan": 1,
+    "vegetarian": 1,
+    "celiac": 1
   },
   {
     "id": 8,
@@ -69,9 +84,9 @@
     "client": "rolirolls",
     "image": "postre1.jpg",
     "category": "postre",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "si"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 1
   },
   {
     "id": 9,
@@ -80,9 +95,9 @@
     "client": "rolirolls",
     "image": "postre2.jpg",
     "category": "postre",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 10,
@@ -91,9 +106,9 @@
     "client": "rolirolls",
     "image": "postre3.jpg",
     "category": "postre",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 11,
@@ -102,9 +117,9 @@
     "client": "rolirolls",
     "image": "postre4.jpg",
     "category": "postre",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 12,
@@ -113,9 +128,9 @@
     "client": "rolirolls",
     "image": "pasteleria1.jpg",
     "category": "pasteleria",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 13,
@@ -124,9 +139,9 @@
     "client": "rolirolls",
     "image": "pasteleria2.jpg",
     "category": "pasteleria",
-    "vegan": "no",
-    "vegetarian": "no",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 0,
+    "celiac": 0
   },
   {
     "id": 14,
@@ -135,25 +150,20 @@
     "client": "rolirolls",
     "image": "pasteleria3.jpg",
     "category": "pasteleria",
-    "vegan": "no",
-    "vegetarian": "si",
-    "celiac": "no"
+    "vegan": 0,
+    "vegetarian": 1,
+    "celiac": 0
   },
   {
     "id": 15,
-    "name": "omelette du fromage",
-    "price": "1563",
-    "client": "tavo",
-    "image": "image-1614135744373.jpg",
-    "category": "entrada",
-    "vegetarian": "on"
-  },
-  {
-    "id": 16,
-    "name": "omelett",
-    "price": "2435",
-    "client": "tavo",
-    "image": "image-1614183187109.jpg",
-    "category": "entrada"
+    "name": "Leeks - Baby, White",
+    "description": "ultrices posuere cubilia curae duis faucibus accumsan odio curabitur convallis duis consequat dui",
+    "price": 4060.75,
+    "client": "rolirolls",
+    "image": "pasteleria4.jpg",
+    "category": "pasteleria",
+    "vegan": 1,
+    "vegetarian": 1,
+    "celiac": 0
   }
 ]

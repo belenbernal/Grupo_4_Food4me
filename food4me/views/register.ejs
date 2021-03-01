@@ -8,13 +8,13 @@
             <div class="container form contenedorRegister">
                 <div class="row card mx-auto ">
                     <h1 class="registerTitulo">Registrate</h1>
-                    <form action="/users/login" method="POST" enctype="multipart/form-data">
+                    <form action="/users/register" method="POST" enctype="multipart/form-data">
                         <div class="col-12  col-md-12 datosRegister">
 
                             <div class="EntradasRegister col-12">
                                 <label for="mail">Email</label>
-                                <input type="email" name="mail" id="mail" placeholder="Ingresa tu Email">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.mail)?errores.mail.msg : "" %> </span>
+                                <input type="email" name="email" id="mail" placeholder="Ingresa tu Email">
+                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email)?errores.email.msg : "" %> </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
@@ -31,19 +31,32 @@
 
                             <div class="EntradasRegister col-12">
                                 <label for="pass">Contraseña</label>
+<<<<<<< HEAD
                                 <input type="password" name="pass1" id="pass1" placeholder="Password">
                                 <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass1)?errores.pass1.msg : "" %> </span>
+=======
+                                <input type="password" name="pass" id="pass1" placeholder="Password">
+                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass)?errores.pass.msg : "" %> </span>
+>>>>>>> origin
                             </div>
 
                             <div class="EntradasRegister  col-12">
                                 <label for="pass"> Confirmar Contraseña</label>
                                 <input type="password" name="pass2" id="pass2" placeholder="Password">
                                 <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass2)?errores.pass2.msg : "" %> </span>
+<<<<<<< HEAD
                             </div> 
 
                             <div class="EntradasRegister col-12">
                                 <label for="">Fecha de Nacimiento </label>
                                 <input type="date" name="birth" id="">
+=======
+                            </div>
+
+                            <div class="EntradasRegister col-12">
+                                <label for="date">Fecha de Nacimiento </label>
+                                <input type="date" name="date" id="">
+>>>>>>> origin
                                 <span class="text-danger"><%= (typeof errores != 'undefined' && errores.birth)?errores.birth.msg : "" %> </span>
                             </div> 
 
@@ -61,15 +74,15 @@
                         <div class="check">
                             <select name="genero" class="form-select" aria-label="Default select example">
                                 <option selected>Genero</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                                <option value="3">Prefiero no Decirlo</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="otro">otro</option>
                             </select>
                             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.genero)?errores.genero.msg : "" %> </span>
 
                             <div class="terminosRegister">
-                                <input type="checkbox" name="" id="accepto">
-                                <label for="accepto">Acepto los terminos y condiciones.</label>
+                                <input type="checkbox" name="aceptar" id="aceptar">
+                                <label for="aceptar">Acepto los terminos y condiciones.</label>
                             </div>
                         </div>
 
