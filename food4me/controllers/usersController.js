@@ -72,7 +72,7 @@ const usersController = {
 
          /* si el array de errores no esta vacia, muestro los errores */
          if(!errores.isEmpty()){
-            res.render('register',{
+            return res.render('register',{
                 errores : errores.mapped()/* devuelve el error corrrespondiente */
             })
          }else{/* si esta todo bien pasa a crear el usuario */
@@ -90,7 +90,7 @@ const usersController = {
             /* encripta la contraseña */
             let passHash = bcrypt.hashSync(pass1,12)       
             
-                /* crrea nuevo usuario */
+                /* crea nuevo usuario */
                 let newUser = {
                     id : +last + 1,
                     mail : mail.trim(),

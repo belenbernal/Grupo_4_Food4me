@@ -1,84 +1,35 @@
 [
   {
-    "id": 1,
-    "email": "bb@gmail.com",
-    "name": "Belu",
-    "last_name": "Bernal",
-    "password": "123456",
-    "date": "2016-08-29",
-    "gender": "female",
-    "rol": "admin"
-  },
-  {
-    "id": 2,
-    "email": "tavo@gmail.com",
-    "name": "Tavo",
-    "last_name": "Acosta",
-    "password": "123456",
-    "date": "1952-09-11",
-    "gender": "Agender",
-    "rol": "user"
-  },
-  {
-    "id": 3,
-    "email": "astallon2@privacy.gov.au",
-    "name": "Adele",
-    "last_name": "Stallon",
-    "password": "VZu9tdG",
-    "date": "1963-11-12",
-    "gender": "Agender",
-    "rol": "user"
-  },
-  {
-    "id": 4,
-    "email": "kcrouch3@amazonaws.com",
-    "name": "Korry",
-    "last_name": "Crouch",
-    "password": "08hm38G",
-    "date": "1947-01-30",
-    "gender": "Agender",
-    "rol": "user"
-  },
-  {
-    "id": 5,
-    "email": "atilley4@hp.com",
-    "name": "Ashlin",
-    "last_name": "Tilley",
-    "password": "xBFVYfi",
-    "date": "1953-08-01",
-    "gender": "Genderfluid",
-    "rol": "user"
-  },
-  {
     "id": 6,
-    "mail": "gusacosta@hotmail.com",
+    "email": "gusacosta@hotmail.com",
     "nombre": "Gustavo",
     "apellido": "Acosta",
     "pass": "$2b$12$vY2.p15QvVYu7MD6h02BF.CjsCSUxPt6k9G21f2kGIhsCT8WD5Sxu",
-    "birth": "2021-02-18",
+    "date": "2021-02-18",
     "image": "image-1614481731559.jpg",
-    "genero": "1"
+    "genero": "1",
+    "rol": "user"
   },
   {
     "id": 7,
-    "mail": "tavo@hotmail.com",
+    "email": "tavo@hotmail.com",
     "nombre": "Juana",
     "apellido": "Barrionuevo",
     "pass": "$2b$12$7h2oMXm5WO1/AG3P5S.5vu7D81L8lVAeA3GfTeJ/3GFRpxClbmZN.",
-    "birth": "2021-02-10",
+    "date": "2021-02-10",
     "image": "image-1614544913170.jpg",
     "genero": "2",
-    "rol": "usuario"
+    "rol": "admin"
   },
   {
     "id": 8,
-    "mail": "belu@email.com",
+    "email": "belu@email.com",
     "nombre": "belu",
     "apellido": "bernal",
     "pass1": "$2b$12$fnzPvjekQr8fbe7BMJLYYuHeKvmcqhahsCOEQE0rixtIUk9R/DIna",
-    "birth": "2015-02-11",
+    "date": "2015-02-11",
     "image": "image-1614551356482.jpg",
     "genero": "Genero",
-    "rol": "usuario"
+    "rol": "user"
   }
 ]
