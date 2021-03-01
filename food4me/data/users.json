@@ -80,5 +80,38 @@
     "image": "image-1614551356482.jpg",
     "genero": "Genero",
     "rol": "usuario"
+  },
+  {
+    "id": 9,
+    "mail": "fer@email.com",
+    "nombre": "fer",
+    "apellido": "asda",
+    "pass1": "$2b$12$JZFWyiYPXvYP2LfMuWrbhu7j.gdIvyJIchdp80Mv03o0KPZXOUgk6",
+    "birth": "2008-03-18",
+    "image": "image-1614555079999.jpg",
+    "genero": "1",
+    "rol": "usuario"
+  },
+  {
+    "id": 10,
+    "mail": "ale@email.com",
+    "nombre": "ale",
+    "apellido": "Barrionuevo",
+    "pass1": "$2b$12$DVuYmXCyP./y.67xRXA8FugGKFkjkw6S5ACXCe25UelbD9XbYnzaa",
+    "birth": "2021-02-18",
+    "image": "image-1614557232562.jpg",
+    "genero": "Genero",
+    "rol": "usuario"
+  },
+  {
+    "id": 11,
+    "mail": "ale@email.com",
+    "nombre": "ale",
+    "apellido": "Barrionuevo",
+    "pass1": "$2b$12$MKefeX0HO2/UMqf91KxMYuu1ooOybzDwYlkTrcyPDDhMU0KwV4xUC",
+    "birth": "2021-02-18",
+    "image": "image-1614557261506.jpg",
+    "genero": "Genero",
+    "rol": "usuario"
   }
 ]

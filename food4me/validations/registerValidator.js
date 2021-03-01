@@ -9,11 +9,11 @@ module.exports = [
     check('apellido')
     .notEmpty().withMessage('este campo es requerido'),
 
-    check('mail')
+    check('email')
     .notEmpty().withMessage('este campo es requerido')
     .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
 
-    body('mail').custom(value =>{
+    body('email').custom(value =>{
         let mail = users_db.find(email => email.mail === value)
         if (mail){
             return false
@@ -22,7 +22,7 @@ module.exports = [
         }
     }).withMessage('el email ya esta registrado'),
     
-    check('pass')
+    check('pass1')
     .notEmpty().withMessage('este campo es requerido')
     .isLength({min : 6, max : 12}).withMessage('la contraseña tiene q tener un minimo de 6 y un maximo de 12 caracteres'),
 
@@ -34,7 +34,7 @@ module.exports = [
         }
     }).withMessage('las contraseñas no coinciden'),
 
-    check('birth')
+    check('date')
     .notEmpty().withMessage('este campo es requerido'),
 
     check('genero')

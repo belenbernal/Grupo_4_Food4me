@@ -13,8 +13,8 @@
 
                             <div class="EntradasRegister col-12">
                                 <label for="mail">Email</label>
-                                <input type="email" name="mail" id="mail" placeholder="Ingresa tu Email">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.mail)?errores.mail.msg : "" %> </span>
+                                <input type="email" name="email" id="mail" placeholder="Ingresa tu Email">
+                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email)?errores.email.msg : "" %> </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
@@ -61,9 +61,9 @@
                         <div class="check">
                             <select name="genero" class="form-select" aria-label="Default select example">
                                 <option selected>Genero</option>
-                                <option value="1">Masculino</option>
-                                <option value="2">Femenino</option>
-                                <option value="3">Prefiero no Decirlo</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+                                <option value="otro">otro</option>
                             </select>
                             <span class="text-danger"><%= (typeof errores != 'undefined' && errores.genero)?errores.genero.msg : "" %> </span>
 

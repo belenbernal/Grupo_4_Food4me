@@ -14,7 +14,7 @@ const usersController = {
         let errores = validationResult(req);
 
         /* requerimos los datos que nos envian desde el formulario */
-        const {email, pass, recordar} = req.body;
+        const {email, pass1, recordar} = req.body;
 
         /* si el array de errores no esta vacia, muestro los errores */
         if(!errores.isEmpty()){
@@ -30,25 +30,23 @@ const usersController = {
             if(result){
 
                 /* comparemos las contraseñas, en caso de que coincidan.. */
-                if(bcrypt.compareSync(pass.trim(), result.pass)){
+                if(bcrypt.compareSync(pass1.trim(), result.pass)){
 
                     /* creamos la session */
                     req.session.user = {
                         id : result.id,
-                        username : result.username,
-                        rol: result.rol/*,
-                        avatar : result.avatar*/
+                        email : result.email,
+                        rol: result.rol,
+                        image : result.image
                     }
 
                     /* si hizo click en el check de recordar.. */
-                    if(recordar){
-                        
+                    if(recordar){                        
                         /* guardamos la sesion por 1 minuto */
                         res.cookie('userFood4me',req.session.user,{
                             maxAge : 60 * 1000 //mide en milisegundos
                         })
-                    }
-
+                    }                   
                     /* redirigimos al home */
                     res.redirect('/')
                 }
@@ -85,15 +83,15 @@ const usersController = {
             });
             
             /* requiro los campos pasados por el formulario */
-            const {mail, nombre, apellido, pass1, birth, genero} = req.body;
+            const {email, nombre, apellido, pass1, birth, genero} = req.body;
             
             /* encripta la contraseña */
-            let passHash = bcrypt.hashSync(pass1,12)       
+            let passHash = bcrypt.hashSync(pass1.trim(),12)       
             
                 /* crrea nuevo usuario */
                 let newUser = {
                     id : +last + 1,
-                    mail : mail.trim(),
+                    email : email.trim(),
                     nombre : nombre.trim(),
                     apellido : apellido.trim(),
                     pass1 : passHash,               
@@ -118,7 +116,7 @@ const usersController = {
         });
         
         /* requiro los campos pasados por el formulario */
-        const {mail, nombre, apellido, pass1, birth, genero} = req.body;
+        const {email, nombre, apellido, pass1, birth, genero} = req.body;
         
         /* encripta la contraseña */
         let passHash = bcrypt.hashSync(pass1,12)       
@@ -126,7 +124,7 @@ const usersController = {
             /* crrea nuevo usuario */
             let newUser = {
                 id : +last + 1,
-                mail : mail.trim(),
+                email : email.trim(),
                 nombre : nombre.trim(),
                 apellido : apellido.trim(),
                 pass1 : passHash,               
@@ -145,7 +143,13 @@ const usersController = {
         res.render('profile')
     },
     logout : (req, res)=>{
+        if(req.cookies.userAdmin){ //chequeo que la cookie exista
+            res.cookie('userAdmin','',{maxAge:-1}); //borro la cookie
+        }
+        delete req.session.userAdmin
 
+        //req.session.destroy();
+        res.redirect('/')
     }
 }
 
