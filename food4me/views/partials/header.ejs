@@ -20,10 +20,17 @@
 
             <!-- login/carrito -->
             <div class="col-3 buttons">
-               
-                <a href="/users/login"><i class="fas fa-user-circle"></i></a>
+                <% if (typeof user !="undefined") { %>
+                    <div class="chip">
+                       <a href="/users/profile"> <img src="/images/users/<%= user.image %> " alt="Person" width="96" height="96"></a>
+                      
+                      </div>
+                <% }else{ %>
+                    <a href="/users/login"><i class="fas fa-user-circle"></i></a>
+                <% } %>
+                
                 <a href="/products/carrito"><i class="fas fa-cart-arrow-down"></i></a>
-               
+
 
             </div>
 
@@ -45,14 +52,16 @@
 
                         <ul class="navbar-nav col-md-12 col-lg-12">
                             <li><a href="/">Menú</a></li>
-                            
+
                             <li><a href="">Reservas</a></li>
 
                             <li><a href="">Pedidos online</a></li>
 
                             <li><a href="">Catering</a></li>
 
-                            <li><a href="admin/list">admin</a></li>
+                            <li><a href="">contacto</a></li>
+                            
+
 
                         </ul>
 

@@ -35,6 +35,8 @@ const usersController = {
                     /* creamos la session */
                     req.session.user = {
                         id: result.id,
+                        nombre: result.nombre,
+                        apellido: result.apellido,
                         email: result.email,
                         rol: result.rol,
                         image: result.image
@@ -47,8 +49,14 @@ const usersController = {
                             maxAge: 60 * 1000 //mide en milisegundos
                         })
                     }
-                    /* redirigimos al home */
+
+                    if(result.rol == 'user'){
+                        /* redirigimos al home */
                     res.redirect('/')
+                    }else{
+                        res.redirect('/admin/list') 
+                    }
+                    
                 }
             }
             /* si no encontro el email que coincide con el ingresado..
@@ -109,18 +117,20 @@ const usersController = {
 
     },
     profile: (req, res) => {
-        res.render('profile')
+        res.render('profile', {
+            users_db
+        })
     },
     logout: (req, res) => {
         /* preguntamos si existe la cookie */
-        if (req.cookies.userAdmin) { 
+        if (req.cookies.userFood4me) { 
 
             /* si existe, borramos la cookie */
-            res.cookie('userAdmin', '', { maxAge: -1 });
+            res.cookie('userFood4me', '', { maxAge: -1 });
         }
 
         /* cerramos sesion */
-        delete req.session.userAdmin
+        delete req.session.user
 
         /* redireccionamos al home */
         res.redirect('/')

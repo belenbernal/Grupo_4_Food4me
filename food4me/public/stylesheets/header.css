@@ -100,6 +100,22 @@ header .menu ul li a{
     text-decoration: none;
 }
 
+/* MODAL */
+
+.chip {
+    display: inline-block;
+    padding: 0 25px;   
+    border-radius: 25px;
+    
+  }
+  
+  .chip img {    
+    margin: 0 10px 0 -25px;
+    height:30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: 14px;
+  }
 /* MEDIA QUERYS */
 @media (min-width: 768px){
 

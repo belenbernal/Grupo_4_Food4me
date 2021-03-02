@@ -1,12 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Perfil</h1>
-</body>
+<html lang="es">
+<%- include('./partials/head') %>
+
+    <%- include('./partials/header') %>
+
+        <body>
+            <div class="body-profile container card ">
+                <div class="perfil-text" style="text-align:center">
+                    <h2>Perfil</h2>
+
+                </div>
+                <div class="profile-dato column">
+                    <div class=" img-perfil column">
+                        <img src="/images/users/<%= user.image %> ">
+                    </div>
+                    <div class="datos column">
+                        <article class="info-profile">
+                            <h4>Nombre: </h4>
+                            <p>
+                                <%= user.nombre %>
+                            </p>
+                        </article>
+
+                        <article class="info-profile">
+                            <h4>Apellido: </h4>
+                            <p>
+                                <%= user.apellido %>
+                            </p>
+                        </article>
+
+                        <article class="info-profile">
+                            <h4>Email: </h4>
+                            <p>
+                                <%= user.email %>
+                            </p>
+                        </article>
+
+                        <div class="botones-profile col-12">
+                            <div class="col-6">
+                                <form clas action="/users/logout">
+                                    <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <form action="">
+                                    <button type="button" class="btn btn-success">Editar Perfil</button>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </body>
+        <%- include('./partials/footer') %>
+
+            <%- include('./partials/scripts') %>
+
 </html>
