@@ -19,9 +19,3 @@ router.get('/profile',userCheck, profile);
 router.get('/logout', userCheck, logout);
 
 module.exports = router;
-/* logout : (req,res) => {
-        req.session.destroy();
-        if(req.cookies.userComision5){
-            res.cookie('userComision5','',{maxAge:-1})
-        }
-        res.redirect('/') */

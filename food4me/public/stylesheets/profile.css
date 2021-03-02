@@ -1,5 +1,5 @@
 .body-profile{
-    width: 60%;
+    width: 90%;
     padding: 15px;
     margin-top: 200px;
     margin-bottom: 150px;
@@ -8,6 +8,7 @@
     font-family: roboto;
     font-size: 40px;
     font-weight: 700;
+    margin-bottom: 0;
 }
 
 .profile-dato .datos{
@@ -34,12 +35,42 @@
     border: 2px solid black;
 }
 
-.nombre{
+.info-profile{
     align-items: baseline;
     justify-content: center;
     display: flex;
 }
 
-.nombre p{
+.info-profile p{
     margin-left: 8px;
+    font-size: 20px;
+}
+
+.info-profile h4{
+    font-weight: bold;
+}
+
+.botones-profile{
+    display: flex;
+}
+.botones-profile button{
+    height: 45px;
+}
+
+/* MEDIA QUERYS */
+@media (min-width: 768px){
+    .body-profile{
+        width: 60%;
+    }
+}
+@media (min-width: 1024px){
+    .body-profile{
+        width: 45%;
+    }
+}
+
+@media (min-width: 1440px){
+    .body-profile{
+        max-width: 40%;
+    }
 }
