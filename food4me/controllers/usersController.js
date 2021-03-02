@@ -29,7 +29,7 @@ const usersController = {
             /* si se encontro el usuario (email) */
             if (result) {
 
-                /* comparemos las contraseñas, en caso de que coincidan.. */
+                /* comparamos las contraseñas, en caso de que coincidan.. */
                 if (bcrypt.compareSync(pass.trim(), result.pass)) {
 
                     /* creamos la session */
@@ -50,24 +50,24 @@ const usersController = {
                         })
                     }
 
-                    if(result.rol == 'user'){
+                    if (result.rol == 'user') {
                         /* redirigimos al home */
-                    res.redirect('/')
-                    }else{
-                        res.redirect('/admin/list') 
+                        return res.redirect('/')
+                    } else {
+                        return res.redirect('/admin/list')
                     }
-                    
+
                 }
             }
-            /* si no encontro el email que coincide con el ingresado..
-            renderizo la pagina del login con un mensaje */
+            /* si no encontro el email que coincide con el ingresado.. renderizo la pagina del login con un mensaje */
             res.render('login', {
-                errores: [
-                    {
-                        msg: "credenciales inválidas"
-                    }
-                ]
-            })
+                errores: {
+                    credenciales: {
+                        msg : 'Credenciales inválidas'
+                    } 
+                },
+                datos: req.body
+            });
         }
     },
     register: (req, res) => {
@@ -123,7 +123,7 @@ const usersController = {
     },
     logout: (req, res) => {
         /* preguntamos si existe la cookie */
-        if (req.cookies.userFood4me) { 
+        if (req.cookies.userFood4me) {
 
             /* si existe, borramos la cookie */
             res.cookie('userFood4me', '', { maxAge: -1 });

@@ -6,12 +6,13 @@ const {login,processLogin,register,logout,profile,processRegister}=require('../c
 const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
 const userCheck = require('../middlewares/userCheck');
+const sessionCheck = require('../middlewares/sessionCheck');
 
-/* GET users listing. */
-router.get('/login', login);
+
+router.get('/login', sessionCheck, login);
 router.post('/login', loginValidator, processLogin);
 
-router.get('/register', register);
+router.get('/register', sessionCheck , register);
 router.post('/register',upload.any(),registerValidator, processRegister)
 
 router.get('/profile',userCheck, profile);
