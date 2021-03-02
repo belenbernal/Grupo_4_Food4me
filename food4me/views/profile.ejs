@@ -1,19 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Perfil</h1>
+<html lang="es">
+<%- include('./partials/head') %>
 
-    <p>Nombre: <span><%= user.email %> </span></p>
+    <%- include('./partials/header') %>
 
-    <img src="/images/users/<%= user.image %> " alt="image">
+        <body>
+            <div class="body-profile container card ">
+                <div class="perfil-text" style="text-align:center">
+                    <h2>Perfil</h2>
 
-    <a href="/users/logout">cerrar session</a>
-    
-</body>
+                </div>
+                <div class="profile-dato column">
+                    <div class=" img-perfil column">
+                        <img src="/images/users/<%= user.image %> ">
+                    </div>
+                    <div class="datos column">
+                        <article class="nombre">
+                            <h4>Nombre: </h4>
+                            <p> <%= user.nombre %> </p>
+                        </article>
+
+                        <h4>Apellido: <%= user.apellido %>
+                        </h4>
+
+                        <h4>Email: <%= user.email %>
+                        </h4>
+
+                        <div class="btns">
+                            <form clas action="/users/logout">
+                                <button type="button" class="btn btn-danger">Cerrar Sesión</button>
+                            </form>
+                            <form action="">
+                                <button type="button" class="btn btn-success">Editar Perfil</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </body>
+        <%- include('./partials/footer') %>
+
+            <%- include('./partials/scripts') %>
+
 </html>

@@ -35,6 +35,8 @@ const usersController = {
                     /* creamos la session */
                     req.session.user = {
                         id: result.id,
+                        nombre: result.nombre,
+                        apellido: result.apellido,
                         email: result.email,
                         rol: result.rol,
                         image: result.image

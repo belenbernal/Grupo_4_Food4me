@@ -1,0 +1,45 @@
+.body-profile{
+    width: 60%;
+    padding: 15px;
+    margin-top: 200px;
+    margin-bottom: 150px;
+}
+.perfil-text h2{
+    font-family: roboto;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.profile-dato .datos{
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.img-perfil{
+    justify-content: center;
+    display: flex;
+}
+
+.profile-dato{
+    justify-content: center;
+}
+
+.profile-dato img{
+    margin-bottom: 25px;
+    justify-content: center;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+}
+
+.nombre{
+    align-items: baseline;
+    justify-content: center;
+    display: flex;
+}
+
+.nombre p{
+    margin-left: 8px;
+}

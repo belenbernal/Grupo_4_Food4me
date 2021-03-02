@@ -8,6 +8,7 @@
 @import url('/stylesheets/productAdd.css');
 @import url('/stylesheets/productDetail.css');
 @import url('/stylesheets/register.css');
+@import url('/stylesheets/profile.css');
 
 *{
     font-family: gentium;
