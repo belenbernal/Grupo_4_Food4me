@@ -14,7 +14,7 @@
                     <div class=" img-perfil column">
                         <img src="/images/users/<%= user.image %> ">
                     </div>
-                    <div class="datos column">
+                    <div class="datos column ">
                         <article class="nombre">
                             <h4>Nombre: </h4>
                             <p> <%= user.nombre %> </p>
@@ -26,13 +26,18 @@
                         <h4>Email: <%= user.email %>
                         </h4>
 
-                        <div class="btns">
+                        <div class="btns col-12">
+                            <div class="col-6">
                             <form clas action="/users/logout">
                                 <button type="button" class="btn btn-danger">Cerrar Sesión</button>
                             </form>
+                        </div>
+
+                        <div class="col-6">
                             <form action="">
                                 <button type="button" class="btn btn-success">Editar Perfil</button>
                             </form>
+                        </div>
                         </div>
                     </div>
 
