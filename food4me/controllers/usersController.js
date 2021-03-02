@@ -57,13 +57,22 @@ const usersController = {
                         return res.redirect('/admin/list')
                     }
 
+                }else{
+                    res.render('login', {
+                        errores: {
+                            pass: {
+                                msg : 'La contraseña es incorrecta'
+                            } 
+                        },
+                        datos: req.body
+                    });
                 }
             }
             /* si no encontro el email que coincide con el ingresado.. renderizo la pagina del login con un mensaje */
             res.render('login', {
                 errores: {
-                    credenciales: {
-                        msg : 'Credenciales inválidas'
+                    email: {
+                        msg : 'El usuario es incorrecto'
                     } 
                 },
                 datos: req.body
