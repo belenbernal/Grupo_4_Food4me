@@ -14,18 +14,34 @@
                     <div class=" img-perfil column">
                         <img src="/images/users/<%= user.image %> ">
                     </div>
+<<<<<<< HEAD
                     <div class="datos column ">
                         <article class="nombre">
+=======
+                    <div class="datos column">
+                        <article class="info-profile">
+>>>>>>> a40870a7a634dde6a250eee1d17dbb86f88d77b0
                             <h4>Nombre: </h4>
-                            <p> <%= user.nombre %> </p>
+                            <p>
+                                <%= user.nombre %>
+                            </p>
                         </article>
 
-                        <h4>Apellido: <%= user.apellido %>
-                        </h4>
+                        <article class="info-profile">
+                            <h4>Apellido: </h4>
+                            <p>
+                                <%= user.apellido %>
+                            </p>
+                        </article>
 
-                        <h4>Email: <%= user.email %>
-                        </h4>
+                        <article class="info-profile">
+                            <h4>Email: </h4>
+                            <p>
+                                <%= user.email %>
+                            </p>
+                        </article>
 
+<<<<<<< HEAD
                         <div class="btns col-12">
                             <div class="col-6">
                             <form clas action="/users/logout">
@@ -39,6 +55,21 @@
                             </form>
                         </div>
                         </div>
+=======
+                        <div class="botones-profile col-12">
+                            <div class="col-6">
+                                <form clas action="/users/logout">
+                                    <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <form action="">
+                                    <button type="button" class="btn btn-success">Editar Perfil</button>
+                                </form>
+                            </div>
+                        </div>
+
+>>>>>>> a40870a7a634dde6a250eee1d17dbb86f88d77b0
                     </div>
 
                 </div>

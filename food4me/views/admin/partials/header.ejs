@@ -21,9 +21,20 @@
             <!-- login/carrito -->
             <div class="col-3 buttons">
 
-                <a href="/users/login"><i class="fas fa-user-circle"></i></a>
-                <a href="/products/carrito"><i class="fas fa-cart-arrow-down"></i></a>
+                <div class="col-3 buttons">
+                    <% if (typeof user !="undefined" ) { %>
+                        <div class="chip">
+                            <a href="/users/profile"> <img src="/images/users/<%= user.image %> " alt="Person"
+                                    width="96" height="96"></a>
 
+                        </div>
+                        <% }else{ %>
+                            <a href="/users/login"><i class="fas fa-user-circle"></i></a>
+                            <% } %>
+
+                                <a href="/products/carrito"><i class="fas fa-cart-arrow-down"></i></a>
+
+                </div>
 
             </div>
 
@@ -45,7 +56,7 @@
 
                         <ul class="navbar-nav col-md-12 col-lg-12">
                             <li><a href="/">Menú</a></li>
-                            
+
                             <li><a href="create">subir producto</a></li>
 
                             <li><a href="list">listar productos</a></li>

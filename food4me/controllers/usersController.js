@@ -49,8 +49,14 @@ const usersController = {
                             maxAge: 60 * 1000 //mide en milisegundos
                         })
                     }
-                    /* redirigimos al home */
+
+                    if(result.rol == 'user'){
+                        /* redirigimos al home */
                     res.redirect('/')
+                    }else{
+                        res.redirect('/admin/list') 
+                    }
+                    
                 }
             }
             /* si no encontro el email que coincide con el ingresado..
