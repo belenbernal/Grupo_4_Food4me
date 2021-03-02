@@ -6,12 +6,4 @@ module.exports = [
 
     check('pass')
     .notEmpty().withMessage('La constraseña es requerida'),
-
-    body('pass').custom((value,{req}) =>{
-        if (value !== req.body.pass){
-            return false
-        }else{
-            return true
-        }
-    }).withMessage('Las contraseñas no coinciden'),
 ]
