@@ -88,8 +88,8 @@ const usersController = {
                 if (usuario.id > last) {
                     last = usuario.id
                 }
-            });
-
+            }); 
+           
             /* requiro los campos pasados por el formulario */
             const { email, nombre, apellido, pass, date, genero } = req.body;
 
@@ -109,11 +109,15 @@ const usersController = {
                 rol: 'user'
             }
 
+          
             /* envia al nuevo usuario al json */
             users_db.push(newUser);
             setUsers(users_db);
             res.redirect('/users/login')
+
+           
         }
+        
 
     },
     profile: (req, res) => {
