@@ -8,6 +8,9 @@ const indexController = {
             products
         })
     },
+    contact: (req, res)=>{
+        res.render('contact')
+    }
     
 }
 module.exports = indexController;

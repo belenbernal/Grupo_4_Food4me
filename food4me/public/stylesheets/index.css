@@ -9,6 +9,7 @@
 @import url('/stylesheets/productDetail.css');
 @import url('/stylesheets/register.css');
 @import url('/stylesheets/profile.css');
+@import url('/stylesheets/contact.css');
 
 *{
     font-family: gentium;
