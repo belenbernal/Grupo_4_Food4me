@@ -57,22 +57,13 @@ const usersController = {
                         return res.redirect('/admin/list')
                     }
 
-                }else{
-                    res.render('login', {
-                        errores: {
-                            pass: {
-                                msg : 'La contraseña es incorrecta'
-                            } 
-                        },
-                        datos: req.body
-                    });
                 }
             }
             /* si no encontro el email que coincide con el ingresado.. renderizo la pagina del login con un mensaje */
             res.render('login', {
                 errores: {
-                    email: {
-                        msg : 'El usuario es incorrecto'
+                    credenciales: {
+                        msg : 'Credenciales inválidas'
                     } 
                 },
                 datos: req.body
@@ -88,7 +79,8 @@ const usersController = {
         /* si el array de errores no esta vacia, muestro los errores */
         if (!errores.isEmpty()) {
             return res.render('register', {
-                errores: errores.mapped()/* devuelve el error corrrespondiente */
+                errores: errores.mapped(),/* devuelve el error corrrespondiente */
+                datos: req.body
             })
         } else {/* si esta todo bien pasa a crear el usuario */
             let last = 0
@@ -98,7 +90,9 @@ const usersController = {
                     last = usuario.id
                 }
             }); 
-           
+            
+            
+
             /* requiro los campos pasados por el formulario */
             const { email, nombre, apellido, pass, date, genero } = req.body;
 
@@ -116,9 +110,8 @@ const usersController = {
                 image: req.files[0].filename || 'sin imagen',
                 genero: genero,
                 rol: 'user'
-            }
+            }           
 
-          
             /* envia al nuevo usuario al json */
             users_db.push(newUser);
             setUsers(users_db);
