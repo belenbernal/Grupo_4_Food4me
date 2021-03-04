@@ -49,18 +49,18 @@ main{
     
 }
 
-.carousel{
+.carrousel{
     margin-left: auto;
     width: 95%;
     margin-right: auto;
     display: none;
 }
 
-.carousel-inner{
+.carrousel-items{
 box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
 }
 
-main .carousel-item img {
+.carrousel-items .carrousel-item img {
     height: 300px;
     
 }
