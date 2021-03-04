@@ -18,17 +18,33 @@
     margin: 0;
 }
 body{
-    background-image: url('/images/fondo11.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    background-image: url('/images/fondoblanco.jpg');
+    background-repeat: repeat;
+    
 }
 
 /* main */
+.padre{
+    background-color: rgba(0, 0, 0, 0.639);
+    border-radius: 2px;
+    padding: 30px;
+}
+
+.titulo-menu{
+    color: white;
+    margin-top: 8px;
+    background-color: black;
+    padding: 6px;
+    margin: 0;
+}
+
+.titulo-medio{
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
 
 main{    
-    margin-top: 200px;
+    margin-top: 80px;
     margin-bottom: 25px;
     
 }

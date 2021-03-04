@@ -1,5 +1,8 @@
 
 /* pie */
+footer{
+    max-width: 1440px;
+}
 .atajos{
     margin-top: 10px;
     background-color:#BC0C2B;

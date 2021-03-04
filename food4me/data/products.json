@@ -165,5 +165,16 @@
     "vegan": 1,
     "vegetarian": 1,
     "celiac": 0
+  },
+  {
+    "id": 16,
+    "name": "Mortadella",
+    "price": "4830.94",
+    "client": "bonappetit",
+    "image": "entrada4.jpg",
+    "category": "entrada",
+    "vegan": 0,
+    "vegetarian": 0,
+    "celiac": 0
   }
 ]

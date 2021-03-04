@@ -35,189 +35,193 @@
             </div>
 
             <!-- banner -->
-
-            <div class="container">
-
-                <div class="row productos">
-                    <div class="col-12">
-                        <h1>Entradas</h1>
+            <div class="container padre">
+                
+    
+                <div class="container">
+    
+                    <div class="row productos">
+                        <div class="titulo-menu col-12">
+                            <h1>Entradas</h1>
+                        </div>
+                        <% products.forEach(product=> { %>
+                            <% if (product.category=="entrada" ) { %>
+    
+                                <div class="col-12 col-md-6 col-lg-3 producto">
+                                    <div class="contenido">
+                                        <a href="/products/detail/<%= product.id %> ">
+    
+                                            <div class="img-productos">
+                                                <img src="/images/products/<%= product.image %>" alt="">
+                                            </div>
+    
+                                            <div class="des-producto">
+                                                <h2>
+                                                    <%= product.name %>
+                                                </h2>
+                                               
+                                                <h3>$<%= product.price %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+    
+                                    <div class="btns-form">
+                                        <form class="col-12 btns" action="#">
+                                            <div class="col-6 botones-index">
+                                                <button class="btn boton-comprar" type="button">Comprar</button>
+                                            </div>
+                                            <div class="col-6 botones-index">
+                                                <button class="btn" type="submit"><span
+                                                        class="fas fa-cart-arrow-down"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <% }) %>
+    
                     </div>
-                    <% products.forEach(product=> { %>
-                        <% if (product.category=="entrada" ) { %>
-
-                            <div class="col-12 col-md-6 col-lg-3 producto">
-                                <div class="contenido">
-                                    <a href="/products/detail/<%= product.id %> ">
-
-                                        <div class="img-productos">
-                                            <img src="/images/products/<%= product.image %>" alt="">
-                                        </div>
-
-                                        <div class="des-producto">
-                                            <h2>
-                                                <%= product.name %>
-                                            </h2>
-                                           
-                                            <h3>$<%= product.price %>
-                                            </h3>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="btns-form">
-                                    <form class="col-12 btns" action="#">
-                                        <div class="col-6 botones-index">
-                                            <button class="btn boton-comprar" type="button">Comprar</button>
-                                        </div>
-                                        <div class="col-6 botones-index">
-                                            <button class="btn" type="submit"><span
-                                                    class="fas fa-cart-arrow-down"></span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <% } %>
-                                <% }) %>
-
                 </div>
+    
+                <div class="container">
+    
+                    <div class="row productos">
+                        <div class="titulo-menu titulo-medio col-12">
+                            <h1>Plato principal</h1>
+                        </div>
+                        <% products.forEach(product=> { %>
+                            <% if (product.category=="platoPrincipal" ) { %>
+    
+                                <div class="col-12 col-md-6 col-lg-3 producto">
+                                    <div class="contenido">
+                                        <a href="/products/detail/<%= product.id %> ">
+    
+                                            <div class="img-productos">
+                                                <img src="/images/products/<%= product.image %>" alt="">
+                                            </div>
+    
+                                            <div class="des-producto">
+                                                <h2>
+                                                    <%= product.name %>
+                                                </h2>
+                                                
+                                                <h3>$<%= product.price %>
+                                                </h3>
+                                            </div>
+                                        </a>
+                                    </div>
+    
+                                    <div class="btns-form">
+                                        <form class="col-12 btns" action="#">
+                                            <div class="col-6 botones-index">
+                                                <button class="btn boton-comprar" type="button">Comprar</button>
+                                            </div>
+                                            <div class="col-6 botones-index">
+                                                <button class="btn" type="submit"><span
+                                                        class="fas fa-cart-arrow-down"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <% }) %>
+    
+                    </div>
+    
+                    <div class="container">
+    
+                        <div class="row productos">
+                            <div class="titulo-menu titulo-medio col-12">
+                                <h1>Postres</h1>
+                            </div>
+                            <% products.forEach(product=> { %>
+                                <% if (product.category=="postre" ) { %>
+        
+                                    <div class="col-12 col-md-6 col-lg-3 producto">
+                                        <div class="contenido">
+                                            <a href="/products/detail/<%= product.id %> ">
+        
+                                                <div class="img-productos">
+                                                    <img src="/images/products/<%= product.image %>" alt="">
+                                                </div>
+        
+                                                <div class="des-producto">
+                                                    <h2>
+                                                        <%= product.name %>
+                                                    </h2>
+                                                    
+                                                    <h3>$<%= product.price %>
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+        
+                                        <div class="btns-form">
+                                            <form class="col-12 btns" action="#">
+                                                <div class="col-6 botones-index">
+                                                    <button class="btn boton-comprar" type="button">Comprar</button>
+                                                </div>
+                                                <div class="col-6 botones-index">
+                                                    <button class="btn" type="submit"><span
+                                                            class="fas fa-cart-arrow-down"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+        
+                        </div>
+                    </div>
+    
+                    <div class="container">
+    
+                        <div class="row productos">
+                            <div class="titulo-menu titulo-medio col-12">
+                                <h1>Pastelería</h1>
+                            </div>
+                            <% products.forEach(product=> { %>
+                                <% if (product.category=="pasteleria" ) { %>
+        
+                                    <div class="col-12 col-md-6 col-lg-3 producto">
+                                        <div class="contenido">
+                                            <a href="/products/detail/<%= product.id %> ">
+        
+                                                <div class="img-productos">
+                                                    <img src="/images/products/<%= product.image %>" alt="">
+                                                </div>
+        
+                                                <div class="des-producto">
+                                                    <h2>
+                                                        <%= product.name %>
+                                                    </h2>
+                                                    
+                                                    <h3>$<%= product.price %>
+                                                    </h3>
+                                                </div>
+                                            </a>
+                                        </div>
+        
+                                        <div class="btns-form">
+                                            <form class="col-12 btns" action="#">
+                                                <div class="col-6 botones-index">
+                                                    <button class="btn boton-comprar" type="button">Comprar</button>
+                                                </div>
+                                                <div class="col-6 botones-index">
+                                                    <button class="btn" type="submit"><span
+                                                            class="fas fa-cart-arrow-down"></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+        
+                        </div>
+                    </div>
             </div>
-
-            <div class="container">
-
-                <div class="row productos">
-                    <div class="col-12">
-                        <h1>Plato principal</h1>
-                    </div>
-                    <% products.forEach(product=> { %>
-                        <% if (product.category=="platoPrincipal" ) { %>
-
-                            <div class="col-12 col-md-6 col-lg-3 producto">
-                                <div class="contenido">
-                                    <a href="/products/detail/<%= product.id %> ">
-
-                                        <div class="img-productos">
-                                            <img src="/images/products/<%= product.image %>" alt="">
-                                        </div>
-
-                                        <div class="des-producto">
-                                            <h2>
-                                                <%= product.name %>
-                                            </h2>
-                                            
-                                            <h3>$<%= product.price %>
-                                            </h3>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <div class="btns-form">
-                                    <form class="col-12 btns" action="#">
-                                        <div class="col-6 botones-index">
-                                            <button class="btn boton-comprar" type="button">Comprar</button>
-                                        </div>
-                                        <div class="col-6 botones-index">
-                                            <button class="btn" type="submit"><span
-                                                    class="fas fa-cart-arrow-down"></span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <% } %>
-                                <% }) %>
-
-                </div>
-
-                <div class="container">
-
-                    <div class="row productos">
-                        <div class="col-12">
-                            <h1>Postres</h1>
-                        </div>
-                        <% products.forEach(product=> { %>
-                            <% if (product.category=="postre" ) { %>
-    
-                                <div class="col-12 col-md-6 col-lg-3 producto">
-                                    <div class="contenido">
-                                        <a href="/products/detail/<%= product.id %> ">
-    
-                                            <div class="img-productos">
-                                                <img src="/images/products/<%= product.image %>" alt="">
-                                            </div>
-    
-                                            <div class="des-producto">
-                                                <h2>
-                                                    <%= product.name %>
-                                                </h2>
-                                                
-                                                <h3>$<%= product.price %>
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </div>
-    
-                                    <div class="btns-form">
-                                        <form class="col-12 btns" action="#">
-                                            <div class="col-6 botones-index">
-                                                <button class="btn boton-comprar" type="button">Comprar</button>
-                                            </div>
-                                            <div class="col-6 botones-index">
-                                                <button class="btn" type="submit"><span
-                                                        class="fas fa-cart-arrow-down"></span></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <% } %>
-                                    <% }) %>
-    
-                    </div>
-                </div>
-
-                <div class="container">
-
-                    <div class="row productos">
-                        <div class="col-12">
-                            <h1>Pastelería</h1>
-                        </div>
-                        <% products.forEach(product=> { %>
-                            <% if (product.category=="pasteleria" ) { %>
-    
-                                <div class="col-12 col-md-6 col-lg-3 producto">
-                                    <div class="contenido">
-                                        <a href="/products/detail/<%= product.id %> ">
-    
-                                            <div class="img-productos">
-                                                <img src="/images/products/<%= product.image %>" alt="">
-                                            </div>
-    
-                                            <div class="des-producto">
-                                                <h2>
-                                                    <%= product.name %>
-                                                </h2>
-                                                
-                                                <h3>$<%= product.price %>
-                                                </h3>
-                                            </div>
-                                        </a>
-                                    </div>
-    
-                                    <div class="btns-form">
-                                        <form class="col-12 btns" action="#">
-                                            <div class="col-6 botones-index">
-                                                <button class="btn boton-comprar" type="button">Comprar</button>
-                                            </div>
-                                            <div class="col-6 botones-index">
-                                                <button class="btn" type="submit"><span
-                                                        class="fas fa-cart-arrow-down"></span></button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <% } %>
-                                    <% }) %>
-    
-                    </div>
-                </div>
+            
                
 
                 
