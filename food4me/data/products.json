@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Croissant, Raw - Mini",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 4144.4,
     "client": "lafarola",
     "image": "entrada1.jpg",
@@ -25,7 +26,8 @@
   {
     "id": 3,
     "name": "Mortadella",
-    "price": "4830.94",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
+    "price": 4830.94,
     "client": "bonappetit",
     "image": "entrada3.jpg",
     "category": "entrada",
@@ -36,6 +38,7 @@
   {
     "id": 4,
     "name": "Pop - Club Soda Can",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 4495.34,
     "client": "lafarola",
     "image": "platoprincipal1.jpg",
@@ -47,6 +50,7 @@
   {
     "id": 5,
     "name": "Pineapple - Regular",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 1805.08,
     "client": "mostaza",
     "image": "platoprincipal2.jpg",
@@ -58,6 +62,7 @@
   {
     "id": 6,
     "name": "Wine - White, Gewurtzraminer",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 910.47,
     "client": "garden",
     "image": "platoprincipal3.jpg",
@@ -69,6 +74,7 @@
   {
     "id": 7,
     "name": "Clams - Littleneck, Whole",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 2734.1,
     "client": "garden",
     "image": "platoprincipal4.jpg",
@@ -80,6 +86,7 @@
   {
     "id": 8,
     "name": "Bread - Pumpernickle, Rounds",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 1317.08,
     "client": "rolirolls",
     "image": "postre1.jpg",
@@ -91,6 +98,7 @@
   {
     "id": 9,
     "name": "Cheese - Oka",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 3878.86,
     "client": "rolirolls",
     "image": "postre2.jpg",
@@ -102,6 +110,7 @@
   {
     "id": 10,
     "name": "Flavouring - Orange",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 1201.9,
     "client": "rolirolls",
     "image": "postre3.jpg",
@@ -113,6 +122,7 @@
   {
     "id": 11,
     "name": "Seedlings - Clamshell",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 3338.55,
     "client": "rolirolls",
     "image": "postre4.jpg",
@@ -124,6 +134,7 @@
   {
     "id": 12,
     "name": "Lambcasing",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 1589.26,
     "client": "rolirolls",
     "image": "pasteleria1.jpg",
@@ -135,6 +146,7 @@
   {
     "id": 13,
     "name": "Wine - Pinot Grigio Collavini",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 2887.3,
     "client": "rolirolls",
     "image": "pasteleria2.jpg",
@@ -146,6 +158,7 @@
   {
     "id": 14,
     "name": "Beef - Rib Roast, Capless",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
     "price": 2435.3,
     "client": "rolirolls",
     "image": "pasteleria3.jpg",
@@ -169,7 +182,8 @@
   {
     "id": 16,
     "name": "Mortadella",
-    "price": "4830.94",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
+    "price": 4830.94,
     "client": "bonappetit",
     "image": "entrada4.jpg",
     "category": "entrada",
