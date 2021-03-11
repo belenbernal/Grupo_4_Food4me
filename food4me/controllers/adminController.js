@@ -7,10 +7,6 @@ const products = getProduct()
 const adminController = {
    
     productList: (req, res) => { //method get
-        // if !existe usersession?
-            // redirect perfil
-        // if !usersession.esAdmin
-            // redirect perfil
         res.render('admin/indexAdmin', {
             products
         })
