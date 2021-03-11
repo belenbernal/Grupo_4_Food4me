@@ -190,5 +190,14 @@
     "vegan": 0,
     "vegetarian": 0,
     "celiac": 0
+  },
+  {
+    "id": 17,
+    "name": "Torta",
+    "price": "100",
+    "client": "rullirolls",
+    "image": "image-1614892634702.jpeg",
+    "category": "entrada",
+    "vegetarian": "on"
   }
 ]

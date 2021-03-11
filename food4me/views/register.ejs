@@ -13,61 +13,69 @@
 
                             <div class="EntradasRegister col-12">
                                 <label for="mail">Email</label>
-                                <input type="email" name="email" id="mail" placeholder="Ingresa tu Email" value="<%= (typeof datos!='undefined' && datos.email)?datos.email : "" %>">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.email)?errores.email.msg : "" %> </span>
+                                <input type="email" name="email" id="mail" placeholder="Ingresa tu Email"
+                                    value="<%= (typeof datos!='undefined' && datos.email)?datos.email : "" %>">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.email)?errores.email.msg : "" %>
+                                </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="nombre">Nombre</label>
-                                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre" value="<%= (typeof datos!='undefined' && datos.nombre)?datos.nombre : "" %>">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.nombre)?errores.nombre.msg : "" %> </span>
+                                <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre"
+                                    value="<%= (typeof datos!='undefined' && datos.nombre)?datos.nombre : "" %>">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.nombre)?errores.nombre.msg : "" %>
+                                </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="apellido">Apellido</label>
-                                <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido" value="<%= (typeof datos!='undefined' && datos.apellido)?datos.apellido : "" %>">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.apellido)?errores.apellido.msg : "" %> </span>
+                                <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido"
+                                    value="<%= (typeof datos!='undefined' && datos.apellido)?datos.apellido : "" %>">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.apellido)?errores.apellido.msg : "" %>
+                                </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="pass">Contraseña</label>
-                                <input type="password" name="pass" id="pass1" placeholder="Password" >
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass)?errores.pass.msg : "" %> </span>
+                                <input type="password" name="pass" id="pass1" placeholder="Password">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.pass)?errores.pass.msg : "" %>
+                                </span>
                             </div>
 
                             <div class="EntradasRegister  col-12">
                                 <label for="pass"> Confirmar Contraseña</label>
                                 <input type="password" name="pass2" id="pass2" placeholder="Password">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass2)?errores.pass2.msg : "" %> </span>
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.pass2)?errores.pass2.msg : "" %>
+                                </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="date">Fecha de Nacimiento </label>
-                                <input type="date" name="date" id="" value="<%= (typeof datos!='undefined' && datos.date)?datos.date : "" %>">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.date)?errores.date.msg : "" %> </span>
-                            </div> 
+                                <input type="date" name="date" id=""
+                                    value="<%= (typeof datos!='undefined' && datos.date)?datos.date : "" %>">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.date)?errores.date.msg : "" %>
+                                </span>
+                            </div>
 
-                            <div>
-                                <label for="image" class="form-label">foto de perfil</label>
-                            <input type="file" id="image" name="image" >
-                            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.image)?errores.image.msg : "" %> </span>
+                            <div class="EntradasRegister col-12 avatar">
+                                <label for="image" class="form-label">Foto de perfil</label>
+                                <input type="file" id="image" name="image">
+                                <span class="text-danger">
+                                    <%= (typeof errores !='undefined' && errores.image)?errores.image.msg : "" %>
+                                </span>
                             </div>
                             <img src="" alt="">
-
-
 
                         </div>
 
 
-                        <div class="check">
-                            <select name="genero" class="form-select" aria-label="Default select example">
-                                <option selected>Genero</option>
-                                <option value="Masculino">Masculino</option>
-                                <option value="Femenino">Femenino</option>
-                                <option value="otro">otro</option>
-                            </select>
-                            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.genero)?errores.genero.msg : "" %> </span>
-
+                        <div class="col-12 checkRegister">
                             <div class="terminosRegister">
                                 <input type="checkbox" name="aceptar" id="aceptar">
                                 <label for="aceptar">Acepto los terminos y condiciones.</label>
@@ -77,7 +85,7 @@
                         <div class=" col-12 botonesRegister">
 
                             <button type="submit">Registrarme</button>
-                           
+
                         </div>
 
                     </form>

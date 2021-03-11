@@ -1,4 +1,7 @@
 /*LOGIN*/
+text{
+    display: none;
+}
 
 .contenedorLogin{
     margin-top: 80px;

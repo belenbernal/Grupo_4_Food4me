@@ -103,7 +103,7 @@ const usersController = {
             
 
             /* requiro los campos pasados por el formulario */
-            const { email, nombre, apellido, pass, date, genero } = req.body;
+            const { email, nombre, apellido, pass, date } = req.body;
 
             /* encripta la contraseña */
             let passHash = bcrypt.hashSync(pass.trim(), 12)
@@ -117,7 +117,6 @@ const usersController = {
                 pass: passHash,
                 date: date,
                 image: req.files[0].filename || 'sin imagen',
-                genero: genero,
                 rol: 'user'
             }           
 
