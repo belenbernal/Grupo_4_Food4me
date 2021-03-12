@@ -36,6 +36,19 @@
     color:white;
 }
 
+.bh{
+    background-color: black;
+}
+
+.bannerHomer1{
+    background-image: url('/images/bannerhome1.jpg');
+}
+
+.bannerHomer2{
+    background-image: url('/images/bannerhome2.jpg');
+}
+
+
 @media(min-width: 768px){
     .home-conten{
         padding-bottom: 15px;
@@ -105,5 +118,9 @@
 
     .conten-home2 h3{
         padding-top: 40px;
+    }
+
+    .text-home .subtext{
+        display: contents;
     }
 }
