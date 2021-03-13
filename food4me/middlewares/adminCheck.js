@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
         next()
     }else{
         /* si es falso lo redirije a login */
-        res.redirect('/user/login')
+        res.redirect('/users/login')
     }
 }
 

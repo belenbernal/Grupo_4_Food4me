@@ -3,11 +3,17 @@ const products = getProduct()
 
 
 const indexController = {
-    index: (req, res)=>{
-        res.render('index', {
+    home: (req, res)=>{
+        res.render('home');
+    },
+    menu: (req, res)=>{
+        res.render('menu', {
             products
         })
     },
+    contact: (req, res)=>{
+        res.render('contact')
+    }
     
 }
 module.exports = indexController;

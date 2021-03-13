@@ -1,8 +1,11 @@
 /*LOGIN*/
+text{
+    display: none;
+}
 
 .contenedorLogin{
-    margin-top: 200px;
-    margin-bottom: 150px;
+    margin-top: 80px;
+    margin-bottom: 90px;
 }
   
 .card {
@@ -96,6 +99,10 @@
     height: 30px;
     padding-left: 20px;
     border-radius: 3px;
+}
+
+.credenciales{
+    color: red;
 }
 
 .botonesLogin{

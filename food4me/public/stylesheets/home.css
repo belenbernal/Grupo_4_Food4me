@@ -1,0 +1,126 @@
+.home-conten{
+    background-color: rgb(20, 20, 20);
+}
+
+.home-conten .img-home{
+    display:flex;
+    justify-content: center;
+}
+
+.home-conten .text-home h2{
+    color:white;
+    padding-top:20px;
+}
+
+.home-conten .text-home p{
+    color: white;
+    padding-bottom: 20px;
+}
+
+.conten-home2{
+    height: 260px;
+    background-image: url('/images/homeFooter.jpg');
+    background-size: cover;
+}
+
+.conten-home2 h3{    
+    font-size: 27px;
+    font-family: 'roboto';
+    padding-top: 140px;
+    text-align: center;
+    color:white;
+}
+
+.conten-home2 p{
+    display:none;
+    color:white;
+}
+
+.bh{
+    background-color: black;
+}
+
+.bannerHomer1{
+    background-image: url('/images/bannerhome1.jpg');
+}
+
+.bannerHomer2{
+    background-image: url('/images/bannerhome2.jpg');
+}
+
+
+@media(min-width: 768px){
+    .home-conten{
+        padding-bottom: 15px;
+        margin-bottom: 5px;
+        display: flex;
+    }
+
+    .home-conten .img-home{
+        padding: 30px;
+    }
+
+    .home-conten .img-home img{
+        box-shadow: 20px 15px 5px rgba(252, 252, 252, 100%);
+    }
+
+    .home-conten .text-home{
+        align-items: center;
+        display: flex;
+    }
+
+    .home-conten .text-home h2{
+        font-size: 55px;
+    }
+    
+    .home-conten .text-home p{
+        font-size: 25px;
+    }
+    .conten-home2{
+        flex-direction: row-reverse;
+        display: flex;
+        height: 330px;
+    }
+
+    .conten-home2 .sub-conten{
+        width: 50%;
+    }
+
+    .conten-home2 p{
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 15px;
+        display: block;
+    }
+
+    .conten-home2 h3{
+        padding-top: 40px;
+    }
+}
+
+@media (min-width:1024px){
+    .conten-home2{
+        flex-direction: row-reverse;
+        display: flex;
+        height: 330px;
+    }
+
+    .conten-home2 .sub-conten{
+        width: 50%;
+    }
+
+    .conten-home2 p{
+        margin-right: 10px;
+        margin-left: 10px;
+        font-size: 20px;
+        display: block;
+    }
+
+    .conten-home2 h3{
+        padding-top: 40px;
+    }
+
+    .text-home .subtext{
+        display: contents;
+    }
+}

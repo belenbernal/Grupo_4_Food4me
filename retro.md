@@ -89,3 +89,36 @@
 ### Hacer más:
 * Ser mas detallistas con el Front-End.
 * Ser comprometidos y persistentes.
+
+---------------------------------------------------------------------------
+## Retrospectiva del cuarto sprint
+
+### Seguir haciendo:
+* Estar en contacto con el equipo.
+* Aportar todas las ideas nuevas.
+* Mantener buena comunicación en las reuniones y en whatsapp.
+* Sacarnos las dudas con el equipo y seguir ayudandonos.
+* Seguir investigando y leer documentación.
+* Asignar los roles en las tarjetas de trello.
+* Juntar las partes del codigo a tiempo.
+* Poner grado de dificultad a las tareas.
+
+### Hacer menos:
+* Descuidar las clases por realizar el sprint.
+
+### Dejar de hacer:
+* Tener ejercicios de PG atrazados. 
+
+### Empezar a hacer:
+* Organizar como armar la estructura del codigo antes de codear.
+* Hacer una minuta con los temas de las reuniones.
+* Preguntar las dudas de los ejercicios de PG.
+* Pedir ayuda a tiempo.
+
+### Hacer más:
+* Ser mas detallistas con el Front-End.
+* Ser comprometidos y persistentes.
+* Mantener trello actualizado.
+* Distribuir mejor las tareas de forma equitativa y con anticipación.
+* Poner fecha de vencimiento a las tareas.
+* Ser más autónomos (que cada uno haga la tarea que eligió y en caso de necesitar ayuda, consultarlo con el equipo).

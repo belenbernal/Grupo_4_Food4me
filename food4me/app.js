@@ -31,8 +31,8 @@ app.use(session({
   secret : "Secreto!!"
 }));
 
-app.use(localsCheck);
 app.use(cookieCheck);
+app.use(localsCheck);
 
 /* rutas */
 app.use('/', indexRouter);

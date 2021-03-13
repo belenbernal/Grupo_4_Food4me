@@ -2,7 +2,14 @@
 <html lang="es">
 <%- include('./partials/head') %>
 
-    <%- include('./partials/header') %>
+    
+
+    <% if ((typeof user !="undefined") && (user.rol == 'admin') ) { %>
+        <%- include('./admin/partials/header') %>
+
+        <% }else{ %>
+            <%- include('./partials/header') %>
+            <% } %>
 
         <body>
             <div class="body-profile container card ">

@@ -1,0 +1,93 @@
+/* CONTACTO */
+
+.contenedor-contacto{
+    display: flex;
+    margin-top: 80px;
+    margin-bottom: 90px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.encabezado-contact h2{
+    font-family: 'Roboto';
+    background: #bc0c2b;
+    color: white;
+    border-radius: 10px;
+}
+
+.encabezado-contact p{
+    margin-bottom: 0;
+    font-size: 17px;
+}
+
+.contenedor-contacto .formu-contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.formu-contact form{
+    width: 95%;
+}
+
+.formu-contact .cont label{
+    display: flex;
+    font-weight: bold;
+    margin-bottom: 1px;
+    margin-top: 14px;
+}
+
+.formu-contact .cont input{
+    width: 100%;
+    border: black 1px solid;
+    border-radius: 2px;
+    padding-left: 2px;
+}
+
+.formu-contact .cont textarea{
+    width: 100%;
+    border: black 1px solid;
+    border-radius: 2px;
+    padding-left: 2px;
+}
+
+.mapa{
+    display: flex;
+}
+
+.mapa iframe{
+    border-radius: 4px;
+}
+  
+ /* MEDIA QUERY */
+
+ @media (min-width: 768px){
+     
+    .contenido-contact{
+        flex-direction: row-reverse;
+    }
+    .formu-contact form {
+        width: 100%;
+    }
+
+    .formu-contact{
+        padding: 0;
+    }
+
+    .formu-contact .cont {
+        padding: 0;
+        display: inline-grid;
+        flex-wrap: wrap;
+    }
+    .mapa iframe{
+        height: 86%;
+        margin-top: 18px;
+    }
+ }

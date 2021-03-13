@@ -23,7 +23,7 @@ const productController = {
         const result = products.filter(product => {
             return product.name.toLowerCase().includes(busqueda.toLowerCase());
         });
-        res.render('index', {
+        res.render('menu', {
             products: result
         })
     },
