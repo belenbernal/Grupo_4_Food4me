@@ -24,6 +24,10 @@ const CategoryModel =(sequelize,dataTypes)=>{
     const Category = sequelize.define(alias, cols, config);
     
     Category.associate=function(models){
+        Category.belongsTo(models.productos, {
+            as : 'productos',
+            foreingKey : 'category_id'
+        })    
 
     }
     

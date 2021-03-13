@@ -9,19 +9,19 @@ const addressModel = (sequelize,dataTypes)=>{
             allowNull:false,
         },
         calle:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
         altura:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
         localidad:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
         provincia:{
-            type:dataTypes.STRING,
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
     };

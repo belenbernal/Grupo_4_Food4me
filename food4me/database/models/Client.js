@@ -34,10 +34,18 @@ const ClientModel=(sequelize,dataTypes)=>{
         client.hasMany(modelos.direccion,{
             ass:"addresses",
             foreignKey:"address_id",
-        });
-    }
+        }),
+        client.belongsTo(models.products, {
+                as : 'products',
+                foreingKey : 'client_id'
+            }),
+       client.belongsTo(models.user, {
+                as : 'usres',
+                foreingKey : 'client_id'
+            }) 
+        }
     
     return Client
 }
 
-module.exports =ClientModel;
+module.exports = ClientModel
