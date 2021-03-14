@@ -34,8 +34,8 @@ module.exports = (sequelize,dataTypes)=>{
     const Address = sequelize.define(alias, cols, config);
 
     Address.associate=function(modelos){
-        address.belongsTo(modelos.Cliente,{
-            ass:"client",
+        address.belongsTo(modelos.cliente,{
+            as:"client",
             foreignKey:"userAddress_id",
         });
     }

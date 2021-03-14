@@ -32,7 +32,7 @@ module.exports =(sequelize,dataTypes)=>{
     
     client.associate=function(modelos){
         client.hasMany(modelos.direccion,{
-            ass:"addresses",
+            as:"addresses",
             foreignKey:"address_id",
         }),
         client.belongsTo(models.productos, {
