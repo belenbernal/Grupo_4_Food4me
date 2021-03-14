@@ -1,4 +1,4 @@
-const CategoryModel =(sequelize,dataTypes)=>{
+module.exports=(sequelize,dataTypes)=>{
     
     let alias = "Categoria";
     let cols={
@@ -9,13 +9,14 @@ const CategoryModel =(sequelize,dataTypes)=>{
             allowNull:false,
         },
         categories:{
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
        
     };
     let config={
         tableNane="categories",
-        timestamps=true,
+        timestamps=false,
         
     }
 
@@ -24,7 +25,7 @@ const CategoryModel =(sequelize,dataTypes)=>{
     const Category = sequelize.define(alias, cols, config);
     
     Category.associate=function(models){
-        Category.belongsTo(models.productos, {
+        Category.hasMany(models.productos, {
             as : 'productos',
             foreingKey : 'category_id'
         })    
@@ -34,4 +35,4 @@ const CategoryModel =(sequelize,dataTypes)=>{
     return Category
 }
 
-module.exports =CategoryModel;
+module.exports 

@@ -1,6 +1,6 @@
-const ClientModel=(sequelize,dataTypes)=>{
+module.exports =(sequelize,dataTypes)=>{
     
-    let alias = "Cliente";
+    let alias = "cliente";
     let cols={
         id:{
             type:dataTypes.INTERGER,
@@ -9,34 +9,34 @@ const ClientModel=(sequelize,dataTypes)=>{
             allowNull:false,
         },
         name:{
-            
+            type:dataTypes.STRING(45),
             allowNull:false,
         },
         phome:{
-            
+            type:dataTypes.INTERGER,
             allowNull:false,
         },
         address_id:{
-            
+            type:dataTypes.INTERGER,
             allowNull:false,
         },
         
     };
     let config={
-        tableNane="Clients",
-        timestamps=true,
+        tableNane="clients",
+        timestamps=false,
         
     }
 
-    const Client = sequelize.define(alias, cols, config);
+    const client = sequelize.define(alias, cols, config);
     
-    Client.associate=function(modelos){
+    client.associate=function(modelos){
         client.hasMany(modelos.direccion,{
             ass:"addresses",
             foreignKey:"address_id",
         }),
-        client.belongsTo(models.products, {
-                as : 'products',
+        client.belongsTo(models.productos, {
+                as : 'productos',
                 foreingKey : 'client_id'
             }),
        client.belongsTo(models.user, {
@@ -48,4 +48,3 @@ const ClientModel=(sequelize,dataTypes)=>{
     return Client
 }
 
-module.exports = ClientModel

@@ -1,4 +1,4 @@
-const addressModel = (sequelize,dataTypes)=>{
+module.exports = (sequelize,dataTypes)=>{
     
     let alias = "direccion";
     let cols={
@@ -27,7 +27,7 @@ const addressModel = (sequelize,dataTypes)=>{
     };
     let config={
         tableNane:"addresses",
-        timestamps:true,
+        timestamps:false,
         
     }
 
@@ -36,11 +36,10 @@ const addressModel = (sequelize,dataTypes)=>{
     Address.associate=function(modelos){
         address.belongsTo(modelos.Cliente,{
             ass:"client",
-            foreignKey:"address_id",
+            foreignKey:"userAddress_id",
         });
     }
     
     return Address
 }
 
-module.exports = addressModel
