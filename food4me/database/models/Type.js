@@ -21,13 +21,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName : 'types',
+        underscore: true,
         timesTamps : false
     }
 
-    const tipos = sequelize.define(alias, cols, config);
+    const Type = sequelize.define(alias, cols, config);
 
-    tipos.associate = (models) => {
-        tipos.belongsToMany(models.productos, {
+    Type.associate = (models) => {
+        Type.belongsToMany(models.productos, {
             as : 'productos',
             through : 'product_type',
             foreingKey: 'type_id',
@@ -35,5 +36,5 @@ module.exports = (sequelize, dataTypes) => {
             timesTamps : false
         });
     }
-    return tipos
+    return Type
 }

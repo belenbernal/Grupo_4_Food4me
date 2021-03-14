@@ -51,33 +51,42 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName : 'products',
+        underscore : true,
         timesTamps : false
     }
 
-    const productos = sequelize.define(alias, cols, config);
+    const Product = sequelize.define(alias, cols, config);
        
 
-    productos.associate = (models) => {
+    Product.associate = (models) => {
 
-        productos.belongsTo(models.clientes, {
-            as : 'clientes',
+        Product.belongsTo(models.clientes, {
+            as : 'cliente',
             foreingKey : 'client_id'
         })
 
-        productos.belongsTo(models.categorias, {
-            as : 'categorias',
+        Product.belongsTo(models.categorias, {
+            as : 'categoria',
             foreingKey : 'category_id'
-        })    
+        })
     
     
-        productos.belongsToMany(models.tipos, {
+        Product.belongsToMany(models.tipos, {
             as : 'tipos',
             through : 'product_type',
             foreingKey: 'product_id',
             otherKey : 'type_id',
             timesTamps : false
         });
+
+        Product.belongsToMany(models.usuario, {
+            as : 'usuario',
+            through : 'carts',
+            foreingKey: 'product_id',
+            otherKey : 'user_id',
+            timesTamps : false
+        });
     }
 
-    return productos
+    return Product
 }
