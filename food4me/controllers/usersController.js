@@ -4,6 +4,8 @@ const { setUsers, getUsers } = require("../data/users");
 const users_db = getUsers()
 const { validationResult } = require('express-validator');
 
+const db = require('../database/models')
+
 const usersController = {
     login: (req, res) => {
         res.render('login')
