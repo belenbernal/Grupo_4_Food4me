@@ -1,9 +1,9 @@
 module.exports =(sequelize,dataTypes)=>{
     
-    let alias = "cliente";
+    let alias = "clientes";
     let cols={
         id:{
-            type:dataTypes.INTERGER,
+            type:dataTypes.INTERGER(11),
             primaryKey:true,
             autoIncrement:true,
             allowNull:false,
@@ -12,12 +12,12 @@ module.exports =(sequelize,dataTypes)=>{
             type:dataTypes.STRING(45),
             allowNull:false,
         },
-        phome:{
-            type:dataTypes.INTERGER,
+        phone:{
+            type:dataTypes.INTERGER(11),
             allowNull:false,
         },
         address_id:{
-            type:dataTypes.INTERGER,
+            type:dataTypes.INTERGER(11),
             allowNull:false,
         },
         
@@ -28,19 +28,19 @@ module.exports =(sequelize,dataTypes)=>{
         
     }
 
-    const client = sequelize.define(alias, cols, config);
+    const Client = sequelize.define(alias, cols, config);
     
-    client.associate=function(modelos){
-        client.hasMany(modelos.direccion,{
-            as:"addresses",
+    Client.associate=function(models){
+        Client.belongsTo(models.direcciones,{
+            as:"direccion",
             foreignKey:"address_id",
         }),
-        client.belongsTo(models.productos, {
+        Client.hasMany(models.productos, {
                 as : 'productos',
                 foreingKey : 'client_id'
             }),
-       client.belongsTo(models.user, {
-                as : 'usres',
+        Client.hasMany(models.usuarios, {
+                as : 'usuarios',
                 foreingKey : 'client_id'
             }) 
         }

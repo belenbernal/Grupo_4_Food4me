@@ -1,9 +1,9 @@
 module.exports=(sequelize,dataTypes)=>{
     
-    let alias = "Categoria";
+    let alias = "categorias";
     let cols={
         id:{
-            type:dataTypes.INTERGER,
+            type:dataTypes.INTERGER(11),
             primaryKey:true,
             autoIncrement:true,
             allowNull:false,
@@ -35,4 +35,3 @@ module.exports=(sequelize,dataTypes)=>{
     return Category
 }
 
-module.exports 
