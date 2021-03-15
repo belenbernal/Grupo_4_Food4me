@@ -66,8 +66,15 @@ module.exports = (Sequelize,dataTypes) =>{
         });
         User.belongsTo(models.roles,{
             as : 'rol',
-            foreignKey : 'rol_id',
-            timestamps: false  // es necesario aclarar aca?
+            foreignKey : 'rol_id'
+        });
+        User.belongsTo(models.direcciones,{
+            as : 'direccion',
+            foreignKey : 'userAddress_id'
+        });
+        User.belongsTo(models.clientes,{
+            as : 'cliente',
+            foreignKey : 'cliente_id'
         })
     }
 
