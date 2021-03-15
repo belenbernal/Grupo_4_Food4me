@@ -29,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Type.associate = (models) => {
         Type.belongsToMany(models.productos, {
-            as : 'productos',
+            as : 'tipoProducto',
             through : 'product_type',
             foreingKey: 'type_id',
             otherKey : 'product_id',
