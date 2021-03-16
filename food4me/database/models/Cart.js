@@ -1,10 +1,10 @@
-module.exports = (Sequelize,dataTypes) =>{
+module.exports = (sequelize,dataTypes) =>{
 
     const alias = 'carts';
 
     let cols= {
         id:{
-            type:dataTypes.INTEGER(11),
+            type:dataTypes.INTEGER(11).UNSIGNED,
             primaryKey:true,
             autoIncrement:true,
             allowNull:false

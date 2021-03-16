@@ -1,7 +1,7 @@
 const path = require('path');
 const bcrypt = require('bcrypt');
-const { setUsers, getUsers } = require("../data/users");
-const users_db = getUsers()
+/* const { setUsers, getUsers } = require("../data/users");
+const users_db = getUsers() */
 const { validationResult } = require('express-validator');
 
 const db = require('../database/models')
@@ -123,8 +123,8 @@ const usersController = {
             }           
 
             /* envia al nuevo usuario al json */
-            users_db.push(newUser);
-            setUsers(users_db);
+           /*  users_db.push(newUser);
+            setUsers(users_db); */
             res.redirect('/users/login')
 
            

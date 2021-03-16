@@ -1,4 +1,4 @@
-module.exports = (Sequelize,dataTypes) =>{
+module.exports = (sequelize,dataTypes) =>{
 
     const alias = 'usuarios';
 
@@ -58,7 +58,7 @@ module.exports = (Sequelize,dataTypes) =>{
 
     User.associate = (models) => {
         User.belongsToMany(models.productos, {
-            as: 'productos',
+            as: 'carrito',
             through: 'carts',
             foreignKey: 'user_id',
             otherKey: 'product_id',

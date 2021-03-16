@@ -1,4 +1,4 @@
-module.exports = (Sequelize,dataTypes) =>{
+module.exports = (sequelize,dataTypes) =>{
 
     const alias = 'roles';
 

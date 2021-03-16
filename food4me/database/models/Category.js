@@ -3,7 +3,7 @@ module.exports=(sequelize,dataTypes)=>{
     let alias = "categorias";
     let cols={
         id:{
-            type:dataTypes.INTERGER(11),
+            type:dataTypes.INTEGER(11),
             primaryKey:true,
             autoIncrement:true,
             allowNull:false,
@@ -15,8 +15,8 @@ module.exports=(sequelize,dataTypes)=>{
        
     };
     let config={
-        tableNane="categories",
-        timestamps=false,
+        tableName : "categories",
+        timestamps : false
         
     }
 

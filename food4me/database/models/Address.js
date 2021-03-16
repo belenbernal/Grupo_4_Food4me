@@ -3,31 +3,31 @@ module.exports = (sequelize,dataTypes)=>{
     let alias = "direcciones";
     let cols={
         id:{
-            type:dataTypes.INTERGER(11),
+            type : dataTypes.INTEGER(11),
             primaryKey:true,
             autoIncrement:true,
             allowNull:false,
         },
         calle:{
-            type:dataTypes.STRING(45),
+            type : dataTypes.STRING(45),
             allowNull:false,
         },
         altura:{
-            type:dataTypes.STRING(45),
+            type : dataTypes.STRING(45),
             allowNull:false,
         },
         localidad:{
-            type:dataTypes.STRING(45),
+            type : dataTypes.STRING(45),
             allowNull:false,
         },
         provincia:{
-            type:dataTypes.STRING(45),
+            type : dataTypes.STRING(45),
             allowNull:false,
         },
     };
     let config={
-        tableNane:"addresses",
-        timestamps:false,
+        tableName : "addresses",
+        timestamps : false,
         
     }
 

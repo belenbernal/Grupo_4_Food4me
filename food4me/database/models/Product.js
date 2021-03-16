@@ -12,12 +12,12 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         name : {
-            type : dataTypes.string(45),
+            type : dataTypes.STRING(45),
             allowNull : false
         },
 
         description : {
-            type : dataTypes.string(300),
+            type : dataTypes.STRING(300),
             allowNull : false
         },
 
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         image : {
-            type : dataTypes.string(45),
+            type : dataTypes.STRING(45),
             allowNull : false
         },
 
@@ -79,8 +79,8 @@ module.exports = (sequelize, dataTypes) => {
             timesTamps : false
         });
 
-        Product.belongsToMany(models.usuario, {
-            as : 'usuario',
+        Product.belongsToMany(models.usuarios, {
+            as : 'carrito',
             through : 'carts',
             foreingKey: 'product_id',
             otherKey : 'user_id',

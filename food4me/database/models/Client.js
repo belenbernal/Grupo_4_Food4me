@@ -3,7 +3,7 @@ module.exports =(sequelize,dataTypes)=>{
     let alias = "clientes";
     let cols={
         id:{
-            type:dataTypes.INTERGER(11),
+            type:dataTypes.INTEGER(11),
             primaryKey:true,
             autoIncrement:true,
             allowNull:false,
@@ -13,18 +13,18 @@ module.exports =(sequelize,dataTypes)=>{
             allowNull:false,
         },
         phone:{
-            type:dataTypes.INTERGER(11),
+            type:dataTypes.INTEGER(11),
             allowNull:false,
         },
         address_id:{
-            type:dataTypes.INTERGER(11),
+            type:dataTypes.INTEGER(11),
             allowNull:false,
         },
         
     };
     let config={
-        tableNane="clients",
-        timestamps=false,
+        tableName : "clients",
+        timestamps : false
         
     }
 
