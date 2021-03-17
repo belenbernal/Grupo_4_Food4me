@@ -21,7 +21,6 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName : 'types',
-        underscore: true,
         timestamp : false
     }
 
