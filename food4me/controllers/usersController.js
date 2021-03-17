@@ -100,16 +100,15 @@ const usersController = {
 
     },
     profile: (req, res) => {
-        res.render('profile', {
-            users_db
-        })
-        /* let user = res.locals.user
+        
+        let user = res.locals.user
         res.render('profile', {
             user
-        })*/
+        })
     },
     logout: (req, res) => {
-        db.Usuarios.destroy()
+        
+        delete req.session.user
 
         if (req.cookies.userFood4me) {
             res.cookie('userFood4me', '', { maxAge: -1 });
