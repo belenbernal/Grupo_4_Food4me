@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session')
-
+require('dotenv').config()
 var localsCheck = require('./middlewares/localsCheck');
 var cookieCheck = require('./middlewares/cookieCheck');
 

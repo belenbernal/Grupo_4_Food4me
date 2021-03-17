@@ -40,59 +40,27 @@
 
                             <div class="EntradasRegister col-12">
                                 <label for="pass">Contraseña</label>
-<<<<<<< HEAD
-                                <input type="password" name="pass1" id="pass1" placeholder="Password">
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass1)?errores.pass1.msg : "" %> </span>
-=======
                                 <input type="password" name="pass" id="pass1" placeholder="Password">
-<<<<<<< HEAD
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass)?errores.pass.msg : "" %> </span>
->>>>>>> origin
-=======
                                 <span class="text-danger">
                                     <%= (typeof errores !='undefined' && errores.pass)?errores.pass.msg : "" %>
                                 </span>
->>>>>>> develop
                             </div>
 
                             <div class="EntradasRegister  col-12">
                                 <label for="pass"> Confirmar Contraseña</label>
                                 <input type="password" name="pass2" id="pass2" placeholder="Password">
-<<<<<<< HEAD
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.pass2)?errores.pass2.msg : "" %> </span>
-<<<<<<< HEAD
-                            </div> 
-
-                            <div class="EntradasRegister col-12">
-                                <label for="">Fecha de Nacimiento </label>
-                                <input type="date" name="birth" id="">
-=======
-=======
                                 <span class="text-danger">
                                     <%= (typeof errores !='undefined' && errores.pass2)?errores.pass2.msg : "" %>
                                 </span>
->>>>>>> develop
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="date">Fecha de Nacimiento </label>
-<<<<<<< HEAD
-                                <input type="date" name="date" id="">
->>>>>>> origin
-                                <span class="text-danger"><%= (typeof errores != 'undefined' && errores.birth)?errores.birth.msg : "" %> </span>
-                            </div> 
-
-                            <div>
-                                <label for="image" class="form-label">foto de perfil</label>
-                            <input type="file" id="image" name="image">
-                            <span class="text-danger"><%= (typeof errores != 'undefined' && errores.image)?errores.image.msg : "" %> </span>
-=======
                                 <input type="date" name="date" id=""
                                     value="<%= (typeof datos!='undefined' && datos.date)?datos.date : "" %>">
                                 <span class="text-danger">
                                     <%= (typeof errores !='undefined' && errores.date)?errores.date.msg : "" %>
                                 </span>
->>>>>>> develop
                             </div>
 
                             <div class="EntradasRegister col-12 avatar">
