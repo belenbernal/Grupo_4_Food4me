@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
     
-    const alias = "tipoProductos"
+    const alias = "TipoProductos"
 
     const cols = {
 
@@ -27,19 +27,19 @@ module.exports = (sequelize, dataTypes) => {
     const config = {
         tableName : 'product_type',
         underscore: true,
-        timesTamps : false
+        timestamp : false
     }
 
     const ProductType = sequelize.define(alias, cols, config);
 
     ProductType.associate = (models) => {
 
-        ProductType.belongsTo(models.tipos, {
+        ProductType.belongsTo(models.Tipos, {
             as : 'tipo',
             foreingKey : 'type_id'
         })
 
-       ProductType.belongsTo(models.productos, {
+       ProductType.belongsTo(models.Productos, {
             as : 'producto',
             foreingKey : 'product_id'
         })

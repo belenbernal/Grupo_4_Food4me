@@ -1,6 +1,6 @@
 module.exports =(sequelize,dataTypes)=>{
     
-    let alias = "clientes";
+    let alias = "Clientes";
     let cols={
         id:{
             type:dataTypes.INTEGER(11),
@@ -31,15 +31,15 @@ module.exports =(sequelize,dataTypes)=>{
     const Client = sequelize.define(alias, cols, config);
     
     Client.associate=function(models){
-        Client.belongsTo(models.direcciones,{
+        Client.belongsTo(models.Direcciones,{
             as:"direccion",
             foreignKey:"address_id",
         }),
-        Client.hasMany(models.productos, {
+        Client.hasMany(models.Productos, {
                 as : 'productos',
                 foreingKey : 'client_id'
             }),
-        Client.hasMany(models.usuarios, {
+        Client.hasMany(models.Usuarios, {
                 as : 'usuarios',
                 foreingKey : 'client_id'
             }) 

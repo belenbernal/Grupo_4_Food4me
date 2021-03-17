@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
     
-    const alias = "productos"
+    const alias = "Productos"
 
     const cols = {
 
@@ -45,14 +45,12 @@ module.exports = (sequelize, dataTypes) => {
             type : dataTypes.INTEGER,
             allowNull : false
         }
-
-
     }
 
     const config = {
         tableName : 'products',
-        underscore : true,
-        timesTamps : false
+        timestamps : false,
+        underscored: true
     }
 
     const Product = sequelize.define(alias, cols, config);
@@ -60,31 +58,31 @@ module.exports = (sequelize, dataTypes) => {
 
     Product.associate = (models) => {
 
-        Product.belongsTo(models.clientes, {
+        Product.belongsTo(models.Clientes, {
             as : 'cliente',
             foreingKey : 'client_id'
         })
 
-        Product.belongsTo(models.categorias, {
+        Product.belongsTo(models.Categorias, {
             as : 'categoria',
             foreingKey : 'category_id'
         })
     
     
-        Product.belongsToMany(models.tipos, {
+        Product.belongsToMany(models.Tipos, {
             as : 'tipoProducto',
             through : 'product_type',
             foreingKey: 'product_id',
             otherKey : 'type_id',
-            timesTamps : false
+            timestamp : false
         });
 
-        Product.belongsToMany(models.usuarios, {
+        Product.belongsToMany(models.Usuarios, {
             as : 'carrito',
             through : 'carts',
             foreingKey: 'product_id',
             otherKey : 'user_id',
-            timesTamps : false
+            timestamp : false
         });
     }
 
