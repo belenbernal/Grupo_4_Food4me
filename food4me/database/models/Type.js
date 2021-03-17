@@ -30,7 +30,7 @@ module.exports = (sequelize, dataTypes) => {
         Type.belongsToMany(models.Productos, {
             as : 'tipoProducto',
             through : 'product_type',
-            foreingKey: 'type_id',
+            foreignKey: 'type_id',
             otherKey : 'product_id',
             timestamp : false
         });

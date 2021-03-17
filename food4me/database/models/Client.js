@@ -37,11 +37,11 @@ module.exports =(sequelize,dataTypes)=>{
         }),
         Client.hasMany(models.Productos, {
                 as : 'productos',
-                foreingKey : 'client_id'
+                foreignKey : 'client_id'
             }),
         Client.hasMany(models.Usuarios, {
                 as : 'usuarios',
-                foreingKey : 'client_id'
+                foreignKey : 'client_id'
             }) 
         }
     
