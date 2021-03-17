@@ -35,12 +35,12 @@ module.exports = (sequelize, dataTypes) => {
 
         ProductType.belongsTo(models.Tipos, {
             as : 'tipo',
-            foreingKey : 'type_id'
+            foreignKey : 'type_id'
         })
 
        ProductType.belongsTo(models.Productos, {
             as : 'producto',
-            foreingKey : 'product_id'
+            foreignKey : 'product_id'
         })
     }    
     return ProductType

@@ -36,11 +36,6 @@ module.exports = (sequelize, dataTypes) => {
             allowNull : false
         },
 
-        type_id : {
-            type : dataTypes.INTEGER,
-            allowNull :false
-        },
-
         client_id : {
             type : dataTypes.INTEGER,
             allowNull : false
@@ -59,19 +54,19 @@ module.exports = (sequelize, dataTypes) => {
 
         Product.belongsTo(models.Clientes, {
             as : 'cliente',
-            foreingKey : 'client_id'
+            foreignKey : 'client_id'
         })
 
         Product.belongsTo(models.Categorias, {
             as : 'categoria',
-            foreingKey : 'category_id'
+            foreignKey : 'category_id'
         })
     
     
         Product.belongsToMany(models.Tipos, {
             as : 'tipoProducto',
             through : 'product_type',
-            foreingKey: 'product_id',
+            foreignKey: 'product_id',
             otherKey : 'type_id',
             timestamp : false
         });
@@ -79,7 +74,7 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsToMany(models.Usuarios, {
             as : 'carrito',
             through : 'carts',
-            foreingKey: 'product_id',
+            foreignKey: 'product_id',
             otherKey : 'user_id',
             timestamp : false
         });
