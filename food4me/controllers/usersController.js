@@ -38,7 +38,11 @@ const usersController = {
                                 maxAge: 60 * 1000 //mide en milisegundos
                             })
                         }
-                        return res.redirect('/')
+                        if (user.rol_id == 1) {
+                            return res.redirect('/')
+                        } else {
+                            return res.redirect('/admin/list')
+                        }
                     } else {
                         return res.render('login', {
                             errores: {

@@ -10,7 +10,7 @@ const sessionCheck = require('../middlewares/sessionCheck');
 
 
 router.get('/login', sessionCheck, login);
-router.post('/login', /* loginValidator, */ processLogin);
+router.post('/login', loginValidator, processLogin);
 
 router.get('/register', sessionCheck , register);
 router.post('/register',upload.any(),/* registerValidator, */ processRegister)

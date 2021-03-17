@@ -14,7 +14,7 @@ module.exports = [
     .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
 
     body('email').custom(value =>{
-        return db.usuarios.findOne({
+        return db.Usuarios.findOne({
             where : {
                 email : value
             }

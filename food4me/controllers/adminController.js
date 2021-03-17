@@ -7,9 +7,6 @@ const db = require('../database/models')
 const adminController = {
    
     productList: (req, res) => {
-        /* res.render('admin/indexAdmin', {
-            products
-        }) */
         db.Productos.findAll()
             .then((products)=>{
                 res.render('admin/indexAdmin', {products})
