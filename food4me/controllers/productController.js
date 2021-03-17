@@ -7,12 +7,17 @@ const db = require('../database/models')
 const productController = {
     
     productDetail: (req, res) => {
-        let product = products.find(product => {
+        /* let product = products.find(product => {
             return product.id == req.params.id
         });
         res.render('productDetail', {
             product
-        })
+        }) */
+        db.Productos.findByPk(req.params.id) //asociaciones
+            .then((product)=>{
+                res.render('productDetail', {product})
+            })
+            .catch((error)=>{res.send(error)})
     },   
     carrito: (req, res) => {
         res.render('carrito')

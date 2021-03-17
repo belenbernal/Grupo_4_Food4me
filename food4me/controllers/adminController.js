@@ -6,23 +6,20 @@ const db = require('../database/models')
 
 const adminController = {
    
-    productList: (req, res) => { //method get
+    productList: (req, res) => {
         /* res.render('admin/indexAdmin', {
             products
         }) */
-        /*
-        db.productos.findAll()
+        db.Productos.findAll()
             .then((products)=>{
-                
                 res.render('admin/indexAdmin', {products})
             })
-            .catch((error)=> res.send(error)) */
+            .catch((error)=> res.send(error))
     },
-    productAdd: (req, res) => { //method get
+    productAdd: (req, res) => {
         res.render('admin/productAdd')
     },
-    newProduct: (req, res, next) => { //method post
-        /*res.send(req.body)*/
+    newProduct: (req, res, next) => {
         let lastID = 0;
         products.forEach(product => {
             if (product.id > lastID) {
@@ -79,7 +76,6 @@ const adminController = {
         res.redirect('/admin/list');
     },
     productDelete: (req, res) => {
-        /* res.send('holaa') */
         products.forEach(product => {
             if (product.id === +req.params.id) {
                 if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {

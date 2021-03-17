@@ -74,7 +74,7 @@ module.exports = (sequelize,dataTypes) =>{
         });
         User.belongsTo(models.Clientes,{
             as : 'cliente',
-            foreignKey : 'cliente_id'
+            foreignKey : 'client_id'
         })
     }
 

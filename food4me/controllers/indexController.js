@@ -1,5 +1,3 @@
-const { setProduct, getProduct } = require("../data/products");
-const products = getProduct()
 const db = require('../database/models')
 
 const indexController = {
@@ -7,9 +5,6 @@ const indexController = {
         res.render('home');
     },
     menu: (req, res) => {
-        /*  res.render('menu', {
-             products
-         }) */
         db.Productos.findAll()
             .then((products) => {
                 res.send(products)

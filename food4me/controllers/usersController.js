@@ -3,7 +3,6 @@ const db = require('../database/models')
 const { validationResult } = require('express-validator');
 
 
-
 const usersController = {
     login: (req, res) => {
         res.render('login')
@@ -25,10 +24,10 @@ const usersController = {
                         /* creamos la session */
                         req.session.user = {
                             id: user.id,
-                            name: user.nombre,
-                            last_name: user.apellido,
+                            name: user.name,//name
+                            last_name: user.last_name,//last_name
                             email: user.email,
-                            rol_id: user.rol,
+                            rol_id: user.rol_id, //rol_id
                             image: user.image
                         }
 
@@ -39,21 +38,21 @@ const usersController = {
                                 maxAge: 60 * 1000 //mide en milisegundos
                             })
                         }
-
                         return res.redirect('/')
-                    }
-                    return res.render('login', {
-                        errores: {
-                            invalid: {
-                                msg: "Credenciales inválidas"
+                    } else {
+                        return res.render('login', {
+                            errores: {
+                                invalid: {
+                                    msg: "Credenciales inválidas"
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
                 })
                 .catch(error => res.send(error))
 
-        } else {
-            res.render('login', {
+        } else { //revisar donde marca cada error!!
+            return res.render('login', {
                 errores: {
                     pass: {
                         msg: 'La contraseña es incorrecta'
@@ -62,17 +61,6 @@ const usersController = {
                 datos: req.body
             });
         }
-        /* si no encontro el email que coincide con el ingresado.. renderizo la pagina del login con un mensaje */
-        res.render('login', {
-            errores: {
-                email: {
-                    msg: 'El usuario es incorrecto'
-                }
-            },
-            datos: req.body
-        });
-
-
     },
     register: (req, res) => {
         res.render('register')
@@ -115,18 +103,17 @@ const usersController = {
         res.render('profile', {
             users_db
         })
+        /* let user = res.locals.user
+        res.render('profile', {
+            user
+        })*/
     },
     logout: (req, res) => {
-
         db.Usuarios.destroy()
-        /* preguntamos si existe la cookie */
+
         if (req.cookies.userFood4me) {
-
-            /* si existe, borramos la cookie */
             res.cookie('userFood4me', '', { maxAge: -1 });
-
         }
-
 
         res.redirect('/')
     }
