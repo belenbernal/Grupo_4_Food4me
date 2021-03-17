@@ -17,8 +17,7 @@ module.exports = (sequelize,dataTypes) =>{
 
     const config ={
         tableName : 'users',
-        timestamps : false,
-        underscored: false
+        timestamps : false
     }
 
     const Rol = sequelize.define(alias, cols, config)

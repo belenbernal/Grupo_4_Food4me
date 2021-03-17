@@ -15,21 +15,21 @@ const usersController = {
 
             const { email, pass, recordar } = req.body;
 
-            db.usuarios.findOne({
+            db.Usuarios.findOne({
                 where: {
                     email
                 }
             })
                 .then(user => {
-                    if (user && bcrypt.compareSync(pass.trim(), result.pass)) {
+                    if (user && bcrypt.compareSync(pass.trim(), user.pass)) {
                         /* creamos la session */
                         req.session.user = {
-                            id: result.id,
-                            name: result.nombre,
-                            last_name: result.apellido,
-                            email: result.email,
-                            rol: result.rol,
-                            image: result.image
+                            id: user.id,
+                            name: user.nombre,
+                            last_name: user.apellido,
+                            email: user.email,
+                            rol_id: user.rol,
+                            image: user.image
                         }
 
                         /* si hizo click en el check de recordar.. */
@@ -50,6 +50,7 @@ const usersController = {
                         }
                     })
                 })
+                .catch(error => res.send(error))
 
         } else {
             res.render('login', {
@@ -87,7 +88,7 @@ const usersController = {
             /* encripta la contraseña */
             let passHash = bcrypt.hashSync(pass.trim(), 12)
 
-            db.usuarios.create({
+            db.Usuarios.create({
                 /* crea nuevo usuario */
                 email: email.trim(),
                 name: nombre.trim(),
@@ -95,7 +96,7 @@ const usersController = {
                 pass: passHash,
                 date: date,
                 image: req.files[0].filename || 'sin imagen',
-                userAddress_id : 4,
+                userAddress_id: 4,
                 client_id: null,
                 rol_id: 1
             })
@@ -117,17 +118,17 @@ const usersController = {
     },
     logout: (req, res) => {
 
-        db.usuarios.destroy()
-            /* preguntamos si existe la cookie */
-            if(req.cookies.userFood4me) {
+        db.Usuarios.destroy()
+        /* preguntamos si existe la cookie */
+        if (req.cookies.userFood4me) {
 
-                /* si existe, borramos la cookie */
-                res.cookie('userFood4me', '', { maxAge: -1 });
+            /* si existe, borramos la cookie */
+            res.cookie('userFood4me', '', { maxAge: -1 });
 
-            }
-           
-       
-        res.redirect('/')    
+        }
+
+
+        res.redirect('/')
     }
 }
 

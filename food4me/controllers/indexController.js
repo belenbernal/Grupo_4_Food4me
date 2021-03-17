@@ -10,7 +10,7 @@ const indexController = {
         /*  res.render('menu', {
              products
          }) */
-        db.productos.findAll()
+        db.Productos.findAll()
             .then((products) => {
                 res.send(products)
                 /* res.render('menu', { products }) */
