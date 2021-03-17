@@ -2,14 +2,21 @@ const fs = require('fs');
 const path = require('path');
 const { setProduct, getProduct } = require("../data/products");
 const products = getProduct()
-
+const db = require('../database/models')
 
 const adminController = {
    
     productList: (req, res) => { //method get
-        res.render('admin/indexAdmin', {
+        /* res.render('admin/indexAdmin', {
             products
-        })
+        }) */
+        /*
+        db.productos.findAll()
+            .then((products)=>{
+                
+                res.render('admin/indexAdmin', {products})
+            })
+            .catch((error)=> res.send(error)) */
     },
     productAdd: (req, res) => { //method get
         res.render('admin/productAdd')

@@ -1,6 +1,6 @@
 module.exports = (sequelize,dataTypes) =>{
 
-    const alias = 'usuarios';
+    const alias = 'Usuarios';
 
     let cols= {
         id:{
@@ -57,22 +57,22 @@ module.exports = (sequelize,dataTypes) =>{
     const User = sequelize.define(alias, cols, config);
 
     User.associate = (models) => {
-        User.belongsToMany(models.productos, {
+        User.belongsToMany(models.Productos, {
             as: 'carrito',
             through: 'carts',
             foreignKey: 'user_id',
             otherKey: 'product_id',
             timestamps: false
         });
-        User.belongsTo(models.roles,{
+        User.belongsTo(models.Roles,{
             as : 'rol',
             foreignKey : 'rol_id'
         });
-        User.belongsTo(models.direcciones,{
+        User.belongsTo(models.Direcciones,{
             as : 'direccion',
             foreignKey : 'userAddress_id'
         });
-        User.belongsTo(models.clientes,{
+        User.belongsTo(models.Clientes,{
             as : 'cliente',
             foreignKey : 'cliente_id'
         })

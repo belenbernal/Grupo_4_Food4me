@@ -1,6 +1,6 @@
 module.exports = (sequelize,dataTypes)=>{
     
-    let alias = "direcciones";
+    let alias = "Direcciones";
     let cols={
         id:{
             type : dataTypes.INTEGER(11),
@@ -34,12 +34,12 @@ module.exports = (sequelize,dataTypes)=>{
     const Address = sequelize.define(alias, cols, config);
 
     Address.associate=function(models){
-        Address.hasMany(models.clientes,{
+        Address.hasMany(models.Clientes,{
             as:"clientes",
             foreignKey:"address_id",
         });
         Address.associate=function(models){
-            Address.hasMany(models.usuarios,{
+            Address.hasMany(models.Usuarios,{
                 as:"usuarios",
                 foreignKey:"userAddress_id",
             }); 

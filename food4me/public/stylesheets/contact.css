@@ -60,6 +60,7 @@
 
 .mapa{
     display: flex;
+    padding-bottom: 12px;
 }
 
 .mapa iframe{
@@ -86,8 +87,25 @@
         display: inline-grid;
         flex-wrap: wrap;
     }
+    .mapa{
+        display: flex;
+        height: 240px;
+        padding-left: 43px;
+    }
     .mapa iframe{
         height: 86%;
-        margin-top: 18px;
+        margin-top: 24px;
+        width: 265px;
+    }
+ }
+ @media(min-width: 1024px){
+    .mapa{
+        padding-left: 82px;
+        height: 292px;
+    }
+    .mapa iframe{
+        height: 72%;
+        margin-top: 24px;
+        width: 300px;
     }
  }
