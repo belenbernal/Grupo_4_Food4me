@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const { setProduct, getProduct } = require("../data/products");
+const { sequelize } = require('../database/models');
 const products = getProduct()
 const db = require('../database/models')
+const {Op} = require('sequelize');
 
 const productController = {
     
@@ -23,15 +25,26 @@ const productController = {
         res.render('carrito')
     },
     search: (req, res) => { //falta validacion y editar vista
-        const busqueda = req.query.buscar;
+        
+        let buscar = req.query.buscar;
 
-        const result = products.filter(product => {
-            return product.name.toLowerCase().includes(busqueda.toLowerCase());
-        });
-        res.render('menu', {
-            products: result
+        db.Productos.findAll({
+            where :{
+                name : {
+                    [Op.substring] : buscar
+                }
+            }
         })
-    },
+        .then(products =>{ 
+            return res.render('menu', {
+                products
+            })
+                   
+        })
+        .catch((error)=> res.send(error))       
+        
+    }
+    
     
 }
 module.exports = productController;
