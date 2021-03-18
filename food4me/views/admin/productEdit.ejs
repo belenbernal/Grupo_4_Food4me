@@ -22,10 +22,10 @@
                             <label for="category" class="form-label">Categoría</label>
                             <select name="category" id="category" class="custom-select" value="<%=product.category%>">
                                 <option >Selecciona la categoría</option>
-                                <option value="entrada" <%- product.category === 'entrada' ? 'selected' : null %> >Entrada</option>
-                                <option value="platoPrincipal" <%- product.category === 'platoPrincipal' ? 'selected' : null %> >Plato principal</option>
-                                <option value="postre" <%- product.category === 'postre' ? 'selected' : null %> >Postre</option>
-                                <option value="pasteleria" <%- product.category === 'pasteleria' ? 'selected' : null %> >Pastelería</option>
+                                <option value="Entrada" <%- product.category === 'Entrada' ? 'selected' : null %> >Entrada</option>
+                                <option value="Plato principal" <%- product.category === 'Plato principal' ? 'selected' : null %> >Plato principal</option>
+                                <option value="Postre" <%- product.category === 'Postre' ? 'selected' : null %> >Postre</option>
+                                <option value="Pasteleria" <%- product.category === 'Pasteleria' ? 'selected' : null %> >Pastelería</option>
                             </select>
                         </div>
 
@@ -42,6 +42,10 @@
                             <div class="custom-control custom-checkbox checks">
                                 <input type="checkbox" class="custom-control-input" name="celiac" id="celiac" value="<%=product.celiac%>">
                                 <label class="custom-control-label" for="celiac">Comida para celíacos</label>
+                            </div>
+                            <div class="custom-control custom-checkbox checks">
+                                <input value="none" type="checkbox" class="custom-control-input" name="none" id="none">
+                                <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
                             </div>
                         </div>
 
