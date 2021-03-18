@@ -4,7 +4,13 @@
 <%- include('./partials/head') %>
 
     <body>
-        <%- include('./partials/header') %>
+        <% if ((typeof user !="undefined") && (user.rol_id == 2) ) { %>
+            <%- include('./admin/partials/header') %>
+    
+            <% }else{ %>
+                <%- include('./partials/header') %>
+                <% } %>
+                
             <div class="container contenedor-detalle">
                 <!--Contenido-->
                 <div class="row contenido-detalle card mx-auto">
@@ -18,13 +24,12 @@
                             <h2 class="nombre">
                                 <%= product.name %> 
                             </h2>
-                            <p class="nombre">
+                            <p class="descripcion">
                                 <%= product.description %> 
                             </p>
                             <h2 class="precio">
                                 $<%= product.price %> 
                             </h2>
-                            <p><%= product.description %> </p>
                         </div>
                         <!--Botón e input-->
                         <div class="boton">
