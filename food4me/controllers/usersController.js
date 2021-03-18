@@ -84,7 +84,7 @@ const usersController = {
                 pass: passHash,
                 date: date,
                 image: req.files[0].filename || 'sin imagen',
-                userAddress_id: 4,
+                userAddress_id: 2,
                 client_id: null,
                 rol_id: 1
             })
