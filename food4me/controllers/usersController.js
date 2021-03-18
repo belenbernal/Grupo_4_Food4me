@@ -2,7 +2,6 @@ const bcrypt = require('bcrypt');
 const db = require('../database/models')
 const { validationResult } = require('express-validator');
 
-
 const usersController = {
     login: (req, res) => {
         res.render('login')
@@ -38,7 +37,11 @@ const usersController = {
                                 maxAge: 60 * 1000 //mide en milisegundos
                             })
                         }
-                        return res.redirect('/')
+                        if (user.rol_id == 1) {
+                            return res.redirect('/')
+                        } else {
+                            return res.redirect('/admin/list')
+                        }
                     } else {
                         return res.render('login', {
                             errores: {

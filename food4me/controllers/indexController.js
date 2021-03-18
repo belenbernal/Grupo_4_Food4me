@@ -7,8 +7,7 @@ const indexController = {
     menu: (req, res) => {
         db.Productos.findAll()
             .then((products) => {
-               
-                res.render('menu', { products }) 
+                res.render('menu', { products })
             })
             .catch((error) => res.send(error))
     },
