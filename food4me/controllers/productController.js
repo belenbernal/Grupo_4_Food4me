@@ -9,12 +9,6 @@ const {Op} = require('sequelize');
 const productController = {
     
     productDetail: (req, res) => {
-        /* let product = products.find(product => {
-            return product.id == req.params.id
-        });
-        res.render('productDetail', {
-            product
-        }) */
         db.Productos.findByPk(req.params.id) //asociaciones
             .then((product)=>{
                 res.render('productDetail', {product})

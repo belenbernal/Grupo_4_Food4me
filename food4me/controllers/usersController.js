@@ -69,11 +69,12 @@ const usersController = {
         res.render('register')
     },
     processRegister: (req, res) => {
-
+        
         let errores = validationResult(req);
+        
 
         if (errores.isEmpty()) {
-
+            
             /* requiro los campos pasados por el formulario */
             const { email, nombre, apellido, pass, date } = req.body;
             /* encripta la contraseña */
@@ -95,10 +96,12 @@ const usersController = {
                 .catch(error => res.send(error))
 
         } else {
+            
+            console.log(errores.mapped());
             return res.render('register', {
                 errores: errores.mapped(),
                 datos: req.body
-            })
+            });
         }
 
     },

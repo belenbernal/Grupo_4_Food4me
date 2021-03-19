@@ -21,7 +21,7 @@ module.exports = [
         })
         .then(user => {
             if(user){
-                return Promise.reject('El email ya esta registrado')
+                return Promise.reject('El email ya esta registrado');
             }
         })
     }),
@@ -45,6 +45,4 @@ module.exports = [
     check('date')
     .notEmpty().withMessage('este campo es requerido'),
 
-    check('genero')
-    .notEmpty().withMessage('Este campo es requerido')
 ]
