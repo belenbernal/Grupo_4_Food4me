@@ -45,6 +45,4 @@ module.exports = [
     check('date')
     .notEmpty().withMessage('este campo es requerido'),
 
-    check('genero')
-    .notEmpty().withMessage('Este campo es requerido')
 ]

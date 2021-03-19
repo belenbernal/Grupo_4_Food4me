@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const config = {
         tableName : 'types',
-        timestamp : false
+        timestamps : false
     }
 
     const Type = sequelize.define(alias, cols, config);
@@ -32,7 +32,7 @@ module.exports = (sequelize, dataTypes) => {
             through : 'product_type',
             foreignKey: 'type_id',
             otherKey : 'product_id',
-            timestamp : false
+            timestamps : false
         });
     }
     return Type

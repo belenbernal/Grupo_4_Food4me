@@ -23,11 +23,12 @@ const usersController = {
                         /* creamos la session */
                         req.session.user = {
                             id: user.id,
-                            name: user.name,//name
-                            last_name: user.last_name,//last_name
+                            name: user.name,
+                            last_name: user.last_name,
                             email: user.email,
-                            rol_id: user.rol_id, //rol_id
-                            image: user.image
+                            rol_id: user.rol_id,
+                            image: user.image,
+                            client_id: user.client_id
                         }
 
                         /* si hizo click en el check de recordar.. */
