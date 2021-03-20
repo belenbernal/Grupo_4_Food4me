@@ -33,9 +33,9 @@ const usersController = {
 
                         /* si hizo click en el check de recordar.. */
                         if (recordar) {
-                            /* guardamos la sesion por 1 minuto */
+                           
                             res.cookie('userFood4me', req.session.user, {
-                                maxAge: 60 * 1000 //mide en milisegundos
+                                maxAge: 60 * 1000 * 60//mide en milisegundos
                             })
                         }
                         if (user.rol_id == 1) {
@@ -44,36 +44,38 @@ const usersController = {
                             return res.redirect('/admin/list')
                         }
                     } else {
-                        return res.render('login', {
+                        res.render('login', {
                             errores: {
-                                invalid: {
-                                    msg: "Credenciales inválidas"
-                                }
-                            }
-                        })
+                                pass: {
+                                    msg : 'contraseña inválida vuelva a intentarlo'
+                                },
+                                email : {
+                                    msg : 'email inválido tiene que ser tipo email (nombre@email.com)'
+                                } 
+                            },
+                            datos: req.body
+                        });
+                       
                     }
                 })
-                .catch(error => res.send(error))
+                
 
-        } else { //revisar donde marca cada error!!
+        } else { //revisar donde marca cada error!!           
+
             return res.render('login', {
-                errores: {
-                    pass: {
-                        msg: 'La contraseña es incorrecta'
-                    }
-                },
+                errores: errores.mapped(),
                 datos: req.body
             });
+
+           
         }
     },
     register: (req, res) => {
         res.render('register')
     },
     processRegister: (req, res) => {
-        
         let errores = validationResult(req);
         
-
         if (errores.isEmpty()) {
             
             /* requiro los campos pasados por el formulario */
@@ -97,8 +99,6 @@ const usersController = {
                 .catch(error => res.send(error))
 
         } else {
-            
-            console.log(errores.mapped());
             return res.render('register', {
                 errores: errores.mapped(),
                 datos: req.body

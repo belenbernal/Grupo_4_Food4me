@@ -13,7 +13,7 @@ router.get('/login', sessionCheck, login);
 router.post('/login', loginValidator, processLogin);
 
 router.get('/register', sessionCheck , register);
-router.post('/register', registerValidator, upload.any(), processRegister);
+router.post('/register', upload.any() ,registerValidator, processRegister);
 
 router.get('/profile',userCheck, profile);
 
