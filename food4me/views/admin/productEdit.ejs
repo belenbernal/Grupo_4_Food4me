@@ -20,31 +20,30 @@
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
-                            <select name="category" id="category" class="custom-select" value="<%=product.category%>">
-                                <option >Selecciona la categoría</option>
-                                <option value="Entrada" <%- product.category === 'Entrada' ? 'selected' : null %> >Entrada</option>
-                                <option value="Plato principal" <%- product.category === 'Plato principal' ? 'selected' : null %> >Plato principal</option>
-                                <option value="Postre" <%- product.category === 'Postre' ? 'selected' : null %> >Postre</option>
-                                <option value="Pasteleria" <%- product.category === 'Pasteleria' ? 'selected' : null %> >Pastelería</option>
+                            <select name="category" id="category" class="custom-select" value="<%=product.category_id%>">
+                                <option disabled>Selecciona la categoría</option>
+                                <% categories.forEach(category => { %>
+                                    <option value="<%=category.id%>" <%- category.id == product.category_id ? 'selected' : '' %> > <%=category.categories%> </option>
+                                <% }) %>
                             </select>
                         </div>
 
                         <div class="mb-3 entrada  checks">
                             <!--opciones vegetariano, vegano, celiaco-->
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="vegetarian" value="<%=product.vegetarian%>">
+                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="types" value="<%=types.id%>">
                                 <label class="custom-control-label" for="vegetarian">Comida vegetariana</label>  
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="vegan" id="vegan" value="<%=product.vegan%>">
+                                <input type="checkbox" class="custom-control-input" name="types" id="vegan" value="<%=types.id%>">
                                 <label class="custom-control-label" for="vegan">Comida vegana</label>
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="celiac" id="celiac" value="<%=product.celiac%>">
+                                <input type="checkbox" class="custom-control-input" name="types" id="celiac" value="<%=types.id%>">
                                 <label class="custom-control-label" for="celiac">Comida para celíacos</label>
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input value="none" type="checkbox" class="custom-control-input" name="none" id="none">
+                                <input value="none" type="checkbox" class="custom-control-input" name="types" id="none" value="<%=types.id%>">
                                 <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                         <div class="mb-3 entrada">
                             <!--cliente-->
                             <label for="client" class="form-label">Nombre del cliente</label>
-                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante" value="<%=product.client%>">
+                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante" value="<%=product.client_id%>">
                         </div>
 
                         <div class="mb-3 entrada">
@@ -82,7 +81,7 @@
                 </div>
             </div>
 
-            <% if (product.vegetarian) { %>
+            <% if (types.id === 2) { %>
                 <script>
                     document.getElementById('vegetarian').checked = true;
                 </script>
