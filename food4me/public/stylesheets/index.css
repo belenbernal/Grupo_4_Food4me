@@ -11,6 +11,7 @@
 @import url('/stylesheets/profile.css');
 @import url('/stylesheets/contact.css');
 @import url('/stylesheets/home.css');
+@import url('/stylesheets/userEdit.css');
 
 *{
     font-family: gentium;
