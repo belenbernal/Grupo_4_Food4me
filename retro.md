@@ -122,3 +122,36 @@
 * Distribuir mejor las tareas de forma equitativa y con anticipación.
 * Poner fecha de vencimiento a las tareas.
 * Ser más autónomos (que cada uno haga la tarea que eligió y en caso de necesitar ayuda, consultarlo con el equipo).
+
+---------------------------------------------------------------------------
+## Retrospectiva del quinto sprint
+
+### Seguir haciendo:
+* Aportar todas las ideas nuevas.
+* Mantener buena comunicación en las reuniones y en whatsapp.
+* Sacarnos las dudas con el equipo y seguir ayudandonos.
+* Seguir investigando y leer documentación.
+* Asignar los roles en las tarjetas de trello.
+* Juntar las partes del codigo a tiempo.
+* Poner grado de dificultad a las tareas.
+* Organizar como armar la estructura del codigo antes de codear.
+* Hacer una minuta con los temas de las reuniones.
+* Ser comprometidos y persistentes.
+* Mantener trello actualizado.
+
+### Hacer menos:
+* Estar muchas horas seguidas codeando.
+
+### Dejar de hacer:
+* Tener ejercicios de PG atrazados. 
+
+### Empezar a hacer:
+* Preguntar las dudas de los ejercicios de PG.
+* Pedir ayuda a tiempo.
+* Dedicarle más tiempo a los ejercicios de PG.
+
+### Hacer más:
+* Ser mas detallistas con el Front-End.
+* Poner fecha de vencimiento a las tareas.
+* Ser más autónomos (que cada uno haga la tarea que eligió y en caso de necesitar ayuda, consultarlo con el equipo).
+* No estresarse tanto con el sprint.
