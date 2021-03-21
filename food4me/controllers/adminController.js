@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../database/models')
+const fs = require('fs')
 
 const adminController = {
 
@@ -7,7 +8,10 @@ const adminController = {
         db.Productos.findAll({
             order: [
                 ['name', 'ASC']
-            ]
+            ],
+            where: {
+                client_id: req.session.user.client_id
+            }
         })
             .then((products) => {
                 res.render('admin/indexAdmin', { products })
@@ -15,9 +19,14 @@ const adminController = {
             .catch((error) => res.send(error))
     },
     productAdd: (req, res) => {
-        res.render('admin/productAdd')
+        db.Categorias.findAll()
+            .then(categorias => {
+                res.render('admin/productAdd', {
+                    categorias
+                })
+            })
     },
-    newProduct: (req, res, next) => {
+    newProduct: (req, res) => {
         const { name, price, category, types, description } = req.body;
         db.Productos.create({
             name,
@@ -63,26 +72,21 @@ const adminController = {
             }
         })
         let categories = db.Categorias.findAll();
-        let types = db.Tipos.findAll();
+        let product_types = db.TipoProductos.findAll();
 
-        Promise.all([product, categories, types])
-            .then(([product, categories, types]) => {
+        Promise.all([product, categories, product_types])
+            .then(([product, categories, product_types]) => {
                 res.render("admin/productEdit", {
                     product,
                     categories,
-                    types
+                    product_types
                 })
             })
-            .catch((error) => {res.send(error)})
-        /* db.Productos.findByPk(req.params.id)
-            .then((product) => {
-                res.render("admin/productEdit", {product})
-            })
-            .catch((error) => {res.send(error)}) */
+            .catch((error) => { res.send(error) })
     },
-    updateProduct: (req, res, next) => {
+    updateProduct: (req, res) => {
 
-        const { name, price, category, description } = req.body;
+        const { name, price, category, description, types } = req.body;
         const { id } = req.params;
 
         db.Productos.update({
@@ -97,10 +101,34 @@ const adminController = {
                 id: id
             }
         })
-            .then(() => {
-                res.redirect('/admin/list');
+            .then((product) => {
+                db.TipoProductos.destroy({
+                    where: {
+                        product_id: id
+                    }
+                })
+                    .then(() => {
+                        const typesArray = [...(types.length ? types : [types])]
+
+                        if (typesArray) {
+                            const createTypes = typesArray.map((type) => {
+                                return db.TipoProductos.create({
+                                    product_id: id,
+                                    type_id: type
+                                })
+                            })
+
+                            Promise.all(createTypes)
+                                .then(() => {
+                                    res.redirect('/admin/list')
+                                })
+                                .catch(error => { res.send(error) })
+                        } else {
+                            res.redirect('/admin/list')
+                        }
+                    })
             })
-            .catch(error => res.send(error))
+            .catch((error) => { res.send(error) })
     },
     productDelete: (req, res) => {
         db.Productos.destroy({

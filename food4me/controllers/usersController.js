@@ -87,7 +87,7 @@ const usersController = {
                 last_name: apellido.trim(),
                 pass: passHash,
                 date: date,
-                image: req.files[0].filename || 'sin imagen',
+                image: req.files[0] ? req.files[0].filename : 'userDefault.png',
                 userAddress_id: 2,
                 client_id: null,
                 rol_id: 1
