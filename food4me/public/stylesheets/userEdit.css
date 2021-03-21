@@ -1,0 +1,46 @@
+.containerEdit{
+    display: flex;
+    justify-content: center;
+}
+
+.tituloEdit{
+    text-align: center;
+    color: white;
+    background-color: #BC0C2B;
+    border-radius: 5px;
+}
+
+.formEdit{
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+
+.labelEdit{
+    display: flex;
+    flex-direction: column;
+}
+
+.labelEdit label{
+    margin-top: 10px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.labelEdit input{
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+}
+
+.btnEdit button{
+    background-color: #BC0C2B;
+    color: #fff;
+    width: 100px;
+    height: 50%;
+    border-radius: 10px;
+    border:none;
+    padding: 10px;
+    margin-top: 10px;  
+}

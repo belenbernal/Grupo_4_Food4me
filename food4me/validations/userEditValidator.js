@@ -3,28 +3,11 @@ const db = require('../database/models');
 
 
 module.exports = [
-    check('nombre')
+    check('name')
     .notEmpty().withMessage('Este campo es requerido'),
 
-    check('apellido')
+    check('last_name')
     .notEmpty().withMessage('Este campo es requerido'),
-
-    check('email')
-    .notEmpty().withMessage('este campo es requerido')
-    .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
-
-    body('email').custom(value =>{
-        return db.Usuarios.findOne({
-            where : {
-                email : value
-            }
-        })
-        .then(user => {
-            if(user){
-                return Promise.reject('El email ya esta registrado');
-            }
-        })
-    }),
     
     check('pass')
     .notEmpty().withMessage('Este campo es requerido')

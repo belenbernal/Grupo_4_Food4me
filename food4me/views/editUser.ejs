@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+
+    <% if ((typeof user !="undefined" ) && (user.rol_id==2) ) { %>
+        <%- include('./admin/partials/header') %>
+
+            <% }else{ %>
+                <%- include('./partials/header') %>
+                    <% } %>
+
+                        <body>
+                            <div class="container-fluid containerEdit">
+                                <div class="row col-12">
+
+                                    <div class="col-12 tituloEdit">
+                                        <h1>Editar usuario</h1>
+                                    </div>
+                                    <div class="col-12 formEdit">
+                                        <form action="/users/update?_method=PUT" method="POST"
+                                            enctype="multipart/form-data">
+
+                                            <img src="" alt="">
+                                            <div class="col-12 labelEdit">
+                                                <label for="">imagen</label>
+                                                <input type="file" name="image">
+                                            </div>
+
+                                            <div class="col-12 labelEdit">
+                                                <label for="">Nombre</label>
+                                                <input type="text" name="name" value="<%= user.name %> ">
+                                            </div>
+
+                                            <div class="col-12 labelEdit">
+                                                <label for="">Apellido</label>
+                                                <input type="text" name="last_name" value="<%= user.last_name %> ">
+                                            </div>
+
+                                            <div class="col-12 labelEdit">
+                                                <label for="">Fecha de Nacimiento</label>
+                                                <input type="date" name="date" value="<%= user.date %>">
+                                            </div>
+
+                                            <div class="col-12 labelEdit">
+                                                <label for="">Contraseña</label>
+                                                <input type="password" name="pass">
+                                            </div>
+
+                                            <div class="col-12 labelEdit">
+                                                <label for="">Confirmar contraseña</label>
+                                                <input type="password" name="pass2">
+                                            </div>
+
+                                            <div class="col-12 btnEdit">
+                                                <button type="submit">Enviar</button>
+                                            </div>
+
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </body>
+                        <%- include('./partials/footer') %>
+
+                            <%- include('./partials/scripts') %>
+
+</html>
