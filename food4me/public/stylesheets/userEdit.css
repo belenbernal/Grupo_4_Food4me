@@ -1,6 +1,9 @@
 .containerEdit{
     display: flex;
     justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    
 }
 
 .tituloEdit{
@@ -15,6 +18,7 @@
     padding: 10px;
     text-align: center;
     display: flex;
+    justify-content: center;
 }
 
 .labelEdit{
@@ -43,4 +47,25 @@
     border:none;
     padding: 10px;
     margin-top: 10px;  
+}
+
+.labelEdit img{
+    margin-bottom: 25px;
+    justify-content: center;
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+    border: 2px solid black;
+}
+
+@media(min-width: 768px){
+    .containerEdit{
+        width: 60%;
+    }
+}
+
+@media(min-width: 1024px){
+    .containerEdit{
+        width: 40%;
+    }
 }
