@@ -132,8 +132,8 @@ const adminController = {
     },
     productDelete: (req, res) => {
 
-        const { id } = req.params.id;
-        
+        const { id } = req.params;
+
         let typesDelete = db.TipoProductos.destroy({
             where: {
                 product_id: id
@@ -169,16 +169,6 @@ const adminController = {
             })
             .catch(error => res.send(error))
 
-
-        /* db.Productos.destroy({
-            where: {
-                id: req.params.id
-            }
-        })
-            .then(() => {
-                return res.redirect('/admin/list');
-            })
-            .catch(error => res.send(error)) */
     }
 }
 
