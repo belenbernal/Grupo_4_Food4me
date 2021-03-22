@@ -1,5 +1,6 @@
 const path = require('path');
 const db = require('../database/models')
+const fs = require('fs');
 
 const adminController = {
 
@@ -130,7 +131,46 @@ const adminController = {
             .catch((error) => { res.send(error) })
     },
     productDelete: (req, res) => {
-        db.Productos.destroy({
+
+        const { id } = req.params.id;
+        
+        let typesDelete = db.TipoProductos.destroy({
+            where: {
+                product_id: id
+            }
+        })
+
+        let cartDelete = db.Carts.destroy({
+            where: {
+                product_id: id
+            }
+        })
+
+        let product = db.Productos.findOne({
+            where: {
+                id: id
+            }
+        })
+            .then((product) => {
+                fs.unlinkSync('public/images/products/' + product.image)
+            })
+
+        Promise.all([typesDelete, cartDelete, product])
+            .then(() => {
+                db.Productos.destroy({
+                    where: {
+                        id: id
+                    }
+                })
+                    .then(() => {
+                        return res.redirect('/admin/list');
+                    })
+                    .catch(error => res.send(error))
+            })
+            .catch(error => res.send(error))
+
+
+        /* db.Productos.destroy({
             where: {
                 id: req.params.id
             }
@@ -138,7 +178,7 @@ const adminController = {
             .then(() => {
                 return res.redirect('/admin/list');
             })
-            .catch(error => res.send(error))
+            .catch(error => res.send(error)) */
     }
 }
 
