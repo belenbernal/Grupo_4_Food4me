@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session')
+require('dotenv').config();
+const dbConnectionTest = require('./utils/dbConnectionTest')
 
 var localsCheck = require('./middlewares/localsCheck');
 var cookieCheck = require('./middlewares/cookieCheck');
@@ -17,6 +19,7 @@ var adminRouter = require('./routes/adminRouter');
 
 var app = express();
 app.use(methodOverride('_method'));
+dbConnectionTest();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,6 +37,7 @@ app.use(session({
 app.use(cookieCheck);
 app.use(localsCheck);
 
+/* rutas */
 app.use('/', indexRouter);
 app.use('/products',productRouter)
 app.use('/users', usersRouter);

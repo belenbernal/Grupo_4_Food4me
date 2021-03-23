@@ -21,27 +21,30 @@
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
                             <select name="category" id="category" class="custom-select">
-                                <option selected>Selecciona la categoría</option>
-                                <option value="entrada">Entrada</option>
-                                <option value="platoPrincipal">Plato principal</option>
-                                <option value="postre">Postre</option>
-                                <option value="pasteleria">Pastelería</option>
+                                <option selected disabled>Seleccione la categoría</option>
+                                <% categorias.forEach(categoria => { %>
+                                    <option value="<%=categoria.id%>"> <%=categoria.categories%> </option>
+                                <% }) %>
                             </select>
                         </div>
 
                         <div class="mb-3 entrada  checks">
                             <!--opciones vegetariano, vegano, celiaco-->
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="vegetarian">
+                                <input value="2" type="checkbox" class="custom-control-input" id="vegetarian" name="types">
                                 <label class="custom-control-label" for="vegetarian">Comida vegetariana</label>  
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="vegan" id="vegan">
+                                <input value="1" type="checkbox" class="custom-control-input" name="types" id="vegan">
                                 <label class="custom-control-label" for="vegan">Comida vegana</label>
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="celiac" id="celiac">
+                                <input value="3" type="checkbox" class="custom-control-input" name="types" id="celiac">
                                 <label class="custom-control-label" for="celiac">Comida para celíacos</label>
+                            </div>
+                            <div class="custom-control custom-checkbox checks">
+                                <input value="4" type="checkbox" class="custom-control-input" name="types" id="none">
+                                <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
                             </div>
                         </div>
 
@@ -52,15 +55,9 @@
                         </div>
 
                         <div class="mb-3 entrada">
-                            <!--cliente-->
-                            <label for="client" class="form-label">Nombre del cliente</label>
-                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante">
-                        </div>
-
-                        <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Ingrese la descripción del producto aquí"></textarea>
                         </div>
 
                         <div class="mb-3 entrada">

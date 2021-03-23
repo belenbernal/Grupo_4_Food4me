@@ -1,5 +1,17 @@
 [
   {
+    "id": 1,
+    "name": "Croissant, Raw - Mini",
+    "description": "lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue",
+    "price": 4144.4,
+    "client": "lafarola",
+    "image": "entrada1.jpg",
+    "category": "entrada",
+    "vegan": 1,
+    "vegetarian": 1,
+    "celiac": 1
+  },
+  {
     "id": 2,
     "name": "Milk - Skim",
     "description": "diam erat fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque",

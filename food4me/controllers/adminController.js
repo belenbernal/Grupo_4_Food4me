@@ -1,89 +1,173 @@
-const fs = require('fs');
 const path = require('path');
-const { setProduct, getProduct } = require("../data/products");
-const products = getProduct()
-
+const db = require('../database/models')
+const fs = require('fs');
 
 const adminController = {
-   
-    productList: (req, res) => { //method get
-        res.render('admin/indexAdmin', {
-            products
-        })
-    },
-    productAdd: (req, res) => { //method get
-        res.render('admin/productAdd')
-    },
-    newProduct: (req, res, next) => { //method post
-        /*res.send(req.body)*/
-        let lastID = 0;
-        products.forEach(product => {
-            if (product.id > lastID) {
-                lastID = product.id
+
+    productList: (req, res) => {
+        db.Productos.findAll({
+            order: [
+                ['name', 'ASC']
+            ],
+            where: {
+                client_id: req.session.user.client_id
             }
-        });
-
-        const { name, price, client, image, category, vegan, vegetarian, celiac } = req.body;
-
-        let product = {
-            id: lastID + 1,
-            name,            
+        })
+            .then((products) => {
+                res.render('admin/indexAdmin', { products })
+            })
+            .catch((error) => res.send(error))
+    },
+    productAdd: (req, res) => {
+        db.Categorias.findAll()
+            .then(categorias => {
+                res.render('admin/productAdd', {
+                    categorias
+                })
+            })
+    },
+    newProduct: (req, res) => {
+        const { name, price, category, types, description } = req.body;
+        db.Productos.create({
+            name,
+            description,
             price,
-            client,
             image: req.files[0].filename,
-            category,
-            vegan,
-            vegetarian,
-            celiac
-        }
-        products.push(product);
-        setProduct(products);
-        res.redirect('/admin/list');
-    },
-    editProduct: (req, res) => { //method get
-        let product = products.find(product => product.id === +req.params.id
-        );
-        res.render('admin/productEdit', {
-            product
+            category_id: category,
+            client_id: req.session.user.client_id
         })
-    },
-    updateProduct: (req, res, next) => { //method put
+            .then((product) => {
+                const typesArray = [...(types.length ? types : [types])]
+                /* preguntamos si lo que llega por parametro es un array o no, si es un array, lo guardamos
+                 en la constante typesArray, si no es un array, lo convertimos a array y lo guardamos*/
 
-        const { name, price, client, image, category, vegan, vegetarian, celiac } = req.body;
 
-        products.forEach(product => {
-            if (product.id === +req.params.id) {
-                if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
-                    fs.unlinkSync(path.join('public', 'images', 'products', product.image));
+                /* console.log(typesArray); */
+                if (typesArray) {
+
+                    /* Recorremos el array y vamos cargando esos datos en la tabla pivot */
+                    const createTypes = typesArray.map((type) => {
+                        return db.TipoProductos.create({
+                            product_id: product.id,
+                            type_id: type
+                        })
+                    })
+                    /* console.log(createTypes); */
+                    Promise.all(createTypes)
+                        .then(() => {
+                            res.redirect('/admin/list')
+                        })
+                        .catch(error => { res.send(error) })
+                } else {
+                    res.redirect('/admin/list')
                 }
-                product.id = +req.params.id;
-                product.name = name;                
-                product.price = price;
-                product.client = client;
-                product.image = req.files[0].filename;
-                product.category = category;
-                product.vegan = vegan;
-                product.vegetarian = vegetarian;
-                product.celiac = celiac
 
+            })
+            .catch((error) => { res.send(error) })
+    },
+    editProduct: (req, res) => {
+        let product = db.Productos.findOne({
+            where: {
+                id: req.params.id
             }
-        });
-        setProduct(products)
-        res.redirect('/admin/list');
+        })
+        let categories = db.Categorias.findAll();
+        let product_types = db.TipoProductos.findAll();
+
+        Promise.all([product, categories, product_types])
+            .then(([product, categories, product_types]) => {
+                res.render("admin/productEdit", {
+                    product,
+                    categories,
+                    product_types
+                })
+            })
+            .catch((error) => { res.send(error) })
+    },
+    updateProduct: (req, res) => {
+
+        const { name, price, category, description, types } = req.body;
+        const { id } = req.params;
+
+        db.Productos.update({
+            name,
+            description,
+            price,
+            image: req.files[0].filename,
+            category_id: category,
+            client_id: req.session.user.client_id
+        }, {
+            where: {
+                id: id
+            }
+        })
+            .then((product) => {
+                db.TipoProductos.destroy({
+                    where: {
+                        product_id: id
+                    }
+                })
+                    .then(() => {
+                        const typesArray = [...(types.length ? types : [types])]
+
+                        if (typesArray) {
+                            const createTypes = typesArray.map((type) => {
+                                return db.TipoProductos.create({
+                                    product_id: id,
+                                    type_id: type
+                                })
+                            })
+
+                            Promise.all(createTypes)
+                                .then(() => {
+                                    res.redirect('/admin/list')
+                                })
+                                .catch(error => { res.send(error) })
+                        } else {
+                            res.redirect('/admin/list')
+                        }
+                    })
+            })
+            .catch((error) => { res.send(error) })
     },
     productDelete: (req, res) => {
-        /* res.send('holaa') */
-        products.forEach(product => {
-            if (product.id === +req.params.id) {
-                if (fs.existsSync(path.join('public', 'images', 'products', product.image))) {
-                    fs.unlinkSync(path.join('public', 'images', 'products', product.image));
-                }
-                let eliminar = products.indexOf(product);
-                products.splice(eliminar, 1);
+
+        const { id } = req.params;
+
+        let typesDelete = db.TipoProductos.destroy({
+            where: {
+                product_id: id
             }
-        });
-        setProduct(products)
-        res.redirect('/admin/list');
+        })
+
+        let cartDelete = db.Carts.destroy({
+            where: {
+                product_id: id
+            }
+        })
+
+        let product = db.Productos.findOne({
+            where: {
+                id: id
+            }
+        })
+            .then((product) => {
+                fs.unlinkSync('public/images/products/' + product.image)
+            })
+
+        Promise.all([typesDelete, cartDelete, product])
+            .then(() => {
+                db.Productos.destroy({
+                    where: {
+                        id: id
+                    }
+                })
+                    .then(() => {
+                        return res.redirect('/admin/list');
+                    })
+                    .catch(error => res.send(error))
+            })
+            .catch(error => res.send(error))
 
     }
 }

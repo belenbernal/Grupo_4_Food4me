@@ -1,7 +1,6 @@
-const path = require('path');
 const bcrypt = require('bcrypt');
-const { setUsers, getUsers } = require("../data/users");
-const users_db = getUsers()
+const db = require('../database/models')
+const fs = require('fs')
 const { validationResult } = require('express-validator');
 
 const usersController = {
@@ -9,74 +8,76 @@ const usersController = {
         res.render('login')
     },
     processLogin: (req, res) => {
-
         /* en esta variable capturamos los datos que no hayan pasado la validacion */
         let errores = validationResult(req);
+        if (errores.isEmpty()) {
 
-        /* requerimos los datos que nos envian desde el formulario */
-        const { email, pass, recordar } = req.body;
+            const { email, pass, recordar } = req.body;
 
-        /* si el array de errores no esta vacia, muestro los errores */
-        if (!errores.isEmpty()) {
-            res.render('login', {
-                errores: errores.mapped()
-            })
-        } else { /* si el array de errores esta vacia.. */
-
-            /* buscamos el user (email) ingresado en la base de datos (json) */
-            let result = users_db.find(user => user.email === email);
-
-            /* si se encontro el usuario (email) */
-            if (result) {
-
-                /* comparamos las contraseñas, en caso de que coincidan.. */
-                if (bcrypt.compareSync(pass.trim(), result.pass)) {
-
-                    /* creamos la session */
-                    req.session.user = {
-                        id: result.id,
-                        nombre: result.nombre,
-                        apellido: result.apellido,
-                        email: result.email,
-                        rol: result.rol,
-                        image: result.image
-                    }
-
-                    /* si hizo click en el check de recordar.. */
-                    if (recordar) {
-                        /* guardamos la sesion por 1 minuto */
-                        res.cookie('userFood4me', req.session.user, {
-                            maxAge: 60 * 1000 //mide en milisegundos
-                        })
-                    }
-
-                    if (result.rol == 'user') {
-                        /* redirigimos al home */
-                        return res.redirect('/')
-                    } else {
-                        return res.redirect('/admin/list')
-                    }
-
-                }else{
-                    res.render('login', {
-                        errores: {
-                            pass: {
-                                msg : 'La contraseña es incorrecta'
-                            } 
-                        },
-                        datos: req.body
-                    });
+            db.Usuarios.findOne({
+                where: {
+                    email
                 }
-            }
-            /* si no encontro el email que coincide con el ingresado.. renderizo la pagina del login con un mensaje */
-            res.render('login', {
-                errores: {
-                    email: {
-                        msg : 'El usuario es incorrecto'
-                    } 
-                },
+            })
+                .then(user => {
+                    if (!user) {
+                        res.render('login', {
+                            errores: {
+                                email: {
+                                    msg: 'email inválida'
+                                }
+                            },
+                            datos: req.body
+                        });
+                    }
+                    if (bcrypt.compareSync(pass.trim(), user.pass)) {
+                        /* creamos la session */
+                        req.session.user = {
+                            id: user.id,
+                            name: user.name,
+                            last_name: user.last_name,
+                            email: user.email,
+                            rol_id: user.rol_id,
+                            image: user.image,
+                            client_id: user.client_id
+                        }
+
+                        /* si hizo click en el check de recordar.. */
+                        if (recordar) {
+
+                            res.cookie('userFood4me', req.session.user, {
+                                maxAge: 60 * 1000 * 60//mide en milisegundos
+                            })
+                        }
+                        if (user.rol_id == 1) {
+                            return res.redirect('/')
+                        } else {
+                            return res.redirect('/admin/list')
+                        }
+                    } else {
+                        
+                        res.render('login', {
+                            errores: {
+                                pass: {
+                                    msg: 'contraseña inválida'
+                                }
+                            },
+                            datos: req.body
+                        });
+                    }
+                    
+                })
+                .catch((error) => res.send(error))
+
+
+        } else { //revisar donde marca cada error!!           
+           
+            return res.render('login', {
+                errores: errores.mapped(),
                 datos: req.body
             });
+
+
         }
     },
     register: (req, res) => {
@@ -85,68 +86,96 @@ const usersController = {
     processRegister: (req, res) => {
         let errores = validationResult(req);
 
-        /* si el array de errores no esta vacia, muestro los errores */
-        if (!errores.isEmpty()) {
-            return res.render('register', {
-                errores: errores.mapped(),/* devuelve el error corrrespondiente */
-                datos: req.body
-            })
-        } else {/* si esta todo bien pasa a crear el usuario */
-            let last = 0
-
-            users_db.forEach(usuario => {
-                if (usuario.id > last) {
-                    last = usuario.id
-                }
-            }); 
-            
-            
+        if (errores.isEmpty()) {
 
             /* requiro los campos pasados por el formulario */
             const { email, nombre, apellido, pass, date } = req.body;
-
             /* encripta la contraseña */
             let passHash = bcrypt.hashSync(pass.trim(), 12)
 
-            /* crea nuevo usuario */
-            let newUser = {
-                id: +last + 1,
+            db.Usuarios.create({
+                /* crea nuevo usuario */
                 email: email.trim(),
-                nombre: nombre.trim(),
-                apellido: apellido.trim(),
+                name: nombre.trim(),
+                last_name: apellido.trim(),
                 pass: passHash,
                 date: date,
-                image: req.files[0].filename || 'sin imagen',
-                rol: 'user'
-            }           
+                image: req.files[0] ? req.files[0].filename : 'userDefault.png',
+                userAddress_id: 2,
+                client_id: null,
+                rol_id: 1
+            })
+                .then(() => res.redirect('/users/login'))
+                .catch(error => res.send(error))
 
-            /* envia al nuevo usuario al json */
-            users_db.push(newUser);
-            setUsers(users_db);
-            res.redirect('/users/login')
-
-           
+        } else {
+            return res.render('register', {
+                errores: errores.mapped(),
+                datos: req.body
+            });
         }
-        
 
     },
     profile: (req, res) => {
+
+        let user = res.locals.user
         res.render('profile', {
-            users_db
+            user
         })
+
+    },
+    userEdit: (req, res) => {
+        db.Usuarios.findByPk(req.session.user.id)
+            .then((user) => {
+                res.render('editUser', { user })
+            })
+            .catch(error => res.send(error))
+
+
+    },
+    upUser: (req, res) => {
+
+        const { name, last_name, date} = req.body
+
+        if (req.files[0] && req.session.user.image != 'userDefault.png') {
+            fs.unlinkSync('public/images/users/' + req.session.user.image)
+        }
+
+        db.Usuarios.update({
+            name: name.trim(),
+            last_name: last_name.trim(),
+            image: req.files[0] ? req.files[0].filename : undefined,
+            date: date
+        },
+            {
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(user => {
+                db.Usuarios.findByPk(req.session.user.id)
+                .then((user)=>{
+                    req.session.user = {
+                        id: user.id,
+                        name: user.name,
+                        last_name: user.last_name,
+                        email: user.email,
+                        rol_id: user.rol_id,
+                        image: user.image,
+                        client_id: user.client_id
+                    }
+                    return res.redirect('/users/profile')
+                })
+            })
     },
     logout: (req, res) => {
-        /* preguntamos si existe la cookie */
-        if (req.cookies.userFood4me) {
 
-            /* si existe, borramos la cookie */
+        delete req.session.user
+
+        if (req.cookies.userFood4me) {
             res.cookie('userFood4me', '', { maxAge: -1 });
         }
 
-        /* cerramos sesion */
-        delete req.session.user
-
-        /* redireccionamos al home */
         res.redirect('/')
     }
 }

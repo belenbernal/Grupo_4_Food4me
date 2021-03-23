@@ -20,28 +20,31 @@
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
-                            <select name="category" id="category" class="custom-select" value="<%=product.category%>">
-                                <option >Selecciona la categoría</option>
-                                <option value="entrada" <%- product.category === 'entrada' ? 'selected' : null %> >Entrada</option>
-                                <option value="platoPrincipal" <%- product.category === 'platoPrincipal' ? 'selected' : null %> >Plato principal</option>
-                                <option value="postre" <%- product.category === 'postre' ? 'selected' : null %> >Postre</option>
-                                <option value="pasteleria" <%- product.category === 'pasteleria' ? 'selected' : null %> >Pastelería</option>
+                            <select name="category" id="category" class="custom-select" value="<%=product.category_id%>">
+                                <option disabled>Selecciona la categoría</option>
+                                <% categories.forEach(category => { %>
+                                    <option value="<%=category.id%>" <%- category.id == product.category_id ? 'selected' : '' %> > <%=category.categories%> </option>
+                                <% }) %>
                             </select>
                         </div>
 
                         <div class="mb-3 entrada  checks">
                             <!--opciones vegetariano, vegano, celiaco-->
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" id="vegetarian" name="vegetarian" value="<%=product.vegetarian%>">
-                                <label class="custom-control-label" for="vegetarian">Comida vegetariana</label>  
+                                <input type="checkbox" class="custom-control-input" id="2" name="types" value="2">
+                                <label class="custom-control-label" for="2">Comida vegetariana</label>  
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="vegan" id="vegan" value="<%=product.vegan%>">
-                                <label class="custom-control-label" for="vegan">Comida vegana</label>
+                                <input type="checkbox" class="custom-control-input" name="types" id="1" value="1">
+                                <label class="custom-control-label" for="1">Comida vegana</label>
                             </div>
                             <div class="custom-control custom-checkbox checks">
-                                <input type="checkbox" class="custom-control-input" name="celiac" id="celiac" value="<%=product.celiac%>">
-                                <label class="custom-control-label" for="celiac">Comida para celíacos</label>
+                                <input type="checkbox" class="custom-control-input" name="types" id="3" value="3">
+                                <label class="custom-control-label" for="3">Comida para celíacos</label>
+                            </div>
+                            <div class="custom-control custom-checkbox checks">
+                                <input type="checkbox" class="custom-control-input" name="types" id="4" value="4">
+                                <label class="custom-control-label" for="4">Ninguno de los anteriores</label>
                             </div>
                         </div>
 
@@ -52,22 +55,15 @@
                         </div>
 
                         <div class="mb-3 entrada">
-                            <!--cliente-->
-                            <label for="client" class="form-label">Nombre del cliente</label>
-                            <input type="text" name="client" id="client" class="form-control" placeholder="Nombre del bar/restaurante" value="<%=product.client%>">
-                        </div>
-
-                        <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3"  value="<%=product.description%>"></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3"><%=product.description%></textarea>
                         </div>
                         
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="image" class="form-label">Foto del producto</label>
                             <input type="file" id="image" name="image">
-                            <!--no se puede cargar el value de la imagen-->
                         </div>
 
                         <div class="boton-carga">
@@ -78,22 +74,14 @@
                 </div>
             </div>
 
-            <% if (product.vegetarian) { %>
-                <script>
-                    document.getElementById('vegetarian').checked = true;
-                </script>
-            <% } %>
-            <% if (product.vegan) { %>
-                <script>
-                    document.getElementById('vegan').checked = true;
-                </script>
-            <% } %>
-            <% if (product.celiac) { %>
-                <script>
-                    document.getElementById('celiac').checked = true;
-                </script>
-            <% } %>
-
+            <% product_types.forEach(type => { %>
+                <% if (product.id == type.product_id) { %>
+                    <script>
+                        document.getElementById('<%- type.type_id %>').checked = true;
+                    </script>
+                <% } %>
+            <% }) %>
+            
             <%- include('./partials/footer') %>
 
                 <%- include('./partials/scripts') %>

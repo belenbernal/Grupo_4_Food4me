@@ -1,6 +1,6 @@
 const {check, body} = require('express-validator');
-const { setUsers, getUsers } = require("../data/users");
-const users_db = getUsers();
+const db = require('../database/models');
+
 
 module.exports = [
     check('nombre')
@@ -14,13 +14,17 @@ module.exports = [
     .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
 
     body('email').custom(value =>{
-        let result = users_db.find(user => user.email === value)
-        if (result){
-            return false
-        }else{
-            return true
-        }
-    }).withMessage('El email ya esta registrado'),
+        return db.Usuarios.findOne({
+            where : {
+                email : value
+            }
+        })
+        .then(user => {
+            if(user){
+                return Promise.reject('El email ya esta registrado');
+            }
+        })
+    }),
     
     check('pass')
     .notEmpty().withMessage('Este campo es requerido')
@@ -41,6 +45,4 @@ module.exports = [
     check('date')
     .notEmpty().withMessage('este campo es requerido'),
 
-    check('genero')
-    .notEmpty().withMessage('Este campo es requerido')
 ]

@@ -1,16 +1,19 @@
-const { setProduct, getProduct } = require("../data/products");
-const products = getProduct()
-
+const db = require('../database/models')
 
 const indexController = {
-    index: (req, res)=>{
-        res.render('index', {
-            products
-        })
+    home: (req, res) => {
+        res.render('home');
     },
-    contact: (req, res)=>{
+    menu: (req, res) => {
+        db.Productos.findAll()
+            .then((products) => {
+                res.render('menu', { products })
+            })
+            .catch((error) => res.send(error))
+    },
+    contact: (req, res) => {
         res.render('contact')
     }
-    
+
 }
 module.exports = indexController;

@@ -3,10 +3,11 @@ var router = express.Router();
 const {productDelete, editProduct, newProduct, productAdd, productList, updateProduct} = require('../controllers/adminController')
 const upload = require('../middlewares/productMulter');
 const adminCheck = require('../middlewares/adminCheck');
+const createValidator = require('../validations/createValidator');
 
 
 /* carga de producto*/
-router.get('/create', adminCheck , productAdd);
+router.get('/create', adminCheck, productAdd);
 router.post('/create', upload.any() , newProduct);
 
 /* edicion y subida de producto */

@@ -2,9 +2,7 @@
 <html lang="es">
 <%- include('./partials/head') %>
 
-    
-
-    <% if ((typeof user !="undefined") && (user.rol == 'admin') ) { %>
+    <% if ((typeof user !="undefined") && (user.rol_id == 2) ) { %>
         <%- include('./admin/partials/header') %>
 
         <% }else{ %>
@@ -25,14 +23,14 @@
                         <article class="info-profile">
                             <h4>Nombre: </h4>
                             <p>
-                                <%= user.nombre %>
+                                <%= user.name %>
                             </p>
                         </article>
 
                         <article class="info-profile">
                             <h4>Apellido: </h4>
                             <p>
-                                <%= user.apellido %>
+                                <%= user.last_name %>
                             </p>
                         </article>
 
@@ -50,8 +48,8 @@
                                 </form>
                             </div>
                             <div class="col-6">
-                                <form action="">
-                                    <button type="button" class="btn btn-success">Editar Perfil</button>
+                                <form action="/users/edit">
+                                    <button type="submit" class="btn btn-success">Editar Perfil</button>
                                 </form>
                             </div>
                         </div>

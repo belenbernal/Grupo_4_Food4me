@@ -14,27 +14,27 @@
                             <div class="EntradasRegister col-12">
                                 <label for="mail">Email</label>
                                 <input type="email" name="email" id="mail" placeholder="Ingresa tu Email"
-                                    value="<%= (typeof datos!='undefined' && datos.email)?datos.email : "" %>">
+                                    value="<%= (typeof datos !='undefined' && datos.email ? datos.email : null) %>">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.email)?errores.email.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.email ? errores.email.msg : null) %>
                                 </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="nombre">Nombre</label>
                                 <input type="text" name="nombre" id="nombre" placeholder="Ingresa tu nombre"
-                                    value="<%= (typeof datos!='undefined' && datos.nombre)?datos.nombre : "" %>">
+                                    value="<%= (typeof datos!='undefined' && datos.nombre ? datos.nombre : null) %>">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.nombre)?errores.nombre.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.nombre ? errores.nombre.msg : null) %>
                                 </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="apellido">Apellido</label>
                                 <input type="text" name="apellido" id="apellido" placeholder="Ingresa tu apellido"
-                                    value="<%= (typeof datos!='undefined' && datos.apellido)?datos.apellido : "" %>">
+                                    value="<%= (typeof datos!='undefined' && datos.apellido ? datos.apellido : null) %>">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.apellido)?errores.apellido.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.apellido ? errores.apellido.msg : null) %>
                                 </span>
                             </div>
 
@@ -42,7 +42,7 @@
                                 <label for="pass">Contraseña</label>
                                 <input type="password" name="pass" id="pass1" placeholder="Password">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.pass)?errores.pass.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.pass ? errores.pass.msg : null) %>
                                 </span>
                             </div>
 
@@ -50,16 +50,16 @@
                                 <label for="pass"> Confirmar Contraseña</label>
                                 <input type="password" name="pass2" id="pass2" placeholder="Password">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.pass2)?errores.pass2.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.pass2 ? errores.pass2.msg : null) %>
                                 </span>
                             </div>
 
                             <div class="EntradasRegister col-12">
                                 <label for="date">Fecha de Nacimiento </label>
                                 <input type="date" name="date" id=""
-                                    value="<%= (typeof datos!='undefined' && datos.date)?datos.date : "" %>">
+                                    value="<%= (typeof datos!='undefined' && datos.date ? datos.date : null) %>">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.date)?errores.date.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.date ? errores.date.msg : null) %>
                                 </span>
                             </div>
 
@@ -67,7 +67,7 @@
                                 <label for="image" class="form-label">Foto de perfil</label>
                                 <input type="file" id="image" name="image">
                                 <span class="text-danger">
-                                    <%= (typeof errores !='undefined' && errores.image)?errores.image.msg : "" %>
+                                    <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
                                 </span>
                             </div>
                             <img src="" alt="">
