@@ -20,6 +20,16 @@ const usersController = {
                 }
             })
                 .then(user => {
+                    if (!user) {
+                        res.render('login', {
+                            errores: {
+                                email: {
+                                    msg: 'email inválida'
+                                }
+                            },
+                            datos: req.body
+                        });
+                    }
                     if (bcrypt.compareSync(pass.trim(), user.pass)) {
                         /* creamos la session */
                         req.session.user = {
@@ -45,7 +55,7 @@ const usersController = {
                             return res.redirect('/admin/list')
                         }
                     } else {
-                        console.log('1')
+                        
                         res.render('login', {
                             errores: {
                                 pass: {
@@ -55,12 +65,13 @@ const usersController = {
                             datos: req.body
                         });
                     }
+                    
                 })
                 .catch((error) => res.send(error))
 
 
         } else { //revisar donde marca cada error!!           
-            console.log('2')
+           
             return res.render('login', {
                 errores: errores.mapped(),
                 datos: req.body
