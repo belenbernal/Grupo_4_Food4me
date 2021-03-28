@@ -8,7 +8,7 @@ const createValidator = require('../validations/createValidator');
 
 /* carga de producto*/
 router.get('/create', adminCheck, productAdd);
-router.post('/create', upload.any() , newProduct);
+router.post('/create', upload.any(), createValidator, newProduct);
 
 /* edicion y subida de producto */
 router.get('/edit/:id', adminCheck , editProduct);

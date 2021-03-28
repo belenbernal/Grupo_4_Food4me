@@ -9,6 +9,7 @@ const registerValidator = require('../validations/registerValidator');
 const loginValidator = require('../validations/loginValidator');
 const userEditValidator = require('../validations/userEditValidator');
 
+
 const userCheck = require('../middlewares/userCheck');
 const sessionCheck = require('../middlewares/sessionCheck');
 
@@ -22,7 +23,7 @@ router.post('/register', upload.any() ,registerValidator, processRegister);
 router.get('/profile',userCheck, profile);
 
 router.get('/edit', userEdit);
-router.put('/update',upload.any(), upUser);
+router.put('/update', upload.any(), userEditValidator, upUser);
 
 router.get('/logout', userCheck, logout);
 

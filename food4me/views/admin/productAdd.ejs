@@ -8,24 +8,32 @@
 
             <div class="container contenedor-product-add">
                 <div class="row contenido-form card mx-auto col-12">
-                    <form action="/admin/create" method="POST" enctype="multipart/form-data">
+                    <form class="formAdd" action="/admin/create" method="POST" enctype="multipart/form-data">
                         <h2 class="titulo-formu">Carga de producto</h2>
 
                         <div class="mb-3 entrada">
                             <!--producto-->
                             <label for="name" class="form-label">Nombre del producto</label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto">
+                            <span id="errorNombre" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
                             <select name="category" id="category" class="custom-select">
-                                <option selected disabled>Seleccione la categoría</option>
-                                <% categorias.forEach(categoria => { %>
+                                <option selected disabled >Seleccione la categoría</option>
+                                 <% categorias.forEach(categoria => { %>
                                     <option value="<%=categoria.id%>"> <%=categoria.categories%> </option>
                                 <% }) %>
                             </select>
+                            <span id="errorCategoria" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.category ? errores.category.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada  checks">
@@ -46,33 +54,52 @@
                                 <input value="4" type="checkbox" class="custom-control-input" name="types" id="none">
                                 <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
                             </div>
+                            <span id="errorCheck" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.types ? errores.types.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--precio-->
                             <label for="price" class="form-label">Precio</label>
                             <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario">
+                            <span id="errorPrecio" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.price ? errores.price.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
                             <textarea class="form-control" name="description" id="description" rows="3" placeholder="Ingrese la descripción del producto aquí"></textarea>
+                            <span id="errorDescripcion" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="image" class="form-label">Foto del producto</label>
-                            <input type="file" id="image" name="image">
+                            <input type="file" id="image" name="image" >
+                            <img src="" alt="" id="vistaPrevia" >
+                            <span id="errorImagen" class="text-danger"></span>
+                            <span class="text-danger">
+                                <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="boton-carga">
                             <button type="submit" class="btn btn-primary">Guardar</button>
+                            <span id="msgError" class="text-danger"></span>
                         </div>
 
                     </form>
                 </div>
             </div>
+            <script src="../javascript/productAddFront.js"></script>
 
             <%- include('./partials/footer') %>
 
