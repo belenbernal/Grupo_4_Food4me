@@ -13,6 +13,9 @@ const indexController = {
     },
     contact: (req, res) => {
         res.render('contact')
+    },
+    contactForm: (req, res) => {
+        res.render('contact')
     }
 
 }

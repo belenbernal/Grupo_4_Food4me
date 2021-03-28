@@ -2,20 +2,20 @@
 <html lang="es">
 ​
 <%- include('./partials/head') %>
-    <body>  
+
+    <body>
         <%- include('./partials/header') %>
             <div class="contenedorLogin">
                 <div class="container form ">
                     <div class="row card-login mx-auto">
                         <h1 class="loginTitulo">Login</h1>
-                        <form action="/users/login" method="POST">
+                        <form action="/users/login" method="POST" id="form-login" class="form-login">
                             <div class="col-12  col-md-12 datosLogin">
-                                ​
                                 <div class="col-12 EntradasLogin">
                                     <label for="email">Email</label>
                                     <input type="email" name="email" id="email" placeholder="Ingresa tu email"
                                         value="<%= (typeof datos!='undefined' && datos.email)?datos.email : "" %>">
-                                    <span class="text-danger">
+                                    <span class="text-danger" id="errorEmail">
                                         <%= (typeof errores !='undefined' && errores.email) ? errores.email.msg : null
                                             %>
                                     </span>
@@ -25,7 +25,7 @@
                                     <label for="pass">Contraseña</label>
                                     <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña"
                                         value="<%= (typeof datos!='undefined' && datos.pass)?datos.pass : "" %>">
-                                    <span class="text-danger">
+                                    <span class="text-danger" id="errorPass">
                                         <%= (typeof errores !='undefined' && errores.pass) ? errores.pass.msg : null%>
                                     </span>
                                 </div>
@@ -33,6 +33,7 @@
                                 <div class="col-12 EntradasLogin custom-control custom-checkbox recordame">
                                     <input type="checkbox" class="custom-control-input" id="recordar" name="recordar">
                                     <label class="custom-control-label" for="recordar">Recordame</label>
+                                    <span id="msgError" class="text-danger"></span>
                                 </div>
                             </div>
 
@@ -46,11 +47,9 @@
                     </div>
                 </div>
             </div>
-            ​
-            ​
             <%- include('./partials/footer') %>
-                ​
-            <%- include('./partials/scripts') %>
+                <%- include('./partials/scripts') %>
+                    <script src="/javascript/login.js"></script>
     </body>
 
 </html>

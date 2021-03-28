@@ -24,7 +24,7 @@ const usersController = {
                         res.render('login', {
                             errores: {
                                 email: {
-                                    msg: 'email inválida'
+                                    msg: 'El email no está registrado'
                                 }
                             },
                             datos: req.body
@@ -59,7 +59,7 @@ const usersController = {
                         res.render('login', {
                             errores: {
                                 pass: {
-                                    msg: 'contraseña inválida'
+                                    msg: 'Contraseña inválida'
                                 }
                             },
                             datos: req.body
