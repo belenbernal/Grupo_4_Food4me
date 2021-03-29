@@ -99,13 +99,13 @@ window.addEventListener('load',()=>{
                 break;
         }
     })
-    pass2.addEventListener('change',()=>{
+    pass2.addEventListener('blur',()=>{
         switch (true) {
             case !pass2.value:
                 errorPass2.innerHTML = "Verifique la contraseña";
                 pass2.classList.add('is-invalid');
                 break;
-            case pass1.value != pass2.value :
+            case pass2.value != pass1.value:
                 errorPass2.innerHTML = "Las contraseñas no coinciden";
                 pass2.classList.add('is-invalid');
                 break;
@@ -116,24 +116,24 @@ window.addEventListener('load',()=>{
                 break;
         }
     })
-    date.addEventListener('blur',()=>{
+    date.addEventListener('blur',()=>{ /*Revisar*/
         switch (true) {
             case !date.value:
                 errorDate.innerHTML = "El campo fecha es obligatorio"
                 date.classList.add('is-invalid')
-            break
+            break;
             case moment(date.value) > moment() :
                 errorDate.innerHTML = "La fecha es inválida"
                 date.classList.add('is-invalid')
-            break
-            case moment().diff(moment(date.value),'years') < 13 :
+            break;
+            case moment().diff(moment(date.value),'years') < 18 :
                 errorDate.innerHTML = "Debes ser mayor de 13 años"
                 date.classList.add('is-invalid')
-            break
+            break;
             default:
+                errorDate.innerHTML = "";
                 date.classList.remove('is-invalid');
                 date.classList.add('is-valid');
-                errorDate.innerHTML = "";
                 break;
         }
     })
@@ -154,7 +154,6 @@ window.addEventListener('load',()=>{
             case !regExExt.exec(image.value):
                 errorImage.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"
                 image.classList.add('is-invalid')
-                /* vistaPrevia.src = "" */
                 break;
             case image.files[0].size > oneMB * 2 :
                 errorImage.innerHTML = "El archivo debe pesar menos de 2MB"
@@ -165,11 +164,6 @@ window.addEventListener('load',()=>{
                 image.classList.remove('is-invalid');
                 image.classList.add('is-valid');
                 errorImage.innerHTML = "";
-                /* let reader = new FileReader();
-                reader.readAsDataURL(e.target.files[0])
-                reader.onload = ()=>{
-                    vistaPrevia.src = reader.result
-                } */
             break;
         }
     })
@@ -192,7 +186,7 @@ window.addEventListener('load',()=>{
             }            
         }
         if(!aceptar.checked){
-            msgError.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
+            msgAceptar.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
             msgError.innerHTML = "Los campos señalados son obligatorios"
             error = true;
         }else{
