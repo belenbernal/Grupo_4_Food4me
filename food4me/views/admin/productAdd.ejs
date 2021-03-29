@@ -15,8 +15,7 @@
                             <!--producto-->
                             <label for="name" class="form-label">Nombre del producto</label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto">
-                            <span id="errorNombre" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorNombre">
                                 <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
                             </span>
                         </div>
@@ -30,8 +29,7 @@
                                     <option value="<%=categoria.id%>"> <%=categoria.categories%> </option>
                                 <% }) %>
                             </select>
-                            <span id="errorCategoria" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorCategoria">
                                 <%= (typeof errores !='undefined' && errores.category ? errores.category.msg : null) %>
                             </span>
                         </div>
@@ -99,7 +97,7 @@
                     </form>
                 </div>
             </div>
-            <script src="../javascript/productAddFront.js"></script>
+            <!-- <script src="../javascript/productAddFront.js"></script> -->
 
             <%- include('./partials/footer') %>
 

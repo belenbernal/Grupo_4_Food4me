@@ -24,9 +24,8 @@
                                             <div class="col-12 labelEdit">
                                                 <label for="">imagen</label>
                                                 <img src="/images/users/<%= user.image %> " alt="" id="vistaPrevia">
-                                                <input id="file" type="file" name="image">
-                                                <span id="errorImagen" class="text-danger"></span>
-                                                <span class="text-danger">
+                                                <input id="file" type="file" name="image" value="<%= user.image %>">
+                                                <span class="text-danger" id="errorImagen">
                                                     <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
                                                 </span>
                                             </div>
