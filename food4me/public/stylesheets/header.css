@@ -87,16 +87,23 @@ header .menu ul{
     justify-content: space-between;
 }
 
-header .menu ul li{        
-    border-bottom: 1px solid white;
-}
-header .menu ul li:hover{
-    background-color: #c22d4f;
-}
-
 header .menu ul li a{   
     color: white;
     text-decoration: none;
+}
+
+.link::after{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width .3s;
+}
+
+.link:hover::after{
+    width: 100%;
+    transition: width .3s;
 }
 
 /* MODAL */

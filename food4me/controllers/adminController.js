@@ -1,6 +1,7 @@
 const path = require('path');
 const db = require('../database/models')
 const fs = require('fs');
+const { validationResult } = require('express-validator');
 
 const adminController = {
 
@@ -27,43 +28,58 @@ const adminController = {
             })
     },
     newProduct: (req, res) => {
-        const { name, price, category, types, description } = req.body;
-        db.Productos.create({
-            name,
-            description,
-            price,
-            image: req.files[0].filename,
-            category_id: category,
-            client_id: req.session.user.client_id
-        })
-            .then((product) => {
-                const typesArray = [...(types.length ? types : [types])]
-                /* preguntamos si lo que llega por parametro es un array o no, si es un array, lo guardamos
-                 en la constante typesArray, si no es un array, lo convertimos a array y lo guardamos*/
+        
+        let errores = validationResult(req);
 
-
-                /* console.log(typesArray); */
-                if (typesArray) {
-
-                    /* Recorremos el array y vamos cargando esos datos en la tabla pivot */
-                    const createTypes = typesArray.map((type) => {
-                        return db.TipoProductos.create({
-                            product_id: product.id,
-                            type_id: type
-                        })
-                    })
-                    /* console.log(createTypes); */
-                    Promise.all(createTypes)
-                        .then(() => {
-                            res.redirect('/admin/list')
-                        })
-                        .catch(error => { res.send(error) })
-                } else {
-                    res.redirect('/admin/list')
-                }
-
+        if (errores.isEmpty()) {
+            const { name, price, category, types, description } = req.body;
+            db.Productos.create({
+                name,
+                description,
+                price,
+                image: req.files[0].filename,
+                category_id: category,
+                client_id: req.session.user.client_id
             })
-            .catch((error) => { res.send(error) })
+                .then((product) => {
+                    const typesArray = [...(types.length ? types : [types])]
+                    /* preguntamos si lo que llega por parametro es un array o no, si es un array, lo guardamos
+                     en la constante typesArray, si no es un array, lo convertimos a array y lo guardamos*/
+    
+    
+                    /* console.log(typesArray); */
+                    if (typesArray) {
+    
+                        /* Recorremos el array y vamos cargando esos datos en la tabla pivot */
+                        const createTypes = typesArray.map((type) => {
+                            return db.TipoProductos.create({
+                                product_id: product.id,
+                                type_id: type
+                            })
+                        })
+                        /* console.log(createTypes); */
+                        Promise.all(createTypes)
+                            .then(() => {
+                                res.redirect('/admin/list')
+                            })
+                            .catch(error => { res.send(error) })
+                    } else {
+                        res.redirect('/admin/list')
+                    }
+    
+                })
+                .catch((error) => { res.send(error) })
+        }else{
+            db.Categorias.findAll()
+            .then(categorias => {
+                res.render('admin/productAdd', {
+                    categorias,
+                    errores: errores.mapped(),
+                    datos: req.body
+                })
+            })
+        }
+       
     },
     editProduct: (req, res) => {
         let product = db.Productos.findOne({

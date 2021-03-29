@@ -55,7 +55,7 @@ const usersController = {
                             return res.redirect('/admin/list')
                         }
                     } else {
-                        
+
                         res.render('login', {
                             errores: {
                                 pass: {
@@ -65,13 +65,13 @@ const usersController = {
                             datos: req.body
                         });
                     }
-                    
+
                 })
                 .catch((error) => res.send(error))
 
 
         } else { //revisar donde marca cada error!!           
-           
+
             return res.render('login', {
                 errores: errores.mapped(),
                 datos: req.body
@@ -135,38 +135,51 @@ const usersController = {
     },
     upUser: (req, res) => {
 
-        const { name, last_name, date} = req.body
+        let errores = validationResult(req);
 
-        if (req.files[0] && req.session.user.image != 'userDefault.png') {
-            fs.unlinkSync('public/images/users/' + req.session.user.image)
+        if (errores.isEmpty()) {
+
+            const { name, last_name, date } = req.body
+
+            if (req.files[0] && req.session.user.image != 'userDefault.png') {
+                fs.unlinkSync('public/images/users/' + req.session.user.image)
+            }
+
+            db.Usuarios.update({
+                name: name.trim(),
+                last_name: last_name.trim(),
+                image: req.files[0] ? req.files[0].filename : undefined,
+                date: date
+            },
+                {
+                    where: {
+                        id: req.session.user.id
+                    }
+                })
+                .then(user => {
+                    db.Usuarios.findByPk(req.session.user.id)
+                        .then((user) => {
+                            req.session.user = {
+                                id: user.id,
+                                name: user.name,
+                                last_name: user.last_name,
+                                email: user.email,
+                                rol_id: user.rol_id,
+                                image: user.image,
+                                client_id: user.client_id
+                            }
+                            return res.redirect('/users/profile')
+                        })
+                })
+
+        } else {
+            return res.render('editUser', {
+                errores: errores.mapped(),
+                datos: req.body
+            });
         }
 
-        db.Usuarios.update({
-            name: name.trim(),
-            last_name: last_name.trim(),
-            image: req.files[0] ? req.files[0].filename : undefined,
-            date: date
-        },
-            {
-                where: {
-                    id: req.session.user.id
-                }
-            })
-            .then(user => {
-                db.Usuarios.findByPk(req.session.user.id)
-                .then((user)=>{
-                    req.session.user = {
-                        id: user.id,
-                        name: user.name,
-                        last_name: user.last_name,
-                        email: user.email,
-                        rol_id: user.rol_id,
-                        image: user.image,
-                        client_id: user.client_id
-                    }
-                    return res.redirect('/users/profile')
-                })
-            })
+
     },
     logout: (req, res) => {
 

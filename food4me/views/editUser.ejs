@@ -17,33 +17,46 @@
                                         <h1>Editar usuario</h1>
                                     </div>
                                     <div class="col-12 formEdit">
-                                        <form action="/users/update?_method=PUT" method="POST"
+                                        <form class="editUser" action="/users/update?_method=PUT" method="POST"
                                             enctype="multipart/form-data">
 
                                            
                                             <div class="col-12 labelEdit">
                                                 <label for="">imagen</label>
-                                                <img src="/images/users/<%= user.image %> " alt="">
-                                                <input id="file" type="file" name="image">
+                                                <img src="/images/users/<%= user.image %> " alt="" id="vistaPrevia">
+                                                <input id="file" type="file" name="image" value="<%= user.image %>">
+                                                <span class="text-danger" id="errorImagen">
+                                                    <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
+                                                </span>
                                             </div>
 
                                             <div class="col-12 labelEdit">
                                                 <label for="">Nombre</label>
                                                 <input type="text" name="name" value="<%= user.name %> ">
+                                                <span id="errorNombre" class="text-danger">
+                                                    <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
+                                                </span>
                                             </div>
 
                                             <div class="col-12 labelEdit">
                                                 <label for="">Apellido</label>
                                                 <input type="text" name="last_name" value="<%= user.last_name %> ">
+                                                <span id="errorApellido" class="text-danger">
+                                                    <%= (typeof errores !='undefined' && errores.last_name ? errores.last_name.msg : null) %>
+                                                </span>
                                             </div>
 
                                             <div class="col-12 labelEdit">
                                                 <label for="">Fecha de Nacimiento</label>
                                                 <input type="date" name="date" value="<%= user.date %>">
+                                                <span id="errorDate" class="text-danger">
+                                                    <%= (typeof errores !='undefined' && errores.date ? errores.date.msg : null) %>
+                                                </span>
                                             </div>
 
                                             <div class="col-12 btnEdit">
                                                 <button type="submit">Enviar</button>
+                                                <span id="errorBtn" class="text-danger"></span>
                                             </div>
 
                                         </form>
@@ -51,7 +64,7 @@
 
                                 </div>
                             </div>
-
+                           <!--  <script src="../javascript/userEditFront.js"></script> -->
 
                         </body>
                         <%- include('./partials/footer') %>

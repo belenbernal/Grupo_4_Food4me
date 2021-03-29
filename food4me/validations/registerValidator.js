@@ -10,8 +10,9 @@ module.exports = [
     .notEmpty().withMessage('Este campo es requerido'),
 
     check('email')
+    .normalizeEmail()
     .notEmpty().withMessage('este campo es requerido')
-    .isEmail().withMessage('este campo tiene q tener fomrato de email ejemplo: nombre@email.com'),
+    .isEmail().withMessage('este campo tiene que tener fomrato de email ejemplo: nombre@email.com'),
 
     body('email').custom(value =>{
         return db.Usuarios.findOne({
