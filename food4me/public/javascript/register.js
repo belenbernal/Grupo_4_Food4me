@@ -117,6 +117,7 @@ window.addEventListener('load',()=>{
         }
     })
     date.addEventListener('blur',()=>{ /*Revisar*/
+        console.log(date.value);
         switch (true) {
             case !date.value:
                 errorDate.innerHTML = "El campo fecha es obligatorio"
@@ -126,7 +127,7 @@ window.addEventListener('load',()=>{
                 errorDate.innerHTML = "La fecha es inválida"
                 date.classList.add('is-invalid')
             break;
-            case moment().diff(moment(date.value),'years') < 18 :
+            case moment().diff(moment(date.value),'years') < 13 :
                 errorDate.innerHTML = "Debes ser mayor de 13 años"
                 date.classList.add('is-invalid')
             break;
