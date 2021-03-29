@@ -170,6 +170,8 @@ window.addEventListener('load',()=>{
     aceptar.addEventListener('change', () => {
         if(!aceptar.checked){
             errorAceptar.innerHTML = 'Para crear una cuenta debes aceptar los términos y condiciones'
+        }else{
+            errorAceptar.innerHTML = "";
         }
     })
     formulario.addEventListener('submit',(e)=>{
