@@ -70,11 +70,14 @@ const adminController = {
                 })
                 .catch((error) => { res.send(error) })
         }else{
-            return res.render('admin/productAdd', {
-                errores: errores.mapped(),
-                datos: req.body
-            });
-
+            db.Categorias.findAll()
+            .then(categorias => {
+                res.render('admin/productAdd', {
+                    categorias,
+                    errores: errores.mapped(),
+                    datos: req.body
+                })
+            })
         }
        
     },

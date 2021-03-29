@@ -52,8 +52,7 @@
                                 <input value="4" type="checkbox" class="custom-control-input" name="types" id="none">
                                 <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
                             </div>
-                            <span id="errorCheck" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorCheck">
                                 <%= (typeof errores !='undefined' && errores.types ? errores.types.msg : null) %>
                             </span>
                         </div>
@@ -62,8 +61,7 @@
                             <!--precio-->
                             <label for="price" class="form-label">Precio</label>
                             <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario">
-                            <span id="errorPrecio" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorPrecios">
                                 <%= (typeof errores !='undefined' && errores.price ? errores.price.msg : null) %>
                             </span>
                         </div>
@@ -72,8 +70,7 @@
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
                             <textarea class="form-control" name="description" id="description" rows="3" placeholder="Ingrese la descripción del producto aquí"></textarea>
-                            <span id="errorDescripcion" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorDescripcion">
                                 <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
                             </span>
                         </div>
@@ -83,8 +80,7 @@
                             <label for="image" class="form-label">Foto del producto</label>
                             <input type="file" id="image" name="image" >
                             <img src="" alt="" id="vistaPrevia" >
-                            <span id="errorImagen" class="text-danger"></span>
-                            <span class="text-danger">
+                            <span class="text-danger" id="errorImagen">
                                 <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
                             </span>
                         </div>

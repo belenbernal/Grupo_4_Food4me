@@ -13,7 +13,7 @@ window.addEventListener('load', ()=>{
     let regExImg = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     let oneMb = 1048576;
 
-    /* imagen.addEventListener('blur',()=>{
+    imagen.addEventListener('blur',()=>{
         switch (true) {
             case !user.image.value:
                 errorImagen.innerHTML = "Este campo es obligatorio"
@@ -24,9 +24,9 @@ window.addEventListener('load', ()=>{
             imagen.classList.add('is-valid');
             errorImagen.innerHTML = "";
         }
-    }) */
+    })
 
-    /* imagen.addEventListener('change', (e) => {
+    imagen.addEventListener('change', (e) => {
         switch (true) {
             case !regExImg.exec(imagen.value):
                 errorImagen.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"
@@ -50,7 +50,7 @@ window.addEventListener('load', ()=>{
                 }
                 break;
         }
-    }) */
+    })
 
     nombre.addEventListener('blur', ()=>{
         switch (true) {

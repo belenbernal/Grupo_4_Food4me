@@ -10,20 +10,20 @@ module.exports = [
     .notEmpty().withMessage('Debe seleccionar una categoría'),
 
     body('types').custom((value)=>{
-        if(value.length && value.includes(4)){
-            return false
-        }
-           return true
-    })
-    .withMessage('Si seleccionó la ultima opción, no puede elegir las otras opciones'),
-
-    body('types').custom((value)=>{
         if(!value){
             return false
         }
            return true
     })
-    .withMessage('Seleccione al menos un check'),
+    .withMessage('Seleccione al menos un check')
+    .custom((value)=>{
+        if(value.length && value.includes("4")){
+            return false
+        }
+           return true
+    })
+    .withMessage('Si seleccionó la ultima opción, no puede elegir las otras opciones'),
+    
 
     check('price')
     .isNumeric().withMessage('El valor tiene que ser numérico')
@@ -34,7 +34,21 @@ module.exports = [
     .isLength({min : 100, max : 400}).withMessage('Mínimo 100 caracateres máximo 400'),
 
     check('image')
-    .notEmpty().withMessage('La imagen del producto es requerida')
-    .matches(/(.jpg|.jpeg|.png|.gif|.webp)$/i).withMessage('la imagen tiene que ser de tipo: jpg, jpeg, png, gif o webp')
+    .custom((value,{req})=>{
+        if(req.files[0]){
+            return true;
+        }else{
+            return false;
+        }
+
+    }).withMessage('La imagen del producto es requerida')
+    .custom((value,{req})=>{
+        if(req.files[0].filename.match(/(.jpg|.jpeg|.png|.gif|.webp)$/i)){
+            return true
+        }else{
+            return false
+        }
+    })
+    .withMessage('La imagen tiene que ser de tipo: jpg, jpeg, png, gif o webp')
     
 ]

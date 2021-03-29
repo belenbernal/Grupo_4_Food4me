@@ -3,14 +3,18 @@ const qs = (e) => document.querySelector(e)
 window.addEventListener('load', () => {
     console.log('java script esta vinculado correctamente')
     let formulario = qs('.formAdd');
-    console.log(formulario)
 
     let nombre = formulario.elements[0];
     let categoria = formulario.elements[1];
-    let check = formulario.elements[2];
-    let precio = formulario.elements[3];
-    let descripcion = formulario.elements[4];
-    let imagen = formulario.elements[5];
+    let check1 = formulario.elements[2];
+    let check2 = formulario.elements[3];
+    let check3 = formulario.elements[4];
+    let check4 = formulario.elements[5];
+    let precio = formulario.elements[6];
+    let descripcion = formulario.elements[7];
+    let imagen = formulario.elements[8];
+
+    console.log(formulario)
 
     let regLetras = /^[a-zA-Z\sñáéíóúü]*$/;
     let regExImg = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
@@ -19,11 +23,11 @@ window.addEventListener('load', () => {
     nombre.addEventListener('blur', () => {
         switch (true) {
             case !nombre.value:
-                errorNombre.innerHTML = 'campo obligatrio'
+                errorNombre.innerHTML = 'El nombre es obligatorio'
                 nombre.classList.add('is-invalid')
                 break;
             case !regLetras.test(nombre.value):
-                errorNombre.innerHTML = 'solo se permiten letras'
+                errorNombre.innerHTML = 'Ingrese solo letras'
                 nombre.classList.add('is-invalid')
                 break;
             default:
@@ -36,10 +40,10 @@ window.addEventListener('load', () => {
 
     categoria.addEventListener('blur', () => {
         switch (true) {
-            case categoria.value == 'Seleccione la categoría':
-                errorCategoria.innerHTML = "Este campo es obligatorio"
+            case !categoria.value == 'null': //!categoria.value
+                errorCategoria.innerHTML = "Seleccione la categoría"
                 categoria.classList.add('is-invalid')
-                break
+                break;
             default:
                 categoria.classList.remove('is-invalid');
                 categoria.classList.add('is-valid');
@@ -47,18 +51,60 @@ window.addEventListener('load', () => {
         }
     })
 
+    const checks =()=>{
+        switch (true) {
+            case ((check1.checked || check2.checked || check3.checked) && check4.checked):
+                errorCheck.innerHTML = "Si selecciono el ultimo no puede seleccionar los demás"
+                check1.classList.add('is-invalid')
+                check2.classList.add('is-invalid')
+                check3.classList.add('is-invalid')
+                check4.classList.add('is-invalid')
+                break;
+            case ((!check1.checked && !check2.checked && !check3.checked && !check4.checked)):
+                errorCheck.innerHTML = "Seleccione al menos un check"
+                check1.classList.add('is-invalid')
+                check2.classList.add('is-invalid')
+                check3.classList.add('is-invalid')
+                check4.classList.add('is-invalid')
+                break;
+            default:
+                check1.classList.remove('is-invalid');
+                check2.classList.remove('is-invalid');
+                check3.classList.remove('is-invalid');
+                check4.classList.remove('is-invalid');
+                check1.classList.add('is-valid');
+                check2.classList.add('is-valid');
+                check3.classList.add('is-valid');
+                check4.classList.add('is-valid');
+                errorCheck.innerHTML = "";
+                break;
+        }
+    }
+
+    check1.addEventListener('change', () => {
+        checks();
+    })
+    check2.addEventListener('change', () => {
+        checks();
+    })
+    check3.addEventListener('change', () => {
+        checks();
+    })
+    check4.addEventListener('change', () => {
+        checks();
+    })
 
     precio.addEventListener('blur', () => {
         switch (true) {
             case !precio.value:
-                errorPrecio.innerHtml = "Este campo es obligatorio"
+                errorPrecios.innerHtml = "Este campo es obligatorio"
                 precio.classList.add('is-invalid');
                 break;
 
             default:
                 precio.classList.remove('is-invalid');
                 precio.classList.add('is-valid');
-                errorPrecio.innerHTML = "";
+                errorPrecios.innerHTML = "";
                 break;
         }
     })

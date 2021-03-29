@@ -13,6 +13,6 @@ module.exports = [
     .notEmpty().withMessage('Este campo es requerido'),
 
     check('image')
-    .matches(/(.jpg|.jpeg|.png|.gif|.webp)$/i).withMessage('la imagen tiene que tener formato: jpg, jpeg, png, gif o webp')
+    .matches(/(.jpg|.jpeg|.png|.gif|.webp)$/i).withMessage('La imagen tiene que tener formato: jpg, jpeg, png, gif o webp')
 
 ]
