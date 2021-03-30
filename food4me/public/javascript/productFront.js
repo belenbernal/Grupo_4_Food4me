@@ -1,7 +1,7 @@
 const qs = (e) => document.querySelector(e)
 
 window.addEventListener('load', () => {
-    console.log('java script esta vinculado correctamente')
+    console.log('Javascript vinculado correctamente')
     let formulario = qs('.formAdd');
 
     let nombre = formulario.elements[0];
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
 
     categoria.addEventListener('blur', () => {
         switch (true) {
-            case !categoria.value == 'null': //!categoria.value
+            case categoria.value == 'Seleccione la categoría':
                 errorCategoria.innerHTML = "Seleccione la categoría"
                 categoria.classList.add('is-invalid')
                 break;
@@ -112,7 +112,7 @@ window.addEventListener('load', () => {
     descripcion.addEventListener('blur', () => {
         switch (true) {
             case !descripcion.value:
-                errorDescripcion.innerHTML = 'campo obligatrio'
+                errorDescripcion.innerHTML = 'Campo obligatorio'
                 descripcion.classList.add('is-invalid')
                 break;
             default:
@@ -132,43 +132,34 @@ window.addEventListener('load', () => {
             case imagen.files[0].size > oneMb * 2:
                 errorImagen.innerHTML = "El archivo debe pesar menos de 2Mb"
                 imagen.classList.add('is-invalid')
-                vistaPrevia.src = ""
-                break
+                break;
+            case imagen.files[0]:
+                errorImagen.innerHTML = ""
+                imagen.classList.add('is-valid')
+                break;
             default:
                 imagen.classList.remove('is-invalid');
                 imagen.classList.add('is-valid');
                 errorImagen.innerHTML = "";
-
-                let reader = new FileReader();
-                
-                reader.readAsDataURL(e.target.files[0])
-                reader.onload = () => {
-                    vistaPrevia.src = reader.result
-                }
                 break;
         }
     })
 
-    formulario.addEventListener('submit',(event)=>{
-        event.preventDefault()
+    formulario.addEventListener('submit',(e)=>{
+        let error = false;
+        e.preventDefault();
 
-        let error = false
-        let element = formulario.elements;
+        let elementsForm = formulario.elements;
 
-        for (let i = 0; i < element.length -1; i++) {
-           
-            if (element[i].value) {
-                element[i].classList.add('is-invalid')
-                msgError.innerHTML = ('Los campos señalados son requeridos')
-                error = true
-            }
+        for (let index = 0; index < elementsForm.length -1; index++) { /* -1 para que no cuente al boton cuando recorre el array */
+            if (!elementsForm[index].value) {
+                elementsForm[index].classList.add('is-invalid')
+                msgError.innerHTML = "Los campos señalados son obligatorios"
+                error = true;
+            }            
         }
-
-        if (!error) {
+        if(!error){
             formulario.submit()
         }
     })
-
-
-
 });

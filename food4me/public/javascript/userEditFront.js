@@ -130,7 +130,7 @@ window.addEventListener('load', ()=>{
 
         let elementsForm = formulario.elements;
 
-        for (let index = 0; index < elementsForm.length -2; index++) { /* -1 para que no cuente al boton cuando recorre el array */
+        for (let index = 0; index < elementsForm.length -1; index++) { 
             if (!elementsForm[index].value) {
                 elementsForm[index].classList.add('is-invalid')
                 errorBtn.innerHTML = "Los campos señalados son obligatorios"

@@ -31,7 +31,7 @@ module.exports = [
 
     check('description')
     .notEmpty().withMessage('Por favor agregue la descripción del producto')
-    .isLength({min : 100, max : 400}).withMessage('Mínimo 100 caracateres máximo 400'),
+    .isLength({min:100, max:400}).withMessage('Mínimo 100 caracteres y máximo 400'),
 
     check('image')
     .custom((value,{req})=>{

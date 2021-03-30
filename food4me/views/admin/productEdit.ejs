@@ -8,13 +8,16 @@
 
             <div class="container contenedor-product-add">
                 <div class="row contenido-form card mx-auto col-12">
-                    <form action="/admin/update/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <form class="formAdd" action="/admin/update/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                         <h2 class="titulo-formu">Editar producto</h2>
 
                         <div class="mb-3 entrada">
                             <!--producto-->
                             <label for="name" class="form-label">Nombre del producto</label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto" value="<%=product.name%>">
+                            <span class="text-danger" id="errorNombre">
+                                <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
@@ -26,6 +29,9 @@
                                     <option value="<%=category.id%>" <%- category.id == product.category_id ? 'selected' : '' %> > <%=category.categories%> </option>
                                 <% }) %>
                             </select>
+                            <span class="text-danger" id="errorCategoria">
+                                <%= (typeof errores !='undefined' && errores.category ? errores.category.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada  checks">
@@ -46,28 +52,41 @@
                                 <input type="checkbox" class="custom-control-input" name="types" id="4" value="4">
                                 <label class="custom-control-label" for="4">Ninguno de los anteriores</label>
                             </div>
+                            <span class="text-danger" id="errorCheck">
+                                <%= (typeof errores !='undefined' && errores.types ? errores.types.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--precio-->
                             <label for="price" class="form-label">Precio</label>
                             <input type="text" name="price" id="price" class="form-control" placeholder="Precio unitario" value="<%=product.price%>">
+                            <span class="text-danger" id="errorPrecios">
+                                <%= (typeof errores !='undefined' && errores.price ? errores.price.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
                             <textarea class="form-control" name="description" id="description" rows="3"><%=product.description%></textarea>
+                            <span class="text-danger" id="errorDescripcion">
+                                <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
+                            </span>
                         </div>
                         
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="image" class="form-label">Foto del producto</label>
-                            <input type="file" id="image" name="image">
+                            <input type="file" id="image" name="image" value="<%=product.image%>">
+                            <span class="text-danger" id="errorImagen">
+                                <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
+                            </span>
                         </div>
 
                         <div class="boton-carga">
                             <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                            <span id="msgError" class="text-danger"></span>
                         </div>
 
                     </form>
@@ -85,6 +104,7 @@
             <%- include('./partials/footer') %>
 
                 <%- include('./partials/scripts') %>
+                <script src="/javascript/productEdit.js"></script>
     </body>
 
 </html>

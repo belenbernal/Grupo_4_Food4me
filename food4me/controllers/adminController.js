@@ -28,7 +28,7 @@ const adminController = {
             })
     },
     newProduct: (req, res) => {
-        
+
         let errores = validationResult(req);
 
         if (errores.isEmpty()) {
@@ -45,11 +45,11 @@ const adminController = {
                     const typesArray = [...(types.length ? types : [types])]
                     /* preguntamos si lo que llega por parametro es un array o no, si es un array, lo guardamos
                      en la constante typesArray, si no es un array, lo convertimos a array y lo guardamos*/
-    
-    
+
+
                     /* console.log(typesArray); */
                     if (typesArray) {
-    
+
                         /* Recorremos el array y vamos cargando esos datos en la tabla pivot */
                         const createTypes = typesArray.map((type) => {
                             return db.TipoProductos.create({
@@ -66,20 +66,20 @@ const adminController = {
                     } else {
                         res.redirect('/admin/list')
                     }
-    
+
                 })
                 .catch((error) => { res.send(error) })
-        }else{
+        } else {
             db.Categorias.findAll()
-            .then(categorias => {
-                res.render('admin/productAdd', {
-                    categorias,
-                    errores: errores.mapped(),
-                    datos: req.body
+                .then(categorias => {
+                    res.render('admin/productAdd', {
+                        categorias,
+                        errores: errores.mapped(),
+                        datos: req.body
+                    })
                 })
-            })
         }
-       
+
     },
     editProduct: (req, res) => {
         let product = db.Productos.findOne({
@@ -102,49 +102,78 @@ const adminController = {
     },
     updateProduct: (req, res) => {
 
-        const { name, price, category, description, types } = req.body;
-        const { id } = req.params;
+        let errores = validationResult(req);
 
-        db.Productos.update({
-            name,
-            description,
-            price,
-            image: req.files[0].filename,
-            category_id: category,
-            client_id: req.session.user.client_id
-        }, {
-            where: {
-                id: id
+        if (errores.isEmpty()) {
+
+            const { name, price, category, description, types } = req.body;
+            const { id } = req.params;
+
+            if (req.files[0]) {
+                fs.unlinkSync('public/images/products/' + req.files[0].filename)
             }
-        })
-            .then((product) => {
-                db.TipoProductos.destroy({
-                    where: {
-                        product_id: id
-                    }
-                })
-                    .then(() => {
-                        const typesArray = [...(types.length ? types : [types])]
 
-                        if (typesArray) {
-                            const createTypes = typesArray.map((type) => {
-                                return db.TipoProductos.create({
-                                    product_id: id,
-                                    type_id: type
-                                })
-                            })
-
-                            Promise.all(createTypes)
-                                .then(() => {
-                                    res.redirect('/admin/list')
-                                })
-                                .catch(error => { res.send(error) })
-                        } else {
-                            res.redirect('/admin/list')
+            db.Productos.update({
+                name,
+                description,
+                price,
+                image: req.files[0] ? req.files[0].filename : undefined,
+                category_id: category,
+                client_id: req.session.user.client_id
+            }, {
+                where: {
+                    id: id
+                }
+            })
+                .then((product) => {
+                    db.TipoProductos.destroy({
+                        where: {
+                            product_id: id
                         }
                     })
+                        .then(() => {
+                            const typesArray = [...(types.length ? types : [types])]
+
+                            if (typesArray) {
+                                const createTypes = typesArray.map((type) => {
+                                    return db.TipoProductos.create({
+                                        product_id: id,
+                                        type_id: type
+                                    })
+                                })
+
+                                Promise.all(createTypes)
+                                    .then(() => {
+                                        res.redirect('/admin/list')
+                                    })
+                                    .catch(error => { res.send(error) })
+                            } else {
+                                res.redirect('/admin/list')
+                            }
+                        })
+                })
+                .catch((error) => { res.send(error) })
+        }else{
+            let product = db.Productos.findOne({
+                where: {
+                    id: req.params.id
+                }
             })
-            .catch((error) => { res.send(error) })
+            let categories = db.Categorias.findAll();
+            let product_types = db.TipoProductos.findAll();
+    
+            Promise.all([product, categories, product_types])
+                .then(([product, categories, product_types]) => {
+                    res.render("admin/productEdit", {
+                        product,
+                        categories,
+                        product_types,
+                        errores: errores.mapped(),
+                        datos: req.body
+                    })
+                })
+                .catch((error) => { res.send(error) })
+        }
     },
     productDelete: (req, res) => {
 

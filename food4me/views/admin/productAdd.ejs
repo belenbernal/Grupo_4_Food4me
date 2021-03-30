@@ -69,7 +69,7 @@
                         <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3" placeholder="Ingrese la descripción del producto aquí"></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3" maxlength="400" placeholder="Ingrese la descripción del producto aquí"></textarea>
                             <span class="text-danger" id="errorDescripcion">
                                 <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
                             </span>
@@ -93,7 +93,7 @@
                     </form>
                 </div>
             </div>
-            <!-- <script src="../javascript/productAddFront.js"></script> -->
+            <script src="../javascript/productFront.js"></script>
 
             <%- include('./partials/footer') %>
 

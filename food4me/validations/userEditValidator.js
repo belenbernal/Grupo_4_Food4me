@@ -12,7 +12,23 @@ module.exports = [
     check('date')
     .notEmpty().withMessage('Este campo es requerido'),
 
+    /* tenemos que subir foto si o si */
     check('image')
-    .matches(/(.jpg|.jpeg|.png|.gif|.webp)$/i).withMessage('La imagen tiene que tener formato: jpg, jpeg, png, gif o webp')
+    .custom((value,{req})=>{
+        if(req.files[0]){
+            return true;
+        }else{
+            return false;
+        }
+
+    }).withMessage('La imagen es requerida')
+    .custom((value,{req})=>{
+        if(req.files[0].filename.match(/(.jpg|.jpeg|.png|.gif|.webp)$/i)){
+            return true
+        }else{
+            return false
+        }
+    })
+    .withMessage('La imagen tiene que ser de tipo: jpg, jpeg, png, gif o webp')
 
 ]

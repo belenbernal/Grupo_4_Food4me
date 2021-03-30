@@ -9,7 +9,6 @@ window.addEventListener('load',()=>{
     /* console.log(formulario); */
 
     let regExEmail =  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]:+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
-    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/
 
     email.addEventListener('blur',()=>{
         switch (true) {
@@ -32,10 +31,6 @@ window.addEventListener('load',()=>{
         switch (true) {
             case !pass.value:
                 errorPass.innerHTML = "La contraseña es obligatorio";
-                pass.classList.add('is-invalid');
-                break;
-            case !regExPass.test(pass.value) :
-                errorPass.innerHTML = "La contraseña es inválida";
                 pass.classList.add('is-invalid');
                 break;
             default:
