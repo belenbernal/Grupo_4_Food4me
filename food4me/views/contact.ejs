@@ -17,45 +17,55 @@
                         </p>
                     </div>
                 </div>
-                <div class="row contenido-contact">
-                    <div class="formu-contact col-md-8">
+
+                <div class="row contenido-contact col-12">
+                    <div class="col-12 col-lg-6 image-contact">
+                        <img src="/images/imageContact2.jpg" alt="imagen de contacto">
+                    </div>
+
+                    <div class="formu-contact col-lg-6">
                         <form action="/contact" method="POST" class="contactForm">
-                            <div class="cont col-12 col-md-4">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
-                                <span id="nameError" class="text-danger"></span>
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <label for="nombre">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre"
+                                        placeholder="Nombre">
+                                    <span id="nameError" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="apellido">Apellido</label>
+                                    <input type="text" class="form-control" id="apellido" name="apellido"
+                                        placeholder="Apellido">
+                                    <span id="lastNameError" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                        placeholder="Email">
+                                    <span id="emailError" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="asunto">Asunto</label>
+                                    <input type="text" class="form-control" id="asunto" name="asunto"
+                                        placeholder="Asunto">
+                                    <span id="asuntoError" class="text-danger"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3"
+                                        placeholder="Escriba su mensaje aquí"></textarea>
+                                    <span id="mensajeError" class="text-danger"></span>
+                                </div>
                             </div>
 
-                            <div class="cont col-12 col-md-4">
-                                <label for="apellido">Apellido</label>
-                                <input type="text" id="apellido" name="apellido" placeholder="Apellido">
-                                <span id="lastNameError" class="text-danger"></span>
-                            </div>
-
-                            <div class="cont col-12 col-md-4">
-                                <label for="email">Email</label>
-                                <input type="text" id="email" name="email" placeholder="Email">
-                                <span id="emailError" class="text-danger"></span>
-                            </div>
-
-                            <div class="cont col-12 col-md-4">
-                                <label for="asunto">Asunto</label>
-                                <input type="text" id="asunto" name="asunto" placeholder="Asunto">
-                                <span id="asuntoError" class="text-danger"></span>
-                            </div>
-
-                            <div class="cont col-12 col-md-8">
-                                <label for="mensaje">Mensaje</label>
-                                <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje aquí"></textarea>
-                                <span id="mensajeError" class="text-danger"></span>
-                            </div>
-
-                            <div class="botonesLogin">
+                            <div class="botonesLogin col-12">
                                 <button type="submit" class="btn btn-primary comprar">Enviar</button>
                                 <!-- <span id="msgError" class="text-danger"></span> -->
                             </div>
+                        </form>
                     </div>
-                    <div class="mapa col-12 col-md-4">
+                    <div class="mapa col-12">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13139.347577400822!2d-58.43916209238511!3d-34.58299340890442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf778a5ab942b6f9b!2sDandy%20Grill!5e0!3m2!1ses-419!2sar!4v1611799612937!5m2!1ses-419!2sar"
                             width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""
@@ -68,7 +78,7 @@
             <%- include('./partials/footer') %>
 
                 <%- include('./partials/scripts') %>
-                <!-- <script src="/javascript/contact.js"></script> -->
+                    <!-- <script src="/javascript/contact.js"></script> -->
     </body>
 
 </html>
