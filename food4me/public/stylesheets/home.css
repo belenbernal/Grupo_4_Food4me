@@ -1,10 +1,22 @@
+.home-container{
+    margin-top: -50px;
+}
+
 .home-conten{
     background-color: rgb(20, 20, 20);
+    flex-wrap: wrap;
 }
 
 .home-conten .img-home{
     display:flex;
     justify-content: center;
+}
+.img-home img{
+    height: 350px;
+}
+
+.texto1-home{
+    text-align: center;
 }
 
 .home-conten .text-home h2{
@@ -21,6 +33,7 @@
     height: 260px;
     background-image: url('/images/homeFooter.jpg');
     background-size: cover;
+    border-radius: 1px;
 }
 
 .conten-home2 h3{    
@@ -62,6 +75,8 @@
 
     .home-conten .img-home img{
         box-shadow: 20px 15px 5px rgba(252, 252, 252, 100%);
+        width: 400px;
+        height: 450px;
     }
 
     .home-conten .text-home{
@@ -70,7 +85,13 @@
     }
 
     .home-conten .text-home h2{
-        font-size: 55px;
+        font-size: 50px;
+        width: 100%;
+        padding: 5px;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .home-conten .text-home p{
@@ -91,10 +112,12 @@
         margin-left: 10px;
         font-size: 15px;
         display: block;
+        padding-right: 4px;
     }
 
     .conten-home2 h3{
         padding-top: 40px;
+        padding-right: 5px;
     }
 }
 

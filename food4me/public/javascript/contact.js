@@ -19,11 +19,11 @@ window.addEventListener('load', () => {
     nombre.addEventListener('blur', () => {
         switch (true) {
             case !nombre.value:
-                nameError.innerHTML = "El campo nombre es obligatorio";
+                nameError.innerHTML = "*Obligatorio";
                 nombre.classList.add('is-invalid');
                 break;
             case !regExLetras.test(nombre.value):
-                nameError.innerHTML = "Solo letras por favor";
+                nameError.innerHTML = "*Solo letras";
                 nombre.classList.add('is-invalid');
                 break;
             default:
@@ -36,11 +36,11 @@ window.addEventListener('load', () => {
     apellido.addEventListener('blur', () => {
         switch (true) {
             case !apellido.value:
-                lastNameError.innerHTML = "El campo apellido es obligatorio";
+                lastNameError.innerHTML = "*Obligatorio";
                 apellido.classList.add('is-invalid');
                 break;
             case !regExLetras.test(apellido.value):
-                lastNameError.innerHTML = "Solo letras por favor";
+                lastNameError.innerHTML = "*Solo letras";
                 apellido.classList.add('is-invalid');
                 break;
             default:
@@ -53,11 +53,11 @@ window.addEventListener('load', () => {
     email.addEventListener('blur', () => {
         switch (true) {
             case !email.value:
-                emailError.innerHTML = "El campo email es obligatorio";
+                emailError.innerHTML = "*Obligatorio";
                 email.classList.add('is-invalid');
                 break;
             case !regExEmail.test(email.value):
-                emailError.innerHTML = "Ingrese un email válido";
+                emailError.innerHTML = "*Ingrese un email válido";
                 email.classList.add('is-invalid');
                 break;
             default:
@@ -70,11 +70,11 @@ window.addEventListener('load', () => {
     asunto.addEventListener('blur', () => {
         switch (true) {
             case !asunto.value:
-                asuntoError.innerHTML = "El campo apellido es obligatorio";
+                asuntoError.innerHTML = "*Obligatorio";
                 asunto.classList.add('is-invalid');
                 break;
             case !regExLetras.test(asunto.value):
-                asuntoError.innerHTML = "Solo letras por favor";
+                asuntoError.innerHTML = "*Solo letras";
                 asunto.classList.add('is-invalid');
                 break;
             default:
@@ -87,7 +87,7 @@ window.addEventListener('load', () => {
     mensaje.addEventListener('blur', function () {
         switch (true) {
             case !mensaje.value:
-                mensajeError.innerHTML = "Este campo es obligatorio"
+                mensajeError.innerHTML = "*Obligatorio"
                 mensaje.classList.add('is-invalid')
                 break
             default:

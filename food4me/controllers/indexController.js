@@ -16,7 +16,13 @@ const indexController = {
     },
     contactForm: (req, res) => {
         res.render('contact')
-    }
+    },
+    contactForCompany: (req, res) => {
+        res.render('contactForCompany')
+    },
+    postContactCompany: (req, res) => {
+        res.render('contactForCompany')
+    },
 
 }
 module.exports = indexController;

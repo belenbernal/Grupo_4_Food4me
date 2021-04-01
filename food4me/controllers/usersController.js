@@ -101,7 +101,6 @@ const usersController = {
                 pass: passHash,
                 date: date,
                 image: req.files[0] ? req.files[0].filename : 'userDefault.png',
-                userAddress_id: 2,
                 client_id: null,
                 rol_id: 1
             })
