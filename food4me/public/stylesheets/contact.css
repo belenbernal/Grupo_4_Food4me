@@ -26,6 +26,7 @@
 .encabezado-contact p{
     margin-bottom: 0;
     font-size: 17px;
+    margin-top: 15px;
 }
 
 .contenido-contact{
@@ -70,7 +71,7 @@
 .mapa{
     display: flex;
     padding: 0;
-    margin-top: 22px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
@@ -94,7 +95,7 @@
     }
 
     .mapa{
-        margin-top: 20px;
+        margin-top: 12px;
     }
     
     .mapa iframe{
