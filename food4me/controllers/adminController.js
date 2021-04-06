@@ -1,4 +1,3 @@
-const path = require('path');
 const db = require('../database/models')
 const fs = require('fs');
 const { validationResult } = require('express-validator');
@@ -109,9 +108,13 @@ const adminController = {
             const { name, price, category, description, types } = req.body;
             const { id } = req.params;
 
-            if (req.files[0]) {
-                fs.unlinkSync('public/images/products/' + req.files[0].filename)
-            }
+            db.Productos.findByPk(id)
+                .then((product) => {
+                    if (fs.existsSync('public/images/products/' + product.image)) { 
+                        fs.unlinkSync('public/images/products/' + product.image)
+                    }
+                })
+                .catch(error => res.send(error))
 
             db.Productos.update({
                 name,
@@ -153,7 +156,7 @@ const adminController = {
                         })
                 })
                 .catch((error) => { res.send(error) })
-        }else{
+        } else {
             let product = db.Productos.findOne({
                 where: {
                     id: req.params.id
@@ -161,7 +164,7 @@ const adminController = {
             })
             let categories = db.Categorias.findAll();
             let product_types = db.TipoProductos.findAll();
-    
+
             Promise.all([product, categories, product_types])
                 .then(([product, categories, product_types]) => {
                     res.render("admin/productEdit", {

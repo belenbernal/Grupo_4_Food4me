@@ -15,6 +15,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/products');
 var adminRouter = require('./routes/adminRouter');
+var superAdmin = require('./routes/superAdmin')
 
 
 var app = express();
@@ -41,7 +42,8 @@ app.use(localsCheck);
 app.use('/', indexRouter);
 app.use('/products',productRouter)
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter)
+app.use('/admin', adminRouter);
+app.use('/superAdmin', superAdmin);
 
 
 
