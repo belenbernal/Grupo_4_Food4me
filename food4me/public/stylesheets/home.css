@@ -1,149 +1,83 @@
 .home-container{
-    margin-top: -50px;
+    margin-top: -90px;
+    padding: 0px;
+    max-width: 1920px;
 }
 
 .home-conten{
-    background-color: rgb(20, 20, 20);
+    display: flex;
     flex-wrap: wrap;
-}
-
-.home-conten .img-home{
-    display:flex;
     justify-content: center;
-}
-.img-home img{
-    height: 350px;
+    padding: 0px;
 }
 
-.texto1-home{
+.home-conten img{
+width: 100%;
+}
+
+.texto-home{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    padding: 10px 0px;
+}
+
+.texto-home p{
     text-align: center;
+    text-align: center;
+    padding: 0px 35px;
+    font-family: 'Roboto';
+    color: #bc0c2b;
+    margin: 10px;
+    font-weight: 400;
 }
 
-.home-conten .text-home h2{
-    color:white;
-    padding-top:20px;
+.titulo-marcas{
+    display: flex;
+    justify-content: center;
+    background-color: #bc0c2b;
+    /* margin-top: 20px; */
+    padding: 5px;
 }
 
-.home-conten .text-home p{
+.titulo-marcas h4{
+    text-align: center;
     color: white;
-    padding-bottom: 20px;
 }
 
-.conten-home2{
-    height: 260px;
-    background-image: url('/images/homeFooter.jpg');
-    background-size: cover;
-    border-radius: 1px;
+.home-marcas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0px;
+    margin-bottom: -25px;
 }
 
-.conten-home2 h3{    
-    font-size: 27px;
-    font-family: 'roboto';
-    padding-top: 140px;
-    text-align: center;
-    color:white;
-}
-
-.conten-home2 p{
-    display:none;
-    color:white;
-}
-
-.bh{
-    background-color: black;
-}
-
-.bannerHomer1{
-    background-image: url('/images/bannerhome1.jpg');
-}
-
-.bannerHomer2{
-    background-image: url('/images/bannerhome2.jpg');
+.home-marcas img{
+    width: 100%;
+    margin-top: 0px;
 }
 
 
 @media(min-width: 768px){
-    .home-conten{
-        padding-bottom: 15px;
-        margin-bottom: 5px;
-        display: flex;
-    }
-
-    .home-conten .img-home{
-        padding: 30px;
-    }
-
-    .home-conten .img-home img{
-        box-shadow: 20px 15px 5px rgba(252, 252, 252, 100%);
-        width: 400px;
-        height: 450px;
-    }
-
-    .home-conten .text-home{
-        align-items: center;
-        display: flex;
-    }
-
-    .home-conten .text-home h2{
-        font-size: 50px;
-        width: 100%;
-        padding: 5px;
-        padding-top: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .home-conten .text-home p{
-        font-size: 25px;
-    }
-    .conten-home2{
-        flex-direction: row-reverse;
-        display: flex;
-        height: 330px;
-    }
-
-    .conten-home2 .sub-conten{
-        width: 50%;
-    }
-
-    .conten-home2 p{
-        margin-right: 10px;
-        margin-left: 10px;
-        font-size: 15px;
-        display: block;
-        padding-right: 4px;
-    }
-
-    .conten-home2 h3{
-        padding-top: 40px;
-        padding-right: 5px;
+    .texto-home p{
+        font-weight: 500;
+        padding: 0px 80px;
+        margin: 14px;
     }
 }
 
 @media (min-width:1024px){
-    .conten-home2{
-        flex-direction: row-reverse;
-        display: flex;
-        height: 330px;
+    .titulo-marcas h4{
+        font-size: 36px;
     }
 
-    .conten-home2 .sub-conten{
+    .texto-home p{
+        font-weight: 500;
+        padding: 0px 90px;
         width: 50%;
-    }
-
-    .conten-home2 p{
-        margin-right: 10px;
-        margin-left: 10px;
-        font-size: 20px;
-        display: block;
-    }
-
-    .conten-home2 h3{
-        padding-top: 40px;
-    }
-
-    .text-home .subtext{
-        display: contents;
+        margin: 14px;
+        font-size: 24px;
     }
 }

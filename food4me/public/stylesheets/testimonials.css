@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic);
+
+/* body{
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0px;
+  padding: 0px;
+} */
+
+.redm{color: #A91F24;}
+
+.alcenter{text-align:center;}
+
+#TestC{
+ background:url('http://adhycorp.5gbfree.com/Imgs/16042015-DSC_0390.jpg')no-repeat center center fixed; 
+  background-size: 100%;
+  width:100%;
+  height:400px;
+  box-shadow:0px 0px 20px rgba(0,0,0,0.8);
+}
+
+.redz{
+  width:100%;
+  height:100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position:absolute;
+  z-index:1;
+}
+
+#TestC h1{
+  margin-left:5%;
+  padding-top:1%;
+  color:#fff;
+  -webkit-text-stroke: .1px gray;
+}
+
+.carousel-control{
+    top: inherit;
+    bottom: 30px;
+    font-size: 35px;
+    left: inherit;
+    z-index:999;
+    width:2%;
+    margin-right:5%;
+}
+
+.carousel-control.left {
+ background-image: none;
+ filter: none;
+ right: 45px;
+}
+
+.carousel-control.right {
+    right: 0;
+    left: auto;
+    background-image: none;
+     filter: none;
+}
+
+.quote-section{
+  width:70%;
+  margin:0 auto;
+  position:relative;
+  padding:20px;
+  font-size:18px;
+  margin-top:4%;
+  border-radius:10px;
+  color:#eee;
+  background:rgba(123, 128, 136, 0.3);
+}
+
+#ql{
+  padding:0px 15px 0px 15px;
+}
+#qr{padding:0px 15px 0px 15px;}
+
+.autor-section{
+  width:30%;
+  margin:0 auto;
+  margin-top:1%;
+  color:#eee;
+  font-size:16px;
+  text-align:center;
+  border-radius:5px;
+  background:rgba(255, 255, 255, 0.2);
+  padding:5px;
+}

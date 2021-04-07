@@ -12,6 +12,7 @@
 @import url('/stylesheets/contact.css');
 @import url('/stylesheets/home.css');
 @import url('/stylesheets/userEdit.css');
+@import url('/stylesheets/testimonials.css');
 
 *{
     font-family: gentium;

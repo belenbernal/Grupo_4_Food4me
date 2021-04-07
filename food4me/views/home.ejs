@@ -4,46 +4,64 @@
   <%- include('./partials/header') %>
     <main>
       <div class="container-fluid home-container">
-        <div class=" col-12 home-conten">
 
-          <div class="img-home col-12 col-lg-6">
-            <img src="/images/imgHome.jpg" alt="imghome">
+        <div class="home-conten">
+          <img src="/images/food4me1.png" alt="imghome">
+        </div>
+          <div class="texto-home">
+            <p>Food4me se abre al mundo para convertirse en el punto de encuentro entre comensales apasionados y los mejores locales gastronómicos.</p>
+            <p>Un sitio en donde las combinaciones creativas y la gastronomía de calidad hacen de cada plato una excelente opción con la mejor relación precio calidad.</p>
+            <p>Nace inspirado en los mercados más relevantes del mundo, ofreciendo soluciones a la hora de elegir comida apetitosa y saludable de manera rápida.</p>
+            <p>Desde la comodidad de tu casa o mediante reservas en los lugares gastronómicos más destacados, Food4me te ofrece todo lo que buscas en un solo lugar.</p>
           </div>
 
-          <div class="text-home col-12 col-lg-6">
-            <div class="col-12">
-
-              <div class="col-12 subtext">
-                <h2>¿Qué nos hace tan especiales?</h2>
+          <div id="TestC" class="carousel slide" data-ride="carousel">
+            <div class="redz">
+            <h1>Testimonios</h1>
+            <!--Contenedor slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="quote-section">
+                  <i class="fa fa-quote-left" id="ql"></i>A lo largo del tiempo que hemos estado con los servicios de Maneki, nuestra clientela ha ido en aumento y el servicio que nos han prestado nos ha permitido posicionar nuestra empresa con una excelente imagen ante nuestro clientes y proveedores.<i class="fa fa-quote-right" id="qr"></i>
+                </div>
               </div>
-
-              <div class="col-12 texto1-home">
-                <p>Nuestra oferta gastronómica parece sencilla, pero lo que nos diferencia de los demás es nuestro toque
-                  de
-                  originalidad en cada plato. Los ingredientes que utilizamos en la elaboración de cada receta son de
-                  calidad,
-                  nuestros platos se preparan al momento, adaptándonos así a las necesidades de nuestros clientes.</p>
+              <div class="item">
+                <div class="quote-section">
+                  <i class="fa fa-quote-left" id="ql"></i>Trabajar en Maneki le ha dado a mi empresa la seriedad necesaria para transmitir la confianza que mis clientes necesitan<i class="fa fa-quote-right" id="qr"></i>
+                </div>
               </div>
-
+              <div class="item">
+                <div class="quote-section">
+                  <i class="fa fa-quote-left" id="ql"></i>Afortunadamente tenemos este servicio en Cd. Obregón. Un día se me presentó la necesidad de contar con una oficina en esta ciudad; busqué en Internet, llamé y en 2 horas me dieron una cita. Por la tarde, ya tenía una oficina armada, magnífica ubicación, una línea telefónica exclusiva y un servicio profesional que atendería mis llamadas. Además, asesoría profesional contable. Excelente! Mil Gracias Maneki!<i class="fa fa-quote-right" id="qr"></i>
+              </div>
+              </div>
+              <div class="item">
+                <div class="quote-section">
+                  <i class="fa fa-quote-left" id="ql"></i>Nuestra empresa ha sido cliente de Maneki por más de 2 años y la experiencia ha sido excelente. El personal siempre es cortés y profesional. Las llamadas y visitas por parte de nuestros clientes son tratadas de una manera amable y eficiente. Recomiendo sus servicios.<i class="fa fa-quote-right" id="qr"></i>
+                </div>
+              </div>
+              </div>
             </div>
+            <!--Fin Contenedor slides -->
+            <!--Controles-->
+            <a class="left carousel-control" href="#TestC" data-slide="prev">
+              <i class="fa fa-chevron-circle-left"></i>
+            </a>
+            <a class="right carousel-control" href="#TestC" data-slide="next">
+              <i class="fa fa-chevron-circle-right"></i>
+            </a>
+            <!--Fin Controles-->
           </div>
 
-        </div>
-
-        <div class="conten-home2">
-
-          <div class="sub-conten">
-            <h3>"NOS GUSTA COCINAR PARA LAS PERSONAS QUE LES GUSTA COMER"</h3>
-
-            <p>Las combinaciones creativas y la utilización de productos de primera calidad hacen de nuestros platos una
-              excelente opción con la mejor relación calidad precio.</p>
-            <p>Food4me tiene como objetivo transformar el concepto de comida rápida en una opción apetitosa y saludable,
-              un
-              lugar donde puedas comer sin arrepentimientos. </p>
+          <div class="titulo-marcas">
+            <h4>Nuestros locales</h4>
+          </div>
+          <div class="home-marcas">
+            <img src="/images/marcas.jpg" alt="marcasHome">
           </div>
 
-        </div>
       </div>
+
     </main>
     <%- include('./partials/footer') %>
       <%- include('./partials/scripts') %>
