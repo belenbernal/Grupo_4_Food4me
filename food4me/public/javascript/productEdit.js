@@ -123,9 +123,9 @@ window.addEventListener('load', () => {
         }
     })
 
-    /* Tenemos que actualizar la foto si o si, pero no lo actualiza correctamente */
+    /* 
 
-    /* imagen.addEventListener('change', (e) => {
+    imagen.addEventListener('change', (e) => {
         switch (true) {
             case !regExImg.exec(imagen.value):
                 errorImagen.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"

@@ -2,6 +2,7 @@
 
 .contenedor-contacto{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 80px;
     margin-bottom: 90px;
     border-radius: 5px;
@@ -25,87 +26,89 @@
 .encabezado-contact p{
     margin-bottom: 0;
     font-size: 17px;
+    margin-top: 15px;
 }
 
-.contenedor-contacto .formu-contact{
+.contenido-contact{
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-contact{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.image-contact img{
+    width: 95%;
+    border-radius: 4px;    
+}
+
+.formu-contact{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.formu-contact form{
-    width: 95%;
+.formu-contact label{
+    padding-left: 4px;
+    margin-top: 10px;
+    padding-left: 4px;
+    margin-bottom: 0;
 }
 
-.formu-contact .cont label{
-    display: flex;
-    font-weight: bold;
-    margin-bottom: 1px;
-    margin-top: 14px;
+.formu-contact input{
+    border: rgb(90, 90, 90) solid 1px;
 }
 
-.formu-contact .cont input{
-    width: 100%;
-    border: black 1px solid;
-    border-radius: 2px;
-    padding-left: 2px;
-}
-
-.formu-contact .cont textarea{
-    width: 100%;
-    border: black 1px solid;
-    border-radius: 2px;
-    padding-left: 2px;
+.formu-contact textarea{
+    border: rgb(90, 90, 90) solid 1px;
 }
 
 .mapa{
     display: flex;
-    padding-bottom: 12px;
+    padding: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .mapa iframe{
     border-radius: 4px;
+    width: 100%
 }
   
  /* MEDIA QUERY */
 
  @media (min-width: 768px){
-     
-    .contenido-contact{
-        flex-direction: row-reverse;
-    }
-    .formu-contact form {
-        width: 100%;
-    }
-
     .formu-contact{
-        padding: 0;
+        margin-top: 20px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 
-    .formu-contact .cont {
-        padding: 0;
-        display: inline-grid;
-        flex-wrap: wrap;
+    .image-contact img{
+        width: 500px;
+        height: 300px;   
     }
+
     .mapa{
-        display: flex;
-        height: 240px;
-        padding-left: 43px;
+        margin-top: 12px;
     }
+    
     .mapa iframe{
-        height: 86%;
-        margin-top: 24px;
-        width: 265px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
+    
  }
  @media(min-width: 1024px){
-    .mapa{
-        padding-left: 82px;
-        height: 292px;
+    .image-contact img{
+        width: 430px;
+        height: 310px;
+        margin-top: 32px;  
     }
-    .mapa iframe{
-        height: 72%;
-        margin-top: 24px;
-        width: 300px;
-    }
+
  }
