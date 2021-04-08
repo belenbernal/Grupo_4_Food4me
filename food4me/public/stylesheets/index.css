@@ -12,6 +12,7 @@
 @import url('/stylesheets/contact.css');
 @import url('/stylesheets/home.css');
 @import url('/stylesheets/userEdit.css');
+@import url('/stylesheets/indexAdmin.css');
 
 *{
     font-family: gentium;
@@ -125,10 +126,10 @@ main .contenido .img-productos{
     height: 40vh;
 }
 
-main .contenido img{
+main img {
     margin-top: 0;
-    border-radius: 0 40px 0 40px;
     width: 100%;
+    border-radius: 0px 40px 0px 40px;
 }
 
 main h2{
@@ -177,6 +178,13 @@ main .btns button{
     width:100%;
     border: none;
     background-color: #BC0C2B;
+}
+
+main .contenido .datos-platos .base2 button:hover{
+    border-radius: 50px;
+background: #BC0C2B;
+box-shadow: inset -5px 5px 10px #5a0615,
+            inset 5px -5px 10px #ff1241;
 }
 
 main .btns .btn{

@@ -1,0 +1,55 @@
+main .productos .contenidoAdmin{
+    position: relative;
+    background-color: white;
+    border-radius: 0 40px 0 40px;
+    margin-top: 15px;
+    height: 90%;
+    margin-bottom: 55px;
+    transition: transform 0.5s ease, box-shadow .5s ease;
+}
+
+main .productos .contenidoAdmin:hover{
+    transform: scale(1.02);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+main .contenido .img-productosAdmin{
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+}
+
+main .contenidoAdmin img{
+    margin-top: 0;
+    border-radius: 0 40px 0 40px;
+    width: 100%;
+}
+
+main .contenidoAdmin .des-productoAdmin{
+    height: 130px;
+    color: black;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+}
+
+main .contenidoAdmin .btns-form-admin{
+    display: flex;
+}
+
+main .contenidoAdmin .btns-form-admin .botones-index-Admin button{
+    border-radius: 50px;
+    height: 40px;
+    width: 100%;
+    background-color: #BC0C2B;
+    color: white;
+    border: none;
+}
+
+main .contenidoAdmin .btns-form-admin .botones-index-Admin button:hover{
+    border-radius: 50px;
+background: #BC0C2B;
+box-shadow: inset -5px 5px 10px #5a0615,
+            inset 5px -5px 10px #ff1241;
+}
