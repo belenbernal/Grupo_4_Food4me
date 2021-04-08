@@ -17,7 +17,7 @@ module.exports = [
     })
     .withMessage('Seleccione al menos un check')
     .custom((value)=>{
-        if(value.length && value.includes("4")){
+        if(value.length !== 1 && value.includes("4")){
             return false
         }
            return true
@@ -31,7 +31,7 @@ module.exports = [
 
     check('description')
     .notEmpty().withMessage('Por favor agregue la descripción del producto')
-    .isLength({min:100, max:400}).withMessage('Mínimo 100 caracteres y máximo 400'),
+    .isLength({min:20, max:400}).withMessage('Mínimo 20 caracteres y máximo 400'),
 
     check('image')
     .custom((value,{req})=>{

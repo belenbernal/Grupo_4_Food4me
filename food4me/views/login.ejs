@@ -13,7 +13,7 @@
                             <div class="col-12  col-md-12 datosLogin">
                                 <div class="col-12 EntradasLogin">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" placeholder="Ingresa tu email"
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Ingresa tu email"
                                         value="<%= (typeof datos!='undefined' && datos.email)?datos.email : "" %>">
                                     <span class="text-danger" id="errorEmail">
                                         <%= (typeof errores !='undefined' && errores.email) ? errores.email.msg : null
@@ -23,14 +23,14 @@
 
                                 <div class="col-12 EntradasLogin">
                                     <label for="pass">Contraseña</label>
-                                    <input type="password" name="pass" id="pass" placeholder="Ingresa tu contraseña"
+                                    <input type="password" class="form-control" name="pass" id="pass" placeholder="Ingresa tu contraseña"
                                         value="<%= (typeof datos!='undefined' && datos.pass)?datos.pass : "" %>">
                                     <span class="text-danger" id="errorPass">
                                         <%= (typeof errores !='undefined' && errores.pass) ? errores.pass.msg : null%>
                                     </span>
                                 </div>
 
-                                <div class="col-12 EntradasLogin custom-control custom-checkbox recordame">
+                                <div class="col-12 EntradasLogin">
                                     <input type="checkbox" class="custom-control-input" id="recordar" name="recordar">
                                     <label class="custom-control-label" for="recordar">Recordame</label>
                                     <span id="msgError" class="text-danger"></span>
@@ -39,8 +39,7 @@
 
                             <div class="botonesLogin">
                                 <button type="submit">Ingresar</button>
-                                <button type="submit"> <a class="botonLogin" href="/users/register">
-                                        Registrarme</a></button>
+                                <a class="botonLogin" href="/users/register"> Registrarme</a>
                             </div>
                         </form>
                         ​

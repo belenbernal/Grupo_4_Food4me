@@ -20,7 +20,7 @@
     margin: 0;
 }
 body{
-    background-image: url('/images/fondo-luces.jpg');
+    background-image: url('/images/fondologin.jpg');
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -28,11 +28,6 @@ body{
 }
 
 /* main */
-.padre{
-    background-color: rgba(0, 0, 0, 0.639);
-    border-radius: 2px;
-    padding: 30px;
-}
 
 .titulo-menu{
     color: white;
@@ -70,17 +65,27 @@ box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
 }
 
 main .productos .contenido{
-    border-radius: 10px;
+    position: relative;
+    background-color: white;
+    border-radius: 0 40px 0 40px;
     margin-top: 15px;
-    padding: 8px;
-    height: 80%;
-    margin-bottom: 15px;
+    height: 90%;
+    margin-bottom: 55px;
     transition: transform 0.5s ease, box-shadow .5s ease;
 }
 
 main .productos .contenido:hover {
     transform: scale(1.02);
     box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
+}
+
+main .productos .contenido .datos-box{
+    position:relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 20p;
+    height: 100px;
 }
 
 main .productos .contenido .datos{
@@ -109,11 +114,6 @@ main .productos .contenido i:hover{
     font-size: 30px;
 }
 
-main .contenido{
-    
-    background-color: white;
-}
-
 main .contenido a{    
     color: rgb(0, 0, 0);
     text-decoration: none;
@@ -126,12 +126,12 @@ main .contenido .img-productos{
 }
 
 main .contenido img{
-    width: 95%;
-    border-radius: 4px;
+    margin-top: 0;
+    border-radius: 0 40px 0 40px;
+    width: 100%;
 }
 
 main h2{
-    text-decoration-line: none;
     font-family: 'Roboto';
     font-weight: 600;
     text-align: center;
@@ -170,7 +170,7 @@ main .btns-form .boton-comprar{
 }
 
 main .btns button{   
-    border-radius: 12px;   
+    border-radius: 0 40px 0 40px;   
     color: white;
     font-weight: 900;
     height: 70px;
@@ -186,6 +186,31 @@ main .btns .btn{
     width: 90%;
     border: 1px solid ;
 }
+
+main .contenido .datos-platos{
+    position: absolute;
+    display: contents;
+}
+
+main .contenido .datos-platos .base h5{
+    text-align: center;
+}
+
+main .contenido .datos-platos .base2{
+    text-align: center;
+    border: none;
+    width: 100%;
+}
+
+main .contenido .datos-platos .base2 button{
+    width: 100%;
+    border: none;
+    background-color: #BC0C2B;
+    color: white;
+    height: 45px;
+    border-radius: 15px;
+}
+
 
 /*---------------------------------------------------------------------------------------------------------MEDIA QUERYS*/
 

@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-const {menu,contact,home, contactForm, contactForCompany, postContactCompany} = require('../controllers/indexController');
+const {category,contact,home, contactForm, contactForCompany, postContactCompany} = require('../controllers/indexController');
 
 const contactValidator = require('../validations/contactValidator');
 
 /* GET home page. */
 router.get('/', home);
 
-router.get('/menu', menu);
+router.get('/menu/:id?', category);
 
 router.get('/contact', contactValidator, contact);
 router.post('/contact', contactValidator, contactForm);
