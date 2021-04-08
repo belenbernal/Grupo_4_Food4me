@@ -29,11 +29,11 @@ module.exports = [
     
     check('pass')
     .notEmpty().withMessage('Este campo es requerido')
-    .isLength({min : 8, max : 12}).withMessage('La contraseña debe que tener entre 8 y 12 caracteres'),
+    .isLength({min : 8}).withMessage('La contraseña debe tener 8 caracteres como minimo'),
 
     check('pass2')
     .notEmpty().withMessage('Este campo es requerido')
-    .isLength({min : 8, max : 12}).withMessage('La contraseña debe que tener entre 8 y 12 caracteres'),
+    .isLength({min : 8}).withMessage('La contraseña debe tener 8 caracteres como minimo'),
 
     body('pass2').custom((value,{req}) =>{
         if (value !== req.body.pass){

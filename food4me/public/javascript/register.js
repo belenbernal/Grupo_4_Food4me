@@ -18,7 +18,7 @@ window.addEventListener('load',()=>{
     (image.value)?image.value = "": null
 
     let regExEmail =  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]:+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/
-    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,12}$/
+    let regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/
     let regExLetras = /^[a-zA-Z\sñáéíóúü]*$/
     let regExExt = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     const oneMB = 1048576;
@@ -26,7 +26,7 @@ window.addEventListener('load',()=>{
     email.addEventListener('blur',()=>{
         switch (true) {
             case !email.value:
-                errorEmail.innerHTML = "El campo email es obligatorio";
+                errorEmail.innerHTML = "obligatorio";
                 email.classList.add('is-invalid');
                 break;
             case !regExEmail.test(email.value) :
@@ -43,7 +43,7 @@ window.addEventListener('load',()=>{
     nombre.addEventListener('blur',()=>{
         switch (true) {
             case !nombre.value:
-                errorName.innerHTML = "El campo nombre es obligatorio";
+                errorName.innerHTML = "obligatorio";
                 nombre.classList.add('is-invalid');
                 break;
             case !regExLetras.test(nombre.value) :
@@ -64,7 +64,7 @@ window.addEventListener('load',()=>{
     apellido.addEventListener('blur',()=>{
         switch (true) {
             case !apellido.value:
-                errorLastName.innerHTML = "El campo apellido es obligatorio";
+                errorLastName.innerHTML = "obligatorio";
                 apellido.classList.add('is-invalid');
                 break;
             case !regExLetras.test(apellido.value) :
@@ -85,7 +85,7 @@ window.addEventListener('load',()=>{
     pass1.addEventListener('blur',()=>{
         switch (true) {
             case !pass1.value:
-                errorPass1.innerHTML = "El campo contraseña es obligatorio";
+                errorPass1.innerHTML = "obligatorio";
                 pass1.classList.add('is-invalid');
                 break;
             case !regExPass.test(pass1.value) :
@@ -120,7 +120,7 @@ window.addEventListener('load',()=>{
         console.log(date.value);
         switch (true) {
             case !date.value:
-                errorDate.innerHTML = "El campo fecha es obligatorio"
+                errorDate.innerHTML = "obligatorio"
                 date.classList.add('is-invalid')
             break;
             case moment(date.value) > moment() :
@@ -141,7 +141,7 @@ window.addEventListener('load',()=>{
     image.addEventListener('blur',function(){
         switch (true) {
             case !image.value:
-                errorImage.innerHTML = "Este campo es obligatorio"
+                errorImage.innerHTML = "obligatorio"
                 image.classList.add('is-invalid')
             break
             default:

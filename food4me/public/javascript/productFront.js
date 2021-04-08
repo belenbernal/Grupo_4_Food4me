@@ -26,6 +26,10 @@ window.addEventListener('load', () => {
                 errorNombre.innerHTML = 'El nombre es obligatorio'
                 nombre.classList.add('is-invalid')
                 break;
+            case nombre.value.length < 5:
+                errorNombre.innerHTML = 'El nombre debe tener al menos 5 letras';
+                nombre.classList.add('is-invalid');
+                break;
             case !regLetras.test(nombre.value):
                 errorNombre.innerHTML = 'Ingrese solo letras'
                 nombre.classList.add('is-invalid')
@@ -51,7 +55,7 @@ window.addEventListener('load', () => {
         }
     })
 
-    const checks =()=>{
+    const checks = () => {
         switch (true) {
             case ((check1.checked || check2.checked || check3.checked) && check4.checked):
                 errorCheck.innerHTML = "Si selecciono el ultimo no puede seleccionar los demás"
@@ -115,6 +119,10 @@ window.addEventListener('load', () => {
                 errorDescripcion.innerHTML = 'Campo obligatorio'
                 descripcion.classList.add('is-invalid')
                 break;
+            case descripcion.value.length < 20:
+                errorDescripcion.innerHTML = 'La descripción debe tener entre 20 y 400 caracteres';
+                descripcion.classList.add('is-invalid');
+                break;
             default:
                 errorDescripcion.innerHTML = ''
                 descripcion.classList.remove('is-invalid')
@@ -145,20 +153,20 @@ window.addEventListener('load', () => {
         }
     })
 
-    formulario.addEventListener('submit',(e)=>{
+    formulario.addEventListener('submit', (e) => {
         let error = false;
         e.preventDefault();
 
         let elementsForm = formulario.elements;
 
-        for (let index = 0; index < elementsForm.length -1; index++) { /* -1 para que no cuente al boton cuando recorre el array */
+        for (let index = 0; index < elementsForm.length - 1; index++) { /* -1 para que no cuente al boton cuando recorre el array */
             if (!elementsForm[index].value) {
                 elementsForm[index].classList.add('is-invalid')
                 msgError.innerHTML = "Los campos señalados son obligatorios"
                 error = true;
-            }            
+            }
         }
-        if(!error){
+        if (!error) {
             formulario.submit()
         }
     })

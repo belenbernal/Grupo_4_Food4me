@@ -25,7 +25,7 @@
 }
 
 .contenido-form input , .contenido-form label{
-    width: 900%;
+    width: 100%;
 }
 
 .contenido-form .checks{
@@ -33,7 +33,7 @@
 }
 
 .contenido-form textarea{
-    width: 900%;
+    width: 100%;
 }
 
 .titulo-formu{

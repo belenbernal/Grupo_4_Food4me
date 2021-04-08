@@ -15,14 +15,6 @@ module.exports = [
     /* tenemos que subir foto si o si */
     check('image')
     .custom((value,{req})=>{
-        if(req.files[0]){
-            return true;
-        }else{
-            return false;
-        }
-
-    }).withMessage('La imagen es requerida')
-    .custom((value,{req})=>{
         if(req.files[0].filename.match(/(.jpg|.jpeg|.png|.gif|.webp)$/i)){
             return true
         }else{

@@ -109,7 +109,7 @@ const adminController = {
             const { name, price, category, description, types } = req.body;
             const { id } = req.params;
 
-            if (req.files[0]) {
+            if (fs.existsSync('public/images/products/' + req.files[0].filename)) {
                 fs.unlinkSync('public/images/products/' + req.files[0].filename)
             }
 

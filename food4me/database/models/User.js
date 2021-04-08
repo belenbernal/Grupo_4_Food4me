@@ -36,7 +36,7 @@ module.exports = (sequelize,dataTypes) =>{
         },
         userAddress_id:{
             type:dataTypes.INTEGER(11),
-            allowNull:false
+            defaultValue: null
         },
         rol_id:{
             type:dataTypes.INTEGER(11),

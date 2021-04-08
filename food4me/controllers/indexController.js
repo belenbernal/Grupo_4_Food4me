@@ -4,10 +4,15 @@ const indexController = {
     home: (req, res) => {
         res.render('home');
     },
-    menu: (req, res) => {
-        db.Productos.findAll()
+    category: (req, res) => {
+
+        db.Productos.findAll({            
+            where: {
+                category_id: req.params.id
+            }
+        })
             .then((products) => {
-                res.render('menu', { products })
+                res.render('menu', {products})
             })
             .catch((error) => res.send(error))
     },
