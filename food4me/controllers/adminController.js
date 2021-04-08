@@ -108,13 +108,15 @@ const adminController = {
             const { name, price, category, description, types } = req.body;
             const { id } = req.params;
 
-            db.Productos.findByPk(id)
+            if(req.files[0]){
+                db.Productos.findByPk(id)
                 .then((product) => {
                     if (fs.existsSync('public/images/products/' + product.image)) { 
                         fs.unlinkSync('public/images/products/' + product.image)
                     }
                 })
                 .catch(error => res.send(error))
+            }
 
             db.Productos.update({
                 name,

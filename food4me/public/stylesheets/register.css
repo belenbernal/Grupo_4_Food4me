@@ -68,6 +68,10 @@
     border-radius: 2px;
 }
 
+.EntradasRegister .avatar{
+    border-radius: 0px;
+}
+
 .terminosRegister{
     text-align: center;
     padding: 10px;

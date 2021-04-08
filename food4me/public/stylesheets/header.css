@@ -11,6 +11,14 @@ header .buscador{
     text-align: center;
 }
 
+.chip img{
+    height: 30px;
+    width: 30px;
+    margin-top: 14px;
+    margin-right: 19px;
+    border-radius: 100%;
+}
+
 header .buscador input{
     outline: none;
     margin-top: 14px;
@@ -32,7 +40,7 @@ header .buscador button{
 }
 
 /* logo */
-img{
+.logo img{
     margin-top: 10px;
     width:130%;
 }
@@ -118,7 +126,6 @@ header .menu ul li a{
     border: none;
    
 }
-
 
 /* MEDIA QUERYS */
 @media (min-width: 768px){
