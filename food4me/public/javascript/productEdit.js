@@ -123,7 +123,7 @@ window.addEventListener('load', () => {
         }
     })
 
-    /* Tenemos que actualizar la foto si o si*/
+    /* 
 
     imagen.addEventListener('change', (e) => {
         switch (true) {
@@ -145,7 +145,7 @@ window.addEventListener('load', () => {
                 errorImagen.innerHTML = "";
                 break;
         }
-    })
+    }) */
 
     formulario.addEventListener('submit',(e)=>{
         let error = false;

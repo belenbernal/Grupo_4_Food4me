@@ -15,7 +15,7 @@
 width: 100%;
 }
 
-.texto-home{
+div .texto-home{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -28,9 +28,37 @@ width: 100%;
     text-align: center;
     padding: 0px 35px;
     font-family: 'Roboto';
-    color: #bc0c2b;
+    color: #000000;
     margin: 10px;
     font-weight: 400;
+}
+
+.caja-testimonios{
+    display: flex;
+    width: 100%;
+}
+
+div .sliderTestimonios{
+    height: 220px;
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.testimonios{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(33 37 41 / 4%);
+    border-radius: 6px;
+}
+div .testimonio p{
+    font-family: 'Gentium';
+    color: #000000;
+    font-style: italic;
+    /* font-weight: bold; */
 }
 
 .titulo-marcas{
@@ -39,11 +67,34 @@ width: 100%;
     background-color: #bc0c2b;
     /* margin-top: 20px; */
     padding: 5px;
+    
+}
+
+.hr-testimonials {
+	border: 2px solid #222;
+    color: #222;
+    background-color: #222;
+	width: 30%;
+	margin: 0 auto 35px auto;
+    margin-bottom: 0;
+}
+
+.testimonials-text{
+    background-color: white;
+    justify-content: center;
+}
+.testimonials-text h4{
+    font-family: 'Gentium';
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 25px;
 }
 
 .titulo-marcas h4{
     text-align: center;
     color: white;
+    margin: 0;
 }
 
 .home-marcas{
@@ -52,6 +103,7 @@ width: 100%;
     justify-content: center;
     padding: 0px;
     margin-bottom: -25px;
+    border-radius: 6px;
 }
 
 .home-marcas img{
@@ -66,6 +118,39 @@ width: 100%;
         padding: 0px 80px;
         margin: 14px;
     }
+
+    .hr-testimonials{
+        width: 18%;
+    }
+
+    .testimonials-text{
+        padding-top: 5px;
+    }
+
+    div .sliderTestimonios{
+        height: 200px;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        padding-left: 80px;
+        padding-right: 80px;
+        padding-top: 0;
+    }
+
+    div .testimonios{
+        width: 70%;
+        margin-top: 14px;
+    }
+
+    div .testimonio p{
+        font-size: 18px;
+        margin-bottom: 0;
+    }
+
+    
 }
 
 @media (min-width:1024px){
@@ -79,5 +164,25 @@ width: 100%;
         width: 50%;
         margin: 14px;
         font-size: 24px;
+    }
+
+    .hr-testimonials{
+        width: 10%;
+    }
+
+    div .sliderTestimonios{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+
+    div .testimonios{
+        width: 80%;
+        margin-top: 20px;
+    }
+
+    div .testimonio p{
+        font-size: 28px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 }

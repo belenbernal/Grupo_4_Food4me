@@ -4,6 +4,7 @@ const {productDelete, editProduct, newProduct, productAdd, productList, updatePr
 const upload = require('../middlewares/productMulter');
 const adminCheck = require('../middlewares/adminCheck');
 const productValidator = require('../validations/productValidator');
+const productEditValidator = require('../validations/productEditValidator');
 
 
 /* carga de producto*/
@@ -12,7 +13,7 @@ router.post('/create', upload.any(), productValidator, newProduct);
 
 /* edicion y subida de producto */
 router.get('/edit/:id', adminCheck , editProduct);
-router.put('/update/:id', upload.any(), productValidator, updateProduct);
+router.put('/update/:id', upload.any(), productEditValidator, updateProduct);
 
 /* elimina producto */
 router.delete('/eliminar/:id', adminCheck , productDelete);
