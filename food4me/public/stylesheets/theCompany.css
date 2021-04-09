@@ -1,0 +1,15 @@
+.empresa{
+    margin-bottom: 0;
+}
+
+.theCompany{
+    background-image: url('/images/tabla-madera.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+div .textCompany{
+    margin-top: 500px;
+}

@@ -70,7 +70,7 @@ const usersController = {
                 .catch((error) => res.send(error))
 
 
-        } else { //revisar donde marca cada error!!           
+        } else {           
 
             return res.render('login', {
                 errores: errores.mapped(),

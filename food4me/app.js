@@ -43,7 +43,7 @@ app.use('/', indexRouter);
 app.use('/products',productRouter)
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
-app.use('/superAdmin', superAdmin);
+app.use('/superadmin', superAdmin);
 
 
 

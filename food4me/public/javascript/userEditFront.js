@@ -1,6 +1,8 @@
 const qs = (e) => document.querySelector(e)
 
 window.addEventListener('load', ()=>{
+
+    let errors = {};
     
     let formulario = qs('.editUser');
     
@@ -13,7 +15,7 @@ window.addEventListener('load', ()=>{
     let regExImg = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     let oneMb = 1048576;
 
-    imagen.addEventListener('blur',()=>{
+    /* imagen.addEventListener('blur',()=>{
         switch (true) {
             case !user.image.value:
                 errorImagen.innerHTML = "Este campo es obligatorio"
@@ -24,16 +26,21 @@ window.addEventListener('load', ()=>{
             imagen.classList.add('is-valid');
             errorImagen.innerHTML = "";
         }
-    })
+    }) */
 
-    imagen.addEventListener('change', (e) => {
+    const validatorImage = ()=>{
         switch (true) {
+            case !imagen.value :
+                errors.image = false;
+                break;
             case !regExImg.exec(imagen.value):
                 errorImagen.innerHTML = "Solo imágenes con extensión jpg, jpeg, png, gif, webp"
+                errors.image = true;
                 imagen.classList.add('is-invalid')
                 break;
             case imagen.files[0].size > oneMb * 2:
                 errorImagen.innerHTML = "El archivo debe pesar menos de 2Mb"
+                errors.image = true;
                 imagen.classList.add('is-invalid')
                 vistaPrevia.src = ""
                 break
@@ -41,15 +48,20 @@ window.addEventListener('load', ()=>{
                 imagen.classList.remove('is-invalid');
                 imagen.classList.add('is-valid');
                 errorImagen.innerHTML = "";
+                errors.image = false;
 
                 let reader = new FileReader();
                 
-                reader.readAsDataURL(e.target.files[0])
+                reader.readAsDataURL(imagen.files[0])
                 reader.onload = () => {
                     vistaPrevia.src = reader.result
                 }
                 break;
         }
+    }
+
+    imagen.addEventListener('change', () => {
+        validatorImage();
     })
 
     nombre.addEventListener('blur', ()=>{
@@ -130,7 +142,14 @@ window.addEventListener('load', ()=>{
 
         let elementsForm = formulario.elements;
 
-        for (let index = 0; index < elementsForm.length -1; index++) { 
+        validatorImage();
+        if(errors.image){
+            errorBtn.innerHTML = "Los campos señalados son obligatorios"
+        }else{
+            formulario.submit() 
+        }
+
+        /* for (let index = 1; index < elementsForm.length -1; index++) { 
             if (!elementsForm[index].value) {
                 elementsForm[index].classList.add('is-invalid')
                 errorBtn.innerHTML = "Los campos señalados son obligatorios"
@@ -139,7 +158,7 @@ window.addEventListener('load', ()=>{
         }
         if(!error){
             formulario.submit()
-        }
+        } */
     })
 
 

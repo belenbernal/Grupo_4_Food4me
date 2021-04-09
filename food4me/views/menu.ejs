@@ -48,12 +48,15 @@
                                         </div>
 
                                         <div class="datos-box col-12">
-                                            <h2> <%= product.name %> </h2>
+                                            <h2>
+                                                <%= product.name %>
+                                            </h2>
                                         </div>
 
                                         <div class="col-12 datos-platos">
                                             <div class="base col-12">
-                                                <h5>$<%= product.price %> </h5>
+                                                <h5>$<%= product.price %>
+                                                </h5>
                                             </div>
                                             <div class="base2 col-12">
                                                 <button>Agregar<i class="fas fa-cart-plus"></i></button>
@@ -68,16 +71,40 @@
                 </div>
             </div>
 
-            <div class="container atajos">
-                <div class="row">
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-truck"></i>Envios</a>
+            <div class="container secciones col-12">
+                <div class="flip-box col-12 col-md-4">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <h2>Front Side</h2>
+                        </div>
+
+                        <div class="flip-box-back">
+                            <h2>Back Side</h2>
+                        </div>
                     </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-percentage"></i>Ofertas</a>
+                </div>
+
+                <div class="flip-box col-12 col-md-4">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <h2>Front Side</h2>
+                        </div>
+
+                        <div class="flip-box-back">
+                            <h2>Back Side</h2>
+                        </div>
                     </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-credit-card"></i>Formas de pago</a>
+                </div>
+
+                <div class="flip-box col-12 col-md-4">
+                    <div class="flip-box-inner">
+                        <div class="flip-box-front">
+                            <h2>Front Side</h2>
+                        </div>
+
+                        <div class="flip-box-back">
+                            <h2>Back Side</h2>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,4 +112,5 @@
         <%- include('./partials/footer') %>
 
             <%- include('./partials/scripts') %>
+
 </html>

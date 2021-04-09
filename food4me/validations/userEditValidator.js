@@ -15,11 +15,16 @@ module.exports = [
     /* tenemos que subir foto si o si */
     check('image')
     .custom((value,{req})=>{
-        if(req.files[0].filename.match(/(.jpg|.jpeg|.png|.gif|.webp)$/i)){
-            return true
+        if(req.files[0]){
+            if(req.files[0].filename.match(/(.jpg|.jpeg|.png|.gif|.webp)$/i)){
+                return true
+            }else{
+                return false
+            }
         }else{
-            return false
+            return true;
         }
+        
     })
     .withMessage('La imagen tiene que ser de tipo: jpg, jpeg, png, gif o webp')
 

@@ -13,6 +13,7 @@
 @import url('/stylesheets/home.css');
 @import url('/stylesheets/userEdit.css');
 @import url('/stylesheets/indexAdmin.css');
+@import url('/stylesheets/theCompany.css');
 
 *{
     font-family: gentium;

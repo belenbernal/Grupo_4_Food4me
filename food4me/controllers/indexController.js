@@ -28,6 +28,15 @@ const indexController = {
     postContactCompany: (req, res) => {
         res.render('contactForCompany')
     },
+    theCompany: (req, res) => {
+        res.render('theCompany')
+    },
+    team: (req, res) => {
+        res.render('team')
+    },
+    questions: (req, res) => {
+        res.render('questions')
+    }
 
 }
 module.exports = indexController;

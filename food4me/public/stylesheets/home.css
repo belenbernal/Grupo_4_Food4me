@@ -91,6 +91,10 @@ div .testimonio p{
     padding-top: 25px;
 }
 
+div .company p{
+    margin-bottom: 0;
+}
+
 .titulo-marcas h4{
     text-align: center;
     color: white;
