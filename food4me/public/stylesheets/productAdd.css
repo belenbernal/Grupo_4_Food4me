@@ -1,5 +1,19 @@
 /*PRODUCT ADD*/
+.cardAdd{
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 45%);
+    border-radius: 0 40px 0 40px;
+    max-width: 680px;
+}
 
+.cardEdit{
+    display: flex;
+    justify-content: center;
+    box-shadow: 10px 5px 5px rgb(0 0 0 / 45%);
+    border-radius: 0 40px 0 40px;
+    max-width: 680px
+}
 .contenedor-product-add{
     margin-top: 80px;
     margin-bottom: 90px;
@@ -56,5 +70,12 @@
     background-color: #bc0c2b;
     border: #bc0c2b 1px solid;
     font-weight: bold;
+}
+
+.contenido-form .boton-carga .btn:hover{
+    border-radius: 50px;
+    background: #BC0C2B;
+    box-shadow: inset -5px 5px 10px #5a0615,
+                inset 5px -5px 10px #ff1241;
 }
 

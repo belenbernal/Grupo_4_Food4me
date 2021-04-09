@@ -36,6 +36,7 @@
 }
 
 .info-profile{
+    color: white;
     align-items: baseline;
     justify-content: center;
     display: flex;
@@ -54,7 +55,19 @@
     display: flex;
 }
 .botones-profile button{
+    border: none;
+    border-radius: 50px;
+background: linear-gradient(145deg, #c90d2e, #a90b27);
+box-shadow:  5px 5px 10px #5a0615,
+             -5px -5px 10px #ff1241;
     height: 45px;
+}
+
+.botones-profile button:hover{
+    border-radius: 50px;
+    background: linear-gradient(145deg, #a90b27, #c90d2e);
+    box-shadow:  5px 5px 10px #5a0615,
+                 -5px -5px 10px #ff1241;
 }
 
 /* MEDIA QUERYS */
