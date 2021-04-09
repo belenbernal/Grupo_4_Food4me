@@ -16,6 +16,11 @@
     transition: transform 0.8s;
     transform-style: preserve-3d;
   }
+
+  .flip-box-inner .flip-box-front img{
+      width: 100px;
+      height: 100px;
+  }
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-box:hover .flip-box-inner {
@@ -33,15 +38,26 @@
   
   /* Style the front side */
   .flip-box-front {
-    background-color: #bbb;
+    padding: 15px;
+    border-radius: 40px;
+    background-color: #BC0C2B;
     color: black;
   }
   
   /* Style the back side */
   .flip-box-back {
-    background-color: dodgerblue;
+    border-radius: 40px;
+    background-color: #BC0C2B;
     color: white;
     transform: rotateY(180deg);
+    
+  }
+
+  .flip-box-back h4{
+    align-content: center;
+      font-family: roboto;
+      margin: auto;
+      padding: 15px;
   }
   
   .flip-box:hover .flip-box-inner {
