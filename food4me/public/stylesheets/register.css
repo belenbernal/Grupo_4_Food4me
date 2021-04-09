@@ -26,13 +26,6 @@
     border-radius: 10px;  
 }
 
-.card{
-    background-color: #bc0c2b;
-    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
-    border-radius: 0 40px 0 40px;
-    max-width: 850px;
-}
-
 .datosRegister{
     display: flex;
     flex-wrap: wrap;
