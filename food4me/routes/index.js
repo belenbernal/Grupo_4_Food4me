@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
-<<<<<<< HEAD
-const {menu,contact,home, contactForm, category} = require('../controllers/indexController');
-=======
-const {menu,contact,home, contactForm, contactForCompany, postContactCompany} = require('../controllers/indexController');
->>>>>>> belu
+const {menu,contact,home, category, contactForm, contactForCompany, postContactCompany} = require('../controllers/indexController');
 
 const contactValidator = require('../validations/contactValidator');
 

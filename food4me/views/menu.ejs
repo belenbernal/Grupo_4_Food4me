@@ -13,7 +13,7 @@
                 </ol>
                 <div class="carousel-inner carrousel-items">
                     <div class="carousel-item active carrousel-item">
-                        <img src="/images/banner1.jpg" class="d-block w-100" alt="...">
+                        <img src="/images/logo tabla madera.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item carrousel-item">
                         <img src="/images/banner2.jpg" class="d-block w-100" alt="...">
@@ -48,12 +48,15 @@
                                         </div>
 
                                         <div class="datos-box col-12">
-                                            <h2> <%= product.name %> </h2>
+                                            <h2>
+                                                <%= product.name %>
+                                            </h2>
                                         </div>
 
                                         <div class="col-12 datos-platos">
                                             <div class="base col-12">
-                                                <h5>$<%= product.price %> </h5>
+                                                <h5>$<%= product.price %>
+                                                </h5>
                                             </div>
                                             <div class="base2 col-12">
                                                 <button>Agregar<i class="fas fa-cart-plus"></i></button>
@@ -68,21 +71,70 @@
                 </div>
             </div>
 
-            <div class="container atajos">
-                <div class="row">
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-truck"></i>Envios</a>
-                    </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-percentage"></i>Ofertas</a>
-                    </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-credit-card"></i>Formas de pago</a>
-                    </div>
+            <div class="container preFooter">
+                
+
+                <div class="card cardFooter">
+                    <a href="#">
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="/images/oferta.png">
+                                <h3>Ofertas</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                    veritatis provident at.
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
                 </div>
+                <div class="card cardFooter">
+                    <a href="#"></a>
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="/images/tarjeta.png">
+                            <h3>Forma de pago</h3>
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                veritatis
+                                provident at.
+                            </p>
+
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="card cardFooter">
+                    <a href="#">
+                        <div class="face face1">
+                            <div class="content">
+                                <img src="/images/envio.png">
+                                <h3>Envios</h3>
+                            </div>
+                        </div>
+                        <div class="face face2">
+                            <div class="content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cum cumque minus iste
+                                    veritatis provident at.
+                                </p>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                
             </div>
         </main>
         <%- include('./partials/footer') %>
 
             <%- include('./partials/scripts') %>
+
 </html>

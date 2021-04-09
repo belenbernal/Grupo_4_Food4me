@@ -12,19 +12,19 @@
                         <body>
                             <div class="container-fluid containerEdit">
                                 <div class="row col-12 ">
-
-                                    <div class="col-12 tituloEdit">
-                                        <h1>Editar usuario</h1>
-                                    </div>
+                                   
                                     <div class="col-12 formEdit">
                                         <form class="editUser" action="/users/update?_method=PUT" method="POST"
                                             enctype="multipart/form-data">
 
-                                           
+                                            <div class="col-12 tituloEdit">
+                                                <h1>Editar usuario</h1>
+                                            </div>
+
                                             <div class="col-12 labelEdit">
                                                 <label for="">imagen</label>
                                                 <img src="/images/users/<%= user.image %> " alt="" id="vistaPrevia">
-                                                <input id="file" type="file" name="image" value="<%= user.image %>">
+                                                <input class="file" id="file" type="file" name="image" value="<%= user.image %>">
                                                 <span class="text-danger" id="errorImagen">
                                                     <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
                                                 </span>
