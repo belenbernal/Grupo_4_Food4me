@@ -8,7 +8,10 @@ const superAdminController = {
         db.Usuarios.findAll({
             order: [
                 ['last_name', 'ASC']
-            ]
+            ],
+            where: {
+                rol_id : 1
+            }
         })
         .then((users) => {
             res.render('superAdmin/UsersList', { users })
@@ -28,7 +31,7 @@ const superAdminController = {
             }
         })
         .then((users) => {
-            res.render('superAdmin/UsersList', { users })
+            res.render('superAdmin/AdminList', { users })
         })
         .catch((error) => res.send(error))
     },
@@ -38,8 +41,8 @@ const superAdminController = {
                 ['name', 'ASC']
             ]
         })
-        .then((users) => {
-            res.render('superAdmin/UsersList', { users })
+        .then((clients) => {
+            res.render('superAdmin/clientList', { clients })
         })
         .catch((error) => res.send(error))
     },
