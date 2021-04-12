@@ -25,7 +25,8 @@
                                         </div>
 
                                         <div class="col-12 btns-form-admin">
-                                            <form class="col-6 btnsAdmin" action="/admin/eliminar/<%=product.id%>?_method=DELETE" method="POST">
+                                            <form class="col-6 btnsAdmin"
+                                                action="/admin/eliminar/<%=product.id%>?_method=DELETE" method="POST">
                                                 <div class=" botones-index-Admin">
                                                     <button class=" boton-comprar" type="submit">Eliminar</button>
                                                 </div>
@@ -38,27 +39,16 @@
                                         </div>
                                     </a>
                                 </div>
-                                
+
                             </div>
                             <% }) %>
                     </div>
                 </div>
             </div>
-            </div>
-            <div class="container atajos">
-                <div class="row">
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-truck"></i>Envios</a>
-                    </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-percentage"></i>Ofertas</a>
-                    </div>
-                    <div class="col-12 atajos2">
-                        <a href="#"><i class="fas fa-credit-card"></i>Formas de pago</a>
-                    </div>
-                </div>
-            </div>
+           
+
         </main>
         <%- include('./partials/footer') %>
             <%- include('./partials/scripts') %>
+
 </html>

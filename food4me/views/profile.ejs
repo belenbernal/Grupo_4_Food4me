@@ -2,67 +2,68 @@
 <html lang="es">
 <%- include('./partials/head') %>
 
-    <% if ((typeof user !="undefined") && (user.rol_id == 2) ) { %>
+    <% if ((typeof user !="undefined" ) && (user.rol_id==2) ) { %>
         <%- include('./admin/partials/header') %>
 
-        <% }else{ %>
-            <%- include('./partials/header') %>
-            <% } %>
+            <% }else{ %>
+                <%- include('./partials/header') %>
+                    <% } %>
 
-        <body>
-            <div class="body-profile container card ">
-                <div class="perfil-text" style="text-align:center">
-                    <h2>Perfil</h2>
+                        <body>
+                            <div class="body-profile container card ">
+                                <div class="perfil-text" style="text-align:center">
+                                    <h2>Perfil</h2>
 
-                </div>
-                <div class="profile-dato column">
-                    <div class=" img-perfil column">
-                        <img src="/images/users/<%= user.image %> ">
-                    </div>
-                    <div class="datos column">
-                        <article class="info-profile">
-                            <h4>Nombre: </h4>
-                            <p>
-                                <%= user.name %>
-                            </p>
-                        </article>
+                                </div>
+                                <div class="profile-dato column">
+                                    <div class=" img-perfil column">
+                                        <img src="/images/users/<%= user.image %> ">
+                                    </div>
+                                    <div class="datos column">
+                                        <article class="info-profile">
+                                            <h4>Nombre: </h4>
+                                            <p>
+                                                <%= user.name %>
+                                            </p>
+                                        </article>
 
-                        <article class="info-profile">
-                            <h4>Apellido: </h4>
-                            <p>
-                                <%= user.last_name %>
-                            </p>
-                        </article>
+                                        <article class="info-profile">
+                                            <h4>Apellido: </h4>
+                                            <p>
+                                                <%= user.last_name %>
+                                            </p>
+                                        </article>
 
-                        <article class="info-profile">
-                            <h4>Email: </h4>
-                            <p>
-                                <%= user.email %>
-                            </p>
-                        </article>
+                                        <article class="info-profile">
+                                            <h4>Email: </h4>
+                                            <p>
+                                                <%= user.email %>
+                                            </p>
+                                        </article>
 
-                        <div class="botones-profile col-12">
-                            <div class="col-6">
-                                <form clas action="/users/logout">
-                                    <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
-                                </form>
+
+
+                                    </div>
+                                    <div class="botones-profile col-12">
+                                        <div class="col-6">
+                                            <form clas action="/users/logout">
+                                                <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+                                            </form>
+                                        </div>
+                                        <div class="col-6">
+                                            <form action="/users/edit">
+                                                <button type="submit" class="btn btn-success">Editar Perfil</button>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <form action="/users/edit">
-                                    <button type="submit" class="btn btn-success">Editar Perfil</button>
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
 
 
-        </body>
-        <%- include('./partials/footer') %>
+                        </body>
+                        <%- include('./partials/footer') %>
 
-            <%- include('./partials/scripts') %>
+                            <%- include('./partials/scripts') %>
 
 </html>

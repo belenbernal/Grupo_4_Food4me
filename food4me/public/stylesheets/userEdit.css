@@ -1,4 +1,6 @@
 .containerEdit{
+    border-radius: 0 40px 0 40px;
+    background-color: #BC0C2B;
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
