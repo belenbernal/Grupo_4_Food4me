@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head') %>
+    <%- include('./partials/header') %>
+        <main>
+            <% clients.forEach(client => { %>
+                <div class="card">
+                    <div class="card-body">
+                      <h5><%= client.name %></h5>
+                      <form action="">
+                        <button type="button" class="btn btn-danger">Eliminar</button>
+                      </form>
+                    </div>
+                  </div>
+            <% }) %>
+            
+        </main>
+        <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
+</html>

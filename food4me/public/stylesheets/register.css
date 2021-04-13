@@ -58,6 +58,10 @@
     color:white;
 }
 
+.cardRegister{
+    background: #bc0c2b;  
+}
+
 .EntradasRegister input{
     border-radius: 50px;
     width: 100%;

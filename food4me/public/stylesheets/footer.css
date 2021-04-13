@@ -101,6 +101,9 @@ margin-left: 15px;
 .footer-dark .item-1 li a{
     color: white;
 }
+.footer-dark div .item-1{
+    padding: 10px;
+}
 
 .footer-dark .item-2{
     text-align: center;
@@ -118,6 +121,10 @@ margin-left: 15px;
 
 .footer-dark .item-2 li a{
     color: white;
+}
+
+.footer-dark div .item-2{
+    padding: 10px;
 }
 
 .footer-dark .item-text{
