@@ -62,8 +62,7 @@ box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.452);
 }
 
 .carrousel-items .carrousel-item img {
-    height: 300px;
-    
+    height: 300px;  
 }
 
 main .productos .contenido{
@@ -248,6 +247,7 @@ main .contenido .datos-platos .base2 button{
     main .contenido .img-productos{
         height: 30vh;
     }
+
 }
 
 @media (min-width: 1440px){
@@ -257,5 +257,8 @@ main .contenido .datos-platos .base2 button{
     main .container{
         width: 95%;
         max-width: 1440px;
+    }
+    .carrousel-items .carrousel-item img {
+        height: 500px;  
     }
 }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/header') %>
+
+            <div class="container contenedor-product-add">
+                <div class="row contenido-form mx-auto col-12 cardAdd">
+                    <form class="formAdd" action="" method="GET">
+                        <h2 class="titulo-formu">Editar datos</h2>
+
+                        <div class="mb-3 entrada">
+                            <!--Nombre del cliente-->
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre" >
+                        </div>
+
+                        <div class="mb-3 entrada">
+                            <!--teléfono-->
+                            <label for="phone" class="form-label">Teléfono</label>
+                            <input type="number" name="phone" id="phone" class="form-control" placeholder="Teléfono">
+                        </div>
+
+                        <div class="mb-3 entrada">
+                            <!--calle-->
+                            <label for="street" class="form-label">Calle</label>
+                            <input type="text" name="street" id="street" class="form-control" placeholder="Calle">
+                        </div>
+
+                        <div class="mb-3 entrada">
+                            <!--altura-->
+                            <label for="height" class="form-label">Altura</label>
+                            <input type="number" name="height" id="height" class="form-control" placeholder="Altura">
+                        </div>
+
+                        <div class="mb-3 entrada">
+                            <!--localidad-->
+                            <label for="location" class="form-label">Localidad</label>
+                            <input type="text" name="location" id="location" class="form-control" placeholder="Localidad">
+                        </div>
+
+                        <div class="mb-3 entrada">
+                            <!--provincia-->
+                            <label for="province" class="form-label">Provincia</label>
+                            <input type="text" name="province" id="province" class="form-control" placeholder="Provincia">
+                        </div>
+
+                        <div class="boton-carga">
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <%- include('./partials/footer') %>
+
+                <%- include('./partials/scripts') %>
+    </body>
+
+</html>

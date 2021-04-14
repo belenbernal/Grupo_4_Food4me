@@ -1,4 +1,4 @@
-main .productos .contenidoAdmin{
+    main .productos .contenidoAdmin{
     position: relative;
     background-color: white;
     border-radius: 0 40px 0 40px;
@@ -24,6 +24,7 @@ main .contenidoAdmin img{
     margin-top: 0;
     border-radius: 0 40px 0 40px;
     width: 100%;
+    height: 252px;
 }
 
 main .contenidoAdmin .des-productoAdmin{
@@ -32,6 +33,10 @@ main .contenidoAdmin .des-productoAdmin{
     text-align: center;
     position: relative;
     text-decoration: none;
+}
+
+main .contenidoAdmin a{
+    text-decoration: none !important;
 }
 
 main .contenidoAdmin .btns-form-admin{
@@ -49,7 +54,21 @@ main .contenidoAdmin .btns-form-admin .botones-index-Admin button{
 
 main .contenidoAdmin .btns-form-admin .botones-index-Admin button:hover{
     border-radius: 50px;
-background: #BC0C2B;
-box-shadow: inset -5px 5px 10px #5a0615,
+    background: #BC0C2B;
+    box-shadow: inset -5px 5px 10px #5a0615,
             inset 5px -5px 10px #ff1241;
+}
+
+/*---------------------------*/
+
+@media (min-width: 1024px){
+    main .contenidoAdmin img{
+        height: 152px;
+    }
+}
+
+@media (min-width: 1440px){
+    main .contenidoAdmin img{
+        height: 252px;
+    }
 }

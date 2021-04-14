@@ -108,14 +108,14 @@ const adminController = {
             const { name, price, category, description, types } = req.body;
             const { id } = req.params;
 
-            if(req.files[0]){
+            if (req.files[0]) {
                 db.Productos.findByPk(id)
-                .then((product) => {
-                    if (fs.existsSync('public/images/products/' + product.image)) { 
-                        fs.unlinkSync('public/images/products/' + product.image)
-                    }
-                })
-                .catch(error => res.send(error))
+                    .then((product) => {
+                        if (fs.existsSync('public/images/products/' + product.image)) {
+                            fs.unlinkSync('public/images/products/' + product.image)
+                        }
+                    })
+                    .catch(error => res.send(error))
             }
 
             db.Productos.update({
@@ -219,6 +219,22 @@ const adminController = {
             })
             .catch(error => res.send(error))
 
+    },
+    clientEdit: (req, res) => {
+        let id = req.session.user.client_id;
+        /* let client = db.Clientes.findOne({
+            where: {
+                id: req.session.user.client_id
+            }
+        }) */
+        db.Clientes.findByPk(id)
+        .then((client) => {
+            return res.send(client)
+            res.render("admin/clientEdit"/* , {
+                client
+            } */)
+        })
+        .catch((error) => { res.send(error) })
     }
 }
 
