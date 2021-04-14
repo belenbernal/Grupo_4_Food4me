@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <%- include('./partials/head') %>
-    <%- include('./partials/header') %>
-        <main>
-            <% clients.forEach(client => { %>
-                <div class="card">
-                    <div class="card-body">
-                      <h5><%= client.name %></h5>
-                      <form action="">
-                        <button type="button" class="btn btn-danger">Eliminar</button>
-                      </form>
-                    </div>
-                  </div>
-            <% }) %>
-            
-        </main>
-        <%- include('./partials/footer') %>
-            <%- include('./partials/scripts') %>
+  <%- include('./partials/header') %>
+    <main>
+      <div class="col-12 clientList">
+
+        <% clients.forEach(client=> { %>
+
+          <div class="col-12-col-md-4 col-lg-3">
+
+            <div class="card text-center cardSuperAdmin" style="width: 18rem;">
+              <div class="card-body ">
+                <h5 class="card-title">
+                  <%= client.name %>
+                </h5>
+
+                <form action="">
+                  <button type="button" class="btn btn-danger">Eliminar</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+
+    </main>
+    <%- include('./partials/footer') %>
+      <%- include('./partials/scripts') %>
+
 </html>

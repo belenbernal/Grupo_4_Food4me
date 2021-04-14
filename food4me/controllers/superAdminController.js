@@ -5,7 +5,8 @@ const { validationResult } = require('express-validator');
 
 const superAdminController = {
     userList : (req,res) =>{
-        db.Usuarios.findAll({
+        let clients = db.Clientes.findAll()    
+        let users = db.Usuarios.findAll({
             order: [
                 ['last_name', 'ASC']
             ],
@@ -13,13 +14,30 @@ const superAdminController = {
                 rol_id : 1
             }
         })
-        .then((users) => {
-            res.render('superAdmin/UsersList', { users })
+        Promise.all([users, clients])
+        .then(([users, clients]) => {
+            res.render('superAdmin/UsersList', {users, clients})
         })
         .catch((error) => res.send(error))
     },
-    userEdit : (req,res) =>{
+    updateUser : (req, res)=>{
+        const {client_id, roles_id}= req.body;
+        const {id}=req.params;
 
+        db.Usuarios.update({
+            client_id,
+            rol_id : +roles_id
+        },
+        {
+            where:{
+                id
+            }
+        })
+        .then((users) => {
+            res.redirect('/superadmin/adminList')
+        })
+        .catch((error) => res.send(error))
+       
     },
     adminList : (req,res) =>{
         db.Usuarios.findAll({
@@ -46,9 +64,14 @@ const superAdminController = {
         })
         .catch((error) => res.send(error))
     },
-    clientEdit : (req,res) =>{
-
-    },
+    clientAdd : (req, res)=>{
+        db.Clientes.findAll()
+            .then(clientes => {
+                res.render('superadmin/clientAdd', {
+                    clientes
+                })
+            })
+    },   
     clientDelete : (req,res) =>{
 
     },

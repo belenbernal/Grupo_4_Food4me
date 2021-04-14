@@ -130,6 +130,7 @@ box-shadow:  5px 5px 10px #5a0615,
              -5px -5px 10px #ff1241;
 }
 .botonesLogin a{
+    text-decoration: none !important;
     margin-top: 25px;
     margin-bottom: -25px;
 }

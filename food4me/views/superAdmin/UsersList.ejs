@@ -3,16 +3,57 @@
 <%- include('./partials/head') %>
     <%- include('./partials/header') %>
         <main>
-            <% users.forEach(user => { %>
-                <div class="card">
-                    <div class="card-body">
-                      <h5><%= user.last_name %>, <%= user.name %></h5>
-                      <p><%= user.email %></p>
+
+            <div class="co-12 userList">
+
+                <% users.forEach(user=> { %>
+
+                    <div class="col-12-col-md-4 col-lg-3">
+
+                        <div class="card text-center cardSuperAdmin" style="width: 18rem;">
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <%= user.last_name %>, <%= user.name %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= user.email %>
+                                </p>
+                                <div class="col-12 btnAdmin">
+                                    <form action="/superadmin/update/<%=user.id%>?_method=PUT" method="POST">
+                                        <div class="col-12">
+                                            <label for="">Roles</label>
+                                            <select name="roles_id" id="">
+                                                <option selected disabled>Seleccione un rol</option>                                                
+                                                <option value="1">user</option>
+                                                <option value="2">admin</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="">Clientes</label>
+                                            <select name="client_id" id="">
+                                                <option selected disabled>Seleccione un cliente</option>
+                                                <% clients.forEach(cliente=> { %>
+                                                    <option value="<%=cliente.id%>">
+                                                        <%=cliente.name%>
+                                                    </option>
+                                                    <% }) %>
+                                            </select>
+                                        </div>
+                                        <button type="submit">Guardar cambios</button> 
+                                    </form>
+                                </div>
+                               
+                                   
+                                
+                            </div>
+                        </div>
                     </div>
-                  </div>
-            <% }) %>
-            
+
+                    <% }) %>
+            </div>
         </main>
         <%- include('./partials/footer') %>
             <%- include('./partials/scripts') %>
+
 </html>

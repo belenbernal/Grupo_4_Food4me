@@ -1,0 +1,13 @@
+main .adminList, .clientList, .userList{
+    display: flex;
+}
+
+main .userList .btnAdmin{
+    display: flex;
+}
+
+main .cardSuperAdmin{
+    border-radius: 0 40px 0 40px;
+}
+
+
