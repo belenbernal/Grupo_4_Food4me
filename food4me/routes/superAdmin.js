@@ -15,6 +15,6 @@ router.post('/clientAdd')
 /* lista de clientes */
 router.get('/clientList', clientList);
 /* eliminar cliente */
-router.delete('/clientDelete', clientDelete);
+router.delete('/clientDelete/:id', clientDelete);
 
 module.exports = router;

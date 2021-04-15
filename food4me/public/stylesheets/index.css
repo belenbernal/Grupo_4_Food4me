@@ -15,6 +15,7 @@
 @import url('/stylesheets/indexAdmin.css');
 @import url('/stylesheets/theCompany.css');
 @import url('/stylesheets/superAdmin.css');
+@import url('/stylesheets/clientAdd.css');
 
 *{
     font-family: gentium;
@@ -28,6 +29,10 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.busquedaError{
+    
 }
 
 /* main */

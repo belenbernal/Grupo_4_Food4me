@@ -93,7 +93,41 @@ const superAdminController = {
             })
     },
     clientDelete : (req,res) =>{
-        
+        const { id } = req.params
+
+        let cliente = db.Clientes.findOne({
+            where: {
+                id: id
+            }
+        })
+        let direccionClient = db.Direcciones.destroy({
+            where:{
+                address_id: id
+            }
+        })
+        let productosClient = db.Prductos.destroy({
+            where: {
+                client_id : id
+            }
+        })
+        let adminClient = db.Usuarios.destroy({
+            where: {
+                client_id : id
+            }
+        })
+        Promise.all([cliente, productosClient, adminClient, direccionClient])
+            .then((user) => {
+                db.Clientes.destroy({
+                    where: {
+                        id: id
+                    }
+                })
+                    .then(() => {
+                        return res.render('/superAdmin/clientList');
+                    })
+                    .catch(error => res.send(error))
+            })
+            .catch(error => res.send(error))
     }
 }
 
