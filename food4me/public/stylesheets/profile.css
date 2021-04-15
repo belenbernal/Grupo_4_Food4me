@@ -1,4 +1,6 @@
 .body-profile{
+    background-color: #BC0C2B;
+    border-radius: 0 40px 0 40px;
     width: 90%;
     padding: 15px;
     margin-top: 80px;
@@ -24,6 +26,8 @@
 
 .profile-dato{
     justify-content: center;
+    background: #e20f38;
+    border-radius: 400px 200px 400px 250px;
 }
 
 .profile-dato img{
@@ -52,7 +56,11 @@
 }
 
 .botones-profile{
+    padding-top: 15px;
+    text-align: center;
     display: flex;
+    padding-bottom: 15px;
+    
 }
 .botones-profile button{
     border: none;

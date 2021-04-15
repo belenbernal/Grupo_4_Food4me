@@ -229,7 +229,6 @@ const adminController = {
         }) */
         db.Clientes.findByPk(id)
         .then((client) => {
-            return res.send(client)
             res.render("admin/clientEdit"/* , {
                 client
             } */)

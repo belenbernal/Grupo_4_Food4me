@@ -3,16 +3,38 @@
 <%- include('./partials/head') %>
     <%- include('./partials/header') %>
         <main>
-            <% users.forEach(user => { %>
-                <div class="card">
-                    <div class="card-body">
-                      <h5><%= user.last_name %>, <%= user.name %></h5>
-                      <p><%= user.email %></p>
+            <div class="col-12 adminList">
+                <% users.forEach(user=> { %>
+                    <div class="col-12-col-md-4 col-lg-3">
+                        <div class="card text-center cardSuperAdmin" style="width: 18rem;">
+                            <div class="card-body ">
+                                <h5 class="card-title">
+                                    <%= user.last_name %>, <%= user.name %>
+                                </h5>
+                                <p class="card-text">
+                                    <%= user.email %>
+                                </p>
+
+                                <div class="col-12">
+                                    <label for="">Roles</label>
+                                    <select name="rol_id" id="">
+                                        <option selected disabled>Seleccione un rol</option>                                                
+                                        <option value="1">user</option>
+                                        <option value="2">admin</option>
+                                    </select>
+                                </div>
+
+                                <form action="">
+                                    <button type="submit"> eliminar</button> 
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-            <% }) %>
-            
+                    <% }) %>
+            </div>
+
         </main>
         <%- include('./partials/footer') %>
             <%- include('./partials/scripts') %>
+
 </html>

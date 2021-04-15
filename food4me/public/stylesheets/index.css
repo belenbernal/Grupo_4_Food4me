@@ -14,6 +14,7 @@
 @import url('/stylesheets/userEdit.css');
 @import url('/stylesheets/indexAdmin.css');
 @import url('/stylesheets/theCompany.css');
+@import url('/stylesheets/superAdmin.css');
 
 *{
     font-family: gentium;
@@ -193,6 +194,7 @@ main .btns .btn{
     margin-bottom: 5px;
     width: 90%;
     border: 1px solid ;
+    
 }
 
 main .contenido .datos-platos{

@@ -46,6 +46,7 @@ header .buscador button{
 }
 
 header .logo a{
+    
     display: inline-block;
     max-width: 220px;
 }
@@ -84,6 +85,10 @@ header .menu .menu-2{
     width: 80%;
 }
 
+header .menu .barraMenu{
+    padding: 12px;
+}
+
 header .menu .menu-2 .cf{
     justify-content: center;
 }
@@ -95,6 +100,7 @@ header .menu ul{
 }
 
 header .menu ul li a{   
+    font-size: 20px;
     color: white;
     text-decoration: none;
 }
@@ -124,6 +130,8 @@ header .menu ul li a{
     background-color: #BC0C2B;
     border: none;
 }
+
+
 
 /* MEDIA QUERYS */
 @media (min-width: 768px){

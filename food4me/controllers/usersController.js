@@ -49,11 +49,18 @@ const usersController = {
                                 maxAge: 60 * 1000 * 60//mide en milisegundos
                             })
                         }
-                        if (user.rol_id == 1) {
-                            return res.redirect('/')
-                        } else {
-                            return res.redirect('/admin/list')
+                        switch (true) {
+                            case user.rol_id == 1:
+                                res.redirect('/')
+                                break;
+                            case user.rol_id == 2:
+                                res.redirect('/admin/list')
+                                break;
+                            default:
+                                res.redirect('/superadmin/userList')
+                                break;
                         }
+                       
                     } else {
 
                         res.render('login', {
@@ -70,7 +77,7 @@ const usersController = {
                 .catch((error) => res.send(error))
 
 
-        } else {           
+        } else {
 
             return res.render('login', {
                 errores: errores.mapped(),
