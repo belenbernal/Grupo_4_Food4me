@@ -51,6 +51,28 @@ const superAdminController = {
         })
         .catch((error) => res.send(error))
     },
+    adminDelete : (req, res)=>{
+        const { id } = req.params
+
+        let user = db.Usuarios.findOne({
+            where: {
+                id: id
+            }
+        })
+            .then((user) => {
+                db.Usuarios.destroy({
+                    where: {
+                        id: id
+                    }
+                })
+                    .then(() => {
+                        return res.render('/superAdmin/adminList');
+                    })
+                    .catch(error => res.send(error))
+            })
+            .catch(error => res.send(error))
+
+    },
     clientList : (req,res) =>{
         db.Clientes.findAll({
             order: [
@@ -71,7 +93,7 @@ const superAdminController = {
             })
     },
     clientDelete : (req,res) =>{
-
+        
     }
 }
 
