@@ -1,6 +1,5 @@
 const path = require('path');
 const db = require('../database/models')
-const fs = require('fs');
 const { validationResult } = require('express-validator');
 
 const superAdminController = {
@@ -70,8 +69,68 @@ const superAdminController = {
                 })
             })
     },
-    clientDelete : (req,res) =>{
+    clientUpdate : (req,res) =>{
+        const {name, phone, street, height, location, province} = req.body
 
+        db.Direcciones.create({
+            calle : street,
+            altura : height,
+            localidad : location,
+            provincia : province
+        })
+        .then((address)=>{
+            db.Clientes.create({
+                name,
+                phone,
+                address_id : address.id
+            })
+            .then((clients)=>{
+                res.redirect('/superadmin/clientList')
+            })
+        })
+        .catch((error) => res.send(error))
+
+    },
+    clientDelete : (req,res) =>{
+        const {id} = req.params;
+
+        let productDelete = db.Productos.destroy({
+            where:{
+                client_id : id
+            }
+        })
+
+        let adminDelete = db.Usuarios.destroy({
+            where:{
+                client_id : id
+            }
+        })
+
+        let client = db.Clientes.findOne({
+            where: {
+                id: id
+            }
+        })
+
+        Promise.all([productDelete, adminDelete, client])
+        .then(()=>{
+            let address_id = client.address_id;
+            
+            db.Direcciones.destroy({
+                where:{
+                    id : address_id
+                }
+            })
+            db.Clientes.destroy({
+                where:{
+                    id: id
+                }
+            })
+            .then(()=>{
+                res.redirect('/superadmin/clientList')
+            })
+        })
+        .catch((error) => res.send(error))
     }
 }
 

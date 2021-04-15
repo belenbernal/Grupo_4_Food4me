@@ -15,8 +15,8 @@
                   <%= client.name %>
                 </h5>
 
-                <form action="">
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                <form action="/superadmin/clientDelete/<%=client.id%>?_method=DELETE" method="POST">
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
                 </form>
               </div>
             </div>
