@@ -14,18 +14,9 @@
                                 <p class="card-text">
                                     <%= user.email %>
                                 </p>
-                                
-                                <div class="col-12">
-                                    <label for="">Roles</label>
-                                    <select name="rol_id" id="">
-                                        <option selected disabled>Seleccione un rol</option>                                                
-                                        <option value="1">user</option>
-                                        <option value="2">admin</option>
-                                    </select>
-                                </div>
 
-                                <form action="">
-                                    <button type="submit" class="btn btn-danger"> eliminar</button> 
+                                <form action="/superadmin/eliminar/<%=user.id%>?_method=DELETE" method="POST">
+                                    <button class="btn btn-danger" type="submit"> eliminar</button> 
                                 </form>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {updateUser, userList, adminList, clientList, clientDelete, clientAdd, clientUpdate} = require('../controllers/superAdminController')
+const {updateUser, userList, adminList, clientList, clientDelete, clientAdd, clientUpdate, adminDelete} = require('../controllers/superAdminController')
 
 /* lista de usuarios */
 router.get('/userList', userList);
@@ -8,6 +8,7 @@ router.get('/userList', userList);
 router.put('/update/:id', updateUser)
 /* lista de admin */
 router.get('/adminList', adminList);
+router.delete('/eliminar/:id', adminDelete)
 /* agregar cliente */
 router.get('/clientAdd', clientAdd)
 router.post('/clientAdd',clientUpdate)

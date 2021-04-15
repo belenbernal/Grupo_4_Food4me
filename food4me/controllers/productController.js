@@ -28,9 +28,13 @@ const productController = {
             }
         })
         .then(products =>{ 
-            return res.render('menu', {
-                products
-            })
+            if(products.length == 0){
+                return res.render('busquedaError')
+            }else{
+                return res.render('menu',           
+                {products}
+            )}
+            
                    
         })
         .catch((error)=> res.send(error))       
