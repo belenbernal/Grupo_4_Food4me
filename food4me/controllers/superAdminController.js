@@ -1,7 +1,7 @@
 const path = require('path');
 const db = require('../database/models')
 const fs = require('fs');
-const { validationResult } = require('express-validator');
+
 
 const superAdminController = {
     userList : (req,res) =>{
@@ -91,7 +91,7 @@ const superAdminController = {
     clientUpdate : (req,res) =>{
         const {name, phone, street, height, location, province} = req.body
 
-        db.Direcciones.create({
+        let address = db.Direcciones.create({
             calle : street,
             altura : height,
             localidad : location,
@@ -104,7 +104,7 @@ const superAdminController = {
                 address_id : address.id
             })
             .then((clients)=>{
-                res.render('superAdmin/clientList')
+                res.redirect('/superadmin/clientList')
             })
         })
         .catch((error) => res.send(error))
