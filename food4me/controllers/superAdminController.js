@@ -59,19 +59,18 @@ const superAdminController = {
                 id: id
             }
         })
-            .then((user) => {
-                db.Usuarios.destroy({
-                    where: {
-                        id: id
-                    }
-                })
-                    .then(() => {
-                        return res.render('/superAdmin/adminList');
-                    })
-                    .catch(error => res.send(error))
+        .then((user) => {
+            db.Usuarios.destroy({
+                where: {
+                    id: id
+                }
             })
-            .catch(error => res.send(error))
-
+                .then(() => {
+                    return res.redirect('/superadmin/adminList');
+                })
+                .catch(error => res.send(error))
+        })
+        .catch(error => res.send(error))
     },
     clientList : (req,res) =>{
         db.Clientes.findAll({
