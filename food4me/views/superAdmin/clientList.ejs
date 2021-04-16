@@ -3,27 +3,30 @@
 <%- include('./partials/head') %>
   <%- include('./partials/header') %>
     <main>
-      <div class="col-12 clientList">
+      <div class="container padreS">
+        <div class="container">
+          <div class="row productos">
 
-        <% clients.forEach(client=> { %>
+            <% clients.forEach(client=> { %>
 
-          <div class="col-12-col-md-4 col-lg-3">
+              <div class=" listSA col-12 col-md-6 col-lg-3">
+                <div class="card text-center cardSuperAdmin" style="width: 18rem;">
+                  <div class="card-body ">
+                    <h5 class="card-title">
+                      <%= client.name %>
+                    </h5>
 
-            <div class="card text-center cardSuperAdmin" style="width: 18rem;">
-              <div class="card-body ">
-                <h5 class="card-title">
-                  <%= client.name %>
-                </h5>
-
-                <form action="/superadmin/clientDelete/<%=client.id%>?_method=DELETE" method="POST">
-                  <button type="submit" class="btn btn-danger">Eliminar</button>
-                </form>
+                    <form action="/superadmin/clientDelete/<%=client.id%>?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <% }) %>
-      </div>
 
+              <% }) %>
+          </div>
+        </div>
+      </div>
     </main>
     <%- include('./partials/footer') %>
       <%- include('./partials/scripts') %>
