@@ -15,37 +15,43 @@
                             <div class="col-12 col-lg-6">
                                 <!--Nombre del cliente-->
                                 <label for="name" class="form-label">Nombre</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre" >
+                                <input type="text" name="name" id="name" class="form-control"
+                                    placeholder="Ingrese el nombre" value="<%= client.name %> ">
                             </div>
-    
+
                             <div class="col-12 col-lg-6">
                                 <!--teléfono-->
                                 <label for="phone" class="form-label">Teléfono</label>
-                                <input type="number" name="phone" id="phone" class="form-control" placeholder="Teléfono">
+                                <input type="number" name="phone" id="phone" class="form-control" placeholder="Teléfono"
+                                    value="<%= client.phone %>">
                             </div>
-    
+
                             <div class="col-12 col-lg-6">
                                 <!--calle-->
                                 <label for="street" class="form-label">Calle</label>
-                                <input type="text" name="street" id="street" class="form-control" placeholder="Calle">
+                                <input type="text" name="street" id="street" class="form-control" placeholder="Calle"
+                                    value="<%= address_id.calle %> ">
                             </div>
-    
+
                             <div class="col-12 col-lg-6">
                                 <!--altura-->
                                 <label for="height" class="form-label">Altura</label>
-                                <input type="number" name="height" id="height" class="form-control" placeholder="Altura">
+                                <input type="number" name="height" id="height" class="form-control" placeholder="Altura"
+                                    value="<%= address_id.altura %> ">
                             </div>
-    
+
                             <div class="col-12 col-lg-6">
                                 <!--localidad-->
                                 <label for="location" class="form-label">Localidad</label>
-                                <input type="text" name="location" id="location" class="form-control" placeholder="Localidad">
+                                <input type="text" name="location" id="location" class="form-control"
+                                    placeholder="Localidad" value="<%= address_id.localidad %> ">
                             </div>
-    
+
                             <div class="col-12 col-lg-6">
                                 <!--provincia-->
                                 <label for="province" class="form-label">Provincia</label>
-                                <input type="text" name="province" id="province" class="form-control" placeholder="Provincia">
+                                <input type="text" name="province" id="province" class="form-control"
+                                    placeholder="Provincia" value="<%= address_id.provincia %> ">
                             </div>
                         </div>
 

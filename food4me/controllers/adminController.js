@@ -222,18 +222,58 @@ const adminController = {
     },
     clientEdit: (req, res) => {
         let id = req.session.user.client_id;
-        /* let client = db.Clientes.findOne({
-            where: {
-                id: req.session.user.client_id
-            }
-        }) */
+       
         db.Clientes.findByPk(id)
         .then((client) => {
-            res.render("admin/clientEdit"/* , {
-                client
-            } */)
+            db.Direcciones.findOne({
+                where: {
+                    id: client.address_id
+                }
+            })
+            .then((address)=>{
+                res.render("admin/clientEdit", {
+                    client,
+                    address
+                })
+            })
+           
         })
         .catch((error) => { res.send(error) })
+    },
+    clientEditUp : (req, res)=>{
+        const {name, phone, street, height, location, province} = req.body
+        let id = req.session.user.client_id;
+
+        db.Clientes.findByPk(id)
+        .then((client)=>{
+            db.Direcciones.update({
+                calle : street,
+                altura : height,
+                localidad : location,
+                provincia : province
+            },
+            {
+                where : {
+                id : client.address_id
+            }
+        })
+        })
+        .then((address)=>{
+            db.Clientes.update({
+                name,
+                phone
+            },
+            {
+                where : {
+                    id : id
+                }
+            })
+            .then((client)=>{
+                res.redirect('/superadmin/clientList')
+            })
+        })
+        .catch((error) => res.send(error))
+
     }
 }
 

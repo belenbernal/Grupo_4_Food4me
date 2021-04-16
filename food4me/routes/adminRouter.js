@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-const {productDelete, editProduct, newProduct, productAdd, productList, updateProduct, clientEdit} = require('../controllers/adminController')
+const {clientEditUp, productDelete, editProduct, newProduct, productAdd, productList, updateProduct, clientEdit} = require('../controllers/adminController')
 const upload = require('../middlewares/productMulter');
 const adminCheck = require('../middlewares/adminCheck');
 const productValidator = require('../validations/productValidator');
@@ -23,5 +23,6 @@ router.get('/list', adminCheck , productList);
 
 /* editar cliente */
 router.get('/clientEdit', adminCheck , clientEdit);
+router.post('/clientEdit', clientEditUp);
 
 module.exports = router;
