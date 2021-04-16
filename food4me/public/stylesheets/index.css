@@ -16,6 +16,7 @@
 @import url('/stylesheets/theCompany.css');
 @import url('/stylesheets/superAdmin.css');
 @import url('/stylesheets/clientAdd.css');
+@import url('/stylesheets/clientEdit.css');
 
 *{
     font-family: gentium;
