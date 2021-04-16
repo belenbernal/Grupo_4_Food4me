@@ -14,7 +14,7 @@
                         <div class="mb-3 entrada">
                             <!--producto-->
                             <label for="name" class="form-label">Nombre del producto</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto" value="<%= (typeof datos!='undefined' && datos.name)?datos.name : "" %>">
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto">
                             <span class="text-danger" id="errorNombre">
                                 <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
                             </span>
@@ -23,10 +23,10 @@
                         <div class="mb-3 entrada">
                             <!--categoria-->
                             <label for="category" class="form-label">Categoría</label>
-                            <select name="category" id="category" class="custom-select" >
+                            <select name="category" id="category" class="custom-select">
                                 <option selected disabled >Seleccione la categoría</option>
                                  <% categorias.forEach(categoria => { %>
-                                    <option> <%=categoria.categories%> </option>
+                                    <option value="<%=categoria.id%>"> <%=categoria.categories%> </option>
                                 <% }) %>
                             </select>
                             <span class="text-danger" id="errorCategoria">
@@ -60,7 +60,7 @@
                         <div class="mb-3 entrada">
                             <!--precio-->
                             <label for="price" class="form-label">Precio</label>
-                            <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario" value="<%= (typeof datos!='undefined' && datos.price)?datos.price : "" %>">
+                            <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario">
                             <span class="text-danger" id="errorPrecios">
                                 <%= (typeof errores !='undefined' && errores.price ? errores.price.msg : null) %>
                             </span>
@@ -69,7 +69,7 @@
                         <div class="mb-3 entrada">
                             <!--descripción-->
                             <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3" maxlength="400" placeholder="Ingrese la descripción del producto aquí"><%= (typeof datos!='undefined' && datos.description)?datos.description : "" %></textarea>
+                            <textarea class="form-control" name="description" id="description" rows="3" maxlength="400" placeholder="Ingrese la descripción del producto aquí"></textarea>
                             <span class="text-danger" id="errorDescripcion">
                                 <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
                             </span>
@@ -78,7 +78,7 @@
                         <div class="mb-3 entrada">
                             <!--imagen-->
                             <label for="image" class="form-label">Foto del producto</label>
-                            <input type="file" id="image" name="image">
+                            <input type="file" id="image" name="image" >
                             <img src="" alt="" id="vistaPrevia" >
                             <span class="text-danger" id="errorImagen">
                                 <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>

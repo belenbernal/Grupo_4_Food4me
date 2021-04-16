@@ -1,103 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <%- include('./partials/head') %>
+    <%- include('./partials/header') %>
+        <main>
+            <div class="container clientAdd">
+                <div class="row card cardAdd col-12">
+                    <form action="/superadmin/clientAdd" method="POST">
+                        <h2 class="titulo-formu">Editar datos</h2>
 
-    <body>
-        <%- include('./partials/header') %>
-
-            <div class="container contenedor-product-add">
-                <div class="row contenido-form mx-auto col-12 cardAdd">
-                    <form class="formAdd" action="/admin/create" method="POST" enctype="multipart/form-data">
-                        <h2 class="titulo-formu">Carga de producto</h2>
-
-                        <div class="mb-3 entrada">
-                            <!--producto-->
-                            <label for="name" class="form-label">Nombre del producto</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre del producto">
-                            <span class="text-danger" id="errorNombre">
-                                <%= (typeof errores !='undefined' && errores.name ? errores.name.msg : null) %>
-                            </span>
-                        </div>
-
-                        <div class="mb-3 entrada">
-                            <!--categoria-->
-                            <label for="category" class="form-label">Categoría</label>
-                            <select name="category" id="category" class="custom-select">
-                                <option selected disabled >Seleccione la categoría</option>
-                                 <% categorias.forEach(categoria => { %>
-                                    <option value="<%=categoria.id%>"> <%=categoria.categories%> </option>
-                                <% }) %>
-                            </select>
-                            <span class="text-danger" id="errorCategoria">
-                                <%= (typeof errores !='undefined' && errores.category ? errores.category.msg : null) %>
-                            </span>
-                        </div>
-
-                        <div class="mb-3 entrada  checks">
-                            <!--opciones vegetariano, vegano, celiaco-->
-                            <div class="custom-control custom-checkbox checks">
-                                <input value="2" type="checkbox" class="custom-control-input" id="vegetarian" name="types">
-                                <label class="custom-control-label" for="vegetarian">Comida vegetariana</label>  
+                        <div class="form-row">
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--Nombre del cliente-->
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Ingrese el nombre" >
                             </div>
-                            <div class="custom-control custom-checkbox checks">
-                                <input value="1" type="checkbox" class="custom-control-input" name="types" id="vegan">
-                                <label class="custom-control-label" for="vegan">Comida vegana</label>
+    
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--teléfono-->
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="number" name="phone" id="phone" class="form-control" placeholder="Teléfono">
                             </div>
-                            <div class="custom-control custom-checkbox checks">
-                                <input value="3" type="checkbox" class="custom-control-input" name="types" id="celiac">
-                                <label class="custom-control-label" for="celiac">Comida para celíacos</label>
+    
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--calle-->
+                                <label for="street" class="form-label">Calle</label>
+                                <input type="text" name="street" id="street" class="form-control" placeholder="Calle">
                             </div>
-                            <div class="custom-control custom-checkbox checks">
-                                <input value="4" type="checkbox" class="custom-control-input" name="types" id="none">
-                                <label class="custom-control-label" for="none">Ninguno de los anteriores</label>
+    
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--altura-->
+                                <label for="height" class="form-label">Altura</label>
+                                <input type="number" name="height" id="height" class="form-control" placeholder="Altura">
                             </div>
-                            <span class="text-danger" id="errorCheck">
-                                <%= (typeof errores !='undefined' && errores.types ? errores.types.msg : null) %>
-                            </span>
+    
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--localidad-->
+                                <label for="location" class="form-label">Localidad</label>
+                                <input type="text" name="location" id="location" class="form-control" placeholder="Localidad">
+                            </div>
+    
+                            <div class="camposForm col-12 col-md-6 col-lg-6">
+                                <!--provincia-->
+                                <label for="province" class="form-label">Provincia</label>
+                                <input type="text" name="province" id="province" class="form-control" placeholder="Provincia">
+                            </div>
                         </div>
 
-                        <div class="mb-3 entrada">
-                            <!--precio-->
-                            <label for="price" class="form-label">Precio</label>
-                            <input type="number" name="price" id="price" class="form-control" placeholder="Precio unitario">
-                            <span class="text-danger" id="errorPrecios">
-                                <%= (typeof errores !='undefined' && errores.price ? errores.price.msg : null) %>
-                            </span>
-                        </div>
-
-                        <div class="mb-3 entrada">
-                            <!--descripción-->
-                            <label for="description" class="form-label">Descripción</label>
-                            <textarea class="form-control" name="description" id="description" rows="3" maxlength="400" placeholder="Ingrese la descripción del producto aquí"></textarea>
-                            <span class="text-danger" id="errorDescripcion">
-                                <%= (typeof errores !='undefined' && errores.description ? errores.description.msg : null) %>
-                            </span>
-                        </div>
-
-                        <div class="mb-3 entrada">
-                            <!--imagen-->
-                            <label for="image" class="form-label">Foto del producto</label>
-                            <input type="file" id="image" name="image" >
-                            <img src="" alt="" id="vistaPrevia" >
-                            <span class="text-danger" id="errorImagen">
-                                <%= (typeof errores !='undefined' && errores.image ? errores.image.msg : null) %>
-                            </span>
-                        </div>
-
-                        <div class="boton-carga">
+                        <div class="boton-cargaC">
                             <button type="submit" class="btn btn-primary">Guardar</button>
-                            <span id="msgError" class="text-danger"></span>
                         </div>
 
                     </form>
                 </div>
             </div>
-            <script src="../javascript/productFront.js"></script>
 
-            <%- include('./partials/footer') %>
-
-                <%- include('./partials/scripts') %>
-    </body>
+        </main>
+        <%- include('./partials/footer') %>
+            <%- include('./partials/scripts') %>
 
 </html>

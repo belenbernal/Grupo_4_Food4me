@@ -174,7 +174,7 @@ const usersController = {
                                 image: user.image,
                                 client_id: user.client_id
                             }
-                            return res.redirect('/users/profile')
+                            return res.render('profile', {user})
                         })
                 })
 

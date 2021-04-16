@@ -11,7 +11,7 @@ router.get('/adminList', adminList);
 router.delete('/eliminar/:id', adminDelete)
 /* agregar cliente */
 router.get('/clientAdd', clientAdd)
-router.post('/clientAdd',clientUpdate)
+router.post('/clientAdd', clientUpdate)
 /* lista de clientes */
 router.get('/clientList', clientList);
 /* eliminar cliente */
