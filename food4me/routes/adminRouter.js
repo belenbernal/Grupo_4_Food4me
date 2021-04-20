@@ -22,7 +22,7 @@ router.delete('/eliminar/:id', adminCheck , productDelete);
 router.get('/list', adminCheck , productList);
 
 /* editar cliente */
-router.get('/clientEdit', adminCheck , clientEdit);
+router.get('/clientEdit', adminCheck, clientEdit);
 router.post('/clientEdit', clientEditUp);
 
 module.exports = router;

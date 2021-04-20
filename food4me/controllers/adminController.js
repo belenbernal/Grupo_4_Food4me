@@ -224,19 +224,19 @@ const adminController = {
         let id = req.session.user.client_id;
        
         db.Clientes.findByPk(id)
-        .then((client) => {
+        .then((cliente) => {
             db.Direcciones.findOne({
                 where: {
-                    id: client.address_id
+                    id: cliente.address_id
                 }
             })
             .then((address)=>{
                 res.render("admin/clientEdit", {
-                    client,
+                    cliente,
                     address
                 })
             })
-           
+            .catch((error) => { res.send(error) })
         })
         .catch((error) => { res.send(error) })
     },
@@ -269,7 +269,7 @@ const adminController = {
                 }
             })
             .then((client)=>{
-                res.redirect('/superadmin/clientList')
+                res.redirect('/admin/list')
             })
         })
         .catch((error) => res.send(error))

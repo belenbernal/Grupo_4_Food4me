@@ -3,27 +3,32 @@
 <%- include('./partials/head') %>
     <%- include('./partials/header') %>
         <main>
-            <div class="col-12 adminList">
-                <% users.forEach(user=> { %>
-                    <div class="col-12 col-md-4 col-lg-3">
-                        <div class="card text-center cardSuperAdmin" style="width: 18rem;">
-                            <div class="card-body ">
-                                <h5 class="card-title">
-                                    <%= user.last_name %>, <%= user.name %>
-                                </h5>
-                                <p class="card-text">
-                                    <%= user.email %>
-                                </p>
 
-                                <form action="/superadmin/eliminar/<%=user.id%>?_method=DELETE" method="POST">
-                                    <button class="btn btn-danger" type="submit"> eliminar</button> 
-                                </form>
+            <div class="container padreS">
+                <div class="container">
+                  <div class="row productos">
+        
+                    <% users.forEach(user=> { %>
+                        <div class=" listSA col-12 col-md-4 col-lg-3">
+                            <div class="card text-center cardSuperAdmin" style="width: 18rem;">
+                                <div class="card-body ">
+                                    <h5 class="card-title">
+                                        <%= user.last_name %>, <%= user.name %>
+                                    </h5>
+                                    <p class="card-text">
+                                        <%= user.email %>
+                                    </p>
+    
+                                    <form action="/superadmin/eliminar/<%=user.id%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-danger" type="submit"> eliminar</button> 
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <% }) %>
-            </div>
-
+                        <% }) %>
+                  </div>
+                </div>
+              </div>
         </main>
         <%- include('./partials/footer') %>
             <%- include('./partials/scripts') %>

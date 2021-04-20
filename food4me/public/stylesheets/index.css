@@ -16,6 +16,8 @@
 @import url('/stylesheets/theCompany.css');
 @import url('/stylesheets/superAdmin.css');
 @import url('/stylesheets/clientAdd.css');
+@import url('/stylesheets/clientEdit.css');
+@import url('/stylesheets/team.css');
 
 *{
     font-family: gentium;
@@ -31,8 +33,14 @@ body{
     background-size: cover;
 }
 
-.busquedaError{
-    
+.busquedaImg{
+    display: block;
+    margin: auto;
+    width: 30%;
+}
+
+.bErrorText{
+    color: white;
 }
 
 /* main */

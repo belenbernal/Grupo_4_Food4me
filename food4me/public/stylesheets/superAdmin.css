@@ -7,7 +7,18 @@ main .userList .btnAdmin{
 }
 
 main .cardSuperAdmin{
+    margin: 10px 0;
     border-radius: 0 40px 0 40px;
 }
 
+main .padreS{
+    padding: 0;
+}
 
+main .padreS .container{
+    padding: 0;
+}
+
+main .padreS .container .productos .listaSA{
+    margin-bottom: 10px !important;
+}
