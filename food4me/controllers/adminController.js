@@ -269,7 +269,7 @@ const adminController = {
                 }
             })
             .then((client)=>{
-                res.redirect('/superadmin/clientList')
+                res.redirect('/admin/list')
             })
         })
         .catch((error) => res.send(error))
