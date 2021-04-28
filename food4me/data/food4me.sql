@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `food4me` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `food4me`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: food4me
@@ -31,7 +29,7 @@ CREATE TABLE `addresses` (
   `localidad` varchar(45) NOT NULL,
   `provincia` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +81,7 @@ CREATE TABLE `clients` (
   PRIMARY KEY (`id`),
   KEY `fk_address_id_idx` (`address_id`),
   CONSTRAINT `fk_address_id` FOREIGN KEY (`address_id`) REFERENCES `addresses` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -102,7 +100,7 @@ CREATE TABLE `product_type` (
   KEY `fk_type_id_idx` (`type_id`),
   CONSTRAINT `fk_productType_id` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   CONSTRAINT `fk_typeProduct_id` FOREIGN KEY (`type_id`) REFERENCES `types` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=119 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +123,7 @@ CREATE TABLE `products` (
   KEY `fk_client_id_idx` (`client_id`),
   CONSTRAINT `fk_category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
   CONSTRAINT `fk_client_id` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -171,7 +169,7 @@ CREATE TABLE `users` (
   `pass` varchar(100) NOT NULL,
   `image` varchar(45) DEFAULT NULL,
   `date` date NOT NULL,
-  `userAddress_id` int(11) NOT NULL,
+  `userAddress_id` int(11) DEFAULT NULL,
   `rol_id` int(11) NOT NULL,
   `client_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -182,7 +180,7 @@ CREATE TABLE `users` (
   CONSTRAINT `fk client_id` FOREIGN KEY (`client_id`) REFERENCES `clients` (`id`),
   CONSTRAINT `fk_rol_id` FOREIGN KEY (`rol_id`) REFERENCES `roles` (`id`),
   CONSTRAINT `fk_userAddress_id` FOREIGN KEY (`userAddress_id`) REFERENCES `addresses` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -194,4 +192,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-22 21:07:34
+-- Dump completed on 2021-04-28 20:38:11
