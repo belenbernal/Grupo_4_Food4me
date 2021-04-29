@@ -1,6 +1,6 @@
 module.exports = (sequelize,dataTypes) =>{
 
-    const alias = 'Roles';
+    let alias = 'Roles';
 
     let cols= {
         id:{
@@ -12,11 +12,11 @@ module.exports = (sequelize,dataTypes) =>{
         roles:{
             type:dataTypes.STRING(45),
             allowNull:false
-        }
-    }
+        },
+    };
 
-    const config ={
-        tableName : 'users',
+    let config ={
+        tableName : 'roles',
         timestamps : false
     }
 

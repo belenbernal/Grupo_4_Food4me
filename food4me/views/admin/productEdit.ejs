@@ -25,9 +25,13 @@
                             <label for="category" class="form-label">Categoría</label>
                             <select name="category" id="category" class="custom-select" value="<%=product.category_id%>">
                                 <option disabled>Selecciona la categoría</option>
+                                
                                 <% categories.forEach(category => { %>
-                                    <option value="<%=category.id%>" <%- category.id == product.category_id ? 'selected' : '' %> > <%=category.categories%> </option>
+                                    <option value="<%=category.id%>" <%- category.id == product.category_id ? 'selected' : '' %> > 
+                                        <%=category.categories%>
+                                     </option>
                                 <% }) %>
+
                             </select>
                             <span class="text-danger" id="errorCategoria">
                                 <%= (typeof errores !='undefined' && errores.category ? errores.category.msg : null) %>
