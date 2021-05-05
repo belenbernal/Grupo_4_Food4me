@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const superAdminController = {
     userList : (req,res) =>{
+        let roles = db.Roles.findAll()
         let clients = db.Clientes.findAll()    
         let users = db.Usuarios.findAll({
             order: [
@@ -14,9 +15,9 @@ const superAdminController = {
                 rol_id : 1
             }
         })
-        Promise.all([users, clients])
-        .then(([users, clients]) => {
-            res.render('superAdmin/UsersList', {users, clients})
+        Promise.all([users, clients, roles ])
+        .then(([users, clients, roles ]) => {
+            res.render('superAdmin/UsersList', {users, clients, roles})
         })
         .catch((error) => res.send(error))
     },
